@@ -1,0 +1,149 @@
+<h1 id="grafana-cheatsheet">Grafana Cheatsheet</h1>
+<ul>
+<li><a href="#dashboards">Dashboards</a></li>
+<li><a href="#datasource-cloudwatch">CloudWatch</a>
+<ul>
+<li><a href="#datasource-cloudwatch">CloudWatch Datasource</a></li>
+<li><a href="#variables-for-cloudWatch">CloudWatch Variables</a></li>
+</ul></li>
+<li><a href="">Elasticsearch</a>
+<ul>
+<li><a href="#datasource-elasticsearch">Elasticsearch Datasource</a></li>
+<li><a href="#variables-for-elasticsearch">Elasticsearch Variables</a></li>
+</ul></li>
+<li><a href="">MySQL</a>
+<ul>
+<li><a href="#datasource-mysql">MySQL Datasource</a></li>
+<li><a href="#variables-for-mysql">MySQL Variables</a></li>
+<li><a href="#mysql-queries">MySQL Queries</a></li>
+</ul></li>
+<li><a href="#prometheus-datasource">Prometheus</a>
+<ul>
+<li><a href="#prometheus-datasource">Prometheus Datasource</a></li>
+<li><a href="#prometheus-variables">Prometheus Variables</a></li>
+<li><a href="#prometheus-queries">Prometheus Queries</a></li>
+</ul></li>
+</ul>
+<h2 id="dashboards">Dashboards</h2>
+<ul>
+<li><a href="https://grafana.com/grafana/dashboards/12019">Loki</a></li>
+</ul>
+<h2 id="datasource-cloudwatch">Datasource: CloudWatch</h2>
+<h3 id="variables-for-cloudwatch">Variables for CloudWatch</h3>
+<p>Docs:</p>
+<ul>
+<li>https://grafana.com/docs/grafana/latest/features/datasources/cloudwatch/</li>
+</ul>
+<p>Overview:</p>
+<p>The <code>Name</code> field allows you to use it as a variable, example:</p>
+<pre><code>Name: region
+Type: Query
+Label: Region
+Query: regions()</code></pre>
+<p>Will show as Region in grafana, and you will be able to use a variable <code>$region</code> to select the value from the <code>Region</code> selector.</p>
+<p>AWS Regions:</p>
+<pre><code>Query: regions()</code></pre>
+<p>AutoScaling Group:</p>
+<pre><code>Query: dimension_values($region,AWS/EC2,CPUUtilization,AutoScalingGroupName)</code></pre>
+<p>EC2 InstanceId from Tag Name:</p>
+<pre><code>Query: ec2_instance_attribute(eu-west-1, InstanceId, {&quot;tag:ASG&quot;:[&quot;my-app-asg&quot;]}) </code></pre>
+<p>EBS VolumeId from InstanceId:</p>
+<pre><code>Query: ebs_volume_ids($region, $instanceid)</code></pre>
+<p>ECS Cluster Name:</p>
+<pre><code>Query: dimension_values($region,AWS/ECS,CPUUtilization,ClusterName)</code></pre>
+<p>ECS Service Name:</p>
+<pre><code>Query: dimension_values($region,AWS/ECS,CPUUtilization,ServiceName)</code></pre>
+<p>RDS Cluster Name:</p>
+<pre><code>Query: dimension_values($region,AWS/RDS,CPUUtilization,DBClusterIdentifier)</code></pre>
+<p>RDS Instance Name:</p>
+<pre><code>Query: dimension_values($region,AWS/RDS,CPUUtilization,DBInstanceIdentifier)</code></pre>
+<h2 id="datasource-elasticsearch">Datasource: Elasticsearch</h2>
+<ul>
+<li><a href="https://grafana.com/blog/2016/03/09/how-to-effectively-use-the-elasticsearch-data-source-in-grafana-and-solutions-to-common-pitfalls/">how-to-effectively-use-the-elasticsearch-data-source-in-grafana-and-solutions-to-common-pitfalls/</a></li>
+</ul>
+<h3 id="variables-for-elasticsearch">Variables for Elasticsearch</h3>
+<p>Domain Name:</p>
+<pre><code>{&quot;find&quot;: &quot;terms&quot;, &quot;field&quot;: &quot;domain_name.keyword&quot;}</code></pre>
+<p>Domain Name (Filtered Results):</p>
+<pre><code>{&quot;find&quot;: &quot;terms&quot;, &quot;field&quot;: &quot;domain_name.keyword&quot;, &quot;query&quot;: &quot;domain_name: *.mydomain.com&quot;}</code></pre>
+<p>2 Variables, ALB and Domain Name (domain name results filtered based on the alb that you select / should be in correct order):</p>
+<pre><code>alb_name:
+{&quot;find&quot;: &quot;terms&quot;, &quot;field&quot;: &quot;alb_name.keyword&quot;}
+
+domain_name:
+{&quot;find&quot;: &quot;terms&quot;, &quot;field&quot;: &quot;domain_name.keyword&quot;, &quot;query&quot;: &quot;domain_name: *.mydomain.com AND alb_name:$alb_name.keyword&quot;}</code></pre>
+<h2 id="datasource-mysql">Datasource: MySQL</h2>
+<h3 id="variables-for-mysql">Variables for MySQL</h3>
+<p>Name: <code>status</code> Label: <code>Status</code> Type: <code>Query</code> Datasource: <code>MySQL</code> Query: <code>SELECT status FROM mytable</code></p>
+<p>To use a regex to filter out any NULLs:</p>
+<pre><code># this will only return results with letters/numbers
+/([a-zA-Z0-9\.]+)/  </code></pre>
+<h3 id="queries-for-mysql">Queries for MySQL</h3>
+<p>Gauge:</p>
+<pre><code>SELECT 
+country,
+SUM(cnt) AS total,
+NOW() AS time
+FROM mytable
+WHERE status = ${status}
+GROUP BY country</code></pre>
+<p>Bar Gauge:</p>
+<pre><code>SELECT NOW() AS time, count(*) as cnt, CONCAT(name,&#39;, &#39;,surname,&#39;, &#39;,country) AS entity FROM mytable 
+WHERE status = &quot;PENDING&quot;
+AND name REGEXP &#39;${name:pipe}&#39; 
+AND surname REGEXP &#39;${surname:pipe}&#39;
+AND country REGEXP &#39;${country:pipe}&#39;
+GROUP BY CONCAT(name,&#39;, &#39;,surname,&#39;, &#39;,country)</code></pre>
+<p>Table Panel:</p>
+<pre><code>SELECT name, surname, country, status, pending_time from mytable
+WHERE status = &quot;PENDING&quot;
+AND name REGEXP &#39;${name:pipe}&#39; 
+AND surname REGEXP &#39;${surname:pipe}&#39;
+AND country REGEXP &#39;${country:pipe}&#39;</code></pre>
+<h2 id="prometheus-datasource">Prometheus: Datasource</h2>
+<h3 id="variables-for-prometheus">Variables for Prometheus</h3>
+<p><strong>Basics</strong></p>
+<p>Lets say you want to have a variable defined <code>jobs</code> and the metric looks like:</p>
+<pre><code>up{cluster_name=&quot;cluster-a&quot;,instance=&quot;1.1.1.1:443&quot;,job=&quot;container-metrics&quot;}
+up{cluster_name=&quot;cluster-b=&quot;,instance=&quot;1.1.1.1:443&quot;,job=&quot;node-metrics&quot;}</code></pre>
+<p>Add a variable with the following:</p>
+<pre><code>Name: jobs
+Label: Jobs
+Query: label_values(up, job)</code></pre>
+<p>Which will produce <code>container-metrics</code> and <code>node-metrics</code> and in your dasboard query you can select them using:</p>
+<pre><code>up{job=~&quot;$job&quot;}</code></pre>
+<p><strong>Filtered</strong></p>
+<p>Lets say you only want the variable results to display jobs from <code>cluster-b</code>:</p>
+<pre><code>label_values(up{cluster_name=&quot;cluster-b&quot;}, job)</code></pre>
+<p><strong>Regex</strong></p>
+<p>Let’s say you have the following results for jobs:</p>
+<pre><code>qa/nginx
+qa/app
+qa/app-syslog
+qa/app-deploy
+prod/app
+prod/app-syslog
+prod/app-deploy</code></pre>
+<p>and you only want to display {env}/app,</p>
+<p>The query:</p>
+<pre><code>label_values(labels, job)</code></pre>
+<p>The regex:</p>
+<pre><code>/^(.*app)/</code></pre>
+<p>which results in:</p>
+<pre><code>qa/app
+prod/app</code></pre>
+<p>If you wanted everything after the <code>/</code>:</p>
+<pre><code>/.*(.*app.*).*/</code></pre>
+<p>which will result in:</p>
+<pre><code>app
+app-syslog 
+app-deploy</code></pre>
+<p>For a example where you want to return everything up until the numbers, example:</p>
+<pre><code>ecs-prod-app-10-container-12345
+ecs-dev-app-12-container-12345</code></pre>
+<p>you can use:</p>
+<pre><code>/^(.*?)-[0-9]/</code></pre>
+<p>which will result in:</p>
+<pre><code>ecs-prod-app
+ecs-dev-app</code></pre>
+<h3 id="queries-for-prometheus">Queries for Prometheus</h3>

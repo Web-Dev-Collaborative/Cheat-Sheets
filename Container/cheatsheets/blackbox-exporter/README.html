@@ -1,0 +1,9 @@
+<h1 id="blackbox-exporter">Blackbox Exporter</h1>
+<p>Blackbox Exporter by Prometheus</p>
+<h2 id="debugging">Debugging</h2>
+<p>TCP Checks, host: <code>test.mydomain.com</code>, port: <code>443</code></p>
+<pre><code>curl https://blackbox-exporter.mydomain.com/probe?target=test.mydomain.com:443&amp;module=tcp_connect&amp;debug=true</code></pre>
+<p>HTTP Check: <code>https://test.mydomain.com</code></p>
+<pre><code>curl https://blackbox-exporter.mydomain.com/probe?target=https://test.mydomain.com&amp;module=http_2xx&amp;debug=true</code></pre>
+<p>SSH Check: <code>test.mydomain.com:22</code></p>
+<pre><code>curl &quot;https://blackbox-exporter.mydomain.com/probe?target=test.mydomain.com:22&amp;module=ssh_banner&amp;debug=true&quot;</code></pre>

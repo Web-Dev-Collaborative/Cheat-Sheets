@@ -1,0 +1,33 @@
+<h1 id="aws-cli-ecs-cheatsheet">AWS CLI ECS Cheatsheet</h1>
+<h2 id="register-task-definitions">Register Task Definitions</h2>
+<pre><code>$ aws --profile default ecs register-task-definition --cli-input-json file://taskdef.json</code></pre>
+<h2 id="list-ecs-clusters">List ECS Clusters</h2>
+<p>List ECS Clusters for a given profile:</p>
+<pre><code>$ aws --profile default ecs list-clusters</code></pre>
+<h2 id="list-ecs-services">List ECS Services</h2>
+<p>List ECS Services for a given ECS Cluster:</p>
+<pre><code>$ aws --profile default ecs list-services --cluster $cluster_name</code></pre>
+<h2 id="describe-ecs-service">Describe ECS Service</h2>
+<p>Get the running count of containers for a given service:</p>
+<pre><code>$ aws --profile default ecs describe-services --cluster $cluster_name --services $service_name | jq -r &#39;.services[].runningCount&#39;</code></pre>
+<p>Get the task definition revision for a given service:</p>
+<pre><code>$ aws --profile default ecs describe-services --cluster $cluster_name --services $service_name | jq -r &#39;.services[].taskDefinition&#39;</code></pre>
+<h2 id="describe-ecs-task-states">Describe ECS Task States</h2>
+<p>Check if the deployment info has accepted the new deployment:</p>
+<pre><code>$ aws --profile default ecs describe-services --cluster $cluster_name --services $service_name | jq -r &#39;.services[].deployments&#39;</code></pre>
+<p>If not, get the latest event info:</p>
+<pre><code>$ aws --profile default ecs describe-services --cluster $cluster_name --services $service_name | jq -r &#39;.services[].events[0]&#39;</code></pre>
+<p>Grab the task id and describe the info to get the last know status:</p>
+<pre><code>$ aws --profile default ecs describe-tasks --tasks 00000000-0000-0000-0000-000000000000 --cluster $cluster_name  | jq -r &#39;.tasks[].lastStatus&#39;
+STOPPED</code></pre>
+<p>Get the stop code:</p>
+<pre><code>$ aws --profile default ecs describe-tasks --tasks 00000000-0000-0000-0000-000000000000 --cluster $cluster_name   | jq -r &#39;.tasks[].stopCode&#39;
+TaskFailedToStart</code></pre>
+<p>Get the stop reason:</p>
+<pre><code>$ aws --profile default ecs describe-tasks --tasks 00000000-0000-0000-0000-000000000000 --cluster $cluster_name   | jq -r &#39;.tasks[].stoppedReason&#39;
+Fetching secret data from SSM Parameter Store in eu-west-1: invalid parameters: /demo/dev/MY_INVALID_PARAMETER</code></pre>
+<h2 id="update-ecs-service">Update ECS Service</h2>
+<p>Update ECS Service to the latest task definition revision:</p>
+<pre><code>$ aws --profile default ecs update-service --cluster $cluster_name --service $service_name --task-definition $task_def</code></pre>
+<p>Update ECS Service to 3 replicas:</p>
+<pre><code>$ aws --profile default ecs update-service --cluster $cluster_name --service $service_name --desired-count 3</code></pre>

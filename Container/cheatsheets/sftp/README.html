@@ -1,0 +1,31 @@
+<h1 id="sftp-cheatsheet">SFTP Cheatsheet</h1>
+<p>Connect to server:</p>
+<pre><code>$ sftp -i ~/.ssh/id_rsa me@sftp.mydomain.com</code></pre>
+<p>Local working directory:</p>
+<pre><code>sftp&gt; lpwd</code></pre>
+<p>Remote working directory:</p>
+<pre><code>sftp&gt; pwd</code></pre>
+<p>Listing local files:</p>
+<pre><code>sftp&gt; lls</code></pre>
+<p>Listing remote files:</p>
+<pre><code>sftp&gt; ls</code></pre>
+<p>Upload a single file:</p>
+<pre><code>sftp&gt; put file.json</code></pre>
+<p>Upload a single file to a specific path:</p>
+<pre><code>sftp&gt; file.json path/to/file.json</code></pre>
+<p>Upload multiple files:</p>
+<pre><code>sftp&gt; mput *.json</code></pre>
+<p>Download a single file:</p>
+<pre><code>sftp&gt; get file.json</code></pre>
+<p>Download multiple files:</p>
+<pre><code>sftp&gt; mget *.json</code></pre>
+<p>Switching a local directory:</p>
+<pre><code>sftp&gt; lcd</code></pre>
+<p>Switching a remote directory:</p>
+<pre><code>sftp&gt; cd</code></pre>
+<p>Creating local directory:</p>
+<pre><code>sftp&gt; lmkdir data</code></pre>
+<p>Creating remote directory:</p>
+<pre><code>sftp&gt; mkdir data</code></pre>
+<p>Deleting remote directory:</p>
+<pre><code>sftp&gt; rm data</code></pre>
