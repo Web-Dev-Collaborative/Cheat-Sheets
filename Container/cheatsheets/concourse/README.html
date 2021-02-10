@@ -1,0 +1,15 @@
+<h2 id="concourse-cheatsheets">Concourse Cheatsheets</h2>
+<ul>
+<li>https://cheatsheet.dennyzhang.com/cheatsheet-concourse-a4</li>
+</ul>
+<p>Login to your Team:</p>
+<pre><code>$ fly -t ci-teamx login -c https://ci.domain.com -n teamx</code></pre>
+<p>List your targets:</p>
+<pre><code>$ fly targets
+name       url                    team             expiry
+ci         https://ci.domain.com  teamy            n/a
+ci-teamx   https://ci.domain.com  teamx            Tue, 15 Oct 2019 20:42:34 UTC</code></pre>
+<p>Get a Pipeline’s Config:</p>
+<pre><code>$ fly -t ci-teamx gp -p prod-pipeline</code></pre>
+<p>Delete a Pipeline:</p>
+<pre><code>$ fly -t ci-teamx destroy-pipeline -p prod-pipeline</code></pre>

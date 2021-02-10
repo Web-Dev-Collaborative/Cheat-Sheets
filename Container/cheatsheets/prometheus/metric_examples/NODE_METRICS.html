@@ -1,0 +1,25 @@
+<h1 id="node-metrics">Node Metrics</h1>
+<p>Examples for Prometheus focused on Node Level Metrics.</p>
+<h2 id="cpu">CPU</h2>
+<p>CPU Utilization:</p>
+<pre><code>100 - (avg by(instance) (irate(node_cpu_seconds_total{mode=&quot;idle&quot;, instance=&quot;my-instance-name&quot;}[5m])) * 100) </code></pre>
+<h2 id="memory">Memory</h2>
+<p>Memory Available in %:</p>
+<pre><code>node_memory_MemAvailable_bytes{instance=&quot;my-instance-name&quot;} / node_memory_MemTotal_bytes{instance=&quot;my-instance-name&quot;} * 100</code></pre>
+<p>Memory Pressure:</p>
+<pre><code>rate(node_vmstat_pgmajfault{instance=&quot;my-instance-name&quot;}[1m])</code></pre>
+<h2 id="disk">Disk</h2>
+<p>Disk Space Available in bytes:</p>
+<pre><code>node_filesystem_avail_bytes{instance=~&quot;my-ec2-instance&quot;,job=~&quot;node-exporter&quot;,mountpoint=&quot;/&quot;}</code></pre>
+<p>Disk Space Available in Percentage:</p>
+<pre><code>(node_filesystem_avail_bytes{mountpoint=&quot;/&quot;, instance=~&quot;my-ec2-instance&quot;}  * 100) / node_filesystem_size_bytes{mountpoint=&quot;/&quot;, instance=~&quot;my-ec2-instance&quot;} </code></pre>
+<p>Disk Latencies:</p>
+<pre><code>rate(node_disk_read_time_seconds_total{instance=&quot;my-instance-name&quot;}[1m]) / rate(node_disk_reads_completed_total{instance=&quot;my-instance-name&quot;}[1m])
+rate(node_disk_write_time_seconds_total{instance=&quot;my-instance-name&quot;}[1m]) / rate(node_disk_writes_completed_total{instance=&quot;my-instance-name&quot;}[1m])</code></pre>
+<h2 id="network">Network</h2>
+<p>Network Trhoughput</p>
+<pre><code>irate(node_network_receive_bytes_total{instance=&quot;my-instance-name&quot;}[5m]) * 8
+irate(node_network_transmit_bytes_total{instance=&quot;my-instance-name}[5m]) * 8</code></pre>
+<h2 id="uptime">Uptime</h2>
+<p>Node Uptime:</p>
+<pre><code>node_time_seconds{instance=&quot;my-ec2-instance&quot;,job=&quot;node-exporter&quot;} - node_boot_time_seconds{instance=&quot;my-ec2-instance&quot;,job=&quot;node-exporter&quot;}</code></pre>

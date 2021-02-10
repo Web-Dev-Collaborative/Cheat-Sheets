@@ -1,0 +1,237 @@
+<h1 id="prometheus-cheatsheets">Prometheus Cheatsheets</h1>
+<ul>
+<li><a href="#curated-examples">Curated Examples</a></li>
+<li><a href="#example-queries">Example Queries</a></li>
+<li><a href="#scrape-config">Scrape Configs</a></li>
+<li><a href="#external-sources">External Sources</a></li>
+</ul>
+<h2 id="curated-examples">Curated Examples</h2>
+<p>Example queries per exporter / service:</p>
+<ul>
+<li><a href="metric_examples/NODE_METRICS.md">Node Metrics</a></li>
+</ul>
+<h2 id="example-queries">Example Queries</h2>
+<p>How many nodes are up?</p>
+<pre><code>up</code></pre>
+<p>Combining values from 2 different vectors (Hostname with a Metric):</p>
+<pre><code>up * on(instance) group_left(nodename) (node_uname_info)</code></pre>
+<p>Exclude labels:</p>
+<pre><code>sum without(job) (up * on(instance)  group_left(nodename)  (node_uname_info))</code></pre>
+<p>Count targets per job:</p>
+<pre><code>count by (job) (up)</code></pre>
+<p>Amount of Memory Available:</p>
+<pre><code>node_memory_MemAvailable_bytes</code></pre>
+<p>Amount of Memory Available in MB:</p>
+<pre><code>node_memory_MemAvailable_bytes/1024/1024</code></pre>
+<p>Amount of Memory Available in MB 10 minutes ago:</p>
+<pre><code>node_memory_MemAvailable_bytes/1024/1024 offset 10m</code></pre>
+<p>Average Memory Available for Last 5 Minutes:</p>
+<pre><code>avg_over_time(node_memory_MemAvailable_bytes[5m])/1024/1024</code></pre>
+<p>CPU Utilization:</p>
+<pre><code>100 - (avg by(instance) (irate(node_cpu_seconds_total{mode=&quot;idle&quot;, instance=&quot;my-instance&quot;}[5m])) * 100 ) </code></pre>
+<p>CPU Utilization offset with 24hours ago:</p>
+<pre><code>100 - (avg by(instance) (irate(node_cpu_seconds_total{mode=&quot;idle&quot;, instance=&quot;my-instance&quot;}[5m] offset 24h)) * 100 )</code></pre>
+<p>CPU Utilization by Node:</p>
+<pre><code>100 - (avg by (instance) (irate(node_cpu_seconds_total{mode=&quot;idle&quot;}[10m]) * 100) * on(instance) group_left(nodename) (node_uname_info))</code></pre>
+<p>Memory Available by Node:</p>
+<pre><code>node_memory_MemAvailable_bytes * on(instance) group_left(nodename) (node_uname_info)</code></pre>
+<p>Disk Available by Node:</p>
+<pre><code>node_filesystem_free_bytes{mountpoint=&quot;/&quot;} * on(instance) group_left(nodename) (node_uname_info)</code></pre>
+<p>Disk IO per Node: Outbound:</p>
+<pre><code>sum(rate(node_disk_read_bytes_total[1m])) by (device, instance) * on(instance) group_left(nodename) (node_uname_info)</code></pre>
+<p>Disk IO per Node: Inbound:</p>
+<pre><code>sum(rate(node_disk_written_bytes_total{job=&quot;node&quot;}[1m])) by (device, instance) * on(instance) group_left(nodename) (node_uname_info)</code></pre>
+<p>Network IO per Node:</p>
+<pre><code>sum(rate(node_network_receive_bytes_total[1m])) by (device, instance) * on(instance) group_left(nodename) (node_uname_info)
+sum(rate(node_network_transmit_bytes_total[1m])) by (device, instance) * on(instance) group_left(nodename) (node_uname_info)</code></pre>
+<p>Histogram:</p>
+<pre><code>histogram_quantile(1.00, sum(rate(prometheus_http_request_duration_seconds_bucket[5m])) by (handler, le)) * 1e3</code></pre>
+<p>Metrics 24 hours ago (nice when you compare today with yesterday):</p>
+<pre><code># query a
+total_number_of_errors{instance=&quot;my-instance&quot;, region=&quot;eu-west-1&quot;}
+# query b
+total_number_of_errors{instance=&quot;my-instance&quot;, region=&quot;eu-west-1&quot;} offset 24h
+
+# related:
+# https://about.gitlab.com/blog/2019/07/23/anomaly-detection-using-prometheus/</code></pre>
+<p>Number of Nodes (Up):</p>
+<pre><code>count(up{job=&quot;cadvisor_my-swarm&quot;})</code></pre>
+<p>Running Containers per Node:</p>
+<pre><code>count(container_last_seen) BY (container_label_com_docker_swarm_node_id)</code></pre>
+<p>Running Containers per Node, include corresponding hostnames:</p>
+<pre><code>count(container_last_seen) BY (container_label_com_docker_swarm_node_id) * ON (container_label_com_docker_swarm_node_id) GROUP_LEFT(node_name) node_meta </code></pre>
+<p>HAProxy Response Codes:</p>
+<pre><code>haproxy_server_http_responses_total{backend=~&quot;$backend&quot;, server=~&quot;$server&quot;, code=~&quot;$code&quot;, alias=~&quot;$alias&quot;} &gt; 0</code></pre>
+<p>Metrics with the most resources:</p>
+<pre><code>topk(10, count by (__name__)({__name__=~&quot;.+&quot;}))</code></pre>
+<p>the same, but per job:</p>
+<pre><code>topk(10, count by (__name__, job)({__name__=~&quot;.+&quot;}))</code></pre>
+<p>or jobs have the most time series:</p>
+<pre><code>topk(10, count by (job)({__name__=~&quot;.+&quot;}))</code></pre>
+<p>Top 5 per value:</p>
+<pre><code>sort_desc(topk(5, aws_service_costs))</code></pre>
+<p>Table - Top 5 (enable instant as well):</p>
+<pre><code>sort(topk(5, aws_service_costs))</code></pre>
+<p>Group per Day (Table) - wip</p>
+<pre><code>aws_service_costs{service=~&quot;$service&quot;} + ignoring(year, month, day) group_right
+  count_values without() (&quot;year&quot;, year(timestamp(
+    count_values without() (&quot;month&quot;, month(timestamp(
+      count_values without() (&quot;day&quot;, day_of_month(timestamp(
+        aws_service_costs{service=~&quot;$service&quot;}
+      )))
+    )))
+  ))) * 0</code></pre>
+<p>Group Metrics per node hostname:</p>
+<pre><code>node_memory_MemAvailable_bytes * on(instance) group_left(nodename) (node_uname_info)
+
+..
+{cloud_provider=&quot;amazon&quot;,instance=&quot;x.x.x.x:9100&quot;,job=&quot;node_n1&quot;,my_hostname=&quot;n1.x.x&quot;,nodename=&quot;n1.x.x&quot;}</code></pre>
+<p>Container CPU Average for 5m:</p>
+<pre><code>(sum by(instance, container_label_com_amazonaws_ecs_container_name, container_label_com_amazonaws_ecs_cluster) (rate(container_cpu_usage_seconds_total[5m])) * 100) </code></pre>
+<p>Container Memory Usage: Total:</p>
+<pre><code>sum(container_memory_rss{container_label_com_docker_swarm_task_name=~&quot;.+&quot;})</code></pre>
+<p>Container Memory, per Task, Node:</p>
+<pre><code>sum(container_memory_rss{container_label_com_docker_swarm_task_name=~&quot;.+&quot;}) BY (container_label_com_docker_swarm_task_name, container_label_com_docker_swarm_node_id)</code></pre>
+<p>Container Memory per Node:</p>
+<pre><code>sum(container_memory_rss{container_label_com_docker_swarm_task_name=~&quot;.+&quot;}) BY (container_label_com_docker_swarm_node_id)</code></pre>
+<p>Memory Usage per Stack:</p>
+<pre><code>sum(container_memory_rss{container_label_com_docker_swarm_task_name=~&quot;.+&quot;}) BY (container_label_com_docker_stack_namespace)</code></pre>
+<p>Remove metrics from results that does not contain a specific label:</p>
+<pre><code>container_cpu_usage_seconds_total{container_label_com_amazonaws_ecs_cluster!=&quot;&quot;}</code></pre>
+<p>Remove labels from a metric:</p>
+<pre><code>sum without (age, country) (people_metrics)</code></pre>
+<p>View top 10 biggest metrics by name:</p>
+<pre><code>topk(10, count by (__name__)({__name__=~&quot;.+&quot;}))</code></pre>
+<p>View top 10 biggest metrics by name, job:</p>
+<pre><code>topk(10, count by (__name__, job)({__name__=~&quot;.+&quot;}))</code></pre>
+<p>View all metrics for a specific job:</p>
+<pre><code>{__name__=~&quot;.+&quot;, job=&quot;node-exporter&quot;}</code></pre>
+<p>Website uptime with blackbox-exporter:</p>
+<pre><code># https://www.robustperception.io/what-percentage-of-time-is-my-service-down-for
+
+avg_over_time(probe_success{job=&quot;node&quot;}[15m]) * 100</code></pre>
+<p>Remove / Replace:</p>
+<ul>
+<li>https://medium.com/<span class="citation" data-cites="texasdave2/replace-and-remove-a-label-in-a-prometheus-query-9500faa302f0">@texasdave2/replace-and-remove-a-label-in-a-prometheus-query-9500faa302f0</span></li>
+</ul>
+<h2 id="scrape-config">Scrape Config</h2>
+<p>Relabel configs:</p>
+<ul>
+<li>https://gist.github.com/trastle/1aa205354577ef0b329d4b8cc84c674a</li>
+<li>https://github.com/prometheus/docs/issues/341</li>
+<li>https://medium.com/quiq-blog/prometheus-relabeling-tricks-6ae62c56cbda</li>
+<li>https://blog.freshtracks.io/prometheus-relabel-rules-and-the-action-parameter-39c71959354a</li>
+<li>https://www.robustperception.io/relabel_configs-vs-metric_relabel_configs</li>
+<li>https://training.robustperception.io/courses/prometheus-configuration/lectures/3170347</li>
+</ul>
+<p>static_configs:</p>
+<pre><code>scrape_configs:
+  - job_name: &#39;prometheus&#39;
+    scrape_interval: 5s
+    static_configs:
+         - targets: [&#39;localhost:9090&#39;]
+      labels:
+        region: &#39;eu-west-1&#39;</code></pre>
+<p>dns_sd_configs:</p>
+<pre><code>scrape_configs:
+  - job_name: &#39;mysql-exporter&#39;
+    scrape_interval: 5s
+    dns_sd_configs:
+    - names:
+      - &#39;tasks.mysql-exporter&#39;
+      type: &#39;A&#39;
+      port: 9104
+    relabel_configs:
+    - source_labels: [__address__]
+      regex: &#39;.*&#39;
+      target_label: instance
+      replacement: &#39;mysqld-exporter&#39;</code></pre>
+<h2 id="grafana-with-prometheus">Grafana with Prometheus</h2>
+<p>If you have output like this on grafana:</p>
+<pre><code>{instance=&quot;10.0.2.66:9100&quot;,job=&quot;node&quot;,nodename=&quot;rpi-02&quot;}</code></pre>
+<p>and you only want to show the hostnames, you can apply the following in “Legend” input:</p>
+<pre><code>{{nodename}}</code></pre>
+<p>If your output want <code>exported_instance</code> in:</p>
+<pre><code>sum(exporter_memory_usage{exported_instance=&quot;myapp&quot;})</code></pre>
+<p>You would need to do:</p>
+<pre><code>sum by (exported_instance) (exporter_memory_usage{exported_instance=&quot;my_app&quot;})</code></pre>
+<p>Then on Legend:</p>
+<pre><code>{{exported_instance}}</code></pre>
+<h3 id="variables">Variables</h3>
+<ul>
+<li>Hostname:</li>
+</ul>
+<p>name: <code>node</code> label: <code>node</code> node: <code>label_values(node_uname_info, nodename)</code></p>
+<p>Then in Grafana you can use:</p>
+<pre><code>sum(rate(node_disk_read_bytes_total{job=&quot;node&quot;}[1m])) by (device, instance) * on(instance) group_left(nodename) (node_uname_info{nodename=~&quot;$node&quot;})</code></pre>
+<ul>
+<li>Node Exporter Address</li>
+</ul>
+<p>type: <code>query</code> query: <code>label_values(node_network_up, instance)</code></p>
+<ul>
+<li>MySQL Exporter Address</li>
+</ul>
+<p>type: <code>query</code> query: <code>label_values(mysql_up, instance)</code></p>
+<ul>
+<li>Static Values:</li>
+</ul>
+<p>type: <code>custom</code> name: <code>dc</code> label: <code>dc</code> values seperated by comma: <code>eu-west-1a,eu-west-1b,eu-west-1c</code></p>
+<ul>
+<li>Docker Swarm Stack Names</li>
+</ul>
+<p>name: <code>stack</code> label: <code>stack</code> query: <code>label_values(container_last_seen,container_label_com_docker_stack_namespace)</code></p>
+<ul>
+<li>Docker Swarm Service Names</li>
+</ul>
+<p>name: <code>service_name</code> label: <code>service_name</code> query: <code>label_values(container_last_seen,container_label_com_docker_swarm_service_name)</code></p>
+<ul>
+<li>Docker Swarm Manager NodeId:</li>
+</ul>
+<p>name: <code>manager_node_id</code> label: <code>manager_node_id</code> query:</p>
+<pre><code>label_values(container_last_seen{container_label_com_docker_swarm_service_name=~&quot;proxy_traefik&quot;, container_label_com_docker_swarm_node_id=~&quot;.*&quot;}, container_label_com_docker_swarm_node_id)</code></pre>
+<ul>
+<li>Docker Swarm Stacks Running on Managers</li>
+</ul>
+<p>name: <code>stack_on_manager</code> label: <code>stack_on_manager</code> query:</p>
+<pre><code>label_values(container_last_seen{container_label_com_docker_swarm_node_id=~&quot;$manager_node_id&quot;},container_label_com_docker_stack_namespace)</code></pre>
+<h2 id="external-sources">External Sources</h2>
+<ul>
+<li><a href="https://prometheus.io/docs/querying/basics/">Prometheus</a></li>
+<li><a href="https://medium.com/@valyala/promql-tutorial-for-beginners-9ab455142085">PromQL for Beginners</a></li>
+<li><a href="https://medianetlab.gr/prometheus-101/">Prometheus 101</a></li>
+<li><a href="https://www.robustperception.io/which-are-my-biggest-metrics">Biggest Metrics</a></li>
+<li><a href="https://github.com/grafana/grafana/issues/6561">Top Metrics</a></li>
+<li><a href="https://ordina-jworks.github.io/monitoring/2016/09/23/Monitoring-with-Prometheus.html">Ordina-Jworks</a></li>
+<li><a href="https://github.com/infinityworks/prometheus-example-queries">Infinity Works</a></li>
+<li><a href="https://medium.com/quiq-blog/prometheus-relabeling-tricks-6ae62c56cbda">Prometheus Relabeling Tricks</a></li>
+<li><span class="citation" data-cites="Valyala">[@Valyala: PromQL Tutorial for Beginners]</span>(https://medium.com/<span class="citation" data-cites="valyala/promql-tutorial-for-beginners-9ab455142085">@valyala/promql-tutorial-for-beginners-9ab455142085</span>)</li>
+<li><span class="citation" data-cites="Jitendra">[@Jitendra: PromQL Cheat Sheet]</span>(https://github.com/jitendra-1217/promql.cheat.sheet)</li>
+<li><a href="https://github.com/infinityworks/prometheus-example-queries/blob/master/README.md">InfinityWorks: Prometheus Example Queries</a></li>
+<li><a href="https://timber.io/blog/promql-for-humans/">Timber: PromQL for Humans</a></li>
+<li><a href="https://www.section.io/blog/prometheus-querying/">SectionIO: Prometheus Querying</a></li>
+<li><a href="">RobustPerception</a>
+<ul>
+<li><a href="https://www.robustperception.io/understanding-machine-cpu-usage">RobustPerception: Understanding Machine CPU Usage</a></li>
+<li><a href="https://www.robustperception.io/common-query-patterns-in-promql">RobustPerception: Common Query Patterns</a></li>
+<li><a href="https://www.robustperception.io/what-percentage-of-time-is-my-service-down-for">RobustPerception: Website Uptime</a></li>
+<li><a href="https://www.robustperception.io/how-does-a-prometheus-histogram-work">RobustPerception: Prometheus Histogram</a></li>
+<li><a href="https://www.robustperception.io/how-does-a-prometheus-counter-work">RobustPerception: Prometheus Counter</a></li>
+<li><a href="https://www.robustperception.io/how-does-a-prometheus-gauge-work">RobustPerception: Prometheus Guage</a></li>
+<li><a href="https://www.robustperception.io/how-does-a-prometheus-summary-work">RobustPerception: Prometheus Summary</a></li>
+</ul></li>
+<li><a href="https://devconnected.com/the-definitive-guide-to-prometheus-in-2019/">DevConnected: The Definitive Guide to Prometheus</a></li>
+<li><span class="citation" data-cites="showmax">[@showmax Prometheus Introduction]</span>(https://tech.showmax.com/2019/10/prometheus-introduction/)</li>
+<li><span class="citation" data-cites="aws">[@aws Prometheus Rewrite Rules for k8s]</span>(https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights-Prometheus-Setup-configure.html#ContainerInsights-Prometheus-Setup-config-scrape)</li>
+<li><a href="">ec2_sd_configs</a>
+<ul>
+<li><a href="https://jarodw.com/posts/prometheus-ec2-sd-multiple-aws-accounts/">Prometheus AWS Cross Account ec2_sd_config</a></li>
+<li><a href="https://medium.com/investing-in-tech/automatic-monitoring-for-all-new-aws-instances-using-prometheus-service-discovery-97d37a5b2ea2">Prometheus AWS ec2_sd_config role</a></li>
+</ul></li>
+<li><span class="citation" data-cites="metricfire.com">[@metricfire.com: Understanding the Rate Function]</span>(https://www.metricfire.com/blog/understanding-the-prometheus-rate-function/) Dashboarding:</li>
+<li><a href="https://niravshah2705.medium.com/prometheus-alert-for-missing-metrics-and-labels-afd4b8f12b1">Alerting on Missing Labels and Metrics</a></li>
+<li><span class="citation" data-cites="devconnected">[@devconnected Disk IO Dashboarding]</span>(https://devconnected.com/monitoring-disk-i-o-on-linux-with-the-node-exporter/)</li>
+</ul>
+<p>Setups:</p>
+<ul>
+<li><a href="https://ops.tips/blog/simulating-aws-tags-in-local-prometheus/">Simulating AWS Tags in Local Prometheus</a></li>
+</ul>

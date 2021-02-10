@@ -1,0 +1,34 @@
+<h2 id="provisioning">Provisioning</h2>
+<h3 id="setup-kubernetes">Setup Kubernetes</h3>
+<ul>
+<li><a href="https://gist.github.com/ruanbekker/38a38aea5f325f7fa4a19e795ef4f0d0">Kubernetes on Ubuntu</a></li>
+<li>[<a href="https://github.com/rancher/k3s#quick-start">K3s</a></li>
+</ul>
+<h2 id="get-resource-information">Get Resource Information</h2>
+<h3 id="nodes">Nodes</h3>
+<p>Getting information about nodes:</p>
+<pre><code>$ kubectl get nodes
+$ kubectl get nodes -o wide
+$ kubectl describe nodes
+$ kubectl get nodes -o yaml
+$ kubectl get node --selector=[label_name]
+$ kubectl get nodes -o jsonpath=&#39;{.items[*].status.addresses[?(@.type==&quot;External IP&quot;)].address}&#39;
+$ kubectl top node [node_name]</code></pre>
+<h3 id="pods">Pods</h3>
+<ul>
+<li>Pods: The single smallest interactable unit in Kubernetes.</li>
+<li>Pod can be comprimised of multiple containers that will form a unit deployed on a single node together</li>
+<li>Pod receives one IP which is shared between containers</li>
+</ul>
+<pre><code>$ kubectl get pods
+$ kubectl get pods --all-namespaces
+$ kubectl get pods --namespace kube-system
+$ kubectl get pods --namespace --output yaml
+$ kubectl get pods -o wide
+$ kubectl describe pods --all-namespaces
+$ kubectl get pods --show-labels --all-namespaces
+$ kubectl get pods --selector app=svclb-traefik --namespace kube-system
+$ kubectl get pod svclb-traefik-79556fd88b-p6qp9 --namespace kube-system
+$ kubectl get pod svclb-traefik-79556fd88b-p6qp9 --namespace kube-system -o yaml --export
+$ kubectl get pod svclb-traefik-79556fd88b-p6qp9 --namespace kube-system -o yaml --export &gt; exported.yml
+</code></pre>

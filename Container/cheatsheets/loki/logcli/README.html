@@ -1,0 +1,57 @@
+<h1 id="logcli">LogCLI</h1>
+<p>Go <a href="../README.md">here</a> to setup Loki</p>
+<h2 id="install">Install</h2>
+<p>Install the binary:</p>
+<pre><code>$ wget https://github.com/grafana/loki/releases/download/v1.6.1/logcli-darwin-amd64.zip
+$ unzip logcli-darwin-amd64.zip
+$ sudo mv logcli-darwin-amd64 /usr/local/bin/logcli</code></pre>
+<p>Configure the environment:</p>
+<pre><code>$ export LOKI_ADDR=https://loki.domain.com
+$ export LOKI_USERNAME=x
+$ export LOKI_PASSWORD=x</code></pre>
+<h2 id="discover-labels">Discover Labels</h2>
+<pre><code>$ logcli labels
+__name__
+cluster_name
+container_name
+environment
+job</code></pre>
+<p>Vew all the job labels:</p>
+<pre><code>$ logcli labels job
+dev/dockerlogs
+prod/dockerlogs</code></pre>
+<h2 id="analyze-labels">Analyze Labels</h2>
+<pre><code>$ logcli series &#39;{job=&quot;dev/dockerlogs&quot;}&#39; --analyze-labels
+Total Streams:  5
+Unique Labels:  4
+
+Label Name      Unique Values  Found In Streams
+container_name  5              5
+cluster_name    1              5
+environment     1              5
+job             1              5</code></pre>
+<h2 id="query">Query</h2>
+<p>Query by label value:</p>
+<pre><code>$ logcli query &#39;{job=&quot;dev/dockerlogs&quot;}&#39;</code></pre>
+<p>Query by label value and match filter expression:</p>
+<pre><code>$ logcli query &#39;{job=&quot;dev/dockerlogs&quot;} |= &quot;this string&quot;&#39;</code></pre>
+<p>Query by label value and dont match filter expression:</p>
+<pre><code>$ logcli query &#39;{job=&quot;dev/dockerlogs&quot;} != &quot;this string&quot;&#39;</code></pre>
+<p>Query by label value and regex match filter expression:</p>
+<pre><code>$ logcli query &#39;{job=&quot;dev/dockerlogs&quot;} |~ &quot;this string: (true|false)&quot;&#39;</code></pre>
+<p>Query by label value and dont match regex filter expression:</p>
+<pre><code>$ logcli query &#39;{job=&quot;dev/dockerlogs&quot;} !~ &quot;this string and .+&quot;&#39;</code></pre>
+<p>Tail:</p>
+<pre><code>$ logcli query &#39;{job=&quot;dev/dockerlogs&quot;}&#39; --tail</code></pre>
+<p>Since 4h ago:</p>
+<pre><code>$ logcli query &#39;{job=&quot;dev/dockerlogs&quot;}&#39; --since 4h</code></pre>
+<p>Last 10 lines:</p>
+<pre><code>$ logcli query &#39;{job=&quot;dev/dockerlogs&quot;}&#39; --last 10</code></pre>
+<p>Piping:</p>
+<pre><code>$ logcli query &#39;{job=&quot;dev/dockerlogs&quot;} |= &quot;error&quot;&#39; | grep -i message</code></pre>
+<p>Suppress log labels:</p>
+<pre><code>$ logcli query -q &#39;{job=&quot;dev/dockerlogs&quot;}&#39;</code></pre>
+<p>Change output:</p>
+<pre><code>$ logcli query -o raw &#39;{job=&quot;dev/dockerlogs&quot;}&#39;</code></pre>
+<h2 id="more">More</h2>
+<p>For more detailed tutorials have a look at my blog at <a href="https://blog.ruanbekker.com/blog/archives/">blog.ruanbekker.com</a></p>
