@@ -1,0 +1,15 @@
+<p>Mounting a Docker Socket:</p>
+<pre><code>      - image: docker:stable-dind
+        name: docker-in-docker
+        volumeMounts:
+          - name: dockersock
+            mountPath: &quot;/var/run&quot;
+            #mountPath: &quot;/var/run/docker.sock&quot;
+        securityContext:
+          privileged: true
+          allowPrivilegeEscalation: true
+      volumes:
+      - name: dockersock
+        hostPath:
+          path: /var/run/docker.sock
+          #type: File</code></pre>

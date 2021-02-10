@@ -1,0 +1,21 @@
+<h2 id="elasticache-aws-cli-cheatsheet">Elasticache AWS CLI Cheatsheet</h2>
+<p>List Clusters:</p>
+<pre><code>$ aws --profile dev elasticache describe-cache-clusters --max-items 5
+{
+    &quot;CacheClusters&quot;: [
+        {
+            &quot;CacheClusterId&quot;: &quot;test-cluster-dev-0001-001&quot;, 
+            ...
+        }
+    ]
+}</code></pre>
+<p>Describe Cluster:</p>
+<pre><code>$ aws --profile eu-dev elasticache describe-cache-clusters --cache-cluster-id &quot;test-cluster-dev-0001-001&quot;
+{
+    &quot;CacheClusters&quot;: [
+        {
+            &quot;CacheClusterId&quot;: &quot;test-cluster-dev-0001-001&quot;, 
+            ...
+        }
+    ]
+}</code></pre>

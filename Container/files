@@ -1,0 +1,9 @@
+sudo sed -i '/\.git/d' ./index.html
+sudo sed -i '/images/d' ./index.html
+sudo sed -i '/font/d' ./index.html
+sudo sed -i '/fonts/d' ./index.html
+sudo sed -i '/\.TTF/d' ./index.html
+sudo sed -i '/\.git/d' ./index.html
+
+sudo sed -i '/\.php/d' ./index.html
+sudo sed -i '/\.css/d' ./index.html

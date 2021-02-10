@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>;
+<!DOCTYPE html><html><head>
+      <title>postgreSQL_cheatsheet</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="stylesheet" href="file:///c:\Users\bryan\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+
+
+
+
+
+
+
+
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before,
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <p>===========================</p>
+<h2 class="mume-header" id="postgresql-commands">PostgreSQL commands</h2>
+
+<p>===========================</p>
+<table>
+<thead>
+<tr>
+<th colspan="2"></th>
+
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access the PostgreSQL server from <strong>psql</strong> with a specific user: <code>psql -U [username];</code></td>
+<td>Connect to a specific database:<code>\c database_name;</code></td>
+</tr>
+<tr>
+<td>To quit the psql:<code>\q</code></td>
+<td><a href="https://www.postgresqltutorial.com/postgresql-show-databases/">List all databases</a> in the PostgreSQL database server<code>\l</code></td>
+</tr>
+<tr>
+<td>List all schemas:<code>\dn</code></td>
+<td>List all <a href="https://www.postgresqltutorial.com/postgresql-stored-procedures/">stored procedures</a> and functions:<code>\df</code></td>
+</tr>
+<tr>
+<td>List all <a href="https://www.postgresqltutorial.com/postgresql-views/">views</a>:<code>\dv</code></td>
+<td><a href="https://www.postgresqltutorial.com/postgresql-show-tables/">Lists all tables</a> in a current database.<code>\dt</code></td>
+</tr>
+<tr>
+<td>Or to get more information on tables in the current database:<code>\dt+</code></td>
+<td>Get detailed information on a table.<code>\d+ table_name</code></td>
+</tr>
+<tr>
+<td>Show query output in the pretty-format:<code>\x</code></td>
+<td>List all users:<code>\du</code></td>
+</tr>
+</tbody>
+</table>
+<p>Create a new <a href="https://www.postgresqltutorial.com/postgresql-roles/">role</a>:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>CREATE ROLE role_name;
+</code></pre><p>Create a new role with a <code>username</code> and <code>password</code>:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>CREATE ROLE username NOINHERIT LOGIN PASSWORD password;
+</code></pre><p>Change role for the current session to the <code>new_role</code>:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SET ROLE new_role;
+</code></pre><p>Allow <code>role_1</code> to set its role as <code>role_2:</code></p>
+<pre data-role="codeBlock" data-info class="language-"><code>GRANT role_2 TO role_1;
+</code></pre><p>===========================</p>
+<h2 class="mume-header" id="managing-databases">Managing databases</h2>
+
+<p>===========================<br>
+<a href="https://www.postgresqltutorial.com/postgresql-create-database/">Create a new database</a>:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>CREATE DATABASE [IF NOT EXISTS] db_name;
+</code></pre><p><a href="https://www.postgresqltutorial.com/postgresql-drop-database/">Delete a database permanently</a>:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>DROP DATABASE [IF EXISTS] db_name;
+</code></pre><p>===========================</p>
+<h2 class="mume-header" id="managing-tables">Managing tables</h2>
+
+<p>===========================<br>
+<a href="https://www.postgresqltutorial.com/postgresql-create-table/">Create a new table</a> or a <a href="https://www.postgresqltutorial.com/postgresql-temporary-table/">temporary table</a></p>
+<pre data-role="codeBlock" data-info class="language-"><code>CREATE [TEMP] TABLE [IF NOT EXISTS] table_name(
+       pk SERIAL PRIMARY KEY,
+   c1 type(size) NOT NULL,
+   c2 type(size) NULL,
+   ...
+);
+</code></pre><p><a href="https://www.postgresqltutorial.com/postgresql-add-column/">Add a new column</a> to a table:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>ALTER TABLE table_name ADD COLUMN new_column_name TYPE;
+</code></pre><p><a href="https://www.postgresqltutorial.com/postgresql-drop-column/">Drop a column</a> in a table:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>ALTER TABLE table_name DROP COLUMN column_name;
+</code></pre><p><a href="https://www.postgresqltutorial.com/postgresql-rename-column/">Rename a column</a>:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>ALTER TABLE table_name RENAME column_name TO new_column_name;
+</code></pre><p>Set or remove a default value for a column:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>ALTER TABLE table_name ALTER COLUMN [SET DEFAULT value | DROP DEFAULT]
+</code></pre><p>Add a <a href="https://www.postgresqltutorial.com/postgresql-primary-key/">primary key </a>to a table.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>ALTER TABLE table_name ADD PRIMARY KEY (column,...);
+</code></pre><p>Remove the primary key from a table.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>ALTER TABLE table_name
+DROP CONSTRAINT primary_key_constraint_name;
+</code></pre><p><a href="https://www.postgresqltutorial.com/postgresql-rename-table/">Rename a table</a>.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>ALTER TABLE table_name RENAME TO new_table_name;
+</code></pre><p><a href="https://www.postgresqltutorial.com/postgresql-drop-table/">Drop a table</a> and its dependent objects:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>DROP TABLE [IF EXISTS] table_name CASCADE;
+</code></pre><p>===========================</p>
+<h2 class="mume-header" id="managing-views">Managing views</h2>
+
+<p>===========================<br>
+<a href="https://www.postgresqltutorial.com/managing-postgresql-views/">Create a view</a>:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>CREATE OR REPLACE view_name AS
+query;
+</code></pre><p><a href="https://www.postgresqltutorial.com/postgresql-recursive-view/">Create a recursive view</a>:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>CREATE RECURSIVE VIEW view_name(column_list) AS
+SELECT column_list;
+</code></pre><p><a href="https://www.postgresqltutorial.com/postgresql-materialized-views/">Create a materialized view</a>:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>CREATE MATERIALIZED VIEW view_name
+AS
+query
+WITH [NO] DATA;
+</code></pre><p>Refresh a materialized view:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>REFRESH MATERIALIZED VIEW CONCURRENTLY view_name;
+</code></pre><p>Drop a view:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>DROP VIEW [ IF EXISTS ] view_name;
+</code></pre><p>Drop a materialized view:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>DROP MATERIALIZED VIEW view_name;
+</code></pre><p>Rename a view:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>ALTER VIEW view_name RENAME TO new_name;
+</code></pre><p>===========================</p>
+<h2 class="mume-header" id="managing-indexes">Managing indexes</h2>
+
+<p>===========================<br>
+Creating an index with the specified name on a table</p>
+<pre data-role="codeBlock" data-info class="language-"><code>CREATE [UNIQUE] INDEX index_name
+ON table (column,...)
+</code></pre><p>Removing a specified index from a table</p>
+<pre data-role="codeBlock" data-info class="language-"><code>DROP INDEX index_name;
+</code></pre><p>===========================</p>
+<h2 class="mume-header" id="querying-data-from-tables">Querying data from tables</h2>
+
+<p>===========================<br>
+Query all data from a table:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT * FROM table_name;
+</code></pre><p>Query data from specified columns of all rows in a table:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT column_list
+FROM table;
+</code></pre><p>Query data and select only unique rows:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT DISTINCT (column)
+FROM table;
+</code></pre><p>Query data from a table with a filter:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT *
+FROM table
+WHERE condition;
+</code></pre><p>Assign an <a href="https://www.postgresqltutorial.com/postgresql-alias/">alias</a> to a column in the result set:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT column_1 AS new_column_1, ...
+FROM table;
+</code></pre><p>Query data using the <code><a href="https://www.postgresqltutorial.com/postgresql-like/">LIKE</a></code> operator:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT * FROM table_name
+WHERE column LIKE &apos;%value%&apos;
+</code></pre><p>Query data using the <code><a href="https://www.postgresqltutorial.com/postgresql-between/">BETWEEN</a> </code>operator:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT * FROM table_name
+WHERE column BETWEEN low AND high;
+</code></pre><p>Query data using the <code><a href="https://www.postgresqltutorial.com/postgresql-in/">IN</a> </code>operator:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT * FROM table_name
+WHERE column IN (value1, value2,...);
+</code></pre><p>Constrain the returned rows with the <code><a href="https://www.postgresqltutorial.com/postgresql-limit/">LIMIT</a></code> clause:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT * FROM table_name
+LIMIT limit OFFSET offset
+ORDER BY column_name;
+</code></pre><p>Query data from multiple using the <a href="https://www.postgresqltutorial.com/postgresql-inner-join/">inner join</a>, <a href="https://www.postgresqltutorial.com/postgresql-left-join/">left join</a>, <a href="https://www.postgresqltutorial.com/postgresql-full-outer-join/">full outer join</a>, <a href="https://www.postgresqltutorial.com/postgresql-cross-join/">cross join</a> and <a href="https://www.postgresqltutorial.com/postgresql-natural-join/">natural join</a>:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT *
+FROM table1
+INNER JOIN table2 ON conditions
+SELECT *
+FROM table1
+LEFT JOIN table2 ON conditions
+SELECT *
+FROM table1
+FULL OUTER JOIN table2 ON conditions
+SELECT *
+FROM table1
+CROSS JOIN table2;
+SELECT *
+FROM table1
+NATURAL JOIN table2;
+</code></pre><p>Return the number of rows of a table.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT COUNT (*)
+FROM table_name;
+</code></pre><p>Sort rows in ascending or descending order:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT select_list
+FROM table
+ORDER BY column ASC [DESC], column2 ASC [DESC],...;
+</code></pre><p>Group rows using <code><a href="https://www.postgresqltutorial.com/postgresql-group-by/">GROUP BY</a></code> clause.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT *
+FROM table
+GROUP BY column_1, column_2, ...;
+</code></pre><p>Filter groups using the <code><a href="https://www.postgresqltutorial.com/postgresql-having/">HAVING</a></code> clause.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT *
+FROM table
+GROUP BY column_1
+HAVING condition;
+</code></pre><p>===========================</p>
+<h2 class="mume-header" id="set-operations">Set operations</h2>
+
+<p>===========================<br>
+Combine the result set of two or more queries with <code><a href="https://www.postgresqltutorial.com/postgresql-union/">UNION</a></code> operator:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT * FROM table1
+UNION
+SELECT * FROM table2;
+</code></pre><p>Minus a result set using <code><a href="https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-except/">EXCEPT</a></code> operator:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT * FROM table1
+EXCEPT
+SELECT * FROM table2;
+</code></pre><p>Get intersection of the result sets of two queries:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>SELECT * FROM table1
+INTERSECT
+SELECT * FROM table2;
+</code></pre><p>===========================</p>
+<h2 class="mume-header" id="modifying-data">Modifying data</h2>
+
+<p>===========================<br>
+<a href="https://www.postgresqltutorial.com/postgresql-insert/">Insert a new row into a table</a>:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>INSERT INTO table(column1,column2,...)
+VALUES(value_1,value_2,...);
+</code></pre><p>Insert multiple rows into a table:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>INSERT INTO table_name(column1,column2,...)
+VALUES(value_1,value_2,...),
+      (value_1,value_2,...),
+      (value_1,value_2,...)...
+</code></pre><p><a href="https://www.postgresqltutorial.com/postgresql-update/">Update</a> data for all rows:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>UPDATE table_name
+SET column_1 = value_1,
+    ...;
+</code></pre><p>Update data for a set of rows specified by a condition in the <code>WHERE</code> clause.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>UPDATE table
+SET column_1 = value_1,
+    ...
+WHERE condition;
+</code></pre><p><a href="https://www.postgresqltutorial.com/postgresql-delete/">Delete all rows</a> of a table:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>DELETE FROM table_name;
+</code></pre><p>Delete specific rows based on a condition:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>DELETE FROM table_name
+WHERE condition;
+</code></pre><h2 class="mume-header" id="performance">Performance</h2>
+
+<p>Show the query plan for a query:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>EXPLAIN query;
+</code></pre><p>Show and execute the query plan for a query:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>EXPLAIN ANALYZE query;
+</code></pre><p>Collect statistics:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>ANALYZE table_name;
+</code></pre>
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#postgresql-commands">PostgreSQL commands</a></li>
+<li><a href="#managing-databases">Managing databases</a></li>
+<li><a href="#managing-tables">Managing tables</a></li>
+<li><a href="#managing-views">Managing views</a></li>
+<li><a href="#managing-indexes">Managing indexes</a></li>
+<li><a href="#querying-data-from-tables">Querying data from tables</a></li>
+<li><a href="#set-operations">Set operations</a></li>
+<li><a href="#modifying-data">Modifying data</a></li>
+<li><a href="#performance">Performance</a></li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+
+
+
+
+
+
+
+
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+
+
+    </body></html>
+</body></html>
+</body></html>
