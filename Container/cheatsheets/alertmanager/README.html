@@ -1,0 +1,35 @@
+<h1 id="alertmanager">Alertmanager</h1>
+<h2 id="external-references">External References</h2>
+<p>Tools:</p>
+<ul>
+<li><a href="https://juliusv.com/promslack/">Slack Alert Builder</a></li>
+</ul>
+<p>Alerts:</p>
+<ul>
+<li><a href="https://awesome-prometheus-alerts.grep.to/rules.html">Awesome Prometheus Rules for Alertmanager</a></li>
+<li><a href="https://alex.dzyoba.com/blog/prometheus-alerts/">Basic Prometheus Alerts</a></li>
+<li><a href="https://medium.com/quiq-blog/better-slack-alerts-from-prometheus-49125c8c672b">Better alerts for Slack</a></li>
+<li><a href="https://stackoverflow.com/questions/52918312/customizing-prometheus-alertmanager-notifications-in-slack">Graph in Slack</a></li>
+<li><a href="https://gist.github.com/Cellane/7ee4d8cb4b54eb245701605814350021">Example Config, Alert, Template</a></li>
+<li><a href="https://github.com/prometheus/alertmanager/issues/2220#issuecomment-612099644">Example Alerts 1</a> | <a href="https://gist.github.com/Cellane/7ee4d8cb4b54eb245701605814350021">Example Alerts 2</a> | <a href="https://stackoverflow.com/a/56735484">Example Alert 3 (context switches)</a> | <a href="https://infinityworks.com/insights/slack-prometheus-alertmanager/">Example Alert 4 (slack)</a></li>
+<li><a href="https://jpweber.io/blog/taking-advantage-of-deadmans-switch-in-prometheus/">Deadmans Switch</a></li>
+<li><a href="https://stackoverflow.com/a/62725594">Continue Routes in Alertmanager</a></li>
+<li><a href="https://niravshah2705.medium.com/prometheus-alert-for-missing-metrics-and-labels-afd4b8f12b1">Alert on Missing Labels and Metrics</a></li>
+</ul>
+<p>Configs:</p>
+<ul>
+<li><a href="https://gist.github.com/l13t/d432b63641b6972b1f58d7c037eec88f">Basic getting started example with Slack</a></li>
+<li><a href="https://github.com/prometheus/alertmanager/pull/444#issuecomment-428493861">Webhook config example</a></li>
+<li><a href="https://www.noqcks.io/notes/2018/01/29/prometheus-alertmanager-deadmansswitch/">Setup DeadManSwitch alert</a> and <a href="https://github.com/prometheus/alertmanager/pull/444#issuecomment-428493861">DeadManSwitch Webhook Config</a> and <a href="https://medium.com/@zhimin.wen/custom-notifications-with-alert-managers-webhook-receiver-in-kubernetes-8e1152ba2c31">Golang Webhook Example</a></li>
+</ul>
+<p>Routing:</p>
+<ul>
+<li><a href="https://rtfm.co.ua/en/prometheus-alertmanagers-alerts-receivers-and-routing-based-on-severity-level-and-tags/">Routing Alerts based on Severity Levels and Tags</a></li>
+<li><a href="https://www.reddit.com/r/PrometheusMonitoring/comments/dmzm1k/alertmanager_notifications_how_to_notify_only_on/">Routing Alerts based on Alert name</a></li>
+<li><a href="https://www.robustperception.io/sending-alert-notifications-to-multiple-destinations">Route Alerts to Multiple Destinations</a></li>
+</ul>
+<p>Setups: - <a href="https://daenney.github.io/2018/04/21/setting-up-alertmanager">Setup Alertmanager with manual call example</a> - <a href="https://itnext.io/prometheus-with-alertmanager-f2a1f7efabd6">Setup Alertmanager with Ansible</a> - <a href="https://www.infracloud.io/blogs/grafana-loki-log-monitoring-alerting/">Log Monitoring and Alerting with Loki</a> - <a href="https://github.com/alerta/prometheus-config">Alerta for Alertmanager</a></p>
+<p>Tooling: - <a href="https://github.com/bakins/alertmanager-webhook-example">Webhook for Alertmanager</a></p>
+<h2 id="api-calls">API Calls</h2>
+<p>Manual trigger alert:</p>
+<pre><code>$ curl -H &quot;Content-Type: application/json&quot; -d &#39;[{&quot;status&quot;: &quot;firing&quot;, &quot;labels&quot;:{&quot;alertname&quot;:&quot;TestAlert1&quot;}}]&#39; localhost:9093/alertmanager/api/v1/alerts</code></pre>

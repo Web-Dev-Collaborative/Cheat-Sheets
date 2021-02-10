@@ -1,0 +1,13 @@
+<h2 id="list-instances">List Instances</h2>
+<p>Get instance details from a filter, <a href="examples/ec2_list_instances.py">examples/ec2_list_instances.py</a></p>
+<pre><code>&gt;&gt;&gt; import boto3
+&gt;&gt;&gt; ec2 = boto3.Session(profile_name=&#39;prod&#39;, region_name=&#39;eu-west-1&#39;).client(&#39;ec2&#39;)
+&gt;&gt;&gt; instances = ec2.instances.filter(Filters=[{&#39;Name&#39;: &#39;instance-state-name&#39;, &#39;Values&#39;: [&#39;running&#39;]},{&#39;Name&#39;: &#39;tag:Name&#39;, &#39;Values&#39;: [&#39;my-instance-group-name&#39;]}])
+&gt;&gt;&gt; for instance in instances:
+...     print(instance.id, instance.instance_type, instance.private_ip_address)
+...
+(&#39;i-00bceb55c1cec0c00&#39;, &#39;c5.large&#39;, &#39;172.30.34.253&#39;)
+(&#39;i-007f2ef27779f3f00&#39;, &#39;c5.large&#39;, &#39;172.30.34.245&#39;)
+(&#39;i-00228d357d1ddd200&#39;, &#39;c5.large&#39;, &#39;172.30.36.188&#39;)
+(&#39;i-00a0087392f7ebe00&#39;, &#39;c5.large&#39;, &#39;172.30.37.192&#39;)
+(&#39;i-008895f213ae84000&#39;, &#39;c5.large&#39;, &#39;172.30.38.170&#39;)</code></pre>

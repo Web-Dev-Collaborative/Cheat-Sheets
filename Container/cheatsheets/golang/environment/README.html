@@ -1,0 +1,89 @@
+<h2 id="environment-setup">Environment Setup</h2>
+<p>Go environment on Alpine:</p>
+<pre><code>$ docker run -it alpine sh
+GO_VERSION=1.15.2
+apk add --no-cache ca-certificates
+echo &#39;hosts: files dns&#39; &gt; /etc/nsswitch.conf
+apk add --no-cache --virtual .build-deps bash gcc musl-dev openssl go
+go env GOROOT
+GOROOT_BOOTSTRAP=&quot;$(go env GOROOT)&quot;
+GOOS=&quot;$(go env GOOS)&quot;
+GOARCH=&quot;$(go env GOARCH)&quot;
+GOHOSTOS=&quot;$(go env GOHOSTOS)&quot;
+GOHOSTARCH=&quot;$(go env GOHOSTARCH)&quot;
+apkArch=&quot;$(apk --print-arch)&quot;
+wget -O go.tgz &quot;https://golang.org/dl/go$GO_VERSION.src.tar.gz&quot;
+tar -C /usr/local -xzf go.tgz
+rm go.tgz
+cd /usr/local/go/src
+./make.bash
+rm -rf /usr/local/go/pkg/bootstrap /usr/local/go/pkg/obj
+apk del .build-deps
+export PATH=&quot;/usr/local/go/bin:$PATH&quot;
+export GOPATH=/go
+export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
+mkdir -p &quot;$GOPATH/src&quot; &quot;$GOPATH/bin&quot;
+cd $GOPATH
+go version</code></pre>
+<p>To get a environment where you can download from git, append the following:</p>
+<pre><code>$ apk add --no-cache gcc musl-dev git
+$ go get github.com/digitalocean/godo
+$ ls $GOPATH/
+bin  pkg  src
+
+$ ls $GOPATH/src/github.com/digitalocean
+godo</code></pre>
+<p>Test:</p>
+<pre><code>$ mkdir $GOPATH/src/github.com/ruanbekker/hello
+$ cat $GOPATH/src/github.com/ruanbekker/hello/main.go
+package main
+
+import &quot;fmt&quot;
+
+func main() {
+    fmt.Println(&quot;Hello, World!&quot;)
+}
+
+$ go run $GOPATH/src/github.com/ruanbekker/hello
+/main.go
+Hello, World!
+
+$cd $GOPATH/src/github.com/ruanbekker/hello
+
+$ go install
+
+$ which hello
+/go/bin/hello</code></pre>
+<p>Use a dependency to test:</p>
+<pre><code>$ cat $GOPATH/src/github.com/ruanbekker/randomnumz/main.go
+package main
+
+import (
+    &quot;fmt&quot;
+    &quot;github.com/bxcodec/faker&quot;
+)
+
+func main() {
+    randomDay := faker.DayOfWeek()
+    fmt.Println(&quot;Hi:&quot;, randomDay)
+}
+
+$ go get -u github.com/bxcodec/faker
+# or
+cd $GOPATH/src/github.com/ruanbekker/randomnumz
+$ go get
+
+$ go run main.go
+Hi: Sunday
+
+$ which randomnumz
+/go/bin/randomnumz
+
+$ randomnumz
+Hi: Wednesday
+
+# or:
+
+$ go build -o random -v main.go
+./random
+Hi: Thursday</code></pre>

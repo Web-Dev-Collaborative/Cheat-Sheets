@@ -1,0 +1,15 @@
+<h2 id="cloudwatch-logs-insights">CloudWatch Logs Insights</h2>
+<ul>
+<li>https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax-examples.html</li>
+</ul>
+<p>Loglines:</p>
+<pre><code>172.31.37.134 - - [07/Jul/2020 13:18:34] &quot;GET / HTTP/1.1&quot; 200 -
+172.31.37.134 - - [07/Jul/2020 13:18:34] &quot;GET /status HTTP/1.1&quot; 200 -</code></pre>
+<p>Show all logs:</p>
+<pre><code>fields @message</code></pre>
+<p>Show the 25 most recent log entries:</p>
+<pre><code>fields @timestamp, @message | sort @timestamp desc | limit 25</code></pre>
+<p>Show all logs and include parsed fields:</p>
+<pre><code>fields @message, @log, @logStream, @ingestionTime, @timestamp</code></pre>
+<p>Only show logs containing <code>/status</code>:</p>
+<pre><code>fields @message | filter @message like &#39;/status&#39;</code></pre>
