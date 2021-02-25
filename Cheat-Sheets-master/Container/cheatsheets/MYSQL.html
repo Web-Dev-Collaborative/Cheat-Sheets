@@ -1,0 +1,8 @@
+<p>Create Database:</p>
+<pre><code>mysql&gt; CREATE DATABASE my_db;</code></pre>
+<p>Create User:</p>
+<pre><code>mysql&gt; CREATE USER &#39;user1&#39;@&#39;%&#39; IDENTIFIED BY &#39;securepass&#39;;</code></pre>
+<p>Grant User all Permissions to Database:</p>
+<pre><code>mysql&gt; GRANT ALL PRIVILEGES ON my_db.* TO &#39;user1&#39;@&#39;%&#39;;</code></pre>
+<p>Flush:</p>
+<pre><code>mysql&gt; FLUSH PRIVILEGES;</code></pre>

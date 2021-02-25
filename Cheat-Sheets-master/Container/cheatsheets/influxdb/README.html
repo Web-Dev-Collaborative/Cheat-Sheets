@@ -1,0 +1,17 @@
+<h2 id="influxdb-cheatsheet">InfluxDB Cheatsheet</h2>
+<h3 id="connect-to-influxdb">Connect to InfluxDB:</h3>
+<pre><code>$ influx</code></pre>
+<h3 id="create-db">Create DB:</h3>
+<pre><code>&gt; create database test</code></pre>
+<h3 id="list-databases">List Databases:</h3>
+<pre><code>&gt; show databases</code></pre>
+<h3 id="select-a-db">Select a DB:</h3>
+<pre><code>&gt; use test</code></pre>
+<h3 id="list-measurements">List Measurements</h3>
+<pre><code>&gt; show measurements</code></pre>
+<h3 id="show-measurements-for-name-bar">Show Measurements for name: bar</h3>
+<pre><code>&gt; select * from bar</code></pre>
+<h3 id="drop-bar-measurements">Drop bar Measurements</h3>
+<pre><code>&gt; drop measurement bar</code></pre>
+<h3 id="show-field-keys">Show field keys</h3>
+<pre><code>&gt; show field keys from &quot;bar-A1&quot;</code></pre>

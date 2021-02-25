@@ -1,0 +1,33 @@
+<h2 id="datadog-grok-parser">Datadog Grok Parser</h2>
+<h3 id="example-1">Example 1</h3>
+<p>Message:</p>
+<pre><code>Endpoints not available for default/team-app-service-foobar</code></pre>
+<p>Pattern:</p>
+<pre><code>warning_endpoint_rule %{regex(&quot;[endpoints not available for a-zA-Z]*&quot;):message_line}/%{regex(&quot;[a-zA-Z0-9-]*&quot;):service}</code></pre>
+<p>Result:</p>
+<pre><code>{
+  &quot;message_line&quot;: &quot;Endpoints not available for default&quot;,
+  &quot;service&quot;: &quot;team-app-service-foobar&quot;
+}</code></pre>
+<h3 id="example-2">Example 2</h3>
+<p>Message:</p>
+<pre><code>[2019-12-10 00:00:07,890: INFO/ForkPoolWorker-10] Task api.tasks.handle_job[000000a0-1a2a-12a3-4a56-d12dd3456789] succeeded in 0.02847545174881816s: None</code></pre>
+<p>Pattern:</p>
+<pre><code>my_rule \[%{date(&quot;yyyy-MM-dd HH:mm:ss,SSS&quot;):timestamp}: %{word:severity}/%{regex(&quot;[a-zA-Z0-9-]*&quot;):process}\] %{data:details}</code></pre>
+<p>Result:</p>
+<pre><code>{
+  &quot;timestamp&quot;: 1575982567890,
+  &quot;severity&quot;: &quot;INFO&quot;,
+  &quot;process&quot;: &quot;ForkPoolWorker-10&quot;,
+  &quot;details&quot;: &quot;Task api.tasks.handle_job[000000a0-1a2a-12a3-4a56-d12dd3456789] succeeded in 0.02847545174881816s: None&quot;
+}</code></pre>
+<h3 id="example-3">Example 3</h3>
+<p>Message:</p>
+<pre><code>2019-12-05 11:00:08,921 INFO module=trace, process_id=13, Task apps_dir.health.queue.tasks.add[000000a0-1a2a-12a3-4a56-d12dd3456789] succeeded in 0.0001603253185749054s: 8</code></pre>
+<p>Pattern:</p>
+<pre><code>my_rule .*%{date(&quot;yyyy-MM-dd HH:mm:ss,SSS&quot;):date} %{word:status} .*</code></pre>
+<p>Result:</p>
+<pre><code>{
+  &quot;date&quot;: 1575982567890,
+  &quot;status&quot;: &quot;INFO&quot; 
+}</code></pre>
