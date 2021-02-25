@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="./prism.css">
+<script async defer src="./prism.js"></script>
+</head>
+<body>;
+<pre><code>browser
+  .visit(&quot;http://.../&quot;, -&gt;)
+  .fill(&quot;email&quot;, &quot;zombie@underworld.dead&quot;)
+  .fill(&quot;password&quot;, &quot;eat-the-living&quot;)
+  .select(&quot;Born&quot;, &quot;1985&quot;)
+  .uncheck(&quot;Send newsletter&quot;)
+  .clickLink(&quot;Link name&quot;)
+  .pressButton(&quot;Sign&quot;, -&gt; ...)
+
+  .text(&quot;H1&quot;)
+
+
+expect(browser.query(&quot;#brains&quot;))
+
+expect(browser.body.queryAll(&quot;.hand&quot;)).length 2
+
+console.log(browser.html())
+console.log(browser.html(&quot;table.parts&quot;))
+
+expect(Browser.text(&quot;.card-nopad small&quot;), &quot;A better way to get around!&quot;)</code></pre>
+</body></html>

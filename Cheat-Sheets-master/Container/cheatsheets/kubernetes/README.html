@@ -1,0 +1,150 @@
+<h3 id="components">Components</h3>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>kube-apiserver</td>
+<td>validates and configures data for the api objects which include pods, services, replicationcontrollers, and others</td>
+</tr>
+<tr class="even">
+<td>etcd</td>
+<td>distributed k/v store</td>
+</tr>
+<tr class="odd">
+<td>kube-scheduler</td>
+<td>schedule pods to run on selected nodes</td>
+</tr>
+<tr class="even">
+<td>kube-controller-manager</td>
+<td>daemon that embeds the core control loops shipped with kubernetes</td>
+</tr>
+</tbody>
+</table>
+<p>Components and Services running on Worker Nodes:</p>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>kubelet</td>
+<td>node-agent that runs on each node</td>
+</tr>
+<tr class="even">
+<td>kube-proxy connection</td>
+<td>forwarding</td>
+</tr>
+<tr class="odd">
+<td>container runtime</td>
+<td>container runtimes supported by kubernets: (docker, rkt, runc, etc)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nodes">Nodes</h3>
+<p>Show nodes in the cluster:</p>
+<pre><code>kubectl get nodes</code></pre>
+<p>Show nodes with extra info:</p>
+<pre><code>kubectl get nodes -o wide</code></pre>
+<p>Show nodes in yaml format:</p>
+<pre><code>kubectl get nodes -o yaml</code></pre>
+<p>Describe nodes:</p>
+<pre><code>kubectl describe nodes</code></pre>
+<p>Show nodes in yaml format</p>
+<pre><code>kubectl get nodes -o yaml</code></pre>
+<p>Show node labels</p>
+<pre><code>kubectl get node --show-labels</code></pre>
+<p>Show nodes with specific label</p>
+<pre><code>kubectl get node --selector=[label_name]</code></pre>
+<p>Show value from a key</p>
+<pre><code>kubectl get nodes -o jsonpath=&#39;{.items[*].status.addresses[?(@.type==&quot;External IP&quot;)].address}&#39;</code></pre>
+<p>Get node resource information</p>
+<pre><code>kubectl top node [node_name]</code></pre>
+<h3 id="pods">Pods</h3>
+<ul>
+<li>The single smallest interactable unit in Kubernetes.</li>
+<li>a Pod can be comprimised of multiple containers that will form a unit deployed on a single node together</li>
+<li>a Pod receives one IP which is shared between containers</li>
+</ul>
+<p>Show pods:</p>
+<pre><code>kubectl get pods</code></pre>
+<p>Show pods from all namespaces:</p>
+<pre><code>kubectl get pods --all-namespaces</code></pre>
+<p>Show pods in yaml format:</p>
+<pre><code>kubectl get pods --output yaml</code></pre>
+<p>Show system pods</p>
+<pre><code>kubectl get pods --namespace kube-system</code></pre>
+<p>Show pods in yaml format</p>
+<pre><code>kubectl get pods --output yaml</code></pre>
+<p>Dont truncate output</p>
+<pre><code>kubectl get pods -o wide</code></pre>
+<p>Show pod info</p>
+<pre><code>kubectl get pod svclb-traefik --namespace kube-system</code></pre>
+<p>Show pod info from app selector</p>
+<pre><code>kubectl get pods --selector app=svclb-traefik --namespace kube-system</code></pre>
+<p>Show all pods info from all ns</p>
+<pre><code>kubectl describe pods --all-namespaces</code></pre>
+<p>Show pods with labels</p>
+<pre><code>kubectl get pods --show-labels</code></pre>
+<p>Dump pod info in yaml</p>
+<pre><code>kubectl get pod svclb-traefik --namespace kube-system -o yaml --export</code></pre>
+<p>Export pod info to file</p>
+<pre><code>kubectl get pod svclb-traefik --namespace kube-system -o yaml --export &gt; exported.yml</code></pre>
+<p>Show pods, sort by node</p>
+<pre><code>kubectl get pods -o wide --sort-by=&quot;{.spec.nodeName}&quot;</code></pre>
+<p>Show pods, sort by restarts</p>
+<pre><code>kubectl get pods --sort-by=&quot;{.status.containerStatuses[:1].restartCount}&quot;</code></pre>
+<p>Show pods on a node</p>
+<pre><code>kubectl get pods --all-namespaces -o wide --field-selector spec.nodeName=&quot;ip-10-10-4-20.eu-west-1.compute.internal&quot;</code></pre>
+<p>Show pods from a deployment</p>
+<pre><code>kubectl get pods --output wide --selector app.kubernetes.io/name=my-app</code></pre>
+<p>Run a pod without a deployment (Restart policy with Never wont create a deployment)</p>
+<pre><code>kubectl run pod1 --image=alpine --restart=Never -- ping localhost</code></pre>
+<p>Run a pod without a deployment (Using generator flag)</p>
+<pre><code>kubectl run pod2 --generator=run-pod/v1 --image=alpine -- ping localhost</code></pre>
+<p>Run a debug pod:</p>
+<pre><code>kubectl run --generator=run-pod/v1 -it --rm load-generator --image=busybox /bin/sh</code></pre>
+<h3 id="deployments">Deployments</h3>
+<p>List deployments</p>
+<pre><code>kubectl get deployment</code></pre>
+<p>List deployments from all namespaces</p>
+<pre><code>kubectl get deployments --all-namespaces</code></pre>
+<p>Show deployment info</p>
+<pre><code>kubectl get deployment/myapp -o yaml</code></pre>
+<p>Run a Nginx Deployment with 2 Replicas</p>
+<pre><code>kubectl run nginx01 --image=nginx --replicas=2 --port=80</code></pre>
+<h3 id="logs">Logs</h3>
+<p>Tail logs from a pod:</p>
+<pre><code>kubectl logs -f drone-agent-557ddc7bb4-crjns</code></pre>
+<p>Tail logs from a container (when two or more containers runs in a pod):</p>
+<pre><code>kubectl logs -f drone-agent-557ddc7bb4-crjns -c docker-in-docker</code></pre>
+<p>Show pods and dont truncate the output:</p>
+<pre><code>kubectl get pods -o wide</code></pre>
+<p>Show pods with their labels:</p>
+<pre><code>kubectl get pods --show-labels</code></pre>
+<p>Show pods from a specific deployment:</p>
+<pre><code>kubectl get pods --output wide --selector app.kubernetes.io/name=my-test-app</code></pre>
+<p>Show pods on specific node:</p>
+<pre><code>kubectl get pods -o wide --field-selector spec.nodeName=&quot;ip-10-0-1-20.eu-west-1.compute.internal&quot;</code></pre>
+<p>Show pods, sort output by node:</p>
+<pre><code>kubectl get pods -o wide --sort-by=&quot;{.spec.nodeName}&quot;</code></pre>
+<p>Show pods, sort output by restarts:</p>
+<pre><code>kubectl get pods --sort-by=&quot;{.status.containerStatuses[:1].restartCount}&quot;</code></pre>
+<h3 id="resources">Resources:</h3>
+<p>Kubectl Output Formatting: - https://gist.github.com/so0k/42313dbb3b547a0f51a547bb968696ba</p>
+<p>Kubernetes Cheatsheet: - https://kubernetes.io/docs/reference/kubectl/cheatsheet/</p>

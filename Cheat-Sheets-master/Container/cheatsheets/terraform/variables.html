@@ -1,0 +1,20 @@
+<p>Define variables:</p>
+<pre><code>$ cat variables.tf
+variable &quot;environment&quot; {
+  default = &quot;prod&quot;
+}
+
+variable &quot;name&quot; {
+  default = &quot;web&quot;
+}</code></pre>
+<p>Call a variable:</p>
+<pre><code>$ terraform console
+
+&gt; &quot;${var.name}&quot;
+web
+
+&gt; &quot;${var.environment}&quot;
+prod</code></pre>
+<p>Join strings: - https://www.terraform.io/docs/configuration/functions/format.html</p>
+<pre><code>&gt; format(&quot;%s-%s-server&quot;, var.name, var.environment)
+web-prod-server</code></pre>
