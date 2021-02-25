@@ -1,0 +1,19 @@
+<h1 id="ec2-metadata">EC2 Metadata</h1>
+<h2 id="examples">Examples</h2>
+<p>Get the hostname:</p>
+<pre><code>$ curl http://instance-data/latest/meta-data/instance-id
+i-xxxxxxxxxxx</code></pre>
+<p>Get the private ipv4 address:</p>
+<pre><code>$ curl -s http://169.254.169.254/latest/meta-data/local-ipv4
+172.31.50.37</code></pre>
+<p>Get the region:</p>
+<pre><code>$ curl -s http://instance-data/latest/meta-data/placement/availability-zone | rev | cut -c 2- | rev
+eu-west-1</code></pre>
+<p>Get the EC2 Tag Name Value:</p>
+<pre><code>TAG_NAME=&quot;Name&quot;
+INSTANCE_ID=&quot;$(curl -s http://instance-data/latest/meta-data/instance-id)&quot;
+REGION=&quot;$(curl -s http://instance-data/latest/meta-data/placement/availability-zone | rev | cut -c 2- | rev)&quot;
+TAG_VALUE=&quot;$(aws ec2 describe-tags --filters &quot;Name=resource-id,Values=${INSTANCE_ID}&quot; &quot;Name=key,Values=${TAG_NAME}&quot; --region ${REGION} --output=text | cut -f5)&quot;
+
+$ echo ${TAG_VALUE}
+my-instance</code></pre>

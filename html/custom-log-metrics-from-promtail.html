@@ -1,0 +1,73 @@
+<p>Setup promtail config:</p>
+<pre><code>$ cat /etc/promtail/promtail-config.yml
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /var/lib/promtail/positions.yaml
+
+clients:
+  - url: https://x:x@loki.domain.com/loki/api/v1/push
+
+scrape_configs:
+  - job_name: prod/logs
+    static_configs:
+    - targets:
+        - localhost
+      labels:
+        job: prod/logs
+        service: nginx-test
+        logtype: info
+        __path__: /var/log/nginx/access.log
+    pipeline_stages:
+    - match:
+        selector: &#39;{job=&quot;prod/logs&quot;, service=&quot;nginx-test&quot;}&#39;
+        stages:
+        - regex:
+            expression: &#39;.*(?P&lt;hits&gt;GET /.*)&#39;
+        - metrics:
+            nginx_get_hits:
+              type: Counter
+              description: &quot;Total GET requests&quot;
+              source: hits
+              config:
+                action: inc
+</code></pre>
+<p>Verify that you can access the metrics endpoint:</p>
+<pre><code>$ curl http://localhost:9080/metrics
+# HELP promtail_custom_nginx_get_hits Total GET requests
+# TYPE promtail_custom_nginx_get_hits counter
+promtail_custom_nginx_get_hits{filename=&quot;/var/log/nginx/access.log&quot;,job=&quot;prod/logs&quot;,logtype=&quot;info&quot;,service=&quot;nginx-test&quot;} 801</code></pre>
+<p>Now we can configure prometheus to scrape this endpoint, I am using <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#ec2_sd_config">ec2_sd_config</a>:</p>
+<pre><code>scrape_configs:
+  # promtail-exporter
+  - job_name: promtail-exporter
+    scrape_interval: 15s
+    ec2_sd_configs:
+    - region: eu-west-1
+      port: 9100
+      filters:
+        - name: tag:PromtailScrape
+          values:
+            - Enabled
+    relabel_configs:
+    - source_labels: [__meta_ec2_private_ip]
+      replacement: &#39;${1}:9080&#39;
+      target_label: __address__
+    - source_labels: [__meta_ec2_tag_Name]
+      target_label: instance</code></pre>
+<p>Tag the EC2 instance as <code>PromtailScrape</code> =&gt; <code>Enabled</code> and verify that prometheus is scraping promtail with the following in prometheus:</p>
+<pre><code>up{job=&quot;promtail-exporter&quot;}</code></pre>
+<p>You can also view all the metrics from that exporter with:</p>
+<pre><code>{__name__=~&quot;.+&quot;, job=&quot;promtail-exporter&quot;}</code></pre>
+<p>Now we can query our exported metric:</p>
+<pre><code>increase(promtail_custom_nginx_get_hits{service=&quot;nginx-test&quot;}[5m])</code></pre>
+<p>Let’s say for some reason you want to alert if that value goes over 5000:</p>
+<pre><code>  - name: loki-metric-alert
+    groups:
+      - name: loki_metric_alert
+        rules:
+        - alert: nginx_get_hits
+          expr: sum(increase(promtail_custom_nginx_get_hits{service=&quot;nginx-test&quot;}[5m])) &gt; 5000
+          for: 2m</code></pre>

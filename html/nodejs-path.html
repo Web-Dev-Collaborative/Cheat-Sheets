@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="./prism.css">
+<script async defer src="./prism.js"></script>
+</head>
+<body>;
+<pre><code>fs.realpath(&#39;/etc/passwd&#39;, function(err, path) { /* &quot;/private/etc/passwd&quot; */ 
+});
+
+dir = path.join(&#39;etc&#39;, &#39;passwd&#39;);
+dir = path.resolve(&#39;/etc&#39;, &#39;passwd&#39;, &#39;..&#39;, &#39;var&#39;);
+
+path.dirname(&#39;/etc/passwd&#39;)       //=&gt; &quot;/etc&quot;
+path.basename(&#39;/etc/passwd&#39;)      //=&gt; &quot;passwd&quot;
+path.basename(&#39;/etc/rc.d&#39;, &#39;.d&#39;)  //=&gt; &quot;rc&quot;</code></pre>
+<h3 id="references">References</h3>
+<ul>
+<li>http://nodejs.org/api/path.html</li>
+</ul>
+</body></html>

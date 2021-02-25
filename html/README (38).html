@@ -1,0 +1,35 @@
+<h1 id="nginx-cheatsheet">nginx cheatsheet</h1>
+<h2 id="external">External</h2>
+<ul>
+<li>https://rtfm.co.ua/en/http-redirects-post-and-get-requests-and-lost-data/</li>
+</ul>
+<h2 id="configs">Configs</h2>
+<p>Bare bones website:</p>
+<pre><code>server {
+    listen       80;
+    server_name  localhost;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+}</code></pre>
+<p>Redirect non existing webpage to home:</p>
+<pre><code>    # define the error page
+    error_page 404 = @notfound;
+
+    # 301 redirect to / for defined error page
+    location @notfound {
+        return 301 /;
+    }</code></pre>
+<p>Redirect a old request url to a new path on disk:</p>
+<pre><code>    # redirect old urls
+    location /content/images/2019/10/logo.png {
+        rewrite ^/content/images/2019/10/logo.png /assets/img/logo.png ;
+    }</code></pre>
