@@ -1,0 +1,8 @@
+<h1 id="git-cheatsheet">git cheatsheet</h1>
+<h2 id="display-branch">Display branch</h2>
+<p>Display branch for gitref:</p>
+<pre><code>$ git --no-pager  branch -a --contains 0000000000000000000000000000000000000
+  remotes/origin/dev</code></pre>
+<p>Display as only the branch name:</p>
+<pre><code>$ git --no-pager  branch -a --contains 0000000000000000000000000000000000000 | rev | cut -d &#39;/&#39; -f1 | rev
+dev</code></pre>

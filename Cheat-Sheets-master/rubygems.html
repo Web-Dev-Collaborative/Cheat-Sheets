@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="./prism.css">
+<script async defer src="./prism.js"></script>
+</head>
+<body>;
+<pre><code>gem build *.gemspec         # Build a gem
+gem install *.gem           # Install locally
+gem push *.gem              # Upload to rubygems.org
+gem yank foogem -v 0.0.1    # Take it back
+
+gem owner foogem -a rico@ricostacruz.com
+
+gem list                    # List local gems
+gem which rake              # Point to where lib/rake.rb is
+gem search -r rails         # [remote] Search for gems
+
+# https://github.com/fnando/gem-open
+gem open foogem
+GEM_EDITOR=&quot;vim&quot; gem open foogem
+
+cd $(basename `gem which rake`)  # Go to a gem&#39;s path</code></pre>
+</body></html>

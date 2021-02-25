@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="./prism.css">
+<script async defer src="./prism.js"></script>
+</head>
+<body>;
+<h3 id="stuff">Stuff</h3>
+<pre><code>-resize 100x40
+-crop 40x30+10+10   # (width)x(height)+(x)+y
+-crop 40x30-10-10   # (width)x(height)+(x)+y
+-flip               # vertical
+-flop               # horizontal
+-transpose          # flip vertical + rotate 90deg
+-transverse         # flip horizontal + rotate 270deg
+-trim               # trim image edges
+-rotate 90</code></pre>
+<h3 id="resize-to-fit">Resize to fit</h3>
+<pre><code>convert input.jpg -resize 80x80^ -gravity center -extent 80x80 icon.png</code></pre>
+<h3 id="convert-all-images-to-another-format">Convert all images to another format</h3>
+<pre><code>mogrify -format jpg -quality 85 *.png</code></pre>
+<h3 id="make-a-pdf">Make a pdf</h3>
+<pre><code>convert *.jpg hello.pdf</code></pre>
+<h3 id="references">References</h3>
+<ul>
+<li>http://www.noah.org/wiki/ImageMagick</li>
+</ul>
+</body></html>

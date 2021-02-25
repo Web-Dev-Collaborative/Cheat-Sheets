@@ -1,0 +1,64 @@
+<h2 id="external-resources">External Resources:</h2>
+<ul>
+<li>https://devhints.io/vim</li>
+</ul>
+<h2 id="copy-paste">Copy Paste</h2>
+<p>Copying Lines:</p>
+<pre><code>on the line that you want to duplicate
+yyp</code></pre>
+<p>Copy a Block:</p>
+<pre><code>v (for visual mode)
+direction arrows to highlight
+y (to copy)
+i (insert mode) move to the desired area
+esc
+p</code></pre>
+<h2 id="delete">Delete</h2>
+<p>Deleting a Line:</p>
+<pre><code>On the line that you want to delete
+dd</code></pre>
+<p>Deleting everything below the cursor:</p>
+<pre><code>dG</code></pre>
+<p>Deleting everything above the cursor:</p>
+<pre><code>dH</code></pre>
+<p>Deleting 10 Lines below the cursor:</p>
+<pre><code>10dd</code></pre>
+<p>Delete the first 4 characters of every line:</p>
+<pre><code>:%s/^.\{0,4\}//
+
+eg.
+
+&gt;&gt;&gt; class HashTable:
+...     def __init__(self):
+...         self.size = 256
+...         self.slots = [None for i in range(self.size)]
+...         self.count = 0
+
+after:
+
+class HashTable:
+    def __init__(self):
+        self.size = 256
+        self.slots = [None for i in range(self.size)]
+        self.count = 0</code></pre>
+<h2 id="replace-characters">Replace Characters:</h2>
+<p>Norm Function: Find/Replace</p>
+<p>The dataset:</p>
+<pre><code>123. 123
+233. 123
+
+Apply:
+
+:%norm f.C,</code></pre>
+<p>Result:</p>
+<pre><code>123,
+233,</code></pre>
+<p>Commenting Lines:</p>
+<pre><code>shift + v
+move down until the line you want to comment out
+shift + I
+Enter the character (#)
+Esc</code></pre>
+<p>Search and Replace (replace true with false):</p>
+<pre><code>:%s/true/false/
+press enter</code></pre>
