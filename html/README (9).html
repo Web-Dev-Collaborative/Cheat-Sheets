@@ -1,0 +1,10 @@
+<h2 id="ssm-aws-cli-cheatsheet">SSM AWS CLI Cheatsheet</h2>
+<p>Put SSM Parameter:</p>
+<pre><code>$ aws --profile dev ssm put-parameter --type &#39;String&#39; --name &quot;/my-service/dev/DATABASE_NAME&quot; --value &quot;test&quot;</code></pre>
+<p>Get SSM Parameters by Path:</p>
+<pre><code>$ aws --profile dev --region eu-west-1 ssm get-parameters-by-path --path &#39;/my-service/dev/&#39; | jq &#39;.Parameters[]&#39; | jq -r &#39;.Name&#39; 
+/my-service/dev/DATABASE_HOST
+/my-service/dev/DATABASE_NAME</code></pre>
+<p>Decrypt and View SSM Parameter Value:</p>
+<pre><code>$ aws --profile dev ssm get-parameters --names &#39;/my-service/dev/DATABASE_NAME&#39; --with-decryption | jq -r &#39;.Parameters[]&#39; | jq -r &#39;.Value&#39;
+test</code></pre>

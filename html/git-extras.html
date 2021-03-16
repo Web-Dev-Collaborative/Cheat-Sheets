@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="./prism.css">
+<script async defer src="./prism.js"></script>
+</head>
+<body>;
+<h3 id="git-flow">Git-flow</h3>
+<pre><code>$ git feature myfeature
+  switched to branch &#39;feature/rofl&#39;
+
+$ ...
+$ git checkout develop
+$ git feature finish myfeature
+  merging &#39;feature/rofl&#39; into develop
+  deleted branch &#39;feature/rofl&#39;</code></pre>
+<p>Also <code>git-bug</code> and <code>git-refactor</code>.</p>
+<h3 id="branches">Branches</h3>
+<pre><code>$ git delete-merged-branches
+  # hint: do `git remote prune origin` after
+
+$ git create-branch development
+$ git delete-branch development
+
+$ git fresh-branch gh-pages</code></pre>
+<h3 id="inspecting">Inspecting</h3>
+<pre><code>$ git summary   # repo age, commits, active days, etc
+$ git impact    # impact graph
+$ git effort    # commits per file</code></pre>
+<h3 id="github">Github</h3>
+<pre><code>$ git fork strongloop/express
+# sync your fork with the original repository:
+$ git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+$ git fetch upstream; git merge upstream/master</code></pre>
+<h3 id="tags">Tags</h3>
+<pre><code>$ git release v1.0.0           # commit, tag, push-tags
+$ git delete-tag v1.0.0</code></pre>
+<h3 id="conveniences">Conveniences</h3>
+<pre><code>$ git ignore &quot;*.log&quot;</code></pre>
+<h3 id="locking">Locking</h3>
+<p>Assumes that changes will not be committed.</p>
+<pre><code>$ git lock config/database.yml
+$ git unlock config/database.yml</code></pre>
+<h3 id="etc">Etc</h3>
+<pre><code>$ git obliterate secret.yml   # remove all references to it</code></pre>
+<h3 id="references">References</h3>
+<ul>
+<li>https://github.com/visionmedia/git-extras</li>
+</ul>
+</body></html>

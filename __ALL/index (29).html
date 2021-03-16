@@ -1,0 +1,1646 @@
+<!DOCTYPE html><html
+lang="en" prefix="og: http://ogp.me/ns#">
+<!-- Mirrored from cheatography.com/davechild/cheat-sheets/subversion/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Mar 2021 01:37:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>Subversion Cheat Sheet by DaveChild - Download free from Cheatography - Cheatography.com: Cheat Sheets For Every Occasion</title><link
+rel="dns-prefetch" href="https://media.cheatography.com/"><link
+rel="preconnect" href="https://media.cheatography.com/"><meta
+content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta
+http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta
+http-equiv="Content-Style-Type" content="text/css"><meta
+http-equiv="X-UA-Compatible" content="IE=Edge"><base
+><link
+rel="shortcut icon" href="https://cheatography.com/favicon.png"><link
+rel="apple-touch-icon" href="https://cheatography.com/images/cheatography-iphone.png"><link
+rel="alternate" type="application/rss+xml" title="New Cheat Sheets RSS feed." href="https://cheatography.com/explore/new/rss/"><meta
+name="keywords" content="commandline control development server subversion svn sysadmin vcs version "><meta
+name="monetization" content="$ilp.uphold.com/QRNi8QL4Gr3y"><link
+rel="canonical" href="https://cheatography.com/davechild/cheat-sheets/subversion/" /><meta
+property="fb:admins" content="860405712"/><meta
+property="fb:app_id" content="152741628156662"/><meta
+property="og:site_name" content="Cheatography"/><meta
+property="og:url" content="https://cheatography.com/davechild/cheat-sheets/subversion/"/><meta
+property="og:title" content="Subversion Cheat Sheet"/><meta
+property="og:image" content="https://media.cheatography.com/storage/thumb/davechild_subversion.600.jpg"/><meta
+property="og:type" content="cheatography:cheat_sheet"/><meta
+name="twitter:card" content="summary_large_image" /><meta
+name="twitter:title" content="Subversion Cheat Sheet" /><meta
+name="twitter:site" content="@Cheatography" /><meta
+name="twitter:image" content="https://media.cheatography.com/storage/thumb/davechild_subversion.600.jpg" /><meta
+name="twitter:creator" content="Dave_Child" /><meta
+name="description" content="Subversion cheat sheet"/><meta
+property="og:description" content="Subversion cheat sheet"/><meta
+name="twitter:description" content="Subversion cheat sheet" /> <script src="https://media.cheatography.com/scripts/jquery.min.js"></script> <script src="https://media.cheatography.com/scripts/jquery-ui.min.js"></script> <link
+href="https://media.cheatography.com/styles/styles.scss.css?v=7" rel="stylesheet"><link
+rel="preload" href="https://media.cheatography.com/styles/font-awesome.min.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link
+href="https://media.cheatography.com/styles/font-awesome.min.css?v=2" rel="stylesheet"></noscript><link
+rel="preload" href="https://media.cheatography.com/styles/bootstrap-tour-standalone.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> <script src="https://media.cheatography.com/scripts/bootstrap-tour-standalone.min.js"></script> <script type="text/javascript">var defaultLanguages = false;
+            var rememberTagCookieName = false;
+            var ratableCheatSheetId = false;
+            var isRateable = true;</script> <meta
+name="p:domain_verify" content="f842c4485eeea6c6d71b4314221cc6c0"/></head><body
+class="page-cheatsheet style2">
+ <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-4997759-8', 'auto');
+        ga('send', 'pageview');</script> <div
+id="mobile_wrap_outer"><a
+href="#" id="mobileTrigger">Show Menu</a><div
+id="mobile_wrap_inner"><div
+id="header"><div
+id="header_inner"><div
+id="topbar"><div
+class="inner"><form
+method="GET" action="https://cheatography.com/explore/search/"><p><a
+href="https://cheatography.com/" class="imagelink logolink"><img
+width="156" height="25" id="title_logo" src="http://media.cheatography.com/images/cheatography_logo.png" alt="Cheatography"></a><input
+id="q" name="q" type="text" placeholder="e.g., Regular Expressions, Garden, Kitchen, Audio"> <button
+type="submit" id="qsubmit"><i
+class="fa fa-search"></i></button><a
+class="social_link hideMobile" href="http://www.facebook.com/Cheatography"><i
+class="fa fa-facebook-official"></i></a>
+<a
+class="social_link hideMobile" href="http://twitter.com/Cheatography/"><i
+class="fa fa-twitter"></i></a>
+<a
+class="social_link hideMobile" href="http://www.pinterest.com/cheatography/"><i
+class="fa fa-pinterest"></i></a>
+<a
+class="social_link hideMobile" href="http://www.instagram.com/newcheatsheets/"><i
+class="fa fa-instagram"></i></a></p></form> <script type="text/javascript">$(document).ready(function () {
+                    // Restore search
+                    var lastSearch = $.cookie('lastSearch');
+                    $('#q').val(lastSearch);
+                });</script> </div></div></div><div
+id="menubar"><div
+class="inner"><div
+class="clear"></div><div
+id="user_info"><div
+class="logged_in" style="vertical-align: middle; position: relative; margin: 0; white-space: nowrap; z-index: 1001;">
+<a
+style="vertical-align: middle; margin: 0; padding-right: 0;" class="imagelink gravatar replace_userlink" href="https://cheatography.com/davechild/"><img
+class="gravatar replace_usergravatar" style="background: #fff; vertical-align: middle" src="#" width="32" height="32"></a>
+<a
+style="color: #fff; vertical-align: middle" href="https://cheatography.com/davechild/" class="replace_userlink replace_username"></a>
+<a
+href="https://cheatography.com/messages/" title="You have 0 new messages." class="imageline"><i
+class="fa fa-fw fa-envelope"></i></a></div><div
+id="user_dropdown"><div
+class="biptych1"><ul><li
+class=" "><i
+class="fa fa-fw fa-star"></i><a
+href="https://cheatography.com/favourites/">Your Favourite Cheat Sheets</a></li></ul><ul><li
+class=" "><i
+class="fa fa-fw fa-envelope"></i><a
+href="https://cheatography.com/messages/">Your Messages</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-trophy"></i><a
+href="https://cheatography.com/davechild/badges/">Your Badges</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-heart"></i><a
+href="https://cheatography.com/davechild/followers/">Your Friends</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-comments"></i><a
+href="https://cheatography.com/davechild/comments/">Your Comments</a></li></ul><ul><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-smile-o"></i><a
+href="https://cheatography.com/davechild/">View Profile</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-edit"></i><a
+href="https://cheatography.com/davechild/edit/">Edit Profile</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-key"></i><a
+href="https://cheatography.com/davechild/password/">Change Password</a></li></ul><ul><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-sign-out"></i><a
+href="https://cheatography.com/davechild/log-out/">Log out</a></li></ul></div><div
+class="biptych2"><ul><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-columns"></i><a
+href="https://cheatography.com/davechild/cheat-sheets/new/">New Cheat Sheet</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-link"></i><a
+href="https://cheatography.com/davechild/cheat-sheets/new-link/">New Link</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-upload"></i><a
+href="https://cheatography.com/davechild/cheat-sheets/new-upload/">New Upload</a></li></ul><ul><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-columns"></i><a
+href="https://cheatography.com/davechild/cheat-sheets/live/">Live Cheat Sheets</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-columns"></i><a
+href="https://cheatography.com/davechild/cheat-sheets/drafts/">Draft Cheat Sheets</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-group"></i><a
+href="https://cheatography.com/davechild/cheat-sheets/collaborations/">Collaborations</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-link"></i><a
+href="https://cheatography.com/davechild/cheat-sheets/links/">Links</a></li></ul><ul></ul></div><div
+class="clear"></div></div><div
+class="logged_out"><a
+class="imagelink login_button" href="https://cheatography.com/members/login">Login</a> &nbsp;or&nbsp; <a
+class="imagelink login_button" href="https://cheatography.com/members/register/">Register</a></div><div
+class="clear"></div></div>
+<nav><ul><li><a
+href="https://cheatography.com/"><i
+class="fa fa-home"></i> Home</a></li><li
+class="hidden showMobile logged_out"><a
+href="https://cheatography.com/members/login/">Login</a></li><li
+class="hidden showMobile logged_out"><a
+href="https://cheatography.com/members/register/">Register</a></li><li
+class="on"><a
+id="tourbrowse" href="https://cheatography.com/explore/"><i
+class="fa fa-columns"></i> Cheat Sheets</a><ul
+class="hideMobile"><li
+class=" "><i
+class="fa fa-fw fa-code"></i><a
+href="https://cheatography.com/programming/">Programming Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-desktop"></i><a
+href="https://cheatography.com/software/">Software Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-briefcase"></i><a
+href="https://cheatography.com/business/">Business and Marketing Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-graduation-cap"></i><a
+href="https://cheatography.com/education/">Education Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-home"></i><a
+href="https://cheatography.com/home/">Home and Health Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-gamepad"></i><a
+href="https://cheatography.com/games/">Games and Hobbies Cheat Sheets</a></li><li
+class=" menu_separate  "><i
+class="fa fa-fw fa-graduation-cap"></i><a
+href="https://cheatography.com/explore/new/">New Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-star"></i><a
+href="https://cheatography.com/explore/popular/">Popular Cheat Sheets</a></li><li
+class=" menu_separate  "><i
+class="fa fa-fw fa-tag"></i><a
+href="https://cheatography.com/explore/tags/">Cheat Sheets by Tag</a></li><li
+class=" "><i
+class="fa fa-fw fa-globe"></i><a
+href="https://cheatography.com/language/">Cheat Sheets by Language</a></li><li
+class=" menu_separate  "><i
+class="fa fa-fw fa-link"></i><a
+href="https://cheatography.com/external/">Cheat Sheet Links</a></li></ul></li><li
+class=""><a
+id="tourcreate" href="https://cheatography.com/create/"><i
+class="fa fa-pencil"></i> Create</a><ul
+class="hideMobile"><li
+class=" "><i
+class="fa fa-fw fa-question"></i><a
+href="https://cheatography.com/create/">Getting Started</a></li><li
+class=" logged_in"><i
+class="fa fa-fw fa-columns"></i><a
+href="https://cheatography.com/create/cheat-sheet/">Create a New Cheat Sheet</a></li><li
+class=" logged_in"><i
+class="fa fa-fw fa-upload"></i><a
+href="https://cheatography.com/create/cheat-sheet-upload/">Upload a Cheat Sheet</a></li><li
+class=" logged_in"><i
+class="fa fa-fw fa-link"></i><a
+href="https://cheatography.com/create/cheat-sheet-link/">Link to a Cheat Sheet</a></li><li
+class="menu_separate"><i
+class="fa fa-fw fa-smile-o"></i>A <a
+href="https://cheatography.com/davechild/cheat-sheets/cheatography/">Cheat Sheet</a> for Making Cheat Sheets!</li></ul></li><li><a
+id="tourcommunity" href="https://cheatography.com/members/"><i
+class="fa fa-users"></i> Community</a><ul
+class="hideMobile"><li
+class=" "><i
+class="fa fa-fw fa-globe"></i><a
+href="https://cheatography.com/members/">Community</a></li><li
+class=" "><i
+class="fa fa-fw fa-trophy"></i><a
+href="https://cheatography.com/badges/">Badges</a></li><li
+class=" menu_separate  logged_in"><i
+class="fa fa-fw fa-heart"></i><a
+href="https://cheatography.com/davechild/followers/">Friends</a></li><li
+class=" logged_out"><i
+class="fa fa-fw fa-user"></i><a
+href="https://cheatography.com/members/register/">Join Us!</a></li><li
+class=" menu_separate  logged_out"><i
+class="fa fa-fw fa-key"></i><a
+href="https://cheatography.com/members/login/">Login</a></li><li
+class=" menu_separate  "><i
+class="fa fa-fw fa-twitter"></i><a
+href="http://twitter.com/Cheatography/">Twitter</a></li><li
+class=" "><i
+class="fa fa-fw fa-facebook"></i><a
+href="http://www.facebook.com/Cheatography">Facebook</a></li><li
+class=" "><i
+class="fa fa-fw fa-pinterest"></i><a
+href="http://www.pinterest.com/cheatography/">Pinterest</a></li><li
+class=" "><i
+class="fa fa-fw fa-instagram"></i><a
+href="http://www.instagram.com/newcheatsheets/">Instagram</a></li></ul></li><li
+class="last"><a
+href="https://www.facebook.com/pg/Cheatography/community/" target="_blank" title="Get help on our Facebook community (opens in new window)."><i
+class="fa fa-external-link"></i> Help</a></li></ul><div
+class="hidden showMobile logged_in" id="user_dropdown_mobile"></div></nav><div
+class="clear"></div></div></div></div><div
+id="content" itemscope itemtype="http://schema.org/Course"><div
+id="content_inner"><div
+class="off">
+<span
+itemprop="provider" itemscope itemtype="http://schema.org/Organization">
+<span
+itemprop="name">Cheatography</span>
+<span
+itemprop="url">https://cheatography.com</span>
+</span></div><div
+class="hideMobile" id="cs_menu_wrapper"><div
+id="cs_menu"><div
+class="download_menu" id="tourcheatsheetmenu"><ul
+class="hideMobile noicon downloadItem"><li
+style="float: left; border-right: none;"><i
+class="fa fa-fw fa-download"></i> <a
+href="https://cheatography.com/davechild/cheat-sheets/subversion/#downloads" onclick="trackDownloadPopup();">Download This Cheat Sheet (PDF)</a></li></ul><ul
+class="hideMobile noicon"><li><i
+class="fa fa-fw fa-comments"></i> <a
+href="https://cheatography.com/davechild/cheat-sheets/subversion/#comments">1 Comment</a></li><li
+class="ratingStars">Rating:
+<i
+class="fa fa-spin fa-spinner"></i> <i></i> <i></i> <i></i> <i></i> <span
+id="ratingStarsCount" style="display: none;">(<a
+href="https://cheatography.com/davechild/cheat-sheets/subversion/ratings/"></a>)</span></a></li><li><a
+href="#" title="Add or remove this cheat sheet from your favourites" class="imagelink toggle_favourite_link" id="item_cs_3"><i
+class="fa fa-heart-o"></i></a></li></ul></div></div></div><div
+class="clear"></div><div
+id="pagetitle"><div
+itemscope itemtype="http://schema.org/BreadcrumbList"><ol
+class="breadcrumbs"><li
+itemprop="itemListElement" itemscope
+itemtype="http://schema.org/ListItem">
+<a
+itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://cheatography.com/" itemid="https://cheatography.com/">
+<span
+itemprop="name">Home</span></a><meta
+itemprop="position" content="1" />
+<span
+class="divider">&gt;</span></li><li
+itemprop="itemListElement" itemscope
+itemtype="http://schema.org/ListItem">
+<a
+itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://cheatography.com/programming/" itemid="https://cheatography.com/programming/">
+<span
+itemprop="name">Programming</span></a><meta
+itemprop="position" content="2" />
+<span
+class="divider">&gt;</span></li><li
+itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<a
+rel="tag" itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://cheatography.com/tag/svn/" itemid="https://cheatography.com/tag/svn/">
+<span
+itemprop="name">Subversion Cheat Sheets</span></a><meta
+itemprop="position" content="3" /></li></ol><h1 itemprop="itemListElement" itemscope
+itemtype="http://schema.org/ListItem">
+<span
+itemscope itemtype="http://schema.org/Thing" itemprop="item" itemid="https://cheatography.com/davechild/cheat-sheets/subversion/">
+<span
+itemprop="name">Subversion Cheat Sheet</span> <span
+class="subhead"> by  <span
+itemprop="author" itemscope itemtype="http://schema.org/Person"><a
+href="http://www.cheatography.com/davechild/" class="user_hover" itemprop="url"><span
+itemprop="name">DaveChild</span></a></span></span></span><meta
+itemprop="position" content="4" /></h1></div><style type="text/css">ol.breadcrumbs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  ol.breadcrumbs li {
+    float: left;
+  }
+  ol.breadcrumbs li span.divider {
+    padding: 0 10px;
+    color: #999;
+  }
+  h1 {
+    clear: both;
+    margin-bottom: 0;
+  }</style><div
+class="clear"></div><p
+class="subdesc" itemprop="description">Subversion cheat sheet</p><div
+class="clear"></div></div><div
+id="body_wide"><div
+id="body_wide_inner"><div
+id="body_wide_shadow"> <script type="text/javascript">var defaultRating = 5.0000;
+    var ratingCount = 16;
+    ratableCheatSheetId = '3';
+    var hasUserRating = false;</script> <script type="text/javascript">var redirectTimeout;
+    // Analytics
+    ga('create', 'UA-4997759-19', 'auto', {'name': 'userTracker'});
+    ga('userTracker.send', 'pageview');
+var cheat_sheet_id = 3; // Used in ajax
+var cheatSheetName = 'Subversion Cheat Sheet';
+    var bTracking = true;
+$(document).ready(function() {
+    $('#tabs').tabs();
+    var hiddenBlocks = new Array();
+    if ($.cookie('hiddenBlocks')) {
+        hiddenBlocks = $.cookie('hiddenBlocks').split('-');
+        for (var i = 0; i < hiddenBlocks.length; i++) {
+            $('#block_' + hiddenBlocks[i]).slideUp(400);
+        }
+    }
+    $('.cheat_sheet_output_title').click(function() {
+        var block_id = this.id.substr(6);
+        // Check to see if it's hidden
+        if ($.inArray(block_id, hiddenBlocks) === -1) {
+            $('#block_' + block_id).slideUp(400);
+            hiddenBlocks[hiddenBlocks.length] = block_id;
+        } else {
+            $('#block_' + block_id).slideDown(400);
+            for (var i = 0; i < hiddenBlocks.length; i++) {
+                if (hiddenBlocks[i] == block_id) {
+                    hiddenBlocks.splice(i, 1);
+                }
+            }
+        }
+        // Now, toggle all those items with cookies
+        $.cookie('hiddenBlocks', hiddenBlocks.join('-'));
+    });
+    });</script> <div
+class="clear"></div><style type="text/css">#subsection_programming { display: none; }
+#subsection_software { display: none; }
+#subsection_business { display: none; }
+#subsection_education { display: none; }
+#subsection_home { display: none; }
+#subsection_games { display: none; }
+
+            h2, .sidebar_box h4 {
+                border-bottom: 3px solid #AFC8AC;
+            }
+
+            .cheat_sheet_output_wrapper {
+                background: #AFC8AC;
+                border-bottom: 3px solid #AFC8AC;
+            }
+
+                .cheat_sheet_output_wrapper a, .cheat_sheet_output_wrapper a:visited, .cheat_sheet_output_wrapper a:focus, .cheat_sheet_output_wrapper a:link, .cheat_sheet_output_wrapper a:hover {
+                    color: #AFC8AC;
+                    border-color: #AFC8AC;
+                }
+
+                .cheat_sheet_output_wrapper .cheat_sheet_output_block tr.altrow td, .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    background: #F5F8F4;
+                }
+
+                .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    border-top: 3px solid #AFC8AC;
+                }
+
+                .cheat_sheet_output_wrapper h3.cheat_sheet_output_title {
+                                            color: #46473b;
+                                    }
+
+            /* Breaks */
+            .cheat_sheet_output_column_columnbreak, .cheat_sheet_output_column_pagebreak {
+                border-color: #eee;
+            }
+
+                .cheat_sheet_output_wrapper.cheat_sheet_output_column_columnbreak .cheat_sheet_output_block,
+                .cheat_sheet_output_wrapper.cheat_sheet_output_column_pagebreak .cheat_sheet_output_block {
+                    border-top: none;
+                }
+
+                .cheat_sheet_output_wrapper.cheat_sheet_output_column_columnbreak h3.cheat_sheet_output_title,
+                .cheat_sheet_output_wrapper.cheat_sheet_output_column_pagebreak h3.cheat_sheet_output_title {
+                    color: #999;
+                    background: #eee;
+                }
+
+            /* Buttons */
+            .button_add, .button_add:visited, .button_add:active, .button_add:hover, .draft_notice {
+                background-color: #AFC8AC;
+                border: 1px solid #AFC8AC;
+                color: #F5F8F4;
+            }
+
+                .button_add:hover {
+                    background-color: #F5F8F4;
+                    color: #AFC8AC;
+                }
+
+            .download_menu {
+                background-color: #AFC8AC;
+            }
+
+            #content #content_inner, #cs_menu {
+                border-top-color: #AFC8AC;
+            }
+
+            #content #content_inner {
+                /*top: -3px;*/
+                border: none;
+            }
+
+            #menubar .inner {
+                border-top-color: #AFC8AC;
+            }
+
+            .cheat_sheet_output_block div {
+                border-color: #AFC8AC !important;
+            }
+
+            .footer_popup {
+                background-color: #F5F8F4;
+                box-shadow: 0 0 3px #AFC8AC;
+            }
+
+
+            /* style 2 */
+
+            .style2, .style2 #content #content_inner {
+                background: #F5F8F4;
+            }
+            .style2 #cs_menu .download_menu {
+                border-bottom: 2px solid #F5F8F4;
+            }
+            .style2 #tag_list a {
+                color: #AFC8AC;
+                border-color: #AFC8AC;
+            }
+            .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block tr td, .style2 .cheat_sheet_output_wrapper .cheat_sheet_note {
+                background: #F5F8F4;
+            }
+            .style2 .cheat_sheet_output_wrapper .cheat_sheet_note {
+                border-top: 1px solid #F5F8F4;
+            }
+            .style2 .cheat_sheet_output_wrapper h3.cheat_sheet_output_title {
+                                    color: #222;
+                            }
+            .style2 .cheat_sheet_output_block div {
+                border-color: #F5F8F4 !important;
+            }
+
+
+            .style2 .cheat_sheet_output_wrapper h3.cheat_sheet_output_title {
+                padding: 6px 13px;
+            }
+            .style2 .cheat_sheet_output_wrapper {
+                border-bottom: none;
+                background: none;
+                margin-bottom: 25px;
+            }
+            #downloads {
+                background: none;
+                border-top: none;
+                border-bottom: none;
+            }
+            .style2 .commentblock {
+                background: none;
+                margin-bottom: 35px;
+            }
+            .style2 .commentblock .commenter {
+                background: none;
+            }
+            .style2 .commentblock .commentext {
+                background: #fff;
+                border-radius: 3px;
+                padding: 1em;
+                box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            }
+
+                .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block {
+                    padding: 5px;
+                    border-radius: 3px;
+                    background: #fff;
+                    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+                }
+
+                .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block tr.altrow td, .style2 .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    background: #fff;
+                }</style><article><table
+border="0" cellspacing="0" width="100%" cellpadding="0" class="cheat_sheet_output"><tr><td
+width="32%" valign="top" class="cheat_sheet_output_sortable cheat_sheet_output_column_1"><section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_1186"><h3 class="cheat_sheet_output_title" id="title_3_1186">Subversion Resources</h3><div
+class="cheat_sheet_output_block" id="block_3_1186"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">Homepage</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;"><a
+href="http://subversion.apache.org/" target="_blank">http:/&#173;/su&#173;bve&#173;rsi&#173;on.a&#173;pa&#173;che.org/</a></div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">SVN Book</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;"><a
+href="http://svnbook.red-bean.com/" target="_blank">http:/&#173;/sv&#173;nbo&#173;ok.r&#173;ed&#173;-be&#173;an.com/</a></div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_175"><h3 class="cheat_sheet_output_title" id="title_3_175">Subversion Components</h3><div
+class="cheat_sheet_output_block" id="block_3_175"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">svn</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Command line program</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">svnversion</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Revision of working copy</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">svnlook</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Inspect repository</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">svnadmin</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Repository admini&#173;str&#173;ation</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">svndum&#173;pfilter</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Filter repository stream</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">mod_da&#173;v_svn</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Apache module</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">svnserve</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">SVN server (SVN protocol)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">svnsync</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Mirror repository</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_176"><h3 class="cheat_sheet_output_title" id="title_3_176">Subversion Protocols</h3><div
+class="cheat_sheet_output_block" id="block_3_176"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">file://</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Local machine</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">http://</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">HTTP (Apache)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">https://</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">HTTPS (SSL)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">svn://</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">SVN (svnserve)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">svn+ssh://</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">SVN over SSH</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_qanda" style="z-index: 30; page-break-inside: avoid;" id="block_13"><h3 class="cheat_sheet_output_title" id="title_3_13">Subversion Help</h3><div
+class="cheat_sheet_output_block" id="block_3_13"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_qanda"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn help</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn help import</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Show help for &quot;&#173;imp&#173;ort&#173;&quot; command</div></td></tr></table><div
+class="cheat_sheet_note"><div
+style="padding: 3px 8px;">The $ symbol is used to denote commands to be typed.</div></div></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_qanda" style="z-index: 30; page-break-inside: avoid;" id="block_1151"><h3 class="cheat_sheet_output_title" id="title_3_1151">Subversion Repository Admini&#173;str&#173;ation</h3><div
+class="cheat_sheet_output_block" id="block_3_1151"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_qanda"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svnadmin create &quot;&#173;/pa&#173;th/&#173;to/&#173;rep&#173;osi&#173;tor&#173;y&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Create new repository</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svnadmin setlog &quot;&#173;/pa&#173;th&quot; -r 7 messag&#173;e.txt</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Change log message for revision 7 to contents of file messag&#173;e.txt</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svnadmin dump &quot;&#173;/pa&#173;th/&#173;to/&#173;rep&#173;osi&#173;tor&#173;y&quot; &gt; filename</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Dump repository to file (backup)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svnadmin load &quot;&#173;/pa&#173;th/&#173;to/&#173;rep&#173;osi&#173;tor&#173;y&quot; &lt; filename</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Load repository from file (restore)</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_qanda" style="z-index: 30; page-break-inside: avoid;" id="block_1147"><h3 class="cheat_sheet_output_title" id="title_3_1147">Subversion Property Commands</h3><div
+class="cheat_sheet_output_block" id="block_3_1147"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_qanda"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn proplist &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">List properties</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn propset PROP VAL &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Set PROP to VAL for path.</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn propget PROP &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Get value of PROP</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn propedit PROP &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Edit PROP</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn propdel PROP &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Delete PROP</div></td></tr></table></div>
+</section></td><td
+class="cheat_sheet_output_column_spacer" width="2%">&nbsp;</td><td
+width="32%" valign="top" class="cheat_sheet_output_sortable cheat_sheet_output_column_2"><section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_qanda" style="z-index: 30; page-break-inside: avoid;" id="block_1153"><h3 class="cheat_sheet_output_title" id="title_3_1153">Subversion Checkout Working Copy</h3><div
+class="cheat_sheet_output_block" id="block_3_1153"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_qanda"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn checkout &quot;&#173;/pa&#173;th/&#173;to/&#173;rep&#173;osi&#173;tor&#173;y&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Checkout working copy into current folder</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn checkout &quot;&#173;/pa&#173;th/&#173;to/&#173;rep&#173;osi&#173;tor&#173;y&quot; &quot;&#173;/pa&#173;th/&#173;to/&#173;fol&#173;der&#173;&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Checkout working copy into target folder</div></td></tr></table></div>
+</section><section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_qanda" style="z-index: 30; page-break-inside: avoid;" id="block_1154"><h3 class="cheat_sheet_output_title" id="title_3_1154">Subversion Update Working Copy</h3><div
+class="cheat_sheet_output_block" id="block_3_1154"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_qanda"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn update &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Update path</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn update -r9 &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Update path to revision 9</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_qanda" style="z-index: 30; page-break-inside: avoid;" id="block_1152"><h3 class="cheat_sheet_output_title" id="title_3_1152">Subversion Add Files and Folders</h3><div
+class="cheat_sheet_output_block" id="block_3_1152"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_qanda"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn add *</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Add all items, recurs&#173;ively</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn add itemname</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Add itemname (if folder, adds recurs&#173;ively)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn add * --force</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Force recursion into versioned direct&#173;ories</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_qanda" style="z-index: 30; page-break-inside: avoid;" id="block_1150"><h3 class="cheat_sheet_output_title" id="title_3_1150">Subversion Commit Changes</h3><div
+class="cheat_sheet_output_block" id="block_3_1150"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_qanda"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn commit &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Commit changes to path</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn commit -m &quot;&#173;Mes&#173;sag&#173;e&quot; &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Commit with log message</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn commit -N &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Commit without recursion</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn import &quot;&#173;/pa&#173;th/&#173;to/&#173;fol&#173;der&#173;&quot; &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Import and commit local folder</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_qanda" style="z-index: 30; page-break-inside: avoid;" id="block_1155"><h3 class="cheat_sheet_output_title" id="title_3_1155">Subversion Deleting, Copying and Moving</h3><div
+class="cheat_sheet_output_block" id="block_3_1155"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_qanda"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn delete &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Delete path</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn -m &quot;&#173;Delete messag&#173;e&quot; delete &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Delete with log message</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn copy &quot;&#173;/so&#173;urc&#173;e&quot; &quot;&#173;/ta&#173;rge&#173;t&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Copy source to target</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn move &quot;&#173;/so&#173;urc&#173;e&quot; &quot;&#173;/ta&#173;rge&#173;t&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Move source to target</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_qanda" style="z-index: 30; page-break-inside: avoid;" id="block_1184"><h3 class="cheat_sheet_output_title" id="title_3_1184">Subversion Logs and Blame</h3><div
+class="cheat_sheet_output_block" id="block_3_1184"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_qanda"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn log &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Show log messages for path</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn blame &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Show commits for path</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_qanda" style="z-index: 30; page-break-inside: avoid;" id="block_1183"><h3 class="cheat_sheet_output_title" id="title_3_1183">Subversion Revert Changes</h3><div
+class="cheat_sheet_output_block" id="block_3_1183"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_qanda"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn revert &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Revert changes to path</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn revert -R &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Revert changes recurs&#173;ively</div></td></tr></table></div>
+</section></td><td
+class="cheat_sheet_output_column_spacer" width="2%">&nbsp;</td><td
+width="32%" valign="top" class="cheat_sheet_output_sortable cheat_sheet_output_column_3"><section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_qanda" style="z-index: 30; page-break-inside: avoid;" id="block_181"><h3 class="cheat_sheet_output_title" id="title_3_181">Subversion Differ&#173;ences Between Files</h3><div
+class="cheat_sheet_output_block" id="block_3_181"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_qanda"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn diff &quot;&#173;/pa&#173;th/&#173;fil&#173;e&quot;</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn diff &quot;&#173;/pa&#173;th/&#173;fil&#173;e@2&#173;&quot; &quot;&#173;/pa&#173;th/&#173;fil&#173;e@7&#173;&quot;</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn diff -r 2:7 &quot;&#173;/pa&#173;th/&#173;fol&#173;der&#173;&quot;</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_qanda" style="z-index: 30; page-break-inside: avoid;" id="block_1185"><h3 class="cheat_sheet_output_title" id="title_3_1185">Subversion Merge Changes</h3><div
+class="cheat_sheet_output_block" id="block_3_1185"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_qanda"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn merge -r2:7 &quot;&#173;ite&#173;m&quot; &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Apply diff between revisions 2 and 7 of &quot;&#173;ite&#173;m&quot; to path</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn merge &quot;&#173;url&#173;1&quot; &quot;&#173;url&#173;2&quot; &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Apply diff between &quot;&#173;url&#173;1&quot; and &quot;&#173;url&#173;2&quot; to path</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_qanda" style="z-index: 30; page-break-inside: avoid;" id="block_1149"><h3 class="cheat_sheet_output_title" id="title_3_1149">Subversion Miscel&#173;laneous Commands</h3><div
+class="cheat_sheet_output_block" id="block_3_1149"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_qanda"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn resolve &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Resolve conflict</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn cleanup &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Remove locks and complete operations</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn lock &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Lock path</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn unlock &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Unlock path</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn status &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">Get path status</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">$ svn cat &quot;&#173;/pa&#173;th&quot;</div><div
+style="padding: 3px 8px; margin: 0 8px 3px; border-left: 2px solid #AFC8AC;">View file contents</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_177"><h3 class="cheat_sheet_output_title" id="title_3_177">Subversion Item and Property Statuses</h3><div
+class="cheat_sheet_output_block" id="block_3_177"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1">&nbsp;</td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">No modifi&#173;cations (blank)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">A</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Addition</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">D</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Deletion</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">M</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Modified</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">R</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Item replaced</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">C</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">In conflict</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">X</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Externals definition</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">I</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Ignored</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">?</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Not in repository</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">!</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Item missing</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">~</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Object type changed</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_1148"><h3 class="cheat_sheet_output_title" id="title_3_1148">Subversion Argument Shortcuts</h3><div
+class="cheat_sheet_output_block" id="block_3_1148"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">-m &quot;&#173;Mes&#173;sag&#173;e&quot;</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">--message</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">-q</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">--quiet</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">-v</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">--verbose</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">-r</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">--revision</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">-c</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">--change</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">-t</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">--tran&#173;saction</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">-R</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">--recu&#173;rsive</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">-N</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">--non-&#173;rec&#173;ursive</div></td></tr></table></div>
+</section></td></tr></table><div
+id="tag_list" class="tac" style="padding: 40px 100px 0; line-height: 2.5;"> <span
+style="color: #999; white-space: nowrap;"><i
+class="fa fa-tag"></i> <a
+rel="tag" class="tag" href="https://cheatography.com/tag/development/">development</a></span> &nbsp; &nbsp; <span
+style="color: #999; white-space: nowrap;"><i
+class="fa fa-tag"></i> <a
+rel="tag" class="tag" href="https://cheatography.com/tag/commandline/">commandline</a></span> &nbsp; &nbsp; <span
+style="color: #999; white-space: nowrap;"><i
+class="fa fa-tag"></i> <a
+rel="tag" class="tag" href="https://cheatography.com/tag/server/">server</a></span> &nbsp; &nbsp; <span
+style="color: #999; white-space: nowrap;"><i
+class="fa fa-tag"></i> <a
+rel="tag" class="tag" href="https://cheatography.com/tag/sysadmin/">sysadmin</a></span> &nbsp; &nbsp; <span
+style="color: #999; white-space: nowrap;"><i
+class="fa fa-tag"></i> <a
+rel="tag" class="tag" href="https://cheatography.com/tag/subversion/">subversion</a></span> &nbsp; &nbsp; <span
+style="color: #999; white-space: nowrap;"><i
+class="fa fa-tag"></i> <a
+rel="tag" class="tag" href="https://cheatography.com/tag/svn/">svn</a></span> &nbsp; &nbsp; <span
+style="color: #999; white-space: nowrap;"><i
+class="fa fa-tag"></i> <a
+rel="tag" class="tag" href="https://cheatography.com/tag/version/">version</a></span> &nbsp; &nbsp; <span
+style="color: #999; white-space: nowrap;"><i
+class="fa fa-tag"></i> <a
+rel="tag" class="tag" href="https://cheatography.com/tag/control/">control</a></span> &nbsp; &nbsp; <span
+style="color: #999; white-space: nowrap;"><i
+class="fa fa-tag"></i> <a
+rel="tag" class="tag" href="https://cheatography.com/tag/vcs/">vcs</a></span></div>
+</article><div
+class="clear" style="margin-top: 50px;"></div><aside
+id="downloads" style="margin-top: 0;"><div
+class="clear"></div><div
+class="triptychdbll" style="float: none; margin: 0 auto; background: #F5F8F4; border-radius: 5px; border: 2px solid #AFC8AC; padding: 50px 30px 30px; box-sizing: border-box; position: relative;"><div
+id="download_icon" style="position: absolute; width: 50px; height: 50px; margin-left: -28px; top: -28px; left: 50%; border-radius: 100%; border: 3px solid #AFC8AC; background: #AFC8AC; font-size: 24px; text-align: center; line-height: 50px; color: #fff; ?>;"><i
+class="fa fa-fw fa-download" style="position: relative; left: 1px;"></i></div><h2 class="notopmargin" style="text-align: center;">Download the <span
+itemprop="name">Subversion Cheat Sheet</span></h2><div
+class="biptych1"><div
+class="padded">
+<a
+style="line-height: 1; display: block; height: 200px; overflow: hidden; position: relative; box-shadow: 1px 1px 3px #666; " class="imagelink" href="#" onclick="showPopup('https://cheatography.com//davechild/cheat-sheets/subversion/pdf/'); return false;"><img
+style="line-height: 1;" width="100%" src="http://media.cheatography.com/storage/thumb/davechild_subversion.750.jpg?last=1582663216"><span
+class="page_count" style="background-color: #F1F5F0">2 Pages</span></a><div
+style="display: none;">
+<span
+itemprop="url">https://cheatography.com/davechild/cheat-sheets/subversion/</span>
+<span
+itemprop="thumbnailUrl">//media.cheatography.com/storage/thumb/davechild_subversion.750.jpg</span></div></div></div><div
+class="biptych2"><div
+class="padded"><p
+class="padded"><strong>PDF</strong> (recommended)</p><ul
+class="noicon" style="margin-bottom: 20px;"><li><i
+class="fa fa-fw fa-file-pdf-o"></i> <a
+rel="alternate" target="_blank" href="https://cheatography.com/davechild/cheat-sheets/subversion/pdf/" onclick="showPopup('https://cheatography.com/davechild/cheat-sheets/subversion/pdf/'); trackDownload('PDF', this.href); return false;">PDF (2 pages)</a></li></ul><p
+class="padded"><strong>Alternative&nbsp;Downloads</strong></p><ul
+class="noicon"><li><i
+class="fa fa-fw fa-file-pdf-o"></i> <a
+rel="alternate" target="_blank" href="https://cheatography.com/davechild/cheat-sheets/subversion/pdf_bw/" onclick="showPopup('https://cheatography.com/davechild/cheat-sheets/subversion/pdf_bw/'); trackDownload('PDF - Black and White', this.href); return false;">PDF (black and white)</a></li><li><i
+class="fa fa-fw fa-file-text-o"></i> <a
+rel="alternate" target="_blank" href="https://cheatography.com/davechild/cheat-sheets/subversion/latex/" onclick="showPopup('https://cheatography.com/davechild/cheat-sheets/subversion/latex/'); trackDownload('LaTeX', this.href); return false;">LaTeX</a></li></ul></div></div><div
+class="clear"></div></div><div
+class="clear"></div> <script type="text/javascript">$(document).ready(function() {
+                    $('#download_box').hide();
+                    $('#download_box').css('position', 'fixed');
+
+                    updateSubsection();
+                    $('#cheat_sheet_section').change(function(){
+                        updateSubsection();
+                    });
+
+                });
+
+                function updateSubsection() {
+                    $('#subsection_programming, #subsection_software, #subsection_business, #subsection_education, #subsection_home, #subsection_games,  #thisdoesnotexist').hide();
+                    switch ($('#cheat_sheet_section').val()) {
+                                                case 'programming':
+                            $('#subsection_programming').show();
+                            break;
+                                                case 'software':
+                            $('#subsection_software').show();
+                            break;
+                                                case 'business':
+                            $('#subsection_business').show();
+                            break;
+                                                case 'education':
+                            $('#subsection_education').show();
+                            break;
+                                                case 'home':
+                            $('#subsection_home').show();
+                            break;
+                                                case 'games':
+                            $('#subsection_games').show();
+                            break;
+                                            }
+                }
+
+                var timeToGo = 5;
+                var downloadTimer = false;
+                var downloadTarget = false;
+                function showPopup(target) {
+window.location.replace(target);
+return false;
+                    downloadTarget = target;
+                    timeToGo = 5;
+                    doCountdown();
+                    downloadTimer = setInterval(doCountdown, 1000);
+                    $('#showClose').hide();
+                    $('#download_box').show();
+                }
+                function doCountdown() {
+                    $('#counter').text(timeToGo);
+                    timeToGo = timeToGo - 1;
+                    if (timeToGo <= 0) {
+                        $('#showClose').fadeIn();
+                        clearInterval(downloadTimer);
+                        window.location.replace(downloadTarget);
+                    }
+                }</script> <div
+style="display: none; padding: 100px; text-align: center; background: #fff; background: rgba(255, 255, 255, 0.9); z-index: 3000; left: 0; right: 0; top: 0; bottom: 0; display: none;" id="download_box"><p
+style="text-align: center; font-size: 1.5em; color: #333;">Your Download Will Begin Automatically in <span
+id="counter">5</span> Seconds.<span
+id="showClose"><br><a
+onclick="$('#download_box').hide(); return false;" id="closebox">Close</a></span></p></div></aside><div
+class="clear" style="margin-bottom: 50px;"></div><div
+id="comments"><div
+class="clear">&nbsp;</div><div
+class="triptych3"><div
+id="tourauthors" class="sidebar_box cheat_sheet_footer sidebar_box_first_row"><h2 class="newsectiontitle notopmargin">Created By</h2><div
+class="sidebar_box_row">
+<a
+rel="author" style="float: left; margin: 6px 10px 10px 0" href="https://cheatography.com/davechild/" class="imagelink"><img
+class="gravatar lazy" style="vertical-align: middle;" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/fd7e3b77a3f3007ff30d932b65084851.32.jpg" width="32" height="32" alt="DaveChild"></a><a
+rel="author" href="https://cheatography.com/davechild/" class="user_hover">DaveChild</a>
+<br><a
+target="_blank" href="https://aloneonahill.com/">https://aloneonahill.com</a></div><div
+class="clear"></div></div><div
+class="sidebar_box cheat_sheet_footer sidebar_box_first_row"><div
+class="sidebar_box_first_row"><h2 class="newsectiontitle">Metadata</h2></div><div
+class="sidebar_box_row"><ul
+class="small_content_list"><li>Languages:<meta
+itemprop="inLanguage" content="en"/>
+<a
+rel="tag" href="https://cheatography.com/language/en/">English</a></li><meta
+itemprop="datePublished" content="2012-02-25"><li>Published: <span
+class="publish_date">25th February, 2012</span></li><li>Last Updated: <span
+class="update_date">25th February, 2020</span></li><li>
+Rated: <span
+itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+<span
+itemprop="ratingValue">5</span> stars based on
+<span
+itemprop="ratingCount">16</span> ratings</span></li></ul></div></div><div
+class="sidebar_box"><div
+class="sidebar_box_first_row"><h2 class="newsectiontitle">Favourited By</h2></div><div
+class="sidebar_box_row"><p
+style="line-height: 36px; vertical-align: middle;">
+<a
+href="https://cheatography.com/memrek/" class="imagelink user_hover" title="memrek"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/30ccefb2740bf5bfd861cc63df7689e3.32.jpg" width="32" height="32" alt="memrek"></a>
+<a
+href="https://cheatography.com/thelazyhatguy/" class="imagelink user_hover" title="TheLazyHatGuy"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/6d52083d5c92b71ef08f71c65c5f35db.32.jpg" width="32" height="32" alt="TheLazyHatGuy"></a>
+<a
+href="https://cheatography.com/someone/" class="imagelink user_hover" title="Someone"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/9ba7fcceffd74feb97f424c1410d9d16.32.jpg" width="32" height="32" alt="Someone"></a>
+<a
+href="https://cheatography.com/ericthered/" class="imagelink user_hover" title="ericthered"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/8735c9a22b0b7949fe20fa1cc416eeec.32.jpg" width="32" height="32" alt="ericthered"></a>
+<a
+href="https://cheatography.com/daric/" class="imagelink user_hover" title="Daric"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/6842642bfe6a0636ba976cf0481bf179.32.jpg" width="32" height="32" alt="Daric"></a>
+<a
+href="https://cheatography.com/theseth/" class="imagelink user_hover" title="theseth"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/9e91cb48bd08a1baf47e40249ad62620.32.jpg" width="32" height="32" alt="theseth"></a>
+<a
+href="https://cheatography.com/rhorber/" class="imagelink user_hover" title="rhorber"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/942b325d9d2664685527856322add634.32.jpg" width="32" height="32" alt="rhorber"></a>
+<a
+href="https://cheatography.com/outlaw16/" class="imagelink user_hover" title="outlaw16"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/7b2b338ba1c040fa72aa802fd1cf9ac8.32.jpg" width="32" height="32" alt="outlaw16"></a>
+<a
+href="https://cheatography.com/alessandro/" class="imagelink user_hover" title="Alessandro"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/960c7ddca8229d7dd12a2a83adab57ad.32.jpg" width="32" height="32" alt="Alessandro"></a>
+<a
+href="https://cheatography.com/msb/" class="imagelink user_hover" title="msb"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/42495d927921be01fca5f301511503b5.32.jpg" width="32" height="32" alt="msb"></a>
+<a
+href="https://cheatography.com/ritalbradley/" class="imagelink user_hover" title="ritalbradley"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/1bf8cb71c923769dae989f86a330a783.32.jpg" width="32" height="32" alt="ritalbradley"></a>
+<span
+class="show_more_trigger"><br>and <a
+href="javascript:return false;" onclick="$('.show_more_trigger').hide(); $('.show_more_content').show(); return false;">19 more ...</a></span> <span
+class="show_more_content hidden">                                    <a
+href="https://cheatography.com/vinceswann/" class="imagelink user_hover" title="vinceswann"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/9c38897eb87ca1b4f667336ca1cdf7a3.32.jpg" width="32" height="32" alt="vinceswann"></a>
+<a
+href="https://cheatography.com/aberdean/" class="imagelink user_hover" title="aberdean"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/db37a82b38820a46ef4d2c14315939fd.32.jpg" width="32" height="32" alt="aberdean"></a>
+<a
+href="https://cheatography.com/dl-1991/" class="imagelink user_hover" title="DL 1991"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/0095f53c02dfb808dfd30f8cc2b08d49.32.jpg" width="32" height="32" alt="DL 1991"></a>
+<a
+href="https://cheatography.com/cynicalstoic/" class="imagelink user_hover" title="cynicalstoic"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/eb208a070c239e606cb34064f9b4cc38.32.jpg" width="32" height="32" alt="cynicalstoic"></a>
+<a
+href="https://cheatography.com/oxocode/" class="imagelink user_hover" title="oxocode"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/3352e04109872b0907818bbeda3b6f57.32.jpg" width="32" height="32" alt="oxocode"></a>
+<a
+href="https://cheatography.com/relizont/" class="imagelink user_hover" title="relizont"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/ab2584e3a201906447bfb122e1a55ba7.32.jpg" width="32" height="32" alt="relizont"></a>
+<a
+href="https://cheatography.com/theosis/" class="imagelink user_hover" title="Theosis"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/21111185cb4567f7059181d0559ea94f.32.jpg" width="32" height="32" alt="Theosis"></a>
+<a
+href="https://cheatography.com/akipta/" class="imagelink user_hover" title="akipta"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/aaa5e881c580fdca952bd9fb475b5cf2.32.jpg" width="32" height="32" alt="akipta"></a>
+<a
+href="https://cheatography.com/avalitan/" class="imagelink user_hover" title="avalitan"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/2ed7525a1bf1d2bf484beef042aa1996.32.jpg" width="32" height="32" alt="avalitan"></a>
+<a
+href="https://cheatography.com/petraeus/" class="imagelink user_hover" title="petraeus"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/e2952534013be59d9c64798ff3e4713c.32.jpg" width="32" height="32" alt="petraeus"></a>
+<a
+href="https://cheatography.com/ncapponi/" class="imagelink user_hover" title="ncapponi"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/d566bb46fa9bb296a8cec9e9d3bac644.32.jpg" width="32" height="32" alt="ncapponi"></a>
+<a
+href="https://cheatography.com/simspace/" class="imagelink user_hover" title="simspace"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/6ff55239f069e204b22596b14e1e63e6.32.jpg" width="32" height="32" alt="simspace"></a>
+<a
+href="https://cheatography.com/dttk/" class="imagelink user_hover" title="dttk"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/a12afd381ade1a279360de7e2b206fac.32.jpg" width="32" height="32" alt="dttk"></a>
+<a
+href="https://cheatography.com/gorillawit/" class="imagelink user_hover" title="gorillawit"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/ffd030a6b6ab2640433c768f1f7a6e38.32.jpg" width="32" height="32" alt="gorillawit"></a>
+<a
+href="https://cheatography.com/davechild/" class="imagelink user_hover" title="DaveChild"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/fd7e3b77a3f3007ff30d932b65084851.32.jpg" width="32" height="32" alt="DaveChild"></a>
+<a
+href="https://cheatography.com/sebbu/" class="imagelink user_hover" title="sebbu"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/f5c68c0b6ccafeae2b591cbbd63bf3e1.32.jpg" width="32" height="32" alt="sebbu"></a>
+<a
+href="https://cheatography.com/mishin/" class="imagelink user_hover" title="mishin"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/fc47e34663f359d08fdffd03098b0149.32.jpg" width="32" height="32" alt="mishin"></a>
+<a
+href="https://cheatography.com/wbbourne/" class="imagelink user_hover" title="Wbbourne"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/a9b61db9b493c4dfc4339800d6bcd876.32.jpg" width="32" height="32" alt="Wbbourne"></a>
+</span></p></div></div></div><div
+class="triptychdbll"><h2 class="newsectiontitle notopmargin">Comments</h2><div
+class="commentblock" id="comment4334" itemprop="comment" itemscope itemtype="http://schema.org/Comment"><p
+class="commenter"><span
+itemprop="author" itemscope itemtype="http://schema.org/Person">
+<img
+style="margin: 0 8px 0 0;" class="lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/202cc9656d82d88adbe3c39f63810d39.32.jpg" alt="Luke Mackenzie" width="32" height="32">
+<span
+itemprop="name">Luke Mackenzie</span>
+</span>
+<a
+href="https://cheatography.com:443/davechild/cheat-sheets/subversion/#comment4334" itemprop="datePublished" datetime="2012-08-21T12:10:29+00:00">12:10 21 Aug 12</a></p><p
+class="commentext" itemprop="text">Is this valid for Subversion 1.7.x?</p><div
+class="commentreply" id="reply_4334"></div></div><h2 class="newsectiontitle">Add a Comment</h2><div
+id="reply_default"><div
+id="comment_form"><form
+novalidate class="pageForm" id="commentForm" method="POST" action="https://cheatography.com:443/davechild/cheat-sheets/subversion/#comment_form">
+<input
+type="hidden" name="action" value="comment"/>
+<input
+type="hidden" name="spamkey" value="2.0200222981296E+20">
+<input
+type="text" name="website" id="comment_form_url" value="http://"><fieldset><legend>Your Comment</legend><div
+class="formrow"><p
+class="forminfo"><span>Please enter your name.</span></p><label
+for="commenter_name">Your Name</label><input
+required  type="text" id="commenter_name" name="commenter_name"><div
+class="clear"></div><ul
+class="error off"></ul><div
+class="clear"></div></div><div
+class="formrow"><p
+class="forminfo"><span>Please enter your email address</span></p><label
+for="commenter_email">Your Email Address</label><input
+required  type="email" id="commenter_email" name="commenter_email"><div
+class="clear"></div><ul
+class="error off"></ul><div
+class="clear"></div></div><div
+class="formrow"><p
+class="forminfo"><span>Please enter your Comment.</span></p><label
+for="comment_text">Your Comment</label><textarea cols="50" rows="5" name="comment_text" id="comment_text" required  id="comment_text" name="comment_text"></textarea><div
+class="clear"></div><ul
+class="error off"></ul><div
+class="clear"></div></div><div
+class="buttonrow"><button
+name="continue" id="continue" value="continue" type="submit" id="continue" name="continue"><div><span><strong>Post</strong> Your Comment</span></div></button><div
+class="clear"></div><ul
+class="error off"></ul><div
+class="clear"></div></div></fieldset></form></div></div> <script type="text/javascript">$(document).ready(function () {
+            $("#commentForm").validate({
+                unhighlight: function (el, error, valid, _orig) {
+                    if (el.id == 'sidebar_username') {
+                    }
+                    $(el).parent().find('p').addClass("valid");
+                    $(el).parent().find('p').removeClass("invalid");
+                    $(el).parent().find('ul.error').hide('slow');
+                },
+                highlight: function (el, error, valid, _orig) {
+                    $(el).parent().find('p').removeClass("valid");
+                    $(el).parent().find('p').addClass("invalid");
+                },
+                errorPlacement: function(error, el) {
+                    $(el).parent().find('ul.error').html('<li>' + $(error).text() + '</li>');
+                    $(el).parent().find('ul.error').show('slow');
+                    //$(el).parent().find('span').html($(error).text());
+                    return true;
+                }
+            });
+        });</script> <script type="text/javascript">function replyTo(reply_comment_id, thread) {
+        if (reply_comment_id == 0) {
+            // Move comment_form to reply_default
+            $("#comment_form").prependTo("#reply_default");
+            // Set comment_reply_id to 0
+            $("#comment_reply_id").val(0);
+            $('#replytext').hide();
+        } else {
+            // Move comment_form to reply_<reply_comment_id>
+            if (thread) {
+                $("#comment_form").prependTo("#comment_thread_" + reply_comment_id);
+            } else {
+                $("#comment_form").prependTo("#reply_" + reply_comment_id);
+            }
+            // Set comment_reply_id to <reply_comment_id>
+            $("#comment_reply_id").val(reply_comment_id);
+            $('#replytext').show();
+        }
+        return false;
+    }</script> </div><div
+class="clear"></div><h2 class="newsectiontitle">Related Cheat Sheets</h2><div
+class="clear"></div><div
+id="cheat_sheet_523" class="cheat_sheet_row altrow triptych1 tag-development tag-commandline tag-hg tag-code tag-beginner tag-mercurial tag-version tag-control tag-vcs lang-en rating-5" style="margin-bottom: 20px; position: relative; padding: 10px 0 0 0; min-height: 220px; background: #676767 url('https://cheatography.com/images/ajax-loader.gif') 50% 40% no-repeat;"><div
+style="z-index: 100; position: absolute; top: 0; padding: 0 0 0 6px; border-bottom-left-radius: 3px; right: 10px; color: #E9E9E9; background: #676767;"><i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i></div><a
+class="lazy" data-original="//media.cheatography.com/storage/thumb/codeshane_mercurial-hg.400.jpg?time=1463039584" style="position: absolute; bottom: 0; left: 10px; right: 10px; background: url('https://cheatography.com/images/spacer.png') -13px -52px no-repeat; height: 220px;" href="https://cheatography.com/codeshane/cheat-sheets/mercurial-hg/"></a><div
+style="z-index: 801; position: absolute; bottom: 0; left: 0; right: 0; color: #E9E9E9; background: #404040;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.3em; color: #E9E9E9; border-color: #E9E9E9;" href="https://cheatography.com/codeshane/cheat-sheets/mercurial-hg/">Mercurial (Hg) Cheat Sheet</a></strong><div
+class="extrainfo" style="display: none; line-height: 25px; padding: 0 0 5px;"><div
+style="padding: 5px 0 0;">Cheat Sheet for the Mercurial distributed source version control management tool. System.http://mercurial.selenic.com/</div><div
+class="triptych1"><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="http://media.cheatography.com/images/users/62e4cc88709e5913167723eda1b30fe3.16.jpg"><a
+style="color: #E9E9E9; border-color: #E9E9E9;" href="https://cheatography.com/codeshane/" class="user_hover">codeshane</a></span></div><div
+class="triptych2"><i
+class="fa fa-fw fa-calendar first-list"></i>15 Aug 12</div><div
+class="triptych3"><i
+class="fa fa-fw fa-book"></i>2 Pages</div><div
+class="clear"></div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #E9E9E9; border-color: #E9E9E9;" href="https://cheatography.com/tag/development/cheat-sheets/">development</a>, <a
+style="color: #E9E9E9; border-color: #E9E9E9;" href="https://cheatography.com/tag/commandline/cheat-sheets/">commandline</a>, <a
+style="color: #E9E9E9; border-color: #E9E9E9;" href="https://cheatography.com/tag/hg/cheat-sheets/">hg</a>, <a
+style="color: #E9E9E9; border-color: #E9E9E9;" href="https://cheatography.com/tag/code/cheat-sheets/">code</a>, <a
+style="color: #E9E9E9; border-color: #E9E9E9;" href="https://cheatography.com/tag/beginner/cheat-sheets/">beginner</a> and 4 more&nbsp;...</div></div></div></div><div
+class="clear"></div></div><div
+id="cheat_sheet_1798" class="cheat_sheet_row altrow triptych2 tag-subversion tag-svn tag-version tag-control tag-vcs lang-en rating-5" style="margin-bottom: 20px; position: relative; padding: 10px 0 0 0; min-height: 220px; background: #495464 url('https://cheatography.com/images/ajax-loader.gif') 50% 40% no-repeat;"><div
+style="z-index: 100; position: absolute; top: 0; padding: 0 0 0 6px; border-bottom-left-radius: 3px; right: 10px; color: #E3E5E8; background: #495464;"><i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i></div><a
+class="lazy" data-original="//media.cheatography.com/storage/thumb/lukasi_svn.400.jpg?time=1463015938" style="position: absolute; bottom: 0; left: 10px; right: 10px; background: url('https://cheatography.com/images/spacer.png') -13px -52px no-repeat; height: 220px;" href="https://cheatography.com/lukasi/cheat-sheets/svn/"></a><div
+style="z-index: 801; position: absolute; bottom: 0; left: 0; right: 0; color: #E3E5E8; background: #2E353F;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.3em; color: #E3E5E8; border-color: #E3E5E8;" href="https://cheatography.com/lukasi/cheat-sheets/svn/">SVN Cheat Sheet</a></strong><div
+class="extrainfo" style="display: none; line-height: 25px; padding: 0 0 5px;"><div
+style="padding: 5px 0 0;">SVN</div><div
+class="triptych1"><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="http://media.cheatography.com/images/users/d41d8cd98f00b204e9800998ecf8427e.16.jpg"><a
+style="color: #E3E5E8; border-color: #E3E5E8;" href="https://cheatography.com/lukasi/" class="user_hover">lukasi</a></span></div><div
+class="triptych2"><i
+class="fa fa-fw fa-calendar first-list"></i>6 Mar 14</div><div
+class="triptych3"><i
+class="fa fa-fw fa-book"></i>1 Page</div><div
+class="clear"></div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #E3E5E8; border-color: #E3E5E8;" href="https://cheatography.com/tag/subversion/cheat-sheets/">subversion</a>, <a
+style="color: #E3E5E8; border-color: #E3E5E8;" href="https://cheatography.com/tag/svn/cheat-sheets/">svn</a>, <a
+style="color: #E3E5E8; border-color: #E3E5E8;" href="https://cheatography.com/tag/version/cheat-sheets/">version</a>, <a
+style="color: #E3E5E8; border-color: #E3E5E8;" href="https://cheatography.com/tag/control/cheat-sheets/">control</a>, <a
+style="color: #E3E5E8; border-color: #E3E5E8;" href="https://cheatography.com/tag/vcs/cheat-sheets/">vcs</a></div></div></div></div><div
+class="clear"></div></div><div
+id="cheat_sheet_2245" class="cheat_sheet_row altrow triptych3 tag-development tag-version tag-control tag-vcs tag-bzr tag-branches tag-canonical tag-bazaar lang-en rating-3" style="margin-bottom: 20px; position: relative; padding: 10px 0 0 0; min-height: 220px; background: #244365 url('https://cheatography.com/images/ajax-loader.gif') 50% 40% no-repeat;"><div
+style="z-index: 100; position: absolute; top: 0; padding: 0 0 0 6px; border-bottom-left-radius: 3px; right: 10px; color: #DBE1E9; background: #244365;"><i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i></div><a
+class="lazy" data-original="//media.cheatography.com/storage/thumb/deleted-3973_bazaar-version-control-system.400.jpg?time=1463121392" style="position: absolute; bottom: 0; left: 10px; right: 10px; background: url('https://cheatography.com/images/spacer.png') -13px -52px no-repeat; height: 220px;" href="https://cheatography.com/deleted-3973/cheat-sheets/bazaar-version-control-system/"></a><div
+style="z-index: 801; position: absolute; bottom: 0; left: 0; right: 0; color: #DBE1E9; background: #162A3F;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.3em; color: #DBE1E9; border-color: #DBE1E9;" href="https://cheatography.com/deleted-3973/cheat-sheets/bazaar-version-control-system/">Bazaar version control system Cheat Sheet</a></strong><div
+class="extrainfo" style="display: none; line-height: 25px; padding: 0 0 5px;"><div
+style="padding: 5px 0 0;">Most used Bazaar commands</div><div
+class="triptych1"><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="http://media.cheatography.com/images/users/e0645e96446596e040dadd9c101ec23b.16.jpg"><a
+style="color: #DBE1E9; border-color: #DBE1E9;" href="https://cheatography.com/deleted-3973/" class="user_hover">[deleted]</a></span></div><div
+class="triptych2"><i
+class="fa fa-fw fa-calendar first-list"></i>17 Jun 14</div><div
+class="triptych3"><i
+class="fa fa-fw fa-book"></i>1 Page</div><div
+class="clear"></div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #DBE1E9; border-color: #DBE1E9;" href="https://cheatography.com/tag/development/cheat-sheets/">development</a>, <a
+style="color: #DBE1E9; border-color: #DBE1E9;" href="https://cheatography.com/tag/version/cheat-sheets/">version</a>, <a
+style="color: #DBE1E9; border-color: #DBE1E9;" href="https://cheatography.com/tag/control/cheat-sheets/">control</a>, <a
+style="color: #DBE1E9; border-color: #DBE1E9;" href="https://cheatography.com/tag/vcs/cheat-sheets/">vcs</a>, <a
+style="color: #DBE1E9; border-color: #DBE1E9;" href="https://cheatography.com/tag/bzr/cheat-sheets/">bzr</a> and 3 more&nbsp;...</div></div></div></div><div
+class="clear"></div></div><div
+class="clear"></div><h2 class="newsectiontitle">More Cheat Sheets by DaveChild</h2><div
+class="clear"></div><div
+id="cheat_sheet_5" class="cheat_sheet_row altrow triptych1 tag-development tag-regex tag-regular tag-expressions tag-programming lang-en rating-5" style="margin-bottom: 20px; position: relative; padding: 10px 0 0 0; min-height: 220px; background: #9B0436 url('https://cheatography.com/images/ajax-loader.gif') 50% 40% no-repeat;"><div
+style="z-index: 100; position: absolute; top: 0; padding: 0 0 0 6px; border-bottom-left-radius: 3px; right: 10px; color: #F4D4DF; background: #9B0436;"><i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i></div><a
+class="lazy" data-original="//media.cheatography.com/storage/thumb/davechild_regular-expressions.400.jpg?time=1584011681" style="position: absolute; bottom: 0; left: 10px; right: 10px; background: url('https://cheatography.com/images/spacer.png') -13px -52px no-repeat; height: 220px;" href="https://cheatography.com/davechild/cheat-sheets/regular-expressions/"></a><div
+style="z-index: 801; position: absolute; bottom: 0; left: 0; right: 0; color: #F4D4DF; background: #610222;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.3em; color: #F4D4DF; border-color: #F4D4DF;" href="https://cheatography.com/davechild/cheat-sheets/regular-expressions/">Regular Expressions Cheat Sheet</a></strong><div
+class="extrainfo" style="display: none; line-height: 25px; padding: 0 0 5px;"><div
+style="padding: 5px 0 0;">A quick reference guide for regular expressions (regex), including symbols, ranges, grouping, assertions and some sample patterns to get you started.</div><div
+class="triptych1"><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="http://media.cheatography.com/images/users/fd7e3b77a3f3007ff30d932b65084851.16.jpg"><a
+style="color: #F4D4DF; border-color: #F4D4DF;" href="https://cheatography.com/davechild/" class="user_hover">DaveChild</a></span></div><div
+class="triptych2"><i
+class="fa fa-fw fa-calendar first-list"></i>19 Oct 11</div><div
+class="triptych3"><i
+class="fa fa-fw fa-book"></i>1 Page</div><div
+class="clear"></div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #F4D4DF; border-color: #F4D4DF;" href="https://cheatography.com/tag/development/cheat-sheets/">development</a>, <a
+style="color: #F4D4DF; border-color: #F4D4DF;" href="https://cheatography.com/tag/regex/cheat-sheets/">regex</a>, <a
+style="color: #F4D4DF; border-color: #F4D4DF;" href="https://cheatography.com/tag/regular/cheat-sheets/">regular</a>, <a
+style="color: #F4D4DF; border-color: #F4D4DF;" href="https://cheatography.com/tag/expressions/cheat-sheets/">expressions</a>, <a
+style="color: #F4D4DF; border-color: #F4D4DF;" href="https://cheatography.com/tag/programming/cheat-sheets/">programming</a></div></div></div></div><div
+class="clear"></div></div><div
+id="cheat_sheet_49" class="cheat_sheet_row altrow triptych2 tag-bash tag-nano tag-linux tag-ls tag-commandline tag-ubuntu tag-server tag-sysadmin tag-shell lang-en rating-5" style="margin-bottom: 20px; position: relative; padding: 10px 0 0 0; min-height: 220px; background: #407323 url('https://cheatography.com/images/ajax-loader.gif') 50% 40% no-repeat;"><div
+style="z-index: 100; position: absolute; top: 0; padding: 0 0 0 6px; border-bottom-left-radius: 3px; right: 10px; color: #E1EBDA; background: #407323;"><i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i></div><a
+class="lazy" data-original="//media.cheatography.com/storage/thumb/davechild_linux-command-line.400.jpg?time=1582977076" style="position: absolute; bottom: 0; left: 10px; right: 10px; background: url('https://cheatography.com/images/spacer.png') -13px -52px no-repeat; height: 220px;" href="https://cheatography.com/davechild/cheat-sheets/linux-command-line/"></a><div
+style="z-index: 801; position: absolute; bottom: 0; left: 0; right: 0; color: #E1EBDA; background: #284816;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.3em; color: #E1EBDA; border-color: #E1EBDA;" href="https://cheatography.com/davechild/cheat-sheets/linux-command-line/">Linux Command Line Cheat Sheet</a></strong><div
+class="extrainfo" style="display: none; line-height: 25px; padding: 0 0 5px;"><div
+style="padding: 5px 0 0;">A cheat sheet of the commands I use most for Linux, with popup links to man pages.</div><div
+class="triptych1"><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="http://media.cheatography.com/images/users/fd7e3b77a3f3007ff30d932b65084851.16.jpg"><a
+style="color: #E1EBDA; border-color: #E1EBDA;" href="https://cheatography.com/davechild/" class="user_hover">DaveChild</a></span></div><div
+class="triptych2"><i
+class="fa fa-fw fa-calendar first-list"></i>28 Oct 11</div><div
+class="triptych3"><i
+class="fa fa-fw fa-book"></i>2 Pages</div><div
+class="clear"></div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #E1EBDA; border-color: #E1EBDA;" href="https://cheatography.com/tag/bash/cheat-sheets/">bash</a>, <a
+style="color: #E1EBDA; border-color: #E1EBDA;" href="https://cheatography.com/tag/nano/cheat-sheets/">nano</a>, <a
+style="color: #E1EBDA; border-color: #E1EBDA;" href="https://cheatography.com/tag/linux/cheat-sheets/">linux</a>, <a
+style="color: #E1EBDA; border-color: #E1EBDA;" href="https://cheatography.com/tag/ls/cheat-sheets/">ls</a>, <a
+style="color: #E1EBDA; border-color: #E1EBDA;" href="https://cheatography.com/tag/commandline/cheat-sheets/">commandline</a> and 4 more&nbsp;...</div></div></div></div><div
+class="clear"></div></div><div
+id="cheat_sheet_14" class="cheat_sheet_row altrow triptych3 tag-css tag-webdesign tag-web tag-design tag-frontend lang-en rating-5" style="margin-bottom: 20px; position: relative; padding: 10px 0 0 0; min-height: 220px; background: #AB6421 url('https://cheatography.com/images/ajax-loader.gif') 50% 40% no-repeat;"><div
+style="z-index: 100; position: absolute; top: 0; padding: 0 0 0 6px; border-bottom-left-radius: 3px; right: 10px; color: #F7E8DA; background: #AB6421;"><i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i></div><a
+class="lazy" data-original="//media.cheatography.com/storage/thumb/davechild_css2.400.jpg?time=1582663704" style="position: absolute; bottom: 0; left: 10px; right: 10px; background: url('https://cheatography.com/images/spacer.png') -13px -52px no-repeat; height: 220px;" href="https://cheatography.com/davechild/cheat-sheets/css2/"></a><div
+style="z-index: 801; position: absolute; bottom: 0; left: 0; right: 0; color: #F7E8DA; background: #6B3E15;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.3em; color: #F7E8DA; border-color: #F7E8DA;" href="https://cheatography.com/davechild/cheat-sheets/css2/">CSS2 Cheat Sheet</a></strong><div
+class="extrainfo" style="display: none; line-height: 25px; padding: 0 0 5px;"><div
+style="padding: 5px 0 0;">A quick reference guide for CSS, listing selector syntax, properties, units and other useful bits of information.</div><div
+class="triptych1"><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="http://media.cheatography.com/images/users/fd7e3b77a3f3007ff30d932b65084851.16.jpg"><a
+style="color: #F7E8DA; border-color: #F7E8DA;" href="https://cheatography.com/davechild/" class="user_hover">DaveChild</a></span></div><div
+class="triptych2"><i
+class="fa fa-fw fa-calendar first-list"></i>19 Oct 11</div><div
+class="triptych3"><i
+class="fa fa-fw fa-book"></i>2 Pages</div><div
+class="clear"></div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #F7E8DA; border-color: #F7E8DA;" href="https://cheatography.com/tag/css/cheat-sheets/">css</a>, <a
+style="color: #F7E8DA; border-color: #F7E8DA;" href="https://cheatography.com/tag/webdesign/cheat-sheets/">webdesign</a>, <a
+style="color: #F7E8DA; border-color: #F7E8DA;" href="https://cheatography.com/tag/web/cheat-sheets/">web</a>, <a
+style="color: #F7E8DA; border-color: #F7E8DA;" href="https://cheatography.com/tag/design/cheat-sheets/">design</a>, <a
+style="color: #F7E8DA; border-color: #F7E8DA;" href="https://cheatography.com/tag/frontend/cheat-sheets/">frontend</a></div></div></div></div><div
+class="clear"></div></div><div
+class="clear"></div></div><div
+id="login_popup" class="footer_popup"><div
+id="login_popup_inner" class="footer_popup_inner">
+What could you use a cheat sheet for?<br>Please <a
+href="https://cheatography.com/members/login">login</a> or <a
+href="https://cheatography.com/members/register/">register</a> and make your own today!</div></div><div
+class="clear"></div></div></div></div><div
+class="clear"></div></div></div><div
+class="clear"></div><div
+id="footer"><div
+id="footer_inner"><div
+class="biptychl"><h2>Latest Cheat Sheet</h2><div
+class="cheat_sheet_box" style="margin: 0 0 20px; padding: 0 0 15px"><div
+class="inner" style="padding: 5px 10px 0;"><div
+itemscope itemtype="http://schema.org/CreativeWork" id="cheat_sheet_27121" class="cheat_sheet_row altrow tag-bio lang-en rating-unrated" style="margin-bottom: 20px; position: relative; padding: 10px; min-height: 220px; background: #BA7878;"><div
+class="triptych1" style="position: relative; background: url('https://cheatography.com/images/ajax-loader.gif') 50% 40% no-repeat; height: 250px;"><a
+class="lazy imagelink" data-original="//media.cheatography.com/storage/thumb/katiefocht_unit-7-chp-23-notes.400.jpg?time=1615849484" style="box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); position: absolute; top: 0; left: 0; right: 0; background: url('https://cheatography.com/images/spacer.png') 0 0 no-repeat; background-size: cover; height: 220px;" href="https://cheatography.com/katiefocht/cheat-sheets/unit-7-chp-23-notes/"></a><div
+style="position: absolute; bottom: 33px; left: 3px;"><span
+class="page_count" style="background-color: #FBECEC; white-space: nowrap;"><i
+class="fa fa-fw fa-book"></i>1 Page</span></div><div
+style="position: absolute; top: 230px; text-align: center; left: 0; right: 0; color: #FBECEC;"><i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> &nbsp; (0)</div></div><div
+class="triptychdblr" style="color: #FBECEC; background: #754B4B; min-height: 250px;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.7em; color: #FBECEC; border-color: #FBECEC;" href="https://cheatography.com/katiefocht/cheat-sheets/unit-7-chp-23-notes/" itemprop="url"><span
+itemprop="name">Unit 7 chp 23 notes Cheat Sheet</span></a></strong><div
+class="" style="line-height: 2; padding: 0;"><div
+style="padding: 5px 0 15px;">unit 7 chapter 23 notes</div><div><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="http://media.cheatography.com/images/users/33750c342fd491c0b8590c78f53811be.16.jpg"><a
+style="color: #FBECEC; border-color: #FBECEC;" href="https://cheatography.com/katiefocht/" class="user_hover">katiefocht</a></span></div><div><i
+class="fa fa-fw fa-calendar second-list" date-last-update="2021-03-15 23:04:44"></i>15 Mar 21</div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #FBECEC; border-color: #FBECEC;" href="https://cheatography.com/tag/bio/cheat-sheets/">bio</a></div></div></div></div><div
+class="clear"></div></div></div></div></div><div
+class="biptychr"><h2>Random Cheat Sheet</h2><div
+class="sidebar_box" style="margin: 0 0 20px; padding: 0 0 15px"><div
+class="inner" style="padding: 5px 10px 0;"><div
+id="cheat_sheet_14465" class="cheat_sheet_row altrow tag-science tag-reduction tag-batteries tag-chemistry tag-cells tag-highschool tag-oxidation tag-gr-12 tag-electrochemistry tag-galvanic tag-electrolysis tag-redox tag-disproportionation lang-en rating-unrated" style="margin-bottom: 20px; position: relative; padding: 10px; min-height: 220px; background: #B45002;"><div
+class="triptych1" style="position: relative; background: url('https://cheatography.com/images/ajax-loader.gif') 50% 40% no-repeat; height: 250px;"><a
+class="lazy imagelink" data-original="//media.cheatography.com/storage/thumb/nescafeabusive32_gr-12-electrochemistry.400.jpg?time=1516863790" style="box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); position: absolute; top: 0; left: 0; right: 0; background: url('https://cheatography.com/images/spacer.png') 0 0 no-repeat; background-size: cover; height: 220px;" href="https://cheatography.com/nescafeabusive32/cheat-sheets/gr-12-electrochemistry/"></a><div
+style="position: absolute; bottom: 33px; left: 3px;"><span
+class="page_count" style="background-color: #F9E4D3; white-space: nowrap;"><i
+class="fa fa-fw fa-book"></i>1 Page</span></div><div
+style="position: absolute; top: 230px; text-align: center; left: 0; right: 0; color: #F9E4D3;"><i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> &nbsp; (0)</div></div><div
+class="triptychdblr" style="color: #F9E4D3; background: #703201; min-height: 250px;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.7em; color: #F9E4D3; border-color: #F9E4D3;" href="https://cheatography.com/nescafeabusive32/cheat-sheets/gr-12-electrochemistry/" itemprop="url"><span
+itemprop="name">Gr. 12 Electrochemistry Cheat Sheet</span></a></strong><div
+class="" style="line-height: 2; padding: 0;"><div><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="http://media.cheatography.com/images/users/43219da0b1277df9d708a284b2632f64.16.jpg"><a
+style="color: #F9E4D3; border-color: #F9E4D3;" href="https://cheatography.com/nescafeabusive32/" class="user_hover">nescafeabusive32</a></span></div><div><i
+class="fa fa-fw fa-calendar second-list" date-last-update="2018-01-25 07:03:10"></i>25 Jan 18</div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #F9E4D3; border-color: #F9E4D3;" href="https://cheatography.com/tag/science/cheat-sheets/">science</a>, <a
+style="color: #F9E4D3; border-color: #F9E4D3;" href="https://cheatography.com/tag/reduction/cheat-sheets/">reduction</a>, <a
+style="color: #F9E4D3; border-color: #F9E4D3;" href="https://cheatography.com/tag/batteries/cheat-sheets/">batteries</a>, <a
+style="color: #F9E4D3; border-color: #F9E4D3;" href="https://cheatography.com/tag/chemistry/cheat-sheets/">chemistry</a>, <a
+style="color: #F9E4D3; border-color: #F9E4D3;" href="https://cheatography.com/tag/cells/cheat-sheets/">cells</a> and 8 more&nbsp;...</div></div></div></div><div
+class="clear"></div></div></div></div></div><div
+class="clear"></div><div
+class="triptych1"><h2>About Cheatography</h2><div
+class="sidebar_box"><div
+class="sidebar_box_row"><strong><a
+href="https://cheatography.com/about/">Cheatography</a></strong> is a collection of <strong><a
+href="https://cheatography.com/explore/">4423 cheat sheets</a></strong> and quick references in <strong><a
+href="https://cheatography.com/language/">25 languages</a></strong> for everything from <strong><a
+href="https://cheatography.com/tag/development/">programming</a></strong> to <strong><a
+href="https://cheatography.com/tag/french/">French</a></strong>!</div></div></div><div
+class="triptych2"><div
+class="sidebar_box"><div
+class="sidebar_box_first_row"><h4>Behind the Scenes</h4></div><div
+class="sidebar_box_row">If you have any problems, or just want to say hi, you can find us right here:</div><div
+class="sidebar_box_row"><div
+class="biptych1"><a
+class="imagelink" style="float: left; margin: 5px 8px 0 0;" href="https://cheatography.com/davechild/"><img
+class="lazy gravatar" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/fd7e3b77a3f3007ff30d932b65084851.32.jpg" width="32" height="32" alt="DaveChild"></a> <a
+href="https://cheatography.com/davechild/" class="user_hover" style="line-height: 42px;">DaveChild</a><div
+class="clear"></div></div><div
+class="biptych2"><a
+class="imagelink" style="float: left; margin: 5px 8px 0 0;" href="https://cheatography.com/spaceduck/"><img
+class="lazy gravatar" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/e5f4dc698559e9cdd546c749924c2342.32.jpg" width="32" height="32" alt="SpaceDuck"></a> <a
+href="https://cheatography.com/spaceduck/" class="user_hover" style="line-height: 42px;">SpaceDuck</a><div
+class="clear"></div></div><div
+class="biptych1"><a
+class="imagelink" style="float: left; margin: 5px 8px 0 0;" href="https://cheatography.com/cheatography/"><img
+class="lazy gravatar" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/ae07a15380055b9d1da4dd5fb7538457.32.jpg" width="32" height="32" alt="Cheatography"></a> <a
+href="https://cheatography.com/cheatography/" class="user_hover" style="line-height: 42px;">Cheatography</a><div
+class="clear"></div></div></div><div
+class="clear"></div></div></div><div
+class="triptych3"><h2>Recent Activity</h2><div
+class="sidebar_box"><div
+class="sidebar_box_row footer_recent_activity_1"><a
+class="imagelink" style="float: left; margin: 5px 8px 5px 0;" href="https://cheatography.com/katiefocht/"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/33750c342fd491c0b8590c78f53811be.32.jpg" width="32" height="32" alt="katiefocht"></a> <a
+href="https://cheatography.com/katiefocht/" class="user_hover">katiefocht</a> published <a
+href="https://cheatography.com/katiefocht/cheat-sheets/unit-7-chp-23-notes/">Unit 7 chp 23 notes</a>.<br><span
+class="sidebar_event_date">2 hours 29 mins ago</span></div><div
+class="sidebar_box_row footer_recent_activity_2"><a
+class="imagelink" style="float: left; margin: 5px 8px 5px 0;" href="https://cheatography.com/brice103/"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/36881641c25c24f33ad4a1ccab8c12af.32.jpg" width="32" height="32" alt="brice103"></a> <a
+href="https://cheatography.com/brice103/" class="user_hover">brice103</a> published <a
+href="https://cheatography.com/brice103/cheat-sheets/literary-terms/">Literary Terms</a>.<br><span
+class="sidebar_event_date">5 hours 13 mins ago</span></div><div
+class="sidebar_box_row footer_recent_activity_3"><a
+class="imagelink" style="float: left; margin: 5px 8px 5px 0;" href="https://cheatography.com/gcacars/"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/76f5d6020f8cd2c9b08847ba52db6ae5.32.jpg" width="32" height="32" alt="gcacars"></a> <a
+href="https://cheatography.com/gcacars/" class="user_hover">gcacars</a> published <a
+href="https://cheatography.com/gcacars/cheat-sheets/arch/">Arch</a>.<br><span
+class="sidebar_event_date">7 hours 29 mins ago</span></div><div
+class="sidebar_box_row footer_recent_activity_4"><a
+class="imagelink" style="float: left; margin: 5px 8px 5px 0;" href="https://cheatography.com/skyharbour/"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/e22d7db695329ef2ba7e38d3f7090285.32.jpg" width="32" height="32" alt="SkyHarbour"></a> <a
+href="https://cheatography.com/skyharbour/" class="user_hover">SkyHarbour</a> published <a
+href="https://cheatography.com/skyharbour/cheat-sheets/hebrew-ii-midterm-grammar-concepts/">Hebrew II Midterm Grammar concepts</a>.<br><span
+class="sidebar_event_date">7 hours 39 mins ago</span></div><div
+class="sidebar_box_row sidebar_box_last_row footer_recent_activity_5"><a
+class="imagelink" style="float: left; margin: 5px 8px 5px 0;" href="https://cheatography.com/faq/"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/cb38b22e88ac6bb1e0c7e516a811912d.32.jpg" width="32" height="32" alt="faq"></a> <a
+href="https://cheatography.com/faq/" class="user_hover">faq</a> updated <a
+href="https://cheatography.com/faq/cheat-sheets/python-for-interview/">python for interview</a>.<br><span
+class="sidebar_event_date">12 hours 23 mins ago</span></div><div
+class="clear"></div></div></div><div
+class="clear"></div><div
+class="legal"><div
+class="legal_left">
+&copy; 2011  - 2021 Cheatography.com &nbsp; | &nbsp; <a
+rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/uk/">CC License</a> &nbsp; | &nbsp; <a
+href="https://cheatography.com/terms-and-conditions/">Terms</a> &nbsp; | &nbsp;  <a
+href="https://cheatography.com/privacy/">Privacy</a></div><div
+class="legal_right">
+<a
+href="https://cheatography.com/explore/new/rss/"><i
+class="fa fa-rss-square"></i> Latest Cheat Sheets RSS Feed</a></div><div
+class="clear"></div></div><div
+class="clear"></div></div><div
+class="clear"></div></div><div
+class="clear"></div></div></div></body><head><link
+href="https://cheatography.com/scripts/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css"> <script type="text/javascript" src="https://cheatography.com/scripts/fancybox/jquery.fancybox.pack.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.cookie.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.formalize.min.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.hoverintent.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.tagsinput.min.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.matchheight.min.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.validation.min.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.additional-validation.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.hoverIntent.minified.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/chosen.jquery.min.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.lazyload.min.js"></script> <link
+href='http://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'><!--[if lt IE 7]> <script type="text/javascript" src="https://cheatography.com/scripts/iepngfix.htc"></script> <style type="text/css">body {
+                behavior: url("https://cheatography.com/scripts/csshover.htc");
+            }</style><![endif]-->
+<!--[if IE 7]><style type="text/css"></style><![endif]--> <script type="text/javascript" src="https://cheatography.com/scripts/mobile.min.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/ajax.min.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/useful.min.js?v=2&amp;q=1615858602"></script> <script type="text/javascript">$(document).ready(function() {
+            $(".lazy").lazyload({
+                effect : "fadeIn",
+                failure_limit : 10
+            });
+            // Hide elements not relevant to non-logged-in users
+            var loggedIn = $.cookie('frontLoggedIn');
+            var loggedInUserId = $.cookie('frontUserId');
+            var isAdmin = $.cookie('frontUserAdmin');
+            if (loggedIn == 1) {
+                // Replacements
+                $('.replace_username').html($.cookie('frontUserName'));
+                $('a.replace_userlink, .replace_userlink a').each(function(){
+                    var oldHref = $(this).attr('href');
+                    var newHref = oldHref.replace('davechild', $.cookie('frontUserAlias'));
+                    $(this).attr('href', newHref);
+                });
+                $('.replace_usergravatar').attr('src', $.cookie('frontUserAvatar32'));
+                // Show and hide
+                //$('.logged_in').show();
+                $('.logged_out').hide();
+
+                if (isAdmin) {
+                    $('.admin_view').show();
+                }
+
+                $('.user_view').each(function(){
+                    var userIds = $(this).attr('data-userid').split(',');
+                    if ($.inArray(loggedInUserId, userIds)) {
+                        $(this).show();
+                    }
+                });
+
+            } else {
+                $('.logged_in').hide();
+                //$('.logged_out').show();
+            }
+            //addthis.init();
+        });</script> </head>
+<!-- Mirrored from cheatography.com/davechild/cheat-sheets/subversion/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Mar 2021 01:37:26 GMT -->
+</html>

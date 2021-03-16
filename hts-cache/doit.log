@@ -1,0 +1,8 @@
+http://127.0.0.1:5500/cheatography.com/davechild/cheat-sheets
+File generated automatically on Mon, 15 Mar 2021 21:31:31, do NOT edit
+
+To update a mirror, just launch httrack without any parameters
+The existing cache will be used (and modified)
+To have other options, retype all parameters and launch HTTrack
+To continue an interrupted mirror, just launch httrack without any parameters
+

@@ -1,0 +1,248 @@
+<h1 id="mysql-cheatsheet">MySQL Cheatsheet</h1>
+<ul>
+<li><a href="#changing-tables">Changing Tables</a></li>
+<li><a href="#check-and-repair-tables">Check and Repair Tables</a></li>
+<li><a href="#create-tables">Create Tables</a></li>
+<li><a href="#delete">Delete</a></li>
+<li><a href="#get-size-in-mb">Get Size in MB</a></li>
+<li><a href="#indexes">Indexes</a></li>
+<li><a href="#insert-data">Insert Data</a></li>
+<li><a href="#performance-schema-metrics">Performance Schema Metrics</a></li>
+<li><a href="#permissions">Permissions</a></li>
+<li><a href="#repair-table">Repair Table</a></li>
+</ul>
+<h2 id="permissions">Permissions</h2>
+<p>Create Database:</p>
+<pre><code>mysql&gt; CREATE DATABASE my_db;</code></pre>
+<p>Create User:</p>
+<pre><code>mysql&gt; CREATE USER &#39;user1&#39;@&#39;%&#39; IDENTIFIED BY &#39;securepass&#39;;</code></pre>
+<p>Grant User all Permissions to Database:</p>
+<pre><code>mysql&gt; GRANT ALL PRIVILEGES ON my_db.* TO &#39;user1&#39;@&#39;%&#39;;</code></pre>
+<p>Grant User all Permissions to Database in AWS RDS:</p>
+<pre><code>mysql&gt; GRANT SELECT, UPDATE, DELETE, INSERT, CREATE, DROP, INDEX, ALTER, LOCK TABLES, EXECUTE, CREATE TEMPORARY TABLES, EXECUTE, TRIGGER, CREATE VIEW, SHOW VIEW, EVENT ON my_db.* TO user1@&#39;%&#39;;</code></pre>
+<p>Flush:</p>
+<pre><code>mysql&gt; FLUSH PRIVILEGES;</code></pre>
+<h2 id="create-tables">Create Tables</h2>
+<p>Create a table:</p>
+<pre><code>mysql&gt; CREATE TABLE domains (
+  id INT(10) NOT NULL AUTO_INCREMENT,
+  domain varchar(50) NOT NULL, 
+  owner  varchar(50),
+  year_registered int(4)
+);</code></pre>
+<p>Create a table with primary key:</p>
+<pre><code>mysql&gt; CREATE TABLE domains (
+  id INT(10) NOT NULL AUTO_INCREMENT,
+  domain varchar(50) NOT NULL, 
+  owner  varchar(50),
+  year_registered int(4),
+  PRIMARY KEY (domain) 
+);</code></pre>
+<p>Create a table as a select query:</p>
+<pre><code>mysql&gt; CREATE TABLE purchases_fnb_2016 
+       AS 
+         SELECT * FROM customers where date &gt;= &#39;2016-01-01 00:00:00&#39; 
+         AND date  &lt;= &#39;2016-10-29 00:00:00&#39; 
+         AND bank = &#39;fnb&#39;
+;</code></pre>
+<p>Create a table with a boolean data type:</p>
+<pre><code>CREATE TABLE myusers(name VARCHAR(50), matriculated BOOLEAN);</code></pre>
+<p>Insert with boolean data:</p>
+<pre><code>INSERT INTO myusers VALUES(&#39;tom&#39;, False);</code></pre>
+<p>Read data:</p>
+<pre><code>mysql&gt; select name, matriculated from myusers limit 1;
++------+--------------+
+| name | matriculated |
++------+--------------+
+| tom  |            0 |
++------+--------------+</code></pre>
+<p>Use IF statement and replace value:</p>
+<pre><code>mysql&gt; select name, IF(matriculated, &#39;yes&#39;, &#39;no&#39;) matriculated from myusers limit 1;
++------+--------------+
+| name | matriculated |
++------+--------------+
+| tom  | no           |
++------+--------------+</code></pre>
+<p>To query for people not matriculated:</p>
+<pre><code>mysql&gt; select name, IF(matriculated, &#39;yes&#39;, &#39;no&#39;) matriculated from myusers where matriculated = false limit 1;
++------+--------------+
+| name | matriculated |
++------+--------------+
+| tom  | no           |
++------+--------------+
+
+# you can use it without the if</code></pre>
+<p>To view unique values:</p>
+<pre><code>mysql&gt; select distinct country from people;
++---------+
+| country |
++---------+
+| MOZ     |
+| NGA     |
+| KEN     |
+| ZWE     |
+| IND     |
+| GHA     |
++---------+</code></pre>
+<h2 id="changing-tables">Changing Tables</h2>
+<p>Changing the column length:</p>
+<pre><code>mysql&gt; ALTER TABLE contacts_business CHANGE COLUMN contact_number contact_number varchar(40);</code></pre>
+<h2 id="check-and-repair-tables">Check and Repair Tables</h2>
+<p>Check all tables in mailscanner db:</p>
+<pre><code>$ mysqlcheck -c mailscanner -u root -p</code></pre>
+<p>Check all tables all dbs:</p>
+<pre><code>$ mysqlcheck -c  -u root -p --all-databases</code></pre>
+<p>Check one table:</p>
+<pre><code>$ check table maillog;</code></pre>
+<p>analyzes employee table that is located in thegeekstuff database:</p>
+<pre><code>$ mysqlcheck -a thegeekstuff employee -u root -p</code></pre>
+<p>optimizes employee table that is located in thegeekstuff database.</p>
+<pre><code>$ mysqlcheck -o thegeekstuff employee -u root -p</code></pre>
+<p>repairs employee table that is located in thegeekstuff database.</p>
+<pre><code>$ mysqlcheck -r thegeekstuff employee -u root -p</code></pre>
+<p>checks, optimizes and repairs all the corrupted table in thegeekstuff database.</p>
+<pre><code>$ mysqlcheck -u root -p --auto-repair -c -o thegeekstuff</code></pre>
+<p>optimize and repair all the tables across all your databases using the following command.</p>
+<pre><code>$ mysqlcheck -u root -p --auto-repair -c -o --all-databases</code></pre>
+<h2 id="delete">Delete</h2>
+<p>Delete data older than x:</p>
+<pre><code>mysql&gt; delete from maillog where timestamp &lt; &quot;2012-09-07&quot;;
+mysql&gt; optimize table maillog;</code></pre>
+<h2 id="get-size-in-mb">Get Size in MB</h2>
+<pre><code>SELECT table_schema &quot;Data Base Name&quot;, 
+sum( data_length + index_length ) / 1024 / 
+1024 &quot;Data Base Size in MB&quot;, 
+sum( data_free )/ 1024 / 1024 &quot;Free Space in MB&quot; 
+FROM information_schema.TABLES 
+GROUP BY table_schema ;</code></pre>
+<h2 id="indexes">Indexes</h2>
+<p>Add a index to an existing table:</p>
+<pre><code>mysql&gt; DESCRIBE salaries;
++-----------+---------+------+-----+---------+-------+
+| Field     | Type    | Null | Key | Default | Extra |
++-----------+---------+------+-----+---------+-------+
+| emp_no    | int(11) | NO   | PRI | NULL    |       |
+| salary    | int(11) | NO   |     | NULL    |       |
+| from_date | date    | NO   | PRI | NULL    |       |
+| to_date   | date    | NO   |     | NULL    |       |
++-----------+---------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+
+ALTER TABLE salaries ADD INDEX ( salary );</code></pre>
+<h2 id="insert-data">Insert Data</h2>
+<p>Insert data into our domain table</p>
+<pre><code>mysql&gt; INSERT INTO domains (domain,owner,year_registered) VALUES(&quot;example.com&quot;, &quot;John&quot;, 2019);</code></pre>
+<h2 id="information-schema">Information Schema</h2>
+<p>Show me idle connections:</p>
+<pre><code>mysql&gt; select id, user, host, db, command, time from information_schema.processlist where command = &quot;sleep&quot;;
++-----------+-------+---------------------+--------+---------+------+
+| id        | user  | host                | db     | command | time |
++-----------+-------+---------------------+--------+---------+------+
+| 659558686 | james | 172.31.27.126:37154 | mydb12 | Sleep   |  332 |</code></pre>
+<p>Show me connected sessions:</p>
+<pre><code>mysql&gt; select count(*) from information_schema.processlist;
++----------+
+| count(*) |
++----------+
+|       60 |
++----------+
+
+or
+
+mysql&gt; show status where variable_name = &#39;threads_connected&#39;;
++-------------------+-------+
+| Variable_name     | Value |
++-------------------+-------+
+| Threads_connected | 61    |
++-------------------+-------+</code></pre>
+<p>Show connection related variables:</p>
+<pre><code>mysql&gt; SHOW VARIABLES LIKE &#39;%connections%&#39;;
++-----------------------+-------+
+| Variable_name         | Value |
++-----------------------+-------+
+| extra_max_connections | 1     |
+| max_connections       | 1296  |
+| max_user_connections  | 0     |
++-----------------------+-------+
+3 rows in set (0.16 sec)</code></pre>
+<p>or"</p>
+<pre><code>mysql&gt; show status like &#39;%onn%&#39;;
++-----------------------------------------------+-----------+
+| Variable_name                                 | Value     |
++-----------------------------------------------+-----------+
+| Aborted_connects                              | 35        |
+| Connection_errors_accept                      | 0         |
+| Connection_errors_internal                    | 0         |
+| Connection_errors_max_connections             | 0         |
+| Connection_errors_peer_address                | 0         |
+| Connection_errors_select                      | 0         |
+| Connection_errors_tcpwrap                     | 0         |
+| Connections                                   | 66059     |
+| Max_used_connections                          | 502       |
+| Performance_schema_session_connect_attrs_lost | 0         |
+| Slave_connections                             | 0         |
+| Slaves_connected                              | 1         |
+| Ssl_client_connects                           | 0         |
+| Ssl_connect_renegotiates                      | 0         |
+| Ssl_finished_connects                         | 0         |
+| Threads_connected                             | 46        |
+| wsrep_connected                               | OFF       |
++-----------------------------------------------+-----------+
+17 rows in set (0.16 sec)</code></pre>
+<p>Show me cache information:</p>
+<pre><code>mysql&gt; SHOW VARIABLES LIKE &#39;have_query_cache&#39;;
+mysql&gt; SHOW STATUS LIKE &#39;Qcache%&#39;;</code></pre>
+<p>Show me how long a connection can idle:</p>
+<pre><code># https://aws.amazon.com/blogs/database/best-practices-for-configuring-parameters-for-amazon-rds-for-mysql-part-3-parameters-related-to-security-operational-manageability-and-connectivity-timeout/
+mysql&gt; SHOW VARIABLES LIKE &#39;wait_timeout&#39;;
++---------------+-------+
+| Variable_name | Value |
++---------------+-------+
+| wait_timeout  | 28800 |
++---------------+-------+</code></pre>
+<p>Binlog format:</p>
+<pre><code>mysql&gt; show variables like &#39;binlog_format&#39;;</code></pre>
+<h2 id="performance-schema-metrics">Performance Schema Metrics:</h2>
+<p>Execution time of all the different statement types executed by each user:</p>
+<pre><code>mysql&gt; select * from sys.user_summary_by_statement_type;
++------------+----------------+-------+---------------+-------------+--------------+-----------+---------------+---------------+------------+
+| user       | statement      | total | total_latency | max_latency | lock_latency | rows_sent | rows_examined | rows_affected | full_scans |
++------------+----------------+-------+---------------+-------------+--------------+-----------+---------------+---------------+------------+
+| background | select         |     1 | 212.00 us     | 212.00 us   | 0 ps         |         1 |             0 |             0 |          0 |
+| root       | insert         |   175 | 46.26 s       | 823.43 ms   | 6.33 s       |         0 |             0 |       3919027 |          0 |
+| root       | select         |    50 | 12.21 s       | 10.00 s     | 10.41 ms     |       223 |       7498268 |             0 |         17 |</code></pre>
+<p>Slowest statements (those in the 95th percentile by runtime):</p>
+<pre><code>mysql&gt; select * from sys.statements_with_runtimes_in_95th_percentile\G
+*************************** 1. row ***************************
+            query: SELECT `sleep` (?)
+               db: sys
+        full_scan:
+       exec_count: 1
+        err_count: 0
+       warn_count: 0
+    total_latency: 10.00 s
+      max_latency: 10.00 s
+      avg_latency: 10.00 s
+        rows_sent: 1
+    rows_sent_avg: 1
+    rows_examined: 0
+rows_examined_avg: 0
+       first_seen: 2019-07-04 11:21:23.155084
+        last_seen: 2019-07-04 11:21:23.155084
+           digest: x</code></pre>
+<p>Number of queries that generated errors or warnings:</p>
+<pre><code>mysql&gt; SELECT SUM(errors) FROM sys.statements_with_errors_or_warnings;
++-------------+
+| SUM(errors) |
++-------------+
+|           4 |
++-------------+</code></pre>
+<h2 id="repair-table">Repair Table</h2>
+<pre><code>mysql&gt; repair table x;
+mysql&gt; optimize table x;</code></pre>
+<h2 id="external-resources">External Resources:</h2>
+<ul>
+<li>https://www.mysqltutorial.org/mysql-inner-join.aspx/</li>
+<li>https://www.mysqltutorial.org/mysql-index/mysql-create-index/</li>
+</ul>

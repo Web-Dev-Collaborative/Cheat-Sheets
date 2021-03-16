@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="./prism.css">
+<script async defer src="./prism.js"></script>
+</head>
+<body>;
+<p>Taken from https://medium.com/<span class="citation" data-cites="nthgergo/publishing-gh-pages-with-travis-ci-53a8270e87db">@nthgergo/publishing-gh-pages-with-travis-ci-53a8270e87db</span></p>
+<h3 id="create-an-oauth-token-and-encrypt-it">Create an OAuth token and encrypt it</h3>
+<p>Use https://github.com/settings/tokens/new</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># via ruby</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="ex">gem</span> install travis</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="ex">travis</span> encrypt -r user/repo GITHUB_TOKEN=[the token here]</a></code></pre></div>
+<h3 id="make-it-run-the-deploy-script-on-deploy">Make it run the deploy script on deploy</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb2-1" title="1"> <span class="co"># .travis.yml</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="fu">script:</span></a>
+<a class="sourceLine" id="cb2-3" title="3">  <span class="kw">-</span> bash ./scripts/deploy-to-gh-pages.sh</a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="fu">env:</span></a>
+<a class="sourceLine" id="cb2-5" title="5">  <span class="fu">global:</span></a>
+<a class="sourceLine" id="cb2-6" title="6">    <span class="kw">-</span> <span class="fu">GITHUB_REPO:</span><span class="at"> </span><span class="st">&quot;user/repo&quot;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">    <span class="kw">-</span> <span class="fu">secure:</span><span class="at"> </span><span class="st">&quot;nlnXJW/imf/w...&quot;</span>  <span class="co"># &lt;-- from travis-encrypt</span></a></code></pre></div>
+<h3 id="write-deployer">Write deployer</h3>
+<p>Create the file <code>scripts/deploy-to-gh-pages.sh</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="co">#!/bin/bash</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co"># See https://medium.com/@nthgergo/publishing-gh-pages-with-travis-ci-53a8270e87db</span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="kw">set</span> <span class="ex">-o</span> errexit</a>
+<a class="sourceLine" id="cb3-4" title="4"></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="fu">rm</span> -rf public</a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="fu">mkdir</span> public</a>
+<a class="sourceLine" id="cb3-7" title="7"></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="co"># config</span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="fu">git</span> config --global user.email <span class="st">&quot;nobody@nobody.org&quot;</span></a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="fu">git</span> config --global user.name <span class="st">&quot;Travis CI&quot;</span></a>
+<a class="sourceLine" id="cb3-11" title="11"></a>
+<a class="sourceLine" id="cb3-12" title="12"><span class="co"># build (CHANGE THIS)</span></a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="fu">make</span></a>
+<a class="sourceLine" id="cb3-14" title="14"></a>
+<a class="sourceLine" id="cb3-15" title="15"><span class="co"># deploy</span></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="bu">cd</span> public</a>
+<a class="sourceLine" id="cb3-17" title="17"><span class="fu">git</span> init</a>
+<a class="sourceLine" id="cb3-18" title="18"><span class="fu">git</span> add .</a>
+<a class="sourceLine" id="cb3-19" title="19"><span class="fu">git</span> commit -m <span class="st">&quot;Deploy to Github Pages&quot;</span></a>
+<a class="sourceLine" id="cb3-20" title="20"><span class="fu">git</span> push --force --quiet <span class="st">&quot;https://</span><span class="va">${GITHUB_TOKEN}</span><span class="st">@</span><span class="va">$github</span><span class="st">.com/</span><span class="va">${GITHUB_REPO}</span><span class="st">.git&quot;</span> master:gh-pages <span class="op">&gt;</span> /dev/null <span class="op">2&gt;&amp;1</span></a></code></pre></div>
+<p>From Ractive, this might be useful in certain cases:</p>
+<pre><code>if [ &quot;$TRAVIS_PULL_REQUEST&quot; != &quot;false&quot; -o &quot;$TRAVIS_BRANCH&quot; != &quot;master&quot; ]; then exit 0; fi</code></pre>
+</body></html>

@@ -1,0 +1,2461 @@
+<!DOCTYPE html><html
+lang="en" prefix="og: http://ogp.me/ns#">
+<!-- Mirrored from cheatography.com/davechild/cheat-sheets/python/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Mar 2021 01:37:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>Python Cheat Sheet by DaveChild - Download free from Cheatography - Cheatography.com: Cheat Sheets For Every Occasion</title><link
+rel="dns-prefetch" href="https://media.cheatography.com/"><link
+rel="preconnect" href="https://media.cheatography.com/"><meta
+content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta
+http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta
+http-equiv="Content-Style-Type" content="text/css"><meta
+http-equiv="X-UA-Compatible" content="IE=Edge"><base
+><link
+rel="shortcut icon" href="https://cheatography.com/favicon.png"><link
+rel="apple-touch-icon" href="https://cheatography.com/images/cheatography-iphone.png"><link
+rel="alternate" type="application/rss+xml" title="New Cheat Sheets RSS feed." href="https://cheatography.com/explore/new/rss/"><meta
+name="keywords" content="development django flask programming python "><meta
+name="monetization" content="$ilp.uphold.com/QRNi8QL4Gr3y"><link
+rel="canonical" href="https://cheatography.com/davechild/cheat-sheets/python/" /><meta
+property="fb:admins" content="860405712"/><meta
+property="fb:app_id" content="152741628156662"/><meta
+property="og:site_name" content="Cheatography"/><meta
+property="og:url" content="https://cheatography.com/davechild/cheat-sheets/python/"/><meta
+property="og:title" content="Python Cheat Sheet"/><meta
+property="og:image" content="https://media.cheatography.com/storage/thumb/davechild_python.600.jpg"/><meta
+property="og:type" content="cheatography:cheat_sheet"/><meta
+name="twitter:card" content="summary_large_image" /><meta
+name="twitter:title" content="Python Cheat Sheet" /><meta
+name="twitter:site" content="@Cheatography" /><meta
+name="twitter:image" content="https://media.cheatography.com/storage/thumb/davechild_python.600.jpg" /><meta
+name="twitter:creator" content="Dave_Child" /><meta
+name="description" content="The Python cheat sheet is a one-page reference sheet for the Python programming language."/><meta
+property="og:description" content="The Python cheat sheet is a one-page reference sheet for the Python programming language."/><meta
+name="twitter:description" content="The Python cheat sheet is a one-page reference sheet for the Python programming language." /> <script src="https://media.cheatography.com/scripts/jquery.min.js"></script> <script src="https://media.cheatography.com/scripts/jquery-ui.min.js"></script> <link
+href="https://media.cheatography.com/styles/styles.scss.css?v=7" rel="stylesheet"><link
+rel="preload" href="https://media.cheatography.com/styles/font-awesome.min.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link
+href="https://media.cheatography.com/styles/font-awesome.min.css?v=2" rel="stylesheet"></noscript><link
+rel="preload" href="https://media.cheatography.com/styles/bootstrap-tour-standalone.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> <script src="https://media.cheatography.com/scripts/bootstrap-tour-standalone.min.js"></script> <script type="text/javascript">var defaultLanguages = false;
+            var rememberTagCookieName = false;
+            var ratableCheatSheetId = false;
+            var isRateable = true;</script> <meta
+name="p:domain_verify" content="f842c4485eeea6c6d71b4314221cc6c0"/></head><body
+class="page-cheatsheet style2">
+ <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-4997759-8', 'auto');
+        ga('send', 'pageview');</script> <div
+id="mobile_wrap_outer"><a
+href="#" id="mobileTrigger">Show Menu</a><div
+id="mobile_wrap_inner"><div
+id="header"><div
+id="header_inner"><div
+id="topbar"><div
+class="inner"><form
+method="GET" action="https://cheatography.com/explore/search/"><p><a
+href="https://cheatography.com/" class="imagelink logolink"><img
+width="156" height="25" id="title_logo" src="http://media.cheatography.com/images/cheatography_logo.png" alt="Cheatography"></a><input
+id="q" name="q" type="text" placeholder="e.g., Regular Expressions, Garden, Kitchen, Audio"> <button
+type="submit" id="qsubmit"><i
+class="fa fa-search"></i></button><a
+class="social_link hideMobile" href="http://www.facebook.com/Cheatography"><i
+class="fa fa-facebook-official"></i></a>
+<a
+class="social_link hideMobile" href="http://twitter.com/Cheatography/"><i
+class="fa fa-twitter"></i></a>
+<a
+class="social_link hideMobile" href="http://www.pinterest.com/cheatography/"><i
+class="fa fa-pinterest"></i></a>
+<a
+class="social_link hideMobile" href="http://www.instagram.com/newcheatsheets/"><i
+class="fa fa-instagram"></i></a></p></form> <script type="text/javascript">$(document).ready(function () {
+                    // Restore search
+                    var lastSearch = $.cookie('lastSearch');
+                    $('#q').val(lastSearch);
+                });</script> </div></div></div><div
+id="menubar"><div
+class="inner"><div
+class="clear"></div><div
+id="user_info"><div
+class="logged_in" style="vertical-align: middle; position: relative; margin: 0; white-space: nowrap; z-index: 1001;">
+<a
+style="vertical-align: middle; margin: 0; padding-right: 0;" class="imagelink gravatar replace_userlink" href="https://cheatography.com/davechild/"><img
+class="gravatar replace_usergravatar" style="background: #fff; vertical-align: middle" src="#" width="32" height="32"></a>
+<a
+style="color: #fff; vertical-align: middle" href="https://cheatography.com/davechild/" class="replace_userlink replace_username"></a>
+<a
+href="https://cheatography.com/messages/" title="You have 0 new messages." class="imageline"><i
+class="fa fa-fw fa-envelope"></i></a></div><div
+id="user_dropdown"><div
+class="biptych1"><ul><li
+class=" "><i
+class="fa fa-fw fa-star"></i><a
+href="https://cheatography.com/favourites/">Your Favourite Cheat Sheets</a></li></ul><ul><li
+class=" "><i
+class="fa fa-fw fa-envelope"></i><a
+href="https://cheatography.com/messages/">Your Messages</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-trophy"></i><a
+href="https://cheatography.com/davechild/badges/">Your Badges</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-heart"></i><a
+href="https://cheatography.com/davechild/followers/">Your Friends</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-comments"></i><a
+href="https://cheatography.com/davechild/comments/">Your Comments</a></li></ul><ul><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-smile-o"></i><a
+href="https://cheatography.com/davechild/">View Profile</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-edit"></i><a
+href="https://cheatography.com/davechild/edit/">Edit Profile</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-key"></i><a
+href="https://cheatography.com/davechild/password/">Change Password</a></li></ul><ul><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-sign-out"></i><a
+href="https://cheatography.com/davechild/log-out/">Log out</a></li></ul></div><div
+class="biptych2"><ul><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-columns"></i><a
+href="https://cheatography.com/davechild/cheat-sheets/new/">New Cheat Sheet</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-link"></i><a
+href="https://cheatography.com/davechild/cheat-sheets/new-link/">New Link</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-upload"></i><a
+href="https://cheatography.com/davechild/cheat-sheets/new-upload/">New Upload</a></li></ul><ul><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-columns"></i><a
+href="https://cheatography.com/davechild/cheat-sheets/live/">Live Cheat Sheets</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-columns"></i><a
+href="https://cheatography.com/davechild/cheat-sheets/drafts/">Draft Cheat Sheets</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-group"></i><a
+href="https://cheatography.com/davechild/cheat-sheets/collaborations/">Collaborations</a></li><li
+class=" replace_userlink"><i
+class="fa fa-fw fa-link"></i><a
+href="https://cheatography.com/davechild/cheat-sheets/links/">Links</a></li></ul><ul></ul></div><div
+class="clear"></div></div><div
+class="logged_out"><a
+class="imagelink login_button" href="https://cheatography.com/members/login">Login</a> &nbsp;or&nbsp; <a
+class="imagelink login_button" href="https://cheatography.com/members/register/">Register</a></div><div
+class="clear"></div></div>
+<nav><ul><li><a
+href="https://cheatography.com/"><i
+class="fa fa-home"></i> Home</a></li><li
+class="hidden showMobile logged_out"><a
+href="https://cheatography.com/members/login/">Login</a></li><li
+class="hidden showMobile logged_out"><a
+href="https://cheatography.com/members/register/">Register</a></li><li
+class="on"><a
+id="tourbrowse" href="https://cheatography.com/explore/"><i
+class="fa fa-columns"></i> Cheat Sheets</a><ul
+class="hideMobile"><li
+class=" "><i
+class="fa fa-fw fa-code"></i><a
+href="https://cheatography.com/programming/">Programming Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-desktop"></i><a
+href="https://cheatography.com/software/">Software Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-briefcase"></i><a
+href="https://cheatography.com/business/">Business and Marketing Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-graduation-cap"></i><a
+href="https://cheatography.com/education/">Education Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-home"></i><a
+href="https://cheatography.com/home/">Home and Health Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-gamepad"></i><a
+href="https://cheatography.com/games/">Games and Hobbies Cheat Sheets</a></li><li
+class=" menu_separate  "><i
+class="fa fa-fw fa-graduation-cap"></i><a
+href="https://cheatography.com/explore/new/">New Cheat Sheets</a></li><li
+class=" "><i
+class="fa fa-fw fa-star"></i><a
+href="https://cheatography.com/explore/popular/">Popular Cheat Sheets</a></li><li
+class=" menu_separate  "><i
+class="fa fa-fw fa-tag"></i><a
+href="https://cheatography.com/explore/tags/">Cheat Sheets by Tag</a></li><li
+class=" "><i
+class="fa fa-fw fa-globe"></i><a
+href="https://cheatography.com/language/">Cheat Sheets by Language</a></li><li
+class=" menu_separate  "><i
+class="fa fa-fw fa-link"></i><a
+href="https://cheatography.com/external/">Cheat Sheet Links</a></li></ul></li><li
+class=""><a
+id="tourcreate" href="https://cheatography.com/create/"><i
+class="fa fa-pencil"></i> Create</a><ul
+class="hideMobile"><li
+class=" "><i
+class="fa fa-fw fa-question"></i><a
+href="https://cheatography.com/create/">Getting Started</a></li><li
+class=" logged_in"><i
+class="fa fa-fw fa-columns"></i><a
+href="https://cheatography.com/create/cheat-sheet/">Create a New Cheat Sheet</a></li><li
+class=" logged_in"><i
+class="fa fa-fw fa-upload"></i><a
+href="https://cheatography.com/create/cheat-sheet-upload/">Upload a Cheat Sheet</a></li><li
+class=" logged_in"><i
+class="fa fa-fw fa-link"></i><a
+href="https://cheatography.com/create/cheat-sheet-link/">Link to a Cheat Sheet</a></li><li
+class="menu_separate"><i
+class="fa fa-fw fa-smile-o"></i>A <a
+href="https://cheatography.com/davechild/cheat-sheets/cheatography/">Cheat Sheet</a> for Making Cheat Sheets!</li></ul></li><li><a
+id="tourcommunity" href="https://cheatography.com/members/"><i
+class="fa fa-users"></i> Community</a><ul
+class="hideMobile"><li
+class=" "><i
+class="fa fa-fw fa-globe"></i><a
+href="https://cheatography.com/members/">Community</a></li><li
+class=" "><i
+class="fa fa-fw fa-trophy"></i><a
+href="https://cheatography.com/badges/">Badges</a></li><li
+class=" menu_separate  logged_in"><i
+class="fa fa-fw fa-heart"></i><a
+href="https://cheatography.com/davechild/followers/">Friends</a></li><li
+class=" logged_out"><i
+class="fa fa-fw fa-user"></i><a
+href="https://cheatography.com/members/register/">Join Us!</a></li><li
+class=" menu_separate  logged_out"><i
+class="fa fa-fw fa-key"></i><a
+href="https://cheatography.com/members/login/">Login</a></li><li
+class=" menu_separate  "><i
+class="fa fa-fw fa-twitter"></i><a
+href="http://twitter.com/Cheatography/">Twitter</a></li><li
+class=" "><i
+class="fa fa-fw fa-facebook"></i><a
+href="http://www.facebook.com/Cheatography">Facebook</a></li><li
+class=" "><i
+class="fa fa-fw fa-pinterest"></i><a
+href="http://www.pinterest.com/cheatography/">Pinterest</a></li><li
+class=" "><i
+class="fa fa-fw fa-instagram"></i><a
+href="http://www.instagram.com/newcheatsheets/">Instagram</a></li></ul></li><li
+class="last"><a
+href="https://www.facebook.com/pg/Cheatography/community/" target="_blank" title="Get help on our Facebook community (opens in new window)."><i
+class="fa fa-external-link"></i> Help</a></li></ul><div
+class="hidden showMobile logged_in" id="user_dropdown_mobile"></div></nav><div
+class="clear"></div></div></div></div><div
+id="content" itemscope itemtype="http://schema.org/Course"><div
+id="content_inner"><div
+class="off">
+<span
+itemprop="provider" itemscope itemtype="http://schema.org/Organization">
+<span
+itemprop="name">Cheatography</span>
+<span
+itemprop="url">https://cheatography.com</span>
+</span></div><div
+class="hideMobile" id="cs_menu_wrapper"><div
+id="cs_menu"><div
+class="download_menu" id="tourcheatsheetmenu"><ul
+class="hideMobile noicon downloadItem"><li
+style="float: left; border-right: none;"><i
+class="fa fa-fw fa-download"></i> <a
+href="https://cheatography.com/davechild/cheat-sheets/python/#downloads" onclick="trackDownloadPopup();">Download This Cheat Sheet (PDF)</a></li></ul><ul
+class="hideMobile noicon"><li><i
+class="fa fa-fw fa-comments"></i> <a
+href="https://cheatography.com/davechild/cheat-sheets/python/#comments">14 Comments</a></li><li
+class="ratingStars">Rating:
+<i
+class="fa fa-spin fa-spinner"></i> <i></i> <i></i> <i></i> <i></i> <span
+id="ratingStarsCount" style="display: none;">(<a
+href="https://cheatography.com/davechild/cheat-sheets/python/ratings/"></a>)</span></a></li><li><a
+href="#" title="Add or remove this cheat sheet from your favourites" class="imagelink toggle_favourite_link" id="item_cs_19"><i
+class="fa fa-heart-o"></i></a></li></ul></div></div></div><div
+class="clear"></div><div
+id="pagetitle"><div
+itemscope itemtype="http://schema.org/BreadcrumbList"><ol
+class="breadcrumbs"><li
+itemprop="itemListElement" itemscope
+itemtype="http://schema.org/ListItem">
+<a
+itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://cheatography.com/" itemid="https://cheatography.com/">
+<span
+itemprop="name">Home</span></a><meta
+itemprop="position" content="1" />
+<span
+class="divider">&gt;</span></li><li
+itemprop="itemListElement" itemscope
+itemtype="http://schema.org/ListItem">
+<a
+itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://cheatography.com/programming/" itemid="https://cheatography.com/programming/">
+<span
+itemprop="name">Programming</span></a><meta
+itemprop="position" content="2" />
+<span
+class="divider">&gt;</span></li><li
+itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+<a
+rel="tag" itemscope itemtype="http://schema.org/Thing" itemprop="item" href="https://cheatography.com/tag/python/" itemid="https://cheatography.com/tag/python/">
+<span
+itemprop="name">Python Cheat Sheets</span></a><meta
+itemprop="position" content="3" /></li></ol><h1 itemprop="itemListElement" itemscope
+itemtype="http://schema.org/ListItem">
+<span
+itemscope itemtype="http://schema.org/Thing" itemprop="item" itemid="https://cheatography.com/davechild/cheat-sheets/python/">
+<span
+itemprop="name">Python Cheat Sheet</span> <span
+class="subhead"> by  <span
+itemprop="author" itemscope itemtype="http://schema.org/Person"><a
+href="http://www.cheatography.com/davechild/" class="user_hover" itemprop="url"><span
+itemprop="name">DaveChild</span></a></span></span></span><meta
+itemprop="position" content="4" /></h1></div><style type="text/css">ol.breadcrumbs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  ol.breadcrumbs li {
+    float: left;
+  }
+  ol.breadcrumbs li span.divider {
+    padding: 0 10px;
+    color: #999;
+  }
+  h1 {
+    clear: both;
+    margin-bottom: 0;
+  }</style><div
+class="clear"></div><p
+class="subdesc" itemprop="description">The Python cheat sheet is a one-page reference sheet for the Python programming language.</p><div
+class="clear"></div></div><div
+id="body_wide"><div
+id="body_wide_inner"><div
+id="body_wide_shadow"> <script type="text/javascript">var defaultRating = 4.8860;
+    var ratingCount = 103;
+    ratableCheatSheetId = '19';
+    var hasUserRating = false;</script> <script type="text/javascript">var redirectTimeout;
+    // Analytics
+    ga('create', 'UA-4997759-19', 'auto', {'name': 'userTracker'});
+    ga('userTracker.send', 'pageview');
+var cheat_sheet_id = 19; // Used in ajax
+var cheatSheetName = 'Python Cheat Sheet';
+    var bTracking = true;
+$(document).ready(function() {
+    $('#tabs').tabs();
+    var hiddenBlocks = new Array();
+    if ($.cookie('hiddenBlocks')) {
+        hiddenBlocks = $.cookie('hiddenBlocks').split('-');
+        for (var i = 0; i < hiddenBlocks.length; i++) {
+            $('#block_' + hiddenBlocks[i]).slideUp(400);
+        }
+    }
+    $('.cheat_sheet_output_title').click(function() {
+        var block_id = this.id.substr(6);
+        // Check to see if it's hidden
+        if ($.inArray(block_id, hiddenBlocks) === -1) {
+            $('#block_' + block_id).slideUp(400);
+            hiddenBlocks[hiddenBlocks.length] = block_id;
+        } else {
+            $('#block_' + block_id).slideDown(400);
+            for (var i = 0; i < hiddenBlocks.length; i++) {
+                if (hiddenBlocks[i] == block_id) {
+                    hiddenBlocks.splice(i, 1);
+                }
+            }
+        }
+        // Now, toggle all those items with cookies
+        $.cookie('hiddenBlocks', hiddenBlocks.join('-'));
+    });
+    });</script> <div
+class="clear"></div><style type="text/css">#subsection_programming { display: none; }
+#subsection_software { display: none; }
+#subsection_business { display: none; }
+#subsection_education { display: none; }
+#subsection_home { display: none; }
+#subsection_games { display: none; }
+
+            h2, .sidebar_box h4 {
+                border-bottom: 3px solid #446785;
+            }
+
+            .cheat_sheet_output_wrapper {
+                background: #446785;
+                border-bottom: 3px solid #446785;
+            }
+
+                .cheat_sheet_output_wrapper a, .cheat_sheet_output_wrapper a:visited, .cheat_sheet_output_wrapper a:focus, .cheat_sheet_output_wrapper a:link, .cheat_sheet_output_wrapper a:hover {
+                    color: #446785;
+                    border-color: #446785;
+                }
+
+                .cheat_sheet_output_wrapper .cheat_sheet_output_block tr.altrow td, .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    background: #F3F5F7;
+                }
+
+                .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    border-top: 3px solid #446785;
+                }
+
+                .cheat_sheet_output_wrapper h3.cheat_sheet_output_title {
+                                            color: #F3F5F7;
+                                    }
+
+            /* Breaks */
+            .cheat_sheet_output_column_columnbreak, .cheat_sheet_output_column_pagebreak {
+                border-color: #eee;
+            }
+
+                .cheat_sheet_output_wrapper.cheat_sheet_output_column_columnbreak .cheat_sheet_output_block,
+                .cheat_sheet_output_wrapper.cheat_sheet_output_column_pagebreak .cheat_sheet_output_block {
+                    border-top: none;
+                }
+
+                .cheat_sheet_output_wrapper.cheat_sheet_output_column_columnbreak h3.cheat_sheet_output_title,
+                .cheat_sheet_output_wrapper.cheat_sheet_output_column_pagebreak h3.cheat_sheet_output_title {
+                    color: #999;
+                    background: #eee;
+                }
+
+            /* Buttons */
+            .button_add, .button_add:visited, .button_add:active, .button_add:hover, .draft_notice {
+                background-color: #446785;
+                border: 1px solid #446785;
+                color: #F3F5F7;
+            }
+
+                .button_add:hover {
+                    background-color: #F3F5F7;
+                    color: #446785;
+                }
+
+            .download_menu {
+                background-color: #446785;
+            }
+
+            #content #content_inner, #cs_menu {
+                border-top-color: #446785;
+            }
+
+            #content #content_inner {
+                /*top: -3px;*/
+                border: none;
+            }
+
+            #menubar .inner {
+                border-top-color: #446785;
+            }
+
+            .cheat_sheet_output_block div {
+                border-color: #446785 !important;
+            }
+
+            .footer_popup {
+                background-color: #F3F5F7;
+                box-shadow: 0 0 3px #446785;
+            }
+
+
+            /* style 2 */
+
+            .style2, .style2 #content #content_inner {
+                background: #F3F5F7;
+            }
+            .style2 #cs_menu .download_menu {
+                border-bottom: 2px solid #F3F5F7;
+            }
+            .style2 #tag_list a {
+                color: #446785;
+                border-color: #446785;
+            }
+            .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block tr td, .style2 .cheat_sheet_output_wrapper .cheat_sheet_note {
+                background: #F3F5F7;
+            }
+            .style2 .cheat_sheet_output_wrapper .cheat_sheet_note {
+                border-top: 1px solid #F3F5F7;
+            }
+            .style2 .cheat_sheet_output_wrapper h3.cheat_sheet_output_title {
+                                    color: #446785;
+                            }
+            .style2 .cheat_sheet_output_block div {
+                border-color: #F3F5F7 !important;
+            }
+
+
+            .style2 .cheat_sheet_output_wrapper h3.cheat_sheet_output_title {
+                padding: 6px 13px;
+            }
+            .style2 .cheat_sheet_output_wrapper {
+                border-bottom: none;
+                background: none;
+                margin-bottom: 25px;
+            }
+            #downloads {
+                background: none;
+                border-top: none;
+                border-bottom: none;
+            }
+            .style2 .commentblock {
+                background: none;
+                margin-bottom: 35px;
+            }
+            .style2 .commentblock .commenter {
+                background: none;
+            }
+            .style2 .commentblock .commentext {
+                background: #fff;
+                border-radius: 3px;
+                padding: 1em;
+                box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            }
+
+                .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block {
+                    padding: 5px;
+                    border-radius: 3px;
+                    background: #fff;
+                    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+                }
+
+                .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block tr.altrow td, .style2 .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    background: #fff;
+                }</style><article><table
+border="0" cellspacing="0" width="100%" cellpadding="0" class="cheat_sheet_output"><tr><td
+width="32%" valign="top" class="cheat_sheet_output_sortable cheat_sheet_output_column_1"><section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_182"><h3 class="cheat_sheet_output_title" id="title_19_182">Python sys Variables</h3><div
+class="cheat_sheet_output_block" id="block_19_182"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">argv</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Command line args</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">builti&#173;n_m&#173;odu&#173;le_&#173;names</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Linked C modules</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">byteorder</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Native byte order</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">check_&#173;int&#173;erval</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Signal check frequency</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">exec_p&#173;refix</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Root directory</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">executable</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Name of executable</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">exitfunc</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Exit function name</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">modules</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Loaded modules</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">path</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Search path</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">platform</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Current platform</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">stdin, stdout, stderr</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">File objects for I/O</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">versio&#173;n_info</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Python version info</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">winver</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Version number</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_183"><h3 class="cheat_sheet_output_title" id="title_19_183">Python sys.argv</h3><div
+class="cheat_sheet_output_block" id="block_19_183"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">sys.ar&#173;gv[0]</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">foo.py</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">sys.ar&#173;gv[1]</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">bar</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">sys.ar&#173;gv[2]</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">-c</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">sys.ar&#173;gv[3]</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">qux</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">sys.ar&#173;gv[4]</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">--h</div></td></tr></table><div
+class="cheat_sheet_note"><div
+style="padding: 3px 8px;">sys.argv for the command:<br
+/>
+$ python foo.py bar -c qux --h</div></div></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_184"><h3 class="cheat_sheet_output_title" id="title_19_184">Python os Variables</h3><div
+class="cheat_sheet_output_block" id="block_19_184"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">altsep</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Altern&#173;ative sep</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">curdir</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Current dir string</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">defpath</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Default search path</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">devnull</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Path of null device</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">extsep</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Extension separator</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">linesep</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Line separator</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">name</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Name of OS</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">pardir</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Parent dir string</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">pathsep</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Patch separator</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">sep</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Path separator</div></td></tr></table><div
+class="cheat_sheet_note"><div
+style="padding: 3px 8px;">Registered OS names: &quot;&#173;pos&#173;ix&quot;, &quot;&#173;nt&quot;,<br
+/>
+&quot;&#173;mac&#173;&quot;, &quot;&#173;os2&#173;&quot;, &quot;&#173;ce&quot;, &quot;&#173;jav&#173;a&quot;, &quot;&#173;ris&#173;cos&#173;&quot;</div></div></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_185"><h3 class="cheat_sheet_output_title" id="title_19_185">Python Class Special Methods</h3><div
+class="cheat_sheet_output_block" id="block_19_185"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">__new_&#173;_(cls)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">__lt__&#173;(self, other)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">__init&#173;__(&#173;self, args)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">__le__&#173;(self, other)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">__del_&#173;_(self)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">__gt__&#173;(self, other)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">__repr&#173;__(&#173;self)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">__ge__&#173;(self, other)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">__str_&#173;_(self)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">__eq__&#173;(self, other)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">__cmp_&#173;_(self, other)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">__ne__&#173;(self, other)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">__inde&#173;x__&#173;(self)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">__nonz&#173;ero&#173;__(&#173;self)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="2"><div
+style="padding: 3px 8px;">__hash&#173;__(&#173;self)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="2"><div
+style="padding: 3px 8px;">__geta&#173;ttr&#173;__(&#173;self, name)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="2"><div
+style="padding: 3px 8px;">__geta&#173;ttr&#173;ibu&#173;te_&#173;_(self, name)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="2"><div
+style="padding: 3px 8px;">__seta&#173;ttr&#173;__(&#173;self, name, attr)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="2"><div
+style="padding: 3px 8px;">__dela&#173;ttr&#173;__(&#173;self, name)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="2"><div
+style="padding: 3px 8px;">__call&#173;__(&#173;self, args, kwargs)</div></td></tr></table></div>
+</section></td><td
+class="cheat_sheet_output_column_spacer" width="2%">&nbsp;</td><td
+width="32%" valign="top" class="cheat_sheet_output_sortable cheat_sheet_output_column_2"><section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_187"><h3 class="cheat_sheet_output_title" id="title_19_187">Python List Methods</h3><div
+class="cheat_sheet_output_block" id="block_19_187"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">append&#173;(item)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">pop(po&#173;sition)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">count(&#173;item)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">remove&#173;(item)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">extend&#173;(list)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">reverse()</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">index(&#173;item)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">sort()</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="2"><div
+style="padding: 3px 8px;">insert&#173;(po&#173;sition, item)</div></td></tr></table></div>
+</section><section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_186"><h3 class="cheat_sheet_output_title" id="title_19_186">Python String Methods</h3><div
+class="cheat_sheet_output_block" id="block_19_186"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">capita&#173;lize() *</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">lstrip()</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">center&#173;(width)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">partit&#173;ion&#173;(sep)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">count(sub, start, end)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">replac&#173;e(old, new)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">decode()</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">rfind(sub, start ,end)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">encode()</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">rindex&#173;(sub, start, end)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">endswi&#173;th(sub)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">rjust(&#173;width)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">expand&#173;tabs()</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">rparti&#173;tio&#173;n(sep)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">find(sub, start, end)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">rsplit&#173;(sep)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">index(sub, start, end)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">rstrip()</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">isalnum() *</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">split(sep)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">isalpha() *</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">splitl&#173;ines()</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">isdigit() *</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">starts&#173;wit&#173;h(sub)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">islower() *</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">strip()</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">isspace() *</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">swapcase() *</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">istitle() *</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">title() *</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">isupper() *</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">transl&#173;ate&#173;(table)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">join()</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">upper() *</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">ljust(&#173;width)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">zfill(&#173;width)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="2"><div
+style="padding: 3px 8px;">lower() *</div></td></tr></table><div
+class="cheat_sheet_note"><div
+style="padding: 3px 8px;">Methods marked * are locale dependant for 8-bit strings.</div></div></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_188"><h3 class="cheat_sheet_output_title" id="title_19_188">Python File Methods</h3><div
+class="cheat_sheet_output_block" id="block_19_188"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">close()</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">readli&#173;nes&#173;(size)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">flush()</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">seek(o&#173;ffset)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">fileno()</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">tell()</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">isatty()</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">trunca&#173;te(&#173;size)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">next()</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">write(&#173;string)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">read(size)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">writel&#173;ine&#173;s(list)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="2"><div
+style="padding: 3px 8px;">readli&#173;ne(&#173;size)</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_189"><h3 class="cheat_sheet_output_title" id="title_19_189">Python Indexes and Slices</h3><div
+class="cheat_sheet_output_block" id="block_19_189"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">len(a)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">6</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">a[0]</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">0</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">a[5]</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">5</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">a[-1]</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">5</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">a[-2]</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">4</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">a[1:]</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">[1,2,3&#173;,4,5]</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">a[:5]</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">[0,1,2&#173;,3,4]</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">a[:-2]</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">[0,1,2,3]</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">a[1:3]</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">[1,2]</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">a[1:-1]</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">[1,2,3,4]</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">b=a[:]</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Shallow copy of a</div></td></tr></table><div
+class="cheat_sheet_note"><div
+style="padding: 3px 8px;">Indexes and Slices of a=[0,1&#173;,2,&#173;3,4,5]</div></div></div>
+</section></td><td
+class="cheat_sheet_output_column_spacer" width="2%">&nbsp;</td><td
+width="32%" valign="top" class="cheat_sheet_output_sortable cheat_sheet_output_column_3"><section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_190"><h3 class="cheat_sheet_output_title" id="title_19_190">Python Datetime Methods</h3><div
+class="cheat_sheet_output_block" id="block_19_190"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">today()</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">fromor&#173;din&#173;al(&#173;ord&#173;inal)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">now(ti&#173;mez&#173;one&#173;info)</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">combin&#173;e(date, time)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">utcnow()</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">strpti&#173;me(&#173;date, format)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="2"><div
+style="padding: 3px 8px;">fromti&#173;mes&#173;tam&#173;p(t&#173;ime&#173;stamp)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="2"><div
+style="padding: 3px 8px;">utcfro&#173;mti&#173;mes&#173;tam&#173;p(t&#173;ime&#173;stamp)</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_191"><h3 class="cheat_sheet_output_title" id="title_19_191">Python Time Methods</h3><div
+class="cheat_sheet_output_block" id="block_19_191"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">replace()</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">utcoff&#173;set()</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">isofor&#173;mat()</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">dst()</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">__str__()</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">tzname()</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1" colspan="2"><div
+style="padding: 3px 8px;">strfti&#173;me(&#173;format)</div></td></tr></table></div>
+</section>
+<section
+class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol" style="z-index: 30; page-break-inside: avoid;" id="block_192"><h3 class="cheat_sheet_output_title" id="title_19_192">Python Date Formatting</h3><div
+class="cheat_sheet_output_block" id="block_19_192"><table
+border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table" class="cheat_sheet_output_twocol"><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%a</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Abbrev&#173;iated weekday (Sun)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%A</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Weekday (Sunday)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%b</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Abbrev&#173;iated month name (Jan)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%B</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Month name (January)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%c</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Date and time</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%d</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Day (leading zeros) (01 to 31)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%H</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">24 hour (leading zeros) (00 to 23)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%I</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">12 hour (leading zeros) (01 to 12)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%j</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Day of year (001 to 366)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%m</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Month (01 to 12)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%M</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Minute (00 to 59)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%p</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">AM or PM</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%S</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Second (00 to 61⁴)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%U</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Week number¹ (00 to 53)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%w</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Weekday² (0 to 6)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%W</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Week number³ (00 to 53)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%x</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Date</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%X</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Time</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%y</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Year without century (00 to 99)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%Y</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Year (2008)</div></td></tr><tr
+class="altrow countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%Z</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">Time zone (GMT)</div></td></tr><tr
+class="countrow"><td
+valign="top" class="cheat_sheet_output_cell_1"><div
+style="padding: 3px 8px;">%%</div></td><td
+valign="top" class="cheat_sheet_output_cell_2"><div
+style="padding: 3px 8px;">A literal &quot;&#173;%&quot; character (%)</div></td></tr></table><div
+class="cheat_sheet_note"><div
+style="padding: 3px 8px;">¹ Sunday as start of week. All days in a new year preceding the first Sunday are considered to be in week 0.<br
+/>
+² 0 is Sunday, 6 is Saturday.<br
+/>
+³ Monday as start of week. All days in a new year preceding the first Monday are considered to be in week 0.<br
+/>
+⁴ This is not a mistake. Range takes account of leap and double&#173;-leap seconds.</div></div></div>
+</section></td></tr></table><div
+id="tag_list" class="tac" style="padding: 40px 100px 0; line-height: 2.5;"> <span
+style="color: #999; white-space: nowrap;"><i
+class="fa fa-tag"></i> <a
+rel="tag" class="tag" href="https://cheatography.com/tag/development/">development</a></span> &nbsp; &nbsp; <span
+style="color: #999; white-space: nowrap;"><i
+class="fa fa-tag"></i> <a
+rel="tag" class="tag" href="https://cheatography.com/tag/python/">python</a></span> &nbsp; &nbsp; <span
+style="color: #999; white-space: nowrap;"><i
+class="fa fa-tag"></i> <a
+rel="tag" class="tag" href="https://cheatography.com/tag/programming/">programming</a></span> &nbsp; &nbsp; <span
+style="color: #999; white-space: nowrap;"><i
+class="fa fa-tag"></i> <a
+rel="tag" class="tag" href="https://cheatography.com/tag/django/">django</a></span> &nbsp; &nbsp; <span
+style="color: #999; white-space: nowrap;"><i
+class="fa fa-tag"></i> <a
+rel="tag" class="tag" href="https://cheatography.com/tag/flask/">flask</a></span></div>
+</article><div
+class="clear" style="margin-top: 50px;"></div><aside
+id="downloads" style="margin-top: 0;"><div
+class="clear"></div><div
+class="triptychdbll" style="float: none; margin: 0 auto; background: #F3F5F7; border-radius: 5px; border: 2px solid #446785; padding: 50px 30px 30px; box-sizing: border-box; position: relative;"><div
+id="download_icon" style="position: absolute; width: 50px; height: 50px; margin-left: -28px; top: -28px; left: 50%; border-radius: 100%; border: 3px solid #446785; background: #446785; font-size: 24px; text-align: center; line-height: 50px; color: #fff; ?>;"><i
+class="fa fa-fw fa-download" style="position: relative; left: 1px;"></i></div><h2 class="notopmargin" style="text-align: center;">Download the <span
+itemprop="name">Python Cheat Sheet</span></h2><div
+class="biptych1"><div
+class="padded">
+<a
+style="line-height: 1; display: block; height: 200px; overflow: hidden; position: relative; box-shadow: 1px 1px 3px #666; " class="imagelink" href="#" onclick="showPopup('https://cheatography.com//davechild/cheat-sheets/python/pdf/'); return false;"><img
+style="line-height: 1;" width="100%" src="http://media.cheatography.com/storage/thumb/davechild_python.750.jpg?last=1604414018"><span
+class="page_count" style="background-color: #DFE5EA">2 Pages</span></a><div
+style="display: none;">
+<span
+itemprop="url">https://cheatography.com/davechild/cheat-sheets/python/</span>
+<span
+itemprop="thumbnailUrl">//media.cheatography.com/storage/thumb/davechild_python.750.jpg</span></div></div></div><div
+class="biptych2"><div
+class="padded"><p
+class="padded"><strong>PDF</strong> (recommended)</p><ul
+class="noicon" style="margin-bottom: 20px;"><li><i
+class="fa fa-fw fa-file-pdf-o"></i> <a
+rel="alternate" target="_blank" href="https://cheatography.com/davechild/cheat-sheets/python/pdf/" onclick="showPopup('https://cheatography.com/davechild/cheat-sheets/python/pdf/'); trackDownload('PDF', this.href); return false;">PDF (2 pages)</a></li></ul><p
+class="padded"><strong>Alternative&nbsp;Downloads</strong></p><ul
+class="noicon"><li><i
+class="fa fa-fw fa-file-pdf-o"></i> <a
+rel="alternate" target="_blank" href="https://cheatography.com/davechild/cheat-sheets/python/pdf_bw/" onclick="showPopup('https://cheatography.com/davechild/cheat-sheets/python/pdf_bw/'); trackDownload('PDF - Black and White', this.href); return false;">PDF (black and white)</a></li><li><i
+class="fa fa-fw fa-file-text-o"></i> <a
+rel="alternate" target="_blank" href="https://cheatography.com/davechild/cheat-sheets/python/latex/" onclick="showPopup('https://cheatography.com/davechild/cheat-sheets/python/latex/'); trackDownload('LaTeX', this.href); return false;">LaTeX</a></li></ul></div></div><div
+class="clear"></div></div><div
+class="clear"></div> <script type="text/javascript">$(document).ready(function() {
+                    $('#download_box').hide();
+                    $('#download_box').css('position', 'fixed');
+
+                    updateSubsection();
+                    $('#cheat_sheet_section').change(function(){
+                        updateSubsection();
+                    });
+
+                });
+
+                function updateSubsection() {
+                    $('#subsection_programming, #subsection_software, #subsection_business, #subsection_education, #subsection_home, #subsection_games,  #thisdoesnotexist').hide();
+                    switch ($('#cheat_sheet_section').val()) {
+                                                case 'programming':
+                            $('#subsection_programming').show();
+                            break;
+                                                case 'software':
+                            $('#subsection_software').show();
+                            break;
+                                                case 'business':
+                            $('#subsection_business').show();
+                            break;
+                                                case 'education':
+                            $('#subsection_education').show();
+                            break;
+                                                case 'home':
+                            $('#subsection_home').show();
+                            break;
+                                                case 'games':
+                            $('#subsection_games').show();
+                            break;
+                                            }
+                }
+
+                var timeToGo = 5;
+                var downloadTimer = false;
+                var downloadTarget = false;
+                function showPopup(target) {
+window.location.replace(target);
+return false;
+                    downloadTarget = target;
+                    timeToGo = 5;
+                    doCountdown();
+                    downloadTimer = setInterval(doCountdown, 1000);
+                    $('#showClose').hide();
+                    $('#download_box').show();
+                }
+                function doCountdown() {
+                    $('#counter').text(timeToGo);
+                    timeToGo = timeToGo - 1;
+                    if (timeToGo <= 0) {
+                        $('#showClose').fadeIn();
+                        clearInterval(downloadTimer);
+                        window.location.replace(downloadTarget);
+                    }
+                }</script> <div
+style="display: none; padding: 100px; text-align: center; background: #fff; background: rgba(255, 255, 255, 0.9); z-index: 3000; left: 0; right: 0; top: 0; bottom: 0; display: none;" id="download_box"><p
+style="text-align: center; font-size: 1.5em; color: #333;">Your Download Will Begin Automatically in <span
+id="counter">5</span> Seconds.<span
+id="showClose"><br><a
+onclick="$('#download_box').hide(); return false;" id="closebox">Close</a></span></p></div></aside><div
+class="clear" style="margin-bottom: 50px;"></div><div
+id="comments"><div
+class="clear">&nbsp;</div><div
+class="triptych3"><div
+id="tourauthors" class="sidebar_box cheat_sheet_footer sidebar_box_first_row"><h2 class="newsectiontitle notopmargin">Created By</h2><div
+class="sidebar_box_row">
+<a
+rel="author" style="float: left; margin: 6px 10px 10px 0" href="https://cheatography.com/davechild/" class="imagelink"><img
+class="gravatar lazy" style="vertical-align: middle;" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/fd7e3b77a3f3007ff30d932b65084851.32.jpg" width="32" height="32" alt="DaveChild"></a><a
+rel="author" href="https://cheatography.com/davechild/" class="user_hover">DaveChild</a>
+<br><a
+target="_blank" href="https://aloneonahill.com/">https://aloneonahill.com</a></div><div
+class="clear"></div></div><div
+class="sidebar_box cheat_sheet_footer sidebar_box_first_row"><div
+class="sidebar_box_first_row"><h2 class="newsectiontitle">Metadata</h2></div><div
+class="sidebar_box_row"><ul
+class="small_content_list"><li>Languages:<meta
+itemprop="inLanguage" content="en"/>
+<a
+rel="tag" href="https://cheatography.com/language/en/">English</a></li><meta
+itemprop="datePublished" content="2011-10-19"><li>Published: <span
+class="publish_date">19th October, 2011</span></li><li>Last Updated: <span
+class="update_date">3rd November, 2020</span></li><li>
+Rated: <span
+itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+<span
+itemprop="ratingValue">5</span> stars based on
+<span
+itemprop="ratingCount">103</span> ratings</span></li></ul></div></div><div
+class="sidebar_box"><div
+class="sidebar_box_first_row"><h2 class="newsectiontitle">Favourited By</h2></div><div
+class="sidebar_box_row"><p
+style="line-height: 36px; vertical-align: middle;">
+<a
+href="https://cheatography.com/ksrvsri/" class="imagelink user_hover" title="ksrvsri"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/099cfe360a1bcb6eca7e71fa637bf044.32.jpg" width="32" height="32" alt="ksrvsri"></a>
+<a
+href="https://cheatography.com/chantta-livo/" class="imagelink user_hover" title="chantta livo"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/9b10ab09000a8ad85479099bc3f0934d.32.jpg" width="32" height="32" alt="chantta livo"></a>
+<a
+href="https://cheatography.com/hpgj/" class="imagelink user_hover" title="hpgj"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/a3ae1a6dd5bb3f10e24e30bede60c0c0.32.jpg" width="32" height="32" alt="hpgj"></a>
+<a
+href="https://cheatography.com/jeaninem71/" class="imagelink user_hover" title="jeaninem71"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/85e6950ba0fdcb4646fc9a9c28b2a188.32.jpg" width="32" height="32" alt="jeaninem71"></a>
+<a
+href="https://cheatography.com/star0s/" class="imagelink user_hover" title="Star0s"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/ed3706f654726daa5fada5121f570c19.32.jpg" width="32" height="32" alt="Star0s"></a>
+<a
+href="https://cheatography.com/dogwith4shoes/" class="imagelink user_hover" title="dogwith4shoes"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/53cb2a24a6fa076cece77a67533a05dd.32.jpg" width="32" height="32" alt="dogwith4shoes"></a>
+<a
+href="https://cheatography.com/juspeachy/" class="imagelink user_hover" title="juspeachy"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/e0a04a79f599134ecf69902b03ad5901.32.jpg" width="32" height="32" alt="juspeachy"></a>
+<a
+href="https://cheatography.com/nabiirah/" class="imagelink user_hover" title="nabiirah"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/6112d16dea8e5a185b564b6a8b7fa3b5.32.jpg" width="32" height="32" alt="nabiirah"></a>
+<a
+href="https://cheatography.com/rubashov4/" class="imagelink user_hover" title="rubashov4"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/a131c413683eeeef09fbc0425f2a6727.32.jpg" width="32" height="32" alt="rubashov4"></a>
+<a
+href="https://cheatography.com/darrinc/" class="imagelink user_hover" title="DarrinC"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/8b4336ca5434481d161b3224a80f3897.32.jpg" width="32" height="32" alt="DarrinC"></a>
+<a
+href="https://cheatography.com/homer/" class="imagelink user_hover" title="Homer"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/6ad712b4b55110762d4b015c2006229b.32.jpg" width="32" height="32" alt="Homer"></a>
+<span
+class="show_more_trigger"><br>and <a
+href="javascript:return false;" onclick="$('.show_more_trigger').hide(); $('.show_more_content').show(); return false;">161 more ...</a></span> <span
+class="show_more_content hidden">                                    <a
+href="https://cheatography.com/sabblchan/" class="imagelink user_hover" title="sabblchan"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/4ac6d5f4e48ec22a854650a52b54590e.32.jpg" width="32" height="32" alt="sabblchan"></a>
+<a
+href="https://cheatography.com/sebastian-t/" class="imagelink user_hover" title="sebastian_t"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/ec8135df3e7a32355205d2e62889df1a.32.jpg" width="32" height="32" alt="sebastian_t"></a>
+<a
+href="https://cheatography.com/totalynobody/" class="imagelink user_hover" title="totalynobody"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/811fbd203fc1905f16219244eb933764.32.jpg" width="32" height="32" alt="totalynobody"></a>
+<a
+href="https://cheatography.com/lexx/" class="imagelink user_hover" title="lexx"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/813aa3994ec17da2fb2d19d1f4d5e026.32.jpg" width="32" height="32" alt="lexx"></a>
+<a
+href="https://cheatography.com/kaankadirkilic/" class="imagelink user_hover" title="kaankadirkilic"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/3e048569cea551f6141d0ef055c1b6dd.32.jpg" width="32" height="32" alt="kaankadirkilic"></a>
+<a
+href="https://cheatography.com/larry-hamilton/" class="imagelink user_hover" title="Larry Hamilton"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/6d6fee3d1a6ee39b87ec038cd6d1b589.32.jpg" width="32" height="32" alt="Larry Hamilton"></a>
+<a
+href="https://cheatography.com/etmness/" class="imagelink user_hover" title="etmness"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/34a64126c90aac921d1ee970a7e04402.32.jpg" width="32" height="32" alt="etmness"></a>
+<a
+href="https://cheatography.com/yodav/" class="imagelink user_hover" title="Yodav"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/9dcfddecaae57a542b0afa47b6e72957.32.jpg" width="32" height="32" alt="Yodav"></a>
+<a
+href="https://cheatography.com/niloazzurro/" class="imagelink user_hover" title="niloazzurro"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/fa23f53ac292c22241cc934eb878e351.32.jpg" width="32" height="32" alt="niloazzurro"></a>
+<a
+href="https://cheatography.com/mahfouz/" class="imagelink user_hover" title="Mahfouz"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/abb911ad4d465668f97f4570e4a24bc1.32.jpg" width="32" height="32" alt="Mahfouz"></a>
+<a
+href="https://cheatography.com/bspach/" class="imagelink user_hover" title="bspach"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/09461f6a73774929432f5c5d6e618e08.32.jpg" width="32" height="32" alt="bspach"></a>
+<a
+href="https://cheatography.com/merbst/" class="imagelink user_hover" title="merbst"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/67729ed3cf46f06fa5a7586567b37d44.32.jpg" width="32" height="32" alt="merbst"></a>
+<a
+href="https://cheatography.com/tr1p/" class="imagelink user_hover" title="tr1p"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/af3772f930c1201034cdb1ee9532e440.32.jpg" width="32" height="32" alt="tr1p"></a>
+<a
+href="https://cheatography.com/studiosusmed/" class="imagelink user_hover" title="studiosusmed"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/843f7ca02dcaabb26919353009b821ce.32.jpg" width="32" height="32" alt="studiosusmed"></a>
+<a
+href="https://cheatography.com/danilovryu/" class="imagelink user_hover" title="danilovryu"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/8074349d35a4e9ac6cfa5f811a0643f2.32.jpg" width="32" height="32" alt="danilovryu"></a>
+<a
+href="https://cheatography.com/gl-oct-18/" class="imagelink user_hover" title="gl_oct_18"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/5b36fbae82c7f20bd8586eeab435052a.32.jpg" width="32" height="32" alt="gl_oct_18"></a>
+<a
+href="https://cheatography.com/adrianlewis/" class="imagelink user_hover" title="AdrianLewis"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/6c82c1af138a7be91e4e3846cf28a6fe.32.jpg" width="32" height="32" alt="AdrianLewis"></a>
+<a
+href="https://cheatography.com/noob/" class="imagelink user_hover" title="Noob"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/4a7a17f20384b7841e06dd52659f9990.32.jpg" width="32" height="32" alt="Noob"></a>
+<a
+href="https://cheatography.com/bioinfogal/" class="imagelink user_hover" title="bioinfogal"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/d62eeb29609c36c007a75a9c6f6aefc7.32.jpg" width="32" height="32" alt="bioinfogal"></a>
+<a
+href="https://cheatography.com/arruda/" class="imagelink user_hover" title="arruda"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/90dbb29245f47ad0ab0620dbe5ee66c2.32.jpg" width="32" height="32" alt="arruda"></a>
+<a
+href="https://cheatography.com/aha/" class="imagelink user_hover" title="AHA"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/89d37f501d8a7e4f733fc5730c98aaf0.32.jpg" width="32" height="32" alt="AHA"></a>
+<a
+href="https://cheatography.com/reuriasjr/" class="imagelink user_hover" title="reuriasjr"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/0086c4384143c0c3c2cac693addf923d.32.jpg" width="32" height="32" alt="reuriasjr"></a>
+<a
+href="https://cheatography.com/baileydougman/" class="imagelink user_hover" title="baileydougman"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/6af2e37bc42b7cd8e2163d92a2b95b21.32.jpg" width="32" height="32" alt="baileydougman"></a>
+<a
+href="https://cheatography.com/cysec/" class="imagelink user_hover" title="cysec"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/a92e9a25fed598df48c982254c2d0d15.32.jpg" width="32" height="32" alt="cysec"></a>
+<a
+href="https://cheatography.com/quantumcalzone/" class="imagelink user_hover" title="QuantumCalzone"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/29d944c38ac324a0b6313e89c38fd741.32.jpg" width="32" height="32" alt="QuantumCalzone"></a>
+<a
+href="https://cheatography.com/jaggred/" class="imagelink user_hover" title="Jaggred"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/b2454b8834ffe33740dff39f5bcc9a59.32.jpg" width="32" height="32" alt="Jaggred"></a>
+<a
+href="https://cheatography.com/petedk/" class="imagelink user_hover" title="petedk"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/1c66f432d2a26fe3f8d4578ba66f6054.32.jpg" width="32" height="32" alt="petedk"></a>
+<a
+href="https://cheatography.com/a1ip/" class="imagelink user_hover" title="a1ip"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/eff56641e69a43aeaf5da2be394ceb17.32.jpg" width="32" height="32" alt="a1ip"></a>
+<a
+href="https://cheatography.com/jpjacobs/" class="imagelink user_hover" title="jpjacobs"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/b46bf4bac101312225d590f20eecaee3.32.jpg" width="32" height="32" alt="jpjacobs"></a>
+<a
+href="https://cheatography.com/fpuechl/" class="imagelink user_hover" title="fpuechl"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/5e25e6375b7ce00868b105ea61769bd3.32.jpg" width="32" height="32" alt="fpuechl"></a>
+<a
+href="https://cheatography.com/sathsal/" class="imagelink user_hover" title="sathsal"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/dc67ccdbe073234b96ff674c88c42b6c.32.jpg" width="32" height="32" alt="sathsal"></a>
+<a
+href="https://cheatography.com/carolinefawer-wasser/" class="imagelink user_hover" title="CarolineFawer-Wasser"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/6169c889a887340e664749bb2d154bc6.32.jpg" width="32" height="32" alt="CarolineFawer-Wasser"></a>
+<a
+href="https://cheatography.com/youurt/" class="imagelink user_hover" title="youurt"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/06743e2c127e5fde06b10beee6630b76.32.jpg" width="32" height="32" alt="youurt"></a>
+<a
+href="https://cheatography.com/daric/" class="imagelink user_hover" title="Daric"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/6842642bfe6a0636ba976cf0481bf179.32.jpg" width="32" height="32" alt="Daric"></a>
+<a
+href="https://cheatography.com/mawt/" class="imagelink user_hover" title="MAWT"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/003b620526c7ce78bcf7bffbd06eebd7.32.jpg" width="32" height="32" alt="MAWT"></a>
+<a
+href="https://cheatography.com/torsionsfrei/" class="imagelink user_hover" title="torsionsfrei"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/3d773cfb4795120c237453c4567b2ac0.32.jpg" width="32" height="32" alt="torsionsfrei"></a>
+<a
+href="https://cheatography.com/andrey99/" class="imagelink user_hover" title="Andrey99"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/794ce66e911a81aabe5e00d65a150d37.32.jpg" width="32" height="32" alt="Andrey99"></a>
+<a
+href="https://cheatography.com/theseth/" class="imagelink user_hover" title="theseth"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/9e91cb48bd08a1baf47e40249ad62620.32.jpg" width="32" height="32" alt="theseth"></a>
+<a
+href="https://cheatography.com/isantabarbara/" class="imagelink user_hover" title="isantabarbara"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/d5c59e36322c8feb72752232f66b51f7.32.jpg" width="32" height="32" alt="isantabarbara"></a>
+<a
+href="https://cheatography.com/yusausa09/" class="imagelink user_hover" title="yusausa09"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/bc7f4e787b749083598fdb4b18702940.32.jpg" width="32" height="32" alt="yusausa09"></a>
+<a
+href="https://cheatography.com/dfpeterson/" class="imagelink user_hover" title="dfpeterson"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/2d21877f06b948460b3daf144500b118.32.jpg" width="32" height="32" alt="dfpeterson"></a>
+<a
+href="https://cheatography.com/headphones/" class="imagelink user_hover" title="Headphones"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/9c7fabbce8a48a95be192fd5287d703f.32.jpg" width="32" height="32" alt="Headphones"></a>
+<a
+href="https://cheatography.com/niseak/" class="imagelink user_hover" title="niseak"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/0240b7c0f8798c14465914e28fa6f7bc.32.jpg" width="32" height="32" alt="niseak"></a>
+<a
+href="https://cheatography.com/frns4ever/" class="imagelink user_hover" title="frns4ever"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/f32e28ff5a6162a8a7de5df556465c0b.32.jpg" width="32" height="32" alt="frns4ever"></a>
+<a
+href="https://cheatography.com/jasonlindberg/" class="imagelink user_hover" title="jasonlindberg"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/f2b125bb40625d3deb348c4265b8b27d.32.jpg" width="32" height="32" alt="jasonlindberg"></a>
+<a
+href="https://cheatography.com/mantissa/" class="imagelink user_hover" title="mantissa"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/9377c14119c508d07cf091e63134d008.32.jpg" width="32" height="32" alt="mantissa"></a>
+<a
+href="https://cheatography.com/maddddd/" class="imagelink user_hover" title="maddddd"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/dc4bdbeb65070ce605882880bb2ccd3d.32.jpg" width="32" height="32" alt="maddddd"></a>
+<a
+href="https://cheatography.com/wizzdm/" class="imagelink user_hover" title="wizzdm"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/5d37b65b8dcb931a161b58977eccc78f.32.jpg" width="32" height="32" alt="wizzdm"></a>
+<a
+href="https://cheatography.com/sevenbates/" class="imagelink user_hover" title="sevenbates"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/0ccf77a26aa853625a76c9cea09ffd1e.32.jpg" width="32" height="32" alt="sevenbates"></a>
+<a
+href="https://cheatography.com/drumkill64/" class="imagelink user_hover" title="Drumkill64"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/28c4487a8404f0804b2299bb5f7d5b2a.32.jpg" width="32" height="32" alt="Drumkill64"></a>
+<a
+href="https://cheatography.com/outlaw16/" class="imagelink user_hover" title="outlaw16"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/7b2b338ba1c040fa72aa802fd1cf9ac8.32.jpg" width="32" height="32" alt="outlaw16"></a>
+<a
+href="https://cheatography.com/chaesara/" class="imagelink user_hover" title="chaesara"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/9d970f92f5dad1bf1d3281bd5eef84ec.32.jpg" width="32" height="32" alt="chaesara"></a>
+<a
+href="https://cheatography.com/nazime/" class="imagelink user_hover" title="Nazime"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/9a468cb927238170d6e731f639060186.32.jpg" width="32" height="32" alt="Nazime"></a>
+<a
+href="https://cheatography.com/sulyons/" class="imagelink user_hover" title="sulyons"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/5a87a2fe784c59e35ecdd6c5f40d1f37.32.jpg" width="32" height="32" alt="sulyons"></a>
+<a
+href="https://cheatography.com/infinitone/" class="imagelink user_hover" title="infinitone"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/73c3c663d8f959f9a21cfe9ddd013483.32.jpg" width="32" height="32" alt="infinitone"></a>
+<a
+href="https://cheatography.com/jsire1111/" class="imagelink user_hover" title="jsire1111"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/4d9f976c305f8e2a7f8863cafe8528b0.32.jpg" width="32" height="32" alt="jsire1111"></a>
+<a
+href="https://cheatography.com/gamliel/" class="imagelink user_hover" title="gamliel"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/855f0f8be38266028f467b0e3d1c45cc.32.jpg" width="32" height="32" alt="gamliel"></a>
+<a
+href="https://cheatography.com/tejasshetty-1808/" class="imagelink user_hover" title="tejasshetty.1808"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/fe9250949dd908c0cf456f7317dbb4a8.32.jpg" width="32" height="32" alt="tejasshetty.1808"></a>
+<a
+href="https://cheatography.com/rosst/" class="imagelink user_hover" title="rossT"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/569d4fb622ed49005e54dd12be9ec861.32.jpg" width="32" height="32" alt="rossT"></a>
+<a
+href="https://cheatography.com/sylarvolkoff/" class="imagelink user_hover" title="Sylarvolkoff"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/83ac3fa4f97e24f2c8c8d743d9977052.32.jpg" width="32" height="32" alt="Sylarvolkoff"></a>
+<a
+href="https://cheatography.com/horsedisco/" class="imagelink user_hover" title="horsedisco"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/a443f4804c3d9ee2bb34c4037bd2c06c.32.jpg" width="32" height="32" alt="horsedisco"></a>
+<a
+href="https://cheatography.com/siggib/" class="imagelink user_hover" title="siggib"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/e7ae8d9fa09a7d48bb46ba1e3a87f9d5.32.jpg" width="32" height="32" alt="siggib"></a>
+<a
+href="https://cheatography.com/kaiserha/" class="imagelink user_hover" title="kaiserha"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/b5100adab78de0d4fe85a899d1916345.32.jpg" width="32" height="32" alt="kaiserha"></a>
+<a
+href="https://cheatography.com/ritalbradley/" class="imagelink user_hover" title="ritalbradley"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/1bf8cb71c923769dae989f86a330a783.32.jpg" width="32" height="32" alt="ritalbradley"></a>
+<a
+href="https://cheatography.com/gugahoi/" class="imagelink user_hover" title="gugahoi"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/0a9bf4e43b8215171f351e3f54ebfc26.32.jpg" width="32" height="32" alt="gugahoi"></a>
+<a
+href="https://cheatography.com/mkleach/" class="imagelink user_hover" title="mkleach"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/c0df6b4d623324c1984d60a6896b2dab.32.jpg" width="32" height="32" alt="mkleach"></a>
+<a
+href="https://cheatography.com/anon-cheater/" class="imagelink user_hover" title="anon_cheater"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/071606a9d188aafa2d89793f58b54b35.32.jpg" width="32" height="32" alt="anon_cheater"></a>
+<a
+href="https://cheatography.com/raj47i/" class="imagelink user_hover" title="raj47i"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/82213215930d90897c29685350ec4afa.32.jpg" width="32" height="32" alt="raj47i"></a>
+<a
+href="https://cheatography.com/vv111y/" class="imagelink user_hover" title="vv111y"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/a027a9b11fc37cba26fc414386680fd0.32.jpg" width="32" height="32" alt="vv111y"></a>
+<a
+href="https://cheatography.com/athar/" class="imagelink user_hover" title="Athar"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/153db0cad386c4a295dbcb092e5471b3.32.jpg" width="32" height="32" alt="Athar"></a>
+<a
+href="https://cheatography.com/tiantianisfox/" class="imagelink user_hover" title="tiantianisfox"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/75ee32895f11a247c948c52ec479f8c4.32.jpg" width="32" height="32" alt="tiantianisfox"></a>
+<a
+href="https://cheatography.com/zuzonko/" class="imagelink user_hover" title="zuzonko"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/de3d151ad052d183e969e472c660883c.32.jpg" width="32" height="32" alt="zuzonko"></a>
+<a
+href="https://cheatography.com/florian-waelchli/" class="imagelink user_hover" title="florian.waelchli"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/b334a0bd36297ce6d11419bb82577e76.32.jpg" width="32" height="32" alt="florian.waelchli"></a>
+<a
+href="https://cheatography.com/markhuyong/" class="imagelink user_hover" title="markhuyong"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/9ea991685ccde86cfd4510ae1a85a415.32.jpg" width="32" height="32" alt="markhuyong"></a>
+<a
+href="https://cheatography.com/ale/" class="imagelink user_hover" title="ale"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/73c22fd5958b37cb71f13b9d8390732d.32.jpg" width="32" height="32" alt="ale"></a>
+<a
+href="https://cheatography.com/patakyr/" class="imagelink user_hover" title="patakyr"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/634b7d30dd876402334cbb900c1c9cb4.32.jpg" width="32" height="32" alt="patakyr"></a>
+<a
+href="https://cheatography.com/seidkarl/" class="imagelink user_hover" title="seidkarl"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/c94fcbb15d6e24891f80008c700e87d3.32.jpg" width="32" height="32" alt="seidkarl"></a>
+<a
+href="https://cheatography.com/vinceswann/" class="imagelink user_hover" title="vinceswann"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/9c38897eb87ca1b4f667336ca1cdf7a3.32.jpg" width="32" height="32" alt="vinceswann"></a>
+<a
+href="https://cheatography.com/dhollinger/" class="imagelink user_hover" title="dhollinger"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/c046d2737d97e03abb812278e31c1e3d.32.jpg" width="32" height="32" alt="dhollinger"></a>
+<a
+href="https://cheatography.com/jjaab/" class="imagelink user_hover" title="jjaab"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/ade82a76ab169a3861848429f56e9773.32.jpg" width="32" height="32" alt="jjaab"></a>
+<a
+href="https://cheatography.com/bbrik/" class="imagelink user_hover" title="bbrik"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/d0fcabcef3b2d1b7aaf04c452623384d.32.jpg" width="32" height="32" alt="bbrik"></a>
+<a
+href="https://cheatography.com/davidalanmorgan/" class="imagelink user_hover" title="davidalanmorgan"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/8ea1a8acdabc8ae657ac1c1fe51c481a.32.jpg" width="32" height="32" alt="davidalanmorgan"></a>
+<a
+href="https://cheatography.com/capt-redbeard/" class="imagelink user_hover" title="capt_redbeard"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/937db060a95ecc315b5e609ef07068be.32.jpg" width="32" height="32" alt="capt_redbeard"></a>
+<a
+href="https://cheatography.com/jpaquim/" class="imagelink user_hover" title="JPaquim"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/a6551a3c5e8bc0d91c8dc9ed5946ec46.32.jpg" width="32" height="32" alt="JPaquim"></a>
+<a
+href="https://cheatography.com/hqzxjczx/" class="imagelink user_hover" title="hqzxjczx"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/1e5000da57284c650857695ebbabd4a3.32.jpg" width="32" height="32" alt="hqzxjczx"></a>
+<a
+href="https://cheatography.com/anticom/" class="imagelink user_hover" title="anticom"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/0e53eda4a7385114a5f5fd15c73861b6.32.jpg" width="32" height="32" alt="anticom"></a>
+<a
+href="https://cheatography.com/godspeed23-carl/" class="imagelink user_hover" title="godspeed23.carl"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/1db96344e3d89e8141e6e34c611401e8.32.jpg" width="32" height="32" alt="godspeed23.carl"></a>
+<a
+href="https://cheatography.com/kyleahart/" class="imagelink user_hover" title="kyleahart"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/675d588c37dce99babb654cb2e413a5c.32.jpg" width="32" height="32" alt="kyleahart"></a>
+<a
+href="https://cheatography.com/benmordecai/" class="imagelink user_hover" title="benmordecai"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/3e0e57c7428e1fa0b2fcada9fc1659b0.32.jpg" width="32" height="32" alt="benmordecai"></a>
+<a
+href="https://cheatography.com/zenlc2000/" class="imagelink user_hover" title="zenlc2000"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/765cf0286c6b612df82817b8cdf5eeaf.32.jpg" width="32" height="32" alt="zenlc2000"></a>
+<a
+href="https://cheatography.com/jeff-0000/" class="imagelink user_hover" title="Jeff_0000"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/31c9b587189242878d046b3aa6d5da06.32.jpg" width="32" height="32" alt="Jeff_0000"></a>
+<a
+href="https://cheatography.com/amc538/" class="imagelink user_hover" title="amc538"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/59a433675b4625e4dd9c7680ee472a71.32.jpg" width="32" height="32" alt="amc538"></a>
+<a
+href="https://cheatography.com/owtla/" class="imagelink user_hover" title="owtla"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/957ec60e75526718d2a281971fadc809.32.jpg" width="32" height="32" alt="owtla"></a>
+<a
+href="https://cheatography.com/wolfsong/" class="imagelink user_hover" title="wolfsong"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/2e690b28c89211b39b746ddae9d3a59e.32.jpg" width="32" height="32" alt="wolfsong"></a>
+<a
+href="https://cheatography.com/mandarb/" class="imagelink user_hover" title="mandarb"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/781ad4c93e885c315f8e6403da89aaa5.32.jpg" width="32" height="32" alt="mandarb"></a>
+<a
+href="https://cheatography.com/walsh/" class="imagelink user_hover" title="walsh"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/19ab61902d86490494f9510a585c2be5.32.jpg" width="32" height="32" alt="walsh"></a>
+<a
+href="https://cheatography.com/jharmn/" class="imagelink user_hover" title="jharmn"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/6795c64ec85001e9dc662cf64adcb69a.32.jpg" width="32" height="32" alt="jharmn"></a>
+<a
+href="https://cheatography.com/route666/" class="imagelink user_hover" title="route666"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/272d4670da4acbaca5ed752f42554e88.32.jpg" width="32" height="32" alt="route666"></a>
+<a
+href="https://cheatography.com/doblak/" class="imagelink user_hover" title="doblak"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/7c63498b900acc58a017f13cce68db2d.32.jpg" width="32" height="32" alt="doblak"></a>
+<a
+href="https://cheatography.com/kevnm67/" class="imagelink user_hover" title="kevnm67"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/3f6822870903d90dff2b530ffbecec0e.32.jpg" width="32" height="32" alt="kevnm67"></a>
+<a
+href="https://cheatography.com/brazacka/" class="imagelink user_hover" title="brazacka"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/ae1313a71ed1ee350736afa4537704ec.32.jpg" width="32" height="32" alt="brazacka"></a>
+<a
+href="https://cheatography.com/moopuppy/" class="imagelink user_hover" title="MooPuppy"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/280b6367967ca5f7fc6123f3e7fdd324.32.jpg" width="32" height="32" alt="MooPuppy"></a>
+<a
+href="https://cheatography.com/thegitfather/" class="imagelink user_hover" title="thegitfather"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/091a51149b99e540ca9141eaeaa8c38b.32.jpg" width="32" height="32" alt="thegitfather"></a>
+<a
+href="https://cheatography.com/aung2phyowai/" class="imagelink user_hover" title="aung2phyowai"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/425014d222aa4f32cca2ae86b8446b4a.32.jpg" width="32" height="32" alt="aung2phyowai"></a>
+<a
+href="https://cheatography.com/stephenpegoraro/" class="imagelink user_hover" title="stephenpegoraro"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/e67665511ef2433bfe94a51a0f0a6b27.32.jpg" width="32" height="32" alt="stephenpegoraro"></a>
+<a
+href="https://cheatography.com/siripuramrk/" class="imagelink user_hover" title="siripuramrk"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/493821127ba1fc3e71a24d6c3d4d1ba2.32.jpg" width="32" height="32" alt="siripuramrk"></a>
+<a
+href="https://cheatography.com/monty0018/" class="imagelink user_hover" title="monty0018"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/5960c5b8659f82eeccf5c1ffd94cb2e0.32.jpg" width="32" height="32" alt="monty0018"></a>
+<a
+href="https://cheatography.com/vecna/" class="imagelink user_hover" title="Vecna"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/f6e88b3acc6bc715b2849ad1f38a1f3b.32.jpg" width="32" height="32" alt="Vecna"></a>
+<a
+href="https://cheatography.com/stephenjjohnson/" class="imagelink user_hover" title="stephenjjohnson"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/1aaef79b3433e555c9b4503e2fc50ad7.32.jpg" width="32" height="32" alt="stephenjjohnson"></a>
+<a
+href="https://cheatography.com/talldave/" class="imagelink user_hover" title="talldave"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/b22bc53d8b95490735447265d40d3288.32.jpg" width="32" height="32" alt="talldave"></a>
+<a
+href="https://cheatography.com/robertmorris/" class="imagelink user_hover" title="robertmorris"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/c188560ee7f6a87ea4e1da89c5522922.32.jpg" width="32" height="32" alt="robertmorris"></a>
+<a
+href="https://cheatography.com/freaksed/" class="imagelink user_hover" title="Freaksed"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/caa7e496eb9c6bd678a00bbd78bdee54.32.jpg" width="32" height="32" alt="Freaksed"></a>
+<a
+href="https://cheatography.com/nuno/" class="imagelink user_hover" title="nuno"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/12bf1b621764d99229a1063667dbcaaf.32.jpg" width="32" height="32" alt="nuno"></a>
+<a
+href="https://cheatography.com/shahzaib/" class="imagelink user_hover" title="shahzaib"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/4f9a665c5680737f992f06bb2bd47e93.32.jpg" width="32" height="32" alt="shahzaib"></a>
+<a
+href="https://cheatography.com/dontaut/" class="imagelink user_hover" title="dontaut"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/e8d52fcc35a03598d7709a612dc2c853.32.jpg" width="32" height="32" alt="dontaut"></a>
+<a
+href="https://cheatography.com/chainpython/" class="imagelink user_hover" title="chainpython"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/e5683b28421433b0a206ad4d0ef7545e.32.jpg" width="32" height="32" alt="chainpython"></a>
+<a
+href="https://cheatography.com/chrysa/" class="imagelink user_hover" title="chrysa"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/0f81e51dbf8cdeb4ee13f3aa03d92f5b.32.jpg" width="32" height="32" alt="chrysa"></a>
+<a
+href="https://cheatography.com/fkorling/" class="imagelink user_hover" title="fkorling"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/d032fb06136a64b9e27eaf9a085c3331.32.jpg" width="32" height="32" alt="fkorling"></a>
+<a
+href="https://cheatography.com/kizzlebot/" class="imagelink user_hover" title="kizzlebot"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/333570007c5db55e4861be8acf0b89b8.32.jpg" width="32" height="32" alt="kizzlebot"></a>
+<a
+href="https://cheatography.com/mccloud/" class="imagelink user_hover" title="McCloud"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/43aa500f4a4f7a0b8f5edf60c62fbf53.32.jpg" width="32" height="32" alt="McCloud"></a>
+<a
+href="https://cheatography.com/d1r3i9c0e/" class="imagelink user_hover" title="d1r3i9c0e"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/ad150d2dd7d86b910ea2a66417a1f75c.32.jpg" width="32" height="32" alt="d1r3i9c0e"></a>
+<a
+href="https://cheatography.com/franklens/" class="imagelink user_hover" title="FranklenS"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/7bcb2d069a499a47f79143f2960e819d.32.jpg" width="32" height="32" alt="FranklenS"></a>
+<a
+href="https://cheatography.com/guslong/" class="imagelink user_hover" title="guslong"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/4571b25aad2c23ebef8daac0c2011aff.32.jpg" width="32" height="32" alt="guslong"></a>
+<a
+href="https://cheatography.com/martinprins/" class="imagelink user_hover" title="martinprins"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/eaf59739836cc2f138c202d05256323d.32.jpg" width="32" height="32" alt="martinprins"></a>
+<a
+href="https://cheatography.com/thibaultgomarin/" class="imagelink user_hover" title="ThibaultGomarin"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/4489494c63979343159c2b0d8e546d0a.32.jpg" width="32" height="32" alt="ThibaultGomarin"></a>
+<a
+href="https://cheatography.com/puresky/" class="imagelink user_hover" title="puresky"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/8872d23872058f0ff1fc40ebf9e7d25a.32.jpg" width="32" height="32" alt="puresky"></a>
+<a
+href="https://cheatography.com/amitb2050/" class="imagelink user_hover" title="amitb2050"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/e225794836693131f3833298c47a640c.32.jpg" width="32" height="32" alt="amitb2050"></a>
+<a
+href="https://cheatography.com/gmickd/" class="imagelink user_hover" title="gmickd"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/b2342841ebf1cfdd5efa54ace105ea25.32.jpg" width="32" height="32" alt="gmickd"></a>
+<a
+href="https://cheatography.com/internaciulo/" class="imagelink user_hover" title="internaciulo"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/f33435ee7e8da5170a0e92b3e7ef084a.32.jpg" width="32" height="32" alt="internaciulo"></a>
+<a
+href="https://cheatography.com/theosis/" class="imagelink user_hover" title="Theosis"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/21111185cb4567f7059181d0559ea94f.32.jpg" width="32" height="32" alt="Theosis"></a>
+<a
+href="https://cheatography.com/swahilikid/" class="imagelink user_hover" title="Swahilikid"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/456ad0fb2082dfed71c4c2a46d0a3864.32.jpg" width="32" height="32" alt="Swahilikid"></a>
+<a
+href="https://cheatography.com/eric-normandeau/" class="imagelink user_hover" title="Eric Normandeau"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/96fd26f7bb61541d187fc40fa93e4618.32.jpg" width="32" height="32" alt="Eric Normandeau"></a>
+<a
+href="https://cheatography.com/coldblackice/" class="imagelink user_hover" title="Coldblackice"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/5ca6b00262ff3a2e88f8e2e019ccf092.32.jpg" width="32" height="32" alt="Coldblackice"></a>
+<a
+href="https://cheatography.com/orx57/" class="imagelink user_hover" title="orx57"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/cd966a0d88516e66d29ddb9ea61a4501.32.jpg" width="32" height="32" alt="orx57"></a>
+<a
+href="https://cheatography.com/akipta/" class="imagelink user_hover" title="akipta"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/aaa5e881c580fdca952bd9fb475b5cf2.32.jpg" width="32" height="32" alt="akipta"></a>
+<a
+href="https://cheatography.com/cpriest/" class="imagelink user_hover" title="cpriest"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/3fe019ca0504eaba8c2603ded8067845.32.jpg" width="32" height="32" alt="cpriest"></a>
+<a
+href="https://cheatography.com/mroggy85/" class="imagelink user_hover" title="MrOggy85"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/b8ccf4adaf5b8c68b90707026fb5e8a6.32.jpg" width="32" height="32" alt="MrOggy85"></a>
+<a
+href="https://cheatography.com/asafge/" class="imagelink user_hover" title="asafge"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/bb4a1c5ed95e2ecc42a4f98a0bde58e1.32.jpg" width="32" height="32" alt="asafge"></a>
+<a
+href="https://cheatography.com/itbuddha/" class="imagelink user_hover" title="itbuddha"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/63567d0266fde9ef468dc256a3b25205.32.jpg" width="32" height="32" alt="itbuddha"></a>
+<a
+href="https://cheatography.com/huskeraider/" class="imagelink user_hover" title="Huskeraider"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/b8216df027a6480c721cb805f42ce9ee.32.jpg" width="32" height="32" alt="Huskeraider"></a>
+<a
+href="https://cheatography.com/sturtus/" class="imagelink user_hover" title="sturtus"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/f9f73d4fe9df9b7a2b3f6efb87d216e8.32.jpg" width="32" height="32" alt="sturtus"></a>
+<a
+href="https://cheatography.com/martinku/" class="imagelink user_hover" title="martinku"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/44fb966d1d3a42893ff3245705edd0b0.32.jpg" width="32" height="32" alt="martinku"></a>
+<a
+href="https://cheatography.com/plastefuchs/" class="imagelink user_hover" title="Plastefuchs"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/b8140ce3a33dd4d8859c688d84ed3be4.32.jpg" width="32" height="32" alt="Plastefuchs"></a>
+<a
+href="https://cheatography.com/rbopilot/" class="imagelink user_hover" title="RboPilot"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/3b2c31137723c8926bee182d7e3744c1.32.jpg" width="32" height="32" alt="RboPilot"></a>
+<a
+href="https://cheatography.com/onitek/" class="imagelink user_hover" title="onitek"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/cc069dcec2a2a21f5884a6d167a2e791.32.jpg" width="32" height="32" alt="onitek"></a>
+<a
+href="https://cheatography.com/vonkes/" class="imagelink user_hover" title="vonkes"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/799b7c7607b4d8103e77c851c1949c40.32.jpg" width="32" height="32" alt="vonkes"></a>
+<a
+href="https://cheatography.com/fire9/" class="imagelink user_hover" title="fire9"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/3d7a71f7933014edd5d8c3316e117a4e.32.jpg" width="32" height="32" alt="fire9"></a>
+<a
+href="https://cheatography.com/docdocsteve/" class="imagelink user_hover" title="docdocsteve"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/458c59db3accc1a1ec687dffd97887ac.32.jpg" width="32" height="32" alt="docdocsteve"></a>
+<a
+href="https://cheatography.com/ajumell/" class="imagelink user_hover" title="ajumell"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/36ba063c2d77681dbfb84b70fc295798.32.jpg" width="32" height="32" alt="ajumell"></a>
+<a
+href="https://cheatography.com/blebo/" class="imagelink user_hover" title="blebo"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/0f34d5080f6167970d09b2a029461b2a.32.jpg" width="32" height="32" alt="blebo"></a>
+<a
+href="https://cheatography.com/sebbu/" class="imagelink user_hover" title="sebbu"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/f5c68c0b6ccafeae2b591cbbd63bf3e1.32.jpg" width="32" height="32" alt="sebbu"></a>
+<a
+href="https://cheatography.com/provaguest/" class="imagelink user_hover" title="Provaguest"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/cbe33e66f890e45daea3a40854c20646.32.jpg" width="32" height="32" alt="Provaguest"></a>
+<a
+href="https://cheatography.com/sschaub/" class="imagelink user_hover" title="sschaub"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/ea51ad6add02ee57585fdfdc9fbc6f42.32.jpg" width="32" height="32" alt="sschaub"></a>
+<a
+href="https://cheatography.com/naesk/" class="imagelink user_hover" title="naesk"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/7be668d3f885af900fa00bf3c41160aa.32.jpg" width="32" height="32" alt="naesk"></a>
+<a
+href="https://cheatography.com/akuiraz/" class="imagelink user_hover" title="akuiraz"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/723a18b12c99a1e3fad679f39e53ea80.32.jpg" width="32" height="32" alt="akuiraz"></a>
+<a
+href="https://cheatography.com/manoelhc/" class="imagelink user_hover" title="manoelhc"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/710a543a34a181d528dab05d4550dfed.32.jpg" width="32" height="32" alt="manoelhc"></a>
+<a
+href="https://cheatography.com/anomalophobe/" class="imagelink user_hover" title="anomalophobe"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/0dc876f5a939b1276bd5f48a81463dfe.32.jpg" width="32" height="32" alt="anomalophobe"></a>
+<a
+href="https://cheatography.com/arnoldobr/" class="imagelink user_hover" title="arnoldobr"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/6341a63b1ad1b6e4dbbca8b0c350b5d0.32.jpg" width="32" height="32" alt="arnoldobr"></a>
+<a
+href="https://cheatography.com/xcjjzh/" class="imagelink user_hover" title="xcjjzh"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/b80973cd0046f25f17f0cccdbe11db27.32.jpg" width="32" height="32" alt="xcjjzh"></a>
+<a
+href="https://cheatography.com/cybertron/" class="imagelink user_hover" title="CyberTron"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/855c77a7879aa79fed36476c980eede3.32.jpg" width="32" height="32" alt="CyberTron"></a>
+</span></p></div></div></div><div
+class="triptychdbll"><h2 class="newsectiontitle notopmargin">Comments</h2><div
+class="commentblock" id="comment123" itemprop="comment" itemscope itemtype="http://schema.org/Comment"><p
+class="commenter"><span
+itemprop="author" itemscope itemtype="http://schema.org/Person">
+<img
+style="margin: 0 8px 0 0;" class="lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/1f7984600d6521f51335d7578ef4481b.32.jpg" alt="Brent Hoover" width="32" height="32">
+<span
+itemprop="name">Brent Hoover</span>
+</span>
+<a
+href="https://cheatography.com:443/davechild/cheat-sheets/python/#comment123" itemprop="datePublished" datetime="2011-12-06T07:45:54+00:00">07:45 6 Dec 11</a></p><p
+class="commentext" itemprop="text">This is a great cheatsheet. I'd add a few things, though I don't know what I would remove. I'd add dictionary methods, built-in functions (http://docs.python.org/library/functions.html), and the regular expression functions, since they are odd and I can never remember which one returns what.</p><div
+class="commentreply" id="reply_123"></div></div><div
+class="commentblock" id="comment4382" itemprop="comment" itemscope itemtype="http://schema.org/Comment"><p
+class="commenter"><span
+itemprop="author" itemscope itemtype="http://schema.org/Person">
+<img
+style="margin: 0 8px 0 0;" class="lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/641c0f4726ccfe106a6b24eb8899941a.32.jpg" alt="Mike" width="32" height="32">
+<span
+itemprop="name">Mike</span>
+</span>
+<a
+href="https://cheatography.com:443/davechild/cheat-sheets/python/#comment4382" itemprop="datePublished" datetime="2012-09-17T08:01:45+00:00">08:01 17 Sep 12</a></p><p
+class="commentext" itemprop="text">Hi Dave, thanks for the opensource information. From a Newbie Pythionista wannabe</p><div
+class="commentreply" id="reply_4382"></div></div><div
+class="commentblock" id="comment4415" itemprop="comment" itemscope itemtype="http://schema.org/Comment"><p
+class="commenter"><span
+itemprop="author" itemscope itemtype="http://schema.org/Person">
+<img
+style="margin: 0 8px 0 0;" class="lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/b3e522f786e90272f1b55bba85798e1b.32.jpg" alt="Desiree" width="32" height="32">
+<span
+itemprop="name">Desiree</span>
+</span>
+<a
+href="https://cheatography.com:443/davechild/cheat-sheets/python/#comment4415" itemprop="datePublished" datetime="2012-10-11T21:43:59+00:00">21:43 11 Oct 12</a></p><p
+class="commentext" itemprop="text">Thank you, Dave, for your generosity. This will be helpful in a course I'm taking on 'Programming Fundamentals with Python'.</p><div
+class="commentreply" id="reply_4415"></div></div><div
+class="commentblock" id="comment29413" itemprop="comment" itemscope itemtype="http://schema.org/Comment"><p
+class="commenter"><span
+itemprop="author" itemscope itemtype="http://schema.org/Person">
+<img
+style="margin: 0 8px 0 0;" class="lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/b254d7fff4430d8dda03a85aaeb79ac7.32.jpg" alt="Samantha Atkins" width="32" height="32">
+<span
+itemprop="name">Samantha Atkins</span>
+</span>
+<a
+href="https://cheatography.com:443/davechild/cheat-sheets/python/#comment29413" itemprop="datePublished" datetime="2014-05-30T10:12:51+00:00">10:12 30 May 14</a></p><p
+class="commentext" itemprop="text">I would add:<br
+/>
+with patterns and how to roll your own;<br
+/>
+list comprehensions;<br
+/>
+generators and methods of making them;<br
+/>
+decorators;<br
+/>
+getattr, hasattr, setattr. <br
+/>
+<br
+/>
+At least I ask people that say they really know python well about these things.</p><div
+class="commentreply" id="reply_29413"></div></div><div
+class="commentblock" id="comment29734" itemprop="comment" itemscope itemtype="http://schema.org/Comment"><p
+class="commenter"><span
+itemprop="author" itemscope itemtype="http://schema.org/Person">
+<img
+style="margin: 0 8px 0 0;" class="lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/0bf662fe86d1481669b7c9d3cca578b2.32.jpg" alt="Stan" width="32" height="32">
+<span
+itemprop="name">Stan</span>
+</span>
+<a
+href="https://cheatography.com:443/davechild/cheat-sheets/python/#comment29734" itemprop="datePublished" datetime="2014-11-07T17:53:35+00:00">17:53 7 Nov 14</a></p><p
+class="commentext" itemprop="text">Missing, reverse a string<br
+/>
+&gt;&gt;&gt; 'hello world'[::-1]<br
+/>
+'dlrow olleh'<br
+/>
+<br
+/></p><div
+class="commentreply" id="reply_29734"></div></div><div
+class="commentblock" id="comment29735" itemprop="comment" itemscope itemtype="http://schema.org/Comment"><p
+class="commenter"><span
+itemprop="author" itemscope itemtype="http://schema.org/Person">
+<img
+style="margin: 0 8px 0 0;" class="lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/bd6a167af632fea802707ce70fffebd1.32.jpg" alt="Brian" width="32" height="32">
+<span
+itemprop="name">Brian</span>
+</span>
+<a
+href="https://cheatography.com:443/davechild/cheat-sheets/python/#comment29735" itemprop="datePublished" datetime="2014-11-07T17:53:48+00:00">17:53 7 Nov 14</a></p><p
+class="commentext" itemprop="text">Not &quot;patch&quot; <br
+/>
+<br
+/>
+<br
+/>
+os.pathsep<br
+/>
+The character conventionally used by the operating system to separate search path components (as in PATH), such as colon for POSIX or semicolon for Windows. Also available via os.path.<br
+/></p><div
+class="commentreply" id="reply_29735"></div></div><div
+class="commentblock" id="comment29736" itemprop="comment" itemscope itemtype="http://schema.org/Comment"><p
+class="commenter"><span
+itemprop="author" itemscope itemtype="http://schema.org/Person">
+<a
+href="https://cheatography.com/cosmin/" class="imagelink"><img
+style="margin: 0 8px 0 0;" class="lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/bc69311c533ea90ddefbec80d2b873a7.32.jpg" alt="cosmin" width="32" height="32"></a>
+<a
+href="https://cheatography.com/cosmin/" class="user_hover" itemprop="name">cosmin</a>,
+</span>
+<a
+href="https://cheatography.com:443/davechild/cheat-sheets/python/#comment29736" itemprop="datePublished" datetime="2014-11-07T20:29:59+00:00">20:29 7 Nov 14</a></p><p
+class="commentext" itemprop="text">Curious, is there a way to download this as a PDF? I'm sometimes away but I like to carry stuff like this with me. Thank you.</p><div
+class="commentreply" id="reply_29736"></div></div><div
+class="commentblock" id="comment29738" itemprop="comment" itemscope itemtype="http://schema.org/Comment"><p
+class="commenter"><span
+itemprop="author" itemscope itemtype="http://schema.org/Person">
+<img
+style="margin: 0 8px 0 0;" class="lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/184006271732c7f19243bd6ca989854c.32.jpg" alt="johnbuk" width="32" height="32">
+<span
+itemprop="name">johnbuk</span>
+</span>
+<a
+href="https://cheatography.com:443/davechild/cheat-sheets/python/#comment29738" itemprop="datePublished" datetime="2014-11-10T16:14:23+00:00">16:14 10 Nov 14</a></p><p
+class="commentext" itemprop="text">Cosmin - click the &quot;Download&quot; link at the top-right of the sheet.<br
+/>
+<br
+/>
+My thanks also to Dave Child for this tool - your work is much appreciated.</p><div
+class="commentreply" id="reply_29738"></div></div><div
+class="commentblock" id="comment29739" itemprop="comment" itemscope itemtype="http://schema.org/Comment"><p
+class="commenter"><span
+itemprop="author" itemscope itemtype="http://schema.org/Person">
+<img
+style="margin: 0 8px 0 0;" class="lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/cb5e21ac7580e8b724ec4c7d77b8de67.32.jpg" alt="Glenn" width="32" height="32">
+<span
+itemprop="name">Glenn</span>
+</span>
+<a
+href="https://cheatography.com:443/davechild/cheat-sheets/python/#comment29739" itemprop="datePublished" datetime="2014-11-10T16:22:43+00:00">16:22 10 Nov 14</a></p><p
+class="commentext" itemprop="text">@cosmin - if you click on the thumbnail image to the right of the comments it will pop up a window where you can download the PDF.</p><div
+class="commentreply" id="reply_29739"></div></div><div
+class="commentblock" id="comment29754" itemprop="comment" itemscope itemtype="http://schema.org/Comment"><p
+class="commenter"><span
+itemprop="author" itemscope itemtype="http://schema.org/Person">
+<img
+style="margin: 0 8px 0 0;" class="lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/3fd2ea3b34c50b735ee47a75e7cfb744.32.jpg" alt="codeman38" width="32" height="32">
+<span
+itemprop="name">codeman38</span>
+</span>
+<a
+href="https://cheatography.com:443/davechild/cheat-sheets/python/#comment29754" itemprop="datePublished" datetime="2014-11-24T08:33:06+00:00">08:33 24 Nov 14</a></p><p
+class="commentext" itemprop="text">There seems to be some UTF-8 weirdness with the footnote superscripts in the date formatting section.</p><div
+class="commentreply" id="reply_29754"></div></div><div
+class="commentblock commentreply" id="comment29757"><p
+class="commenter"><a
+href="https://cheatography.com/davechild/" class="imagelink"><img
+style="margin: 0 8px 0 0;" class="lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/fd7e3b77a3f3007ff30d932b65084851.32.jpg" alt="DaveChild" width="32" height="32"></a> <a
+href="https://cheatography.com/davechild/" class="user_hover">DaveChild</a>, <a
+href="https://cheatography.com:443/davechild/cheat-sheets/python/#comment29757">08:34 24 Nov 14</a></p><p
+class="commentext">Thanks codeman, I've fixed it.</p></div><div
+class="commentblock" id="comment29998" itemprop="comment" itemscope itemtype="http://schema.org/Comment"><p
+class="commenter"><span
+itemprop="author" itemscope itemtype="http://schema.org/Person">
+<img
+style="margin: 0 8px 0 0;" class="lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/03c71cb2b785de63a556f2afe01479be.32.jpg" alt="genoki" width="32" height="32">
+<span
+itemprop="name">genoki</span>
+</span>
+<a
+href="https://cheatography.com:443/davechild/cheat-sheets/python/#comment29998" itemprop="datePublished" datetime="2015-07-13T13:52:55+00:00">13:52 13 Jul 15</a></p><p
+class="commentext" itemprop="text">Are model names capitalized or not?<br
+/>
+<br
+/>
+How about references to models in views.py or forms.py etc?<br
+/>
+<br
+/>
+It looks like Flask might do this but not clear.<br
+/>
+<br
+/>
+Does it even matter?<br
+/>
+<br
+/>
+Thanks!</p><div
+class="commentreply" id="reply_29998"></div></div><div
+class="commentblock" id="comment30047" itemprop="comment" itemscope itemtype="http://schema.org/Comment"><p
+class="commenter"><span
+itemprop="author" itemscope itemtype="http://schema.org/Person">
+<img
+style="margin: 0 8px 0 0;" class="lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/6c329210af1d67f0eb83c54d0c73c9ff.32.jpg" alt="Yusuf" width="32" height="32">
+<span
+itemprop="name">Yusuf</span>
+</span>
+<a
+href="https://cheatography.com:443/davechild/cheat-sheets/python/#comment30047" itemprop="datePublished" datetime="2015-09-14T09:11:50+00:00">09:11 14 Sep 15</a></p><p
+class="commentext" itemprop="text">Thanks Dave.</p><div
+class="commentreply" id="reply_30047"></div></div><div
+class="commentblock" id="comment31009" itemprop="comment" itemscope itemtype="http://schema.org/Comment"><p
+class="commenter"><span
+itemprop="author" itemscope itemtype="http://schema.org/Person">
+<a
+href="https://cheatography.com/kaydee/" class="imagelink"><img
+style="margin: 0 8px 0 0;" class="lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/1e0fa2231f3a2a67d90b3a111a634eec.32.jpg" alt="kaydee" width="32" height="32"></a>
+<a
+href="https://cheatography.com/kaydee/" class="user_hover" itemprop="name">kaydee</a>,
+</span>
+<a
+href="https://cheatography.com:443/davechild/cheat-sheets/python/#comment31009" itemprop="datePublished" datetime="2020-11-16T19:53:15+00:00">19:53 16 Nov 20</a></p><p
+class="commentext" itemprop="text">nice cheat sheet</p><div
+class="commentreply" id="reply_31009"></div></div><h2 class="newsectiontitle">Add a Comment</h2><div
+id="reply_default"><div
+id="comment_form"><form
+novalidate class="pageForm" id="commentForm" method="POST" action="https://cheatography.com:443/davechild/cheat-sheets/python/#comment_form">
+<input
+type="hidden" name="action" value="comment"/>
+<input
+type="hidden" name="spamkey" value="2.0200222981296E+20">
+<input
+type="text" name="website" id="comment_form_url" value="http://"><fieldset><legend>Your Comment</legend><div
+class="formrow"><p
+class="forminfo"><span>Please enter your name.</span></p><label
+for="commenter_name">Your Name</label><input
+required  type="text" id="commenter_name" name="commenter_name"><div
+class="clear"></div><ul
+class="error off"></ul><div
+class="clear"></div></div><div
+class="formrow"><p
+class="forminfo"><span>Please enter your email address</span></p><label
+for="commenter_email">Your Email Address</label><input
+required  type="email" id="commenter_email" name="commenter_email"><div
+class="clear"></div><ul
+class="error off"></ul><div
+class="clear"></div></div><div
+class="formrow"><p
+class="forminfo"><span>Please enter your Comment.</span></p><label
+for="comment_text">Your Comment</label><textarea cols="50" rows="5" name="comment_text" id="comment_text" required  id="comment_text" name="comment_text"></textarea><div
+class="clear"></div><ul
+class="error off"></ul><div
+class="clear"></div></div><div
+class="buttonrow"><button
+name="continue" id="continue" value="continue" type="submit" id="continue" name="continue"><div><span><strong>Post</strong> Your Comment</span></div></button><div
+class="clear"></div><ul
+class="error off"></ul><div
+class="clear"></div></div></fieldset></form></div></div> <script type="text/javascript">$(document).ready(function () {
+            $("#commentForm").validate({
+                unhighlight: function (el, error, valid, _orig) {
+                    if (el.id == 'sidebar_username') {
+                    }
+                    $(el).parent().find('p').addClass("valid");
+                    $(el).parent().find('p').removeClass("invalid");
+                    $(el).parent().find('ul.error').hide('slow');
+                },
+                highlight: function (el, error, valid, _orig) {
+                    $(el).parent().find('p').removeClass("valid");
+                    $(el).parent().find('p').addClass("invalid");
+                },
+                errorPlacement: function(error, el) {
+                    $(el).parent().find('ul.error').html('<li>' + $(error).text() + '</li>');
+                    $(el).parent().find('ul.error').show('slow');
+                    //$(el).parent().find('span').html($(error).text());
+                    return true;
+                }
+            });
+        });</script> <script type="text/javascript">function replyTo(reply_comment_id, thread) {
+        if (reply_comment_id == 0) {
+            // Move comment_form to reply_default
+            $("#comment_form").prependTo("#reply_default");
+            // Set comment_reply_id to 0
+            $("#comment_reply_id").val(0);
+            $('#replytext').hide();
+        } else {
+            // Move comment_form to reply_<reply_comment_id>
+            if (thread) {
+                $("#comment_form").prependTo("#comment_thread_" + reply_comment_id);
+            } else {
+                $("#comment_form").prependTo("#reply_" + reply_comment_id);
+            }
+            // Set comment_reply_id to <reply_comment_id>
+            $("#comment_reply_id").val(reply_comment_id);
+            $('#replytext').show();
+        }
+        return false;
+    }</script> </div><div
+class="clear"></div><h2 class="newsectiontitle">Related Cheat Sheets</h2><div
+class="clear"></div><div
+id="cheat_sheet_1072" class="cheat_sheet_row altrow triptych1 tag-development tag-python tag-programming tag-django lang-en rating-5" style="margin-bottom: 20px; position: relative; padding: 10px 0 0 0; min-height: 220px; background: #742391 url('https://cheatography.com/images/ajax-loader.gif') 50% 40% no-repeat;"><div
+style="z-index: 100; position: absolute; top: 0; padding: 0 0 0 6px; border-bottom-left-radius: 3px; right: 10px; color: #ECDAF2; background: #742391;"><i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i></div><a
+class="lazy" data-original="//media.cheatography.com/storage/thumb/lewiseason_django-models.400.jpg?time=1463020752" style="position: absolute; bottom: 0; left: 10px; right: 10px; background: url('https://cheatography.com/images/spacer.png') -13px -52px no-repeat; height: 220px;" href="https://cheatography.com/lewiseason/cheat-sheets/django-models/"></a><div
+style="z-index: 801; position: absolute; bottom: 0; left: 0; right: 0; color: #ECDAF2; background: #48165B;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.3em; color: #ECDAF2; border-color: #ECDAF2;" href="https://cheatography.com/lewiseason/cheat-sheets/django-models/">Django Models Cheat Sheet</a></strong><div
+class="extrainfo" style="display: none; line-height: 25px; padding: 0 0 5px;"><div
+style="padding: 5px 0 0;">Django Models</div><div
+class="triptych1"><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="http://media.cheatography.com/images/users/abf63fc52613002032ffa72c0f45efda.16.jpg"><a
+style="color: #ECDAF2; border-color: #ECDAF2;" href="https://cheatography.com/lewiseason/" class="user_hover">lewiseason</a></span></div><div
+class="triptych2"><i
+class="fa fa-fw fa-calendar first-list"></i>31 May 13</div><div
+class="triptych3"><i
+class="fa fa-fw fa-book"></i>2 Pages</div><div
+class="clear"></div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #ECDAF2; border-color: #ECDAF2;" href="https://cheatography.com/tag/development/cheat-sheets/">development</a>, <a
+style="color: #ECDAF2; border-color: #ECDAF2;" href="https://cheatography.com/tag/python/cheat-sheets/">python</a>, <a
+style="color: #ECDAF2; border-color: #ECDAF2;" href="https://cheatography.com/tag/programming/cheat-sheets/">programming</a>, <a
+style="color: #ECDAF2; border-color: #ECDAF2;" href="https://cheatography.com/tag/django/cheat-sheets/">django</a></div></div></div></div><div
+class="clear"></div></div><div
+id="cheat_sheet_19404" class="cheat_sheet_row altrow triptych2 tag-development tag-python tag-regex tag-regular tag-programming tag-expression lang-en rating-4" style="margin-bottom: 20px; position: relative; padding: 10px 0 0 0; min-height: 220px; background: #13580B url('https://cheatography.com/images/ajax-loader.gif') 50% 40% no-repeat;"><div
+style="z-index: 100; position: absolute; top: 0; padding: 0 0 0 6px; border-bottom-left-radius: 3px; right: 10px; color: #D7E6D5; background: #13580B;"><i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star-o"></i></div><a
+class="lazy" data-original="//media.cheatography.com/storage/thumb/mutanclan_python-regular-expression-regex.400.jpg?time=1582630304" style="position: absolute; bottom: 0; left: 10px; right: 10px; background: url('https://cheatography.com/images/spacer.png') -13px -52px no-repeat; height: 220px;" href="https://cheatography.com/mutanclan/cheat-sheets/python-regular-expression-regex/"></a><div
+style="z-index: 801; position: absolute; bottom: 0; left: 0; right: 0; color: #D7E6D5; background: #0C3707;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.3em; color: #D7E6D5; border-color: #D7E6D5;" href="https://cheatography.com/mutanclan/cheat-sheets/python-regular-expression-regex/">python regular expression (regex) Cheat Sheet</a></strong><div
+class="extrainfo" style="display: none; line-height: 25px; padding: 0 0 5px;"><div
+style="padding: 5px 0 0;">python regular expressions</div><div
+class="triptych1"><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="http://media.cheatography.com/images/users/c4b8850bad31a948d450189eadd9cb7e.16.jpg"><a
+style="color: #D7E6D5; border-color: #D7E6D5;" href="https://cheatography.com/mutanclan/" class="user_hover">mutanclan</a></span></div><div
+class="triptych2"><i
+class="fa fa-fw fa-calendar first-list"></i>19 Apr 19</div><div
+class="triptych3"><i
+class="fa fa-fw fa-book"></i>3 Pages</div><div
+class="clear"></div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #D7E6D5; border-color: #D7E6D5;" href="https://cheatography.com/tag/development/cheat-sheets/">development</a>, <a
+style="color: #D7E6D5; border-color: #D7E6D5;" href="https://cheatography.com/tag/python/cheat-sheets/">python</a>, <a
+style="color: #D7E6D5; border-color: #D7E6D5;" href="https://cheatography.com/tag/regex/cheat-sheets/">regex</a>, <a
+style="color: #D7E6D5; border-color: #D7E6D5;" href="https://cheatography.com/tag/regular/cheat-sheets/">regular</a>, <a
+style="color: #D7E6D5; border-color: #D7E6D5;" href="https://cheatography.com/tag/programming/cheat-sheets/">programming</a>, <a
+style="color: #D7E6D5; border-color: #D7E6D5;" href="https://cheatography.com/tag/expression/cheat-sheets/">expression</a></div></div></div></div><div
+class="clear"></div></div><div
+id="cheat_sheet_4937" class="cheat_sheet_row altrow triptych3 tag-development tag-python tag-programming lang-en rating-4" style="margin-bottom: 20px; position: relative; padding: 10px 0 0 0; min-height: 220px; background: #000000 url('https://cheatography.com/images/ajax-loader.gif') 50% 40% no-repeat;"><div
+style="z-index: 100; position: absolute; top: 0; padding: 0 0 0 6px; border-bottom-left-radius: 3px; right: 10px; color: #D3D3D3; background: #000000;"><i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star-o"></i></div><a
+class="lazy" data-original="//media.cheatography.com/storage/thumb/mr-kitty_intermediate-python.400.jpg?time=1463099358" style="position: absolute; bottom: 0; left: 10px; right: 10px; background: url('https://cheatography.com/images/spacer.png') -13px -52px no-repeat; height: 220px;" href="https://cheatography.com/mr-kitty/cheat-sheets/intermediate-python/"></a><div
+style="z-index: 801; position: absolute; bottom: 0; left: 0; right: 0; color: #D3D3D3; background: #000000;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.3em; color: #D3D3D3; border-color: #D3D3D3;" href="https://cheatography.com/mr-kitty/cheat-sheets/intermediate-python/">Intermediate Python Cheat Sheet</a></strong><div
+class="extrainfo" style="display: none; line-height: 25px; padding: 0 0 5px;"><div
+style="padding: 5px 0 0;">A cheat sheet for various modules in the Python programming language.</div><div
+class="triptych1"><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="http://media.cheatography.com/images/users/faa0cb1ddbe3d5f5345b9549597c918f.16.jpg"><a
+style="color: #D3D3D3; border-color: #D3D3D3;" href="https://cheatography.com/mr-kitty/" class="user_hover">Mr Kitty</a></span></div><div
+class="triptych2"><i
+class="fa fa-fw fa-calendar first-list"></i>19 Aug 15</div><div
+class="triptych3"><i
+class="fa fa-fw fa-book"></i>3 Pages</div><div
+class="clear"></div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #D3D3D3; border-color: #D3D3D3;" href="https://cheatography.com/tag/development/cheat-sheets/">development</a>, <a
+style="color: #D3D3D3; border-color: #D3D3D3;" href="https://cheatography.com/tag/python/cheat-sheets/">python</a>, <a
+style="color: #D3D3D3; border-color: #D3D3D3;" href="https://cheatography.com/tag/programming/cheat-sheets/">programming</a></div></div></div></div><div
+class="clear"></div></div><div
+class="clear"></div><h2 class="newsectiontitle">More Cheat Sheets by DaveChild</h2><div
+class="clear"></div><div
+id="cheat_sheet_5" class="cheat_sheet_row altrow triptych1 tag-development tag-regex tag-regular tag-expressions tag-programming lang-en rating-5" style="margin-bottom: 20px; position: relative; padding: 10px 0 0 0; min-height: 220px; background: #9B0436 url('https://cheatography.com/images/ajax-loader.gif') 50% 40% no-repeat;"><div
+style="z-index: 100; position: absolute; top: 0; padding: 0 0 0 6px; border-bottom-left-radius: 3px; right: 10px; color: #F4D4DF; background: #9B0436;"><i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i></div><a
+class="lazy" data-original="//media.cheatography.com/storage/thumb/davechild_regular-expressions.400.jpg?time=1584011681" style="position: absolute; bottom: 0; left: 10px; right: 10px; background: url('https://cheatography.com/images/spacer.png') -13px -52px no-repeat; height: 220px;" href="https://cheatography.com/davechild/cheat-sheets/regular-expressions/"></a><div
+style="z-index: 801; position: absolute; bottom: 0; left: 0; right: 0; color: #F4D4DF; background: #610222;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.3em; color: #F4D4DF; border-color: #F4D4DF;" href="https://cheatography.com/davechild/cheat-sheets/regular-expressions/">Regular Expressions Cheat Sheet</a></strong><div
+class="extrainfo" style="display: none; line-height: 25px; padding: 0 0 5px;"><div
+style="padding: 5px 0 0;">A quick reference guide for regular expressions (regex), including symbols, ranges, grouping, assertions and some sample patterns to get you started.</div><div
+class="triptych1"><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="http://media.cheatography.com/images/users/fd7e3b77a3f3007ff30d932b65084851.16.jpg"><a
+style="color: #F4D4DF; border-color: #F4D4DF;" href="https://cheatography.com/davechild/" class="user_hover">DaveChild</a></span></div><div
+class="triptych2"><i
+class="fa fa-fw fa-calendar first-list"></i>19 Oct 11</div><div
+class="triptych3"><i
+class="fa fa-fw fa-book"></i>1 Page</div><div
+class="clear"></div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #F4D4DF; border-color: #F4D4DF;" href="https://cheatography.com/tag/development/cheat-sheets/">development</a>, <a
+style="color: #F4D4DF; border-color: #F4D4DF;" href="https://cheatography.com/tag/regex/cheat-sheets/">regex</a>, <a
+style="color: #F4D4DF; border-color: #F4D4DF;" href="https://cheatography.com/tag/regular/cheat-sheets/">regular</a>, <a
+style="color: #F4D4DF; border-color: #F4D4DF;" href="https://cheatography.com/tag/expressions/cheat-sheets/">expressions</a>, <a
+style="color: #F4D4DF; border-color: #F4D4DF;" href="https://cheatography.com/tag/programming/cheat-sheets/">programming</a></div></div></div></div><div
+class="clear"></div></div><div
+id="cheat_sheet_49" class="cheat_sheet_row altrow triptych2 tag-bash tag-nano tag-linux tag-ls tag-commandline tag-ubuntu tag-server tag-sysadmin tag-shell lang-en rating-5" style="margin-bottom: 20px; position: relative; padding: 10px 0 0 0; min-height: 220px; background: #407323 url('https://cheatography.com/images/ajax-loader.gif') 50% 40% no-repeat;"><div
+style="z-index: 100; position: absolute; top: 0; padding: 0 0 0 6px; border-bottom-left-radius: 3px; right: 10px; color: #E1EBDA; background: #407323;"><i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i></div><a
+class="lazy" data-original="//media.cheatography.com/storage/thumb/davechild_linux-command-line.400.jpg?time=1582977076" style="position: absolute; bottom: 0; left: 10px; right: 10px; background: url('https://cheatography.com/images/spacer.png') -13px -52px no-repeat; height: 220px;" href="https://cheatography.com/davechild/cheat-sheets/linux-command-line/"></a><div
+style="z-index: 801; position: absolute; bottom: 0; left: 0; right: 0; color: #E1EBDA; background: #284816;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.3em; color: #E1EBDA; border-color: #E1EBDA;" href="https://cheatography.com/davechild/cheat-sheets/linux-command-line/">Linux Command Line Cheat Sheet</a></strong><div
+class="extrainfo" style="display: none; line-height: 25px; padding: 0 0 5px;"><div
+style="padding: 5px 0 0;">A cheat sheet of the commands I use most for Linux, with popup links to man pages.</div><div
+class="triptych1"><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="http://media.cheatography.com/images/users/fd7e3b77a3f3007ff30d932b65084851.16.jpg"><a
+style="color: #E1EBDA; border-color: #E1EBDA;" href="https://cheatography.com/davechild/" class="user_hover">DaveChild</a></span></div><div
+class="triptych2"><i
+class="fa fa-fw fa-calendar first-list"></i>28 Oct 11</div><div
+class="triptych3"><i
+class="fa fa-fw fa-book"></i>2 Pages</div><div
+class="clear"></div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #E1EBDA; border-color: #E1EBDA;" href="https://cheatography.com/tag/bash/cheat-sheets/">bash</a>, <a
+style="color: #E1EBDA; border-color: #E1EBDA;" href="https://cheatography.com/tag/nano/cheat-sheets/">nano</a>, <a
+style="color: #E1EBDA; border-color: #E1EBDA;" href="https://cheatography.com/tag/linux/cheat-sheets/">linux</a>, <a
+style="color: #E1EBDA; border-color: #E1EBDA;" href="https://cheatography.com/tag/ls/cheat-sheets/">ls</a>, <a
+style="color: #E1EBDA; border-color: #E1EBDA;" href="https://cheatography.com/tag/commandline/cheat-sheets/">commandline</a> and 4 more&nbsp;...</div></div></div></div><div
+class="clear"></div></div><div
+id="cheat_sheet_14" class="cheat_sheet_row altrow triptych3 tag-css tag-webdesign tag-web tag-design tag-frontend lang-en rating-5" style="margin-bottom: 20px; position: relative; padding: 10px 0 0 0; min-height: 220px; background: #AB6421 url('https://cheatography.com/images/ajax-loader.gif') 50% 40% no-repeat;"><div
+style="z-index: 100; position: absolute; top: 0; padding: 0 0 0 6px; border-bottom-left-radius: 3px; right: 10px; color: #F7E8DA; background: #AB6421;"><i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i></div><a
+class="lazy" data-original="//media.cheatography.com/storage/thumb/davechild_css2.400.jpg?time=1582663704" style="position: absolute; bottom: 0; left: 10px; right: 10px; background: url('https://cheatography.com/images/spacer.png') -13px -52px no-repeat; height: 220px;" href="https://cheatography.com/davechild/cheat-sheets/css2/"></a><div
+style="z-index: 801; position: absolute; bottom: 0; left: 0; right: 0; color: #F7E8DA; background: #6B3E15;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.3em; color: #F7E8DA; border-color: #F7E8DA;" href="https://cheatography.com/davechild/cheat-sheets/css2/">CSS2 Cheat Sheet</a></strong><div
+class="extrainfo" style="display: none; line-height: 25px; padding: 0 0 5px;"><div
+style="padding: 5px 0 0;">A quick reference guide for CSS, listing selector syntax, properties, units and other useful bits of information.</div><div
+class="triptych1"><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="http://media.cheatography.com/images/users/fd7e3b77a3f3007ff30d932b65084851.16.jpg"><a
+style="color: #F7E8DA; border-color: #F7E8DA;" href="https://cheatography.com/davechild/" class="user_hover">DaveChild</a></span></div><div
+class="triptych2"><i
+class="fa fa-fw fa-calendar first-list"></i>19 Oct 11</div><div
+class="triptych3"><i
+class="fa fa-fw fa-book"></i>2 Pages</div><div
+class="clear"></div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #F7E8DA; border-color: #F7E8DA;" href="https://cheatography.com/tag/css/cheat-sheets/">css</a>, <a
+style="color: #F7E8DA; border-color: #F7E8DA;" href="https://cheatography.com/tag/webdesign/cheat-sheets/">webdesign</a>, <a
+style="color: #F7E8DA; border-color: #F7E8DA;" href="https://cheatography.com/tag/web/cheat-sheets/">web</a>, <a
+style="color: #F7E8DA; border-color: #F7E8DA;" href="https://cheatography.com/tag/design/cheat-sheets/">design</a>, <a
+style="color: #F7E8DA; border-color: #F7E8DA;" href="https://cheatography.com/tag/frontend/cheat-sheets/">frontend</a></div></div></div></div><div
+class="clear"></div></div><div
+class="clear"></div></div><div
+id="login_popup" class="footer_popup"><div
+id="login_popup_inner" class="footer_popup_inner">
+What could you use a cheat sheet for?<br>Please <a
+href="https://cheatography.com/members/login">login</a> or <a
+href="https://cheatography.com/members/register/">register</a> and make your own today!</div></div><div
+class="clear"></div></div></div></div><div
+class="clear"></div></div></div><div
+class="clear"></div><div
+id="footer"><div
+id="footer_inner"><div
+class="biptychl"><h2>Latest Cheat Sheet</h2><div
+class="cheat_sheet_box" style="margin: 0 0 20px; padding: 0 0 15px"><div
+class="inner" style="padding: 5px 10px 0;"><div
+itemscope itemtype="http://schema.org/CreativeWork" id="cheat_sheet_27121" class="cheat_sheet_row altrow tag-bio lang-en rating-unrated" style="margin-bottom: 20px; position: relative; padding: 10px; min-height: 220px; background: #BA7878;"><div
+class="triptych1" style="position: relative; background: url('https://cheatography.com/images/ajax-loader.gif') 50% 40% no-repeat; height: 250px;"><a
+class="lazy imagelink" data-original="//media.cheatography.com/storage/thumb/katiefocht_unit-7-chp-23-notes.400.jpg?time=1615849484" style="box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); position: absolute; top: 0; left: 0; right: 0; background: url('https://cheatography.com/images/spacer.png') 0 0 no-repeat; background-size: cover; height: 220px;" href="https://cheatography.com/katiefocht/cheat-sheets/unit-7-chp-23-notes/"></a><div
+style="position: absolute; bottom: 33px; left: 3px;"><span
+class="page_count" style="background-color: #FBECEC; white-space: nowrap;"><i
+class="fa fa-fw fa-book"></i>1 Page</span></div><div
+style="position: absolute; top: 230px; text-align: center; left: 0; right: 0; color: #FBECEC;"><i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> <i
+class="fa fa-star-o"></i> &nbsp; (0)</div></div><div
+class="triptychdblr" style="color: #FBECEC; background: #754B4B; min-height: 250px;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.7em; color: #FBECEC; border-color: #FBECEC;" href="https://cheatography.com/katiefocht/cheat-sheets/unit-7-chp-23-notes/" itemprop="url"><span
+itemprop="name">Unit 7 chp 23 notes Cheat Sheet</span></a></strong><div
+class="" style="line-height: 2; padding: 0;"><div
+style="padding: 5px 0 15px;">unit 7 chapter 23 notes</div><div><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="http://media.cheatography.com/images/users/33750c342fd491c0b8590c78f53811be.16.jpg"><a
+style="color: #FBECEC; border-color: #FBECEC;" href="https://cheatography.com/katiefocht/" class="user_hover">katiefocht</a></span></div><div><i
+class="fa fa-fw fa-calendar second-list" date-last-update="2021-03-15 23:04:44"></i>15 Mar 21</div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #FBECEC; border-color: #FBECEC;" href="https://cheatography.com/tag/bio/cheat-sheets/">bio</a></div></div></div></div><div
+class="clear"></div></div></div></div></div><div
+class="biptychr"><h2>Random Cheat Sheet</h2><div
+class="sidebar_box" style="margin: 0 0 20px; padding: 0 0 15px"><div
+class="inner" style="padding: 5px 10px 0;"><div
+id="cheat_sheet_1232" class="cheat_sheet_row altrow tag-web tag-search tag-beginner tag-engine tag-internet tag-skills lang-en rating-5" style="margin-bottom: 20px; position: relative; padding: 10px; min-height: 220px; background: #5E051D;"><div
+class="triptych1" style="position: relative; background: url('https://cheatography.com/images/ajax-loader.gif') 50% 40% no-repeat; height: 250px;"><a
+class="lazy imagelink" data-original="//media.cheatography.com/storage/thumb/deepernetorg_search-engines.400.jpg?time=1463063213" style="box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); position: absolute; top: 0; left: 0; right: 0; background: url('https://cheatography.com/images/spacer.png') 0 0 no-repeat; background-size: cover; height: 220px;" href="https://cheatography.com/deepernetorg/cheat-sheets/search-engines/"></a><div
+style="position: absolute; bottom: 33px; left: 3px;"><span
+class="page_count" style="background-color: #E7D4D9; white-space: nowrap;"><i
+class="fa fa-fw fa-book"></i>1 Page</span></div><div
+style="position: absolute; top: 230px; text-align: center; left: 0; right: 0; color: #E7D4D9;"><i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i> <i
+class="fa fa-star"></i>  &nbsp; (7)</div></div><div
+class="triptychdblr" style="color: #E7D4D9; background: #3B0312; min-height: 250px;"><div
+style="padding: 10px 15px;"><strong><a
+style="font-size: 1.7em; color: #E7D4D9; border-color: #E7D4D9;" href="https://cheatography.com/deepernetorg/cheat-sheets/search-engines/" itemprop="url"><span
+itemprop="name">Search Engines Cheat Sheet</span></a></strong><div
+class="" style="line-height: 2; padding: 0;"><div
+style="padding: 5px 0 15px;">A helpful guide to Web Search Engines</div><div><span
+style="white-space: nowrap;"><img
+style="position: relative; left: 0; top: 5px; padding-right: 5px;" width="16" height="16" src="http://media.cheatography.com/images/users/a2a625bae15cc12532e6742ec85f6016.16.jpg"><a
+style="color: #E7D4D9; border-color: #E7D4D9;" href="https://cheatography.com/deepernetorg/" class="user_hover">deepernetorg</a></span></div><div><i
+class="fa fa-fw fa-calendar second-list" date-last-update="2016-05-12 14:26:53"></i>9 Sep 13, updated 12 May 16</div><div><i
+class="fa fa-fw fa-tag"></i><a
+style="color: #E7D4D9; border-color: #E7D4D9;" href="https://cheatography.com/tag/web/cheat-sheets/">web</a>, <a
+style="color: #E7D4D9; border-color: #E7D4D9;" href="https://cheatography.com/tag/search/cheat-sheets/">search</a>, <a
+style="color: #E7D4D9; border-color: #E7D4D9;" href="https://cheatography.com/tag/beginner/cheat-sheets/">beginner</a>, <a
+style="color: #E7D4D9; border-color: #E7D4D9;" href="https://cheatography.com/tag/engine/cheat-sheets/">engine</a>, <a
+style="color: #E7D4D9; border-color: #E7D4D9;" href="https://cheatography.com/tag/internet/cheat-sheets/">internet</a>, <a
+style="color: #E7D4D9; border-color: #E7D4D9;" href="https://cheatography.com/tag/skills/cheat-sheets/">skills</a></div></div></div></div><div
+class="clear"></div></div></div></div></div><div
+class="clear"></div><div
+class="triptych1"><h2>About Cheatography</h2><div
+class="sidebar_box"><div
+class="sidebar_box_row"><strong><a
+href="https://cheatography.com/about/">Cheatography</a></strong> is a collection of <strong><a
+href="https://cheatography.com/explore/">4423 cheat sheets</a></strong> and quick references in <strong><a
+href="https://cheatography.com/language/">25 languages</a></strong> for everything from <strong><a
+href="https://cheatography.com/tag/development/">programming</a></strong> to <strong><a
+href="https://cheatography.com/tag/french/">French</a></strong>!</div></div></div><div
+class="triptych2"><div
+class="sidebar_box"><div
+class="sidebar_box_first_row"><h4>Behind the Scenes</h4></div><div
+class="sidebar_box_row">If you have any problems, or just want to say hi, you can find us right here:</div><div
+class="sidebar_box_row"><div
+class="biptych1"><a
+class="imagelink" style="float: left; margin: 5px 8px 0 0;" href="https://cheatography.com/davechild/"><img
+class="lazy gravatar" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/fd7e3b77a3f3007ff30d932b65084851.32.jpg" width="32" height="32" alt="DaveChild"></a> <a
+href="https://cheatography.com/davechild/" class="user_hover" style="line-height: 42px;">DaveChild</a><div
+class="clear"></div></div><div
+class="biptych2"><a
+class="imagelink" style="float: left; margin: 5px 8px 0 0;" href="https://cheatography.com/spaceduck/"><img
+class="lazy gravatar" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/e5f4dc698559e9cdd546c749924c2342.32.jpg" width="32" height="32" alt="SpaceDuck"></a> <a
+href="https://cheatography.com/spaceduck/" class="user_hover" style="line-height: 42px;">SpaceDuck</a><div
+class="clear"></div></div><div
+class="biptych1"><a
+class="imagelink" style="float: left; margin: 5px 8px 0 0;" href="https://cheatography.com/cheatography/"><img
+class="lazy gravatar" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/ae07a15380055b9d1da4dd5fb7538457.32.jpg" width="32" height="32" alt="Cheatography"></a> <a
+href="https://cheatography.com/cheatography/" class="user_hover" style="line-height: 42px;">Cheatography</a><div
+class="clear"></div></div></div><div
+class="clear"></div></div></div><div
+class="triptych3"><h2>Recent Activity</h2><div
+class="sidebar_box"><div
+class="sidebar_box_row footer_recent_activity_1"><a
+class="imagelink" style="float: left; margin: 5px 8px 5px 0;" href="https://cheatography.com/katiefocht/"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/33750c342fd491c0b8590c78f53811be.32.jpg" width="32" height="32" alt="katiefocht"></a> <a
+href="https://cheatography.com/katiefocht/" class="user_hover">katiefocht</a> published <a
+href="https://cheatography.com/katiefocht/cheat-sheets/unit-7-chp-23-notes/">Unit 7 chp 23 notes</a>.<br><span
+class="sidebar_event_date">2 hours 29 mins ago</span></div><div
+class="sidebar_box_row footer_recent_activity_2"><a
+class="imagelink" style="float: left; margin: 5px 8px 5px 0;" href="https://cheatography.com/brice103/"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/36881641c25c24f33ad4a1ccab8c12af.32.jpg" width="32" height="32" alt="brice103"></a> <a
+href="https://cheatography.com/brice103/" class="user_hover">brice103</a> published <a
+href="https://cheatography.com/brice103/cheat-sheets/literary-terms/">Literary Terms</a>.<br><span
+class="sidebar_event_date">5 hours 13 mins ago</span></div><div
+class="sidebar_box_row footer_recent_activity_3"><a
+class="imagelink" style="float: left; margin: 5px 8px 5px 0;" href="https://cheatography.com/gcacars/"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/76f5d6020f8cd2c9b08847ba52db6ae5.32.jpg" width="32" height="32" alt="gcacars"></a> <a
+href="https://cheatography.com/gcacars/" class="user_hover">gcacars</a> published <a
+href="https://cheatography.com/gcacars/cheat-sheets/arch/">Arch</a>.<br><span
+class="sidebar_event_date">7 hours 29 mins ago</span></div><div
+class="sidebar_box_row footer_recent_activity_4"><a
+class="imagelink" style="float: left; margin: 5px 8px 5px 0;" href="https://cheatography.com/skyharbour/"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/e22d7db695329ef2ba7e38d3f7090285.32.jpg" width="32" height="32" alt="SkyHarbour"></a> <a
+href="https://cheatography.com/skyharbour/" class="user_hover">SkyHarbour</a> published <a
+href="https://cheatography.com/skyharbour/cheat-sheets/hebrew-ii-midterm-grammar-concepts/">Hebrew II Midterm Grammar concepts</a>.<br><span
+class="sidebar_event_date">7 hours 39 mins ago</span></div><div
+class="sidebar_box_row sidebar_box_last_row footer_recent_activity_5"><a
+class="imagelink" style="float: left; margin: 5px 8px 5px 0;" href="https://cheatography.com/faq/"><img
+class="gravatar lazy" src="https://cheatography.com/images/spacer.png" data-original="//media.cheatography.com/images/users/cb38b22e88ac6bb1e0c7e516a811912d.32.jpg" width="32" height="32" alt="faq"></a> <a
+href="https://cheatography.com/faq/" class="user_hover">faq</a> updated <a
+href="https://cheatography.com/faq/cheat-sheets/python-for-interview/">python for interview</a>.<br><span
+class="sidebar_event_date">12 hours 23 mins ago</span></div><div
+class="clear"></div></div></div><div
+class="clear"></div><div
+class="legal"><div
+class="legal_left">
+&copy; 2011  - 2021 Cheatography.com &nbsp; | &nbsp; <a
+rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/uk/">CC License</a> &nbsp; | &nbsp; <a
+href="https://cheatography.com/terms-and-conditions/">Terms</a> &nbsp; | &nbsp;  <a
+href="https://cheatography.com/privacy/">Privacy</a></div><div
+class="legal_right">
+<a
+href="https://cheatography.com/explore/new/rss/"><i
+class="fa fa-rss-square"></i> Latest Cheat Sheets RSS Feed</a></div><div
+class="clear"></div></div><div
+class="clear"></div></div><div
+class="clear"></div></div><div
+class="clear"></div></div></div></body><head><link
+href="https://cheatography.com/scripts/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css"> <script type="text/javascript" src="https://cheatography.com/scripts/fancybox/jquery.fancybox.pack.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.cookie.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.formalize.min.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.hoverintent.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.tagsinput.min.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.matchheight.min.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.validation.min.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.additional-validation.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.hoverIntent.minified.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/chosen.jquery.min.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/jquery.lazyload.min.js"></script> <link
+href='http://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'><!--[if lt IE 7]> <script type="text/javascript" src="https://cheatography.com/scripts/iepngfix.htc"></script> <style type="text/css">body {
+                behavior: url("https://cheatography.com/scripts/csshover.htc");
+            }</style><![endif]-->
+<!--[if IE 7]><style type="text/css"></style><![endif]--> <script type="text/javascript" src="https://cheatography.com/scripts/mobile.min.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/ajax.min.js"></script> <script type="text/javascript" src="https://cheatography.com/scripts/useful.min.js?v=2&amp;q=1615858584"></script> <script type="text/javascript">$(document).ready(function() {
+            $(".lazy").lazyload({
+                effect : "fadeIn",
+                failure_limit : 10
+            });
+            // Hide elements not relevant to non-logged-in users
+            var loggedIn = $.cookie('frontLoggedIn');
+            var loggedInUserId = $.cookie('frontUserId');
+            var isAdmin = $.cookie('frontUserAdmin');
+            if (loggedIn == 1) {
+                // Replacements
+                $('.replace_username').html($.cookie('frontUserName'));
+                $('a.replace_userlink, .replace_userlink a').each(function(){
+                    var oldHref = $(this).attr('href');
+                    var newHref = oldHref.replace('davechild', $.cookie('frontUserAlias'));
+                    $(this).attr('href', newHref);
+                });
+                $('.replace_usergravatar').attr('src', $.cookie('frontUserAvatar32'));
+                // Show and hide
+                //$('.logged_in').show();
+                $('.logged_out').hide();
+
+                if (isAdmin) {
+                    $('.admin_view').show();
+                }
+
+                $('.user_view').each(function(){
+                    var userIds = $(this).attr('data-userid').split(',');
+                    if ($.inArray(loggedInUserId, userIds)) {
+                        $(this).show();
+                    }
+                });
+
+            } else {
+                $('.logged_in').hide();
+                //$('.logged_out').show();
+            }
+            //addthis.init();
+        });</script> </head>
+<!-- Mirrored from cheatography.com/davechild/cheat-sheets/python/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 16 Mar 2021 01:37:21 GMT -->
+</html>

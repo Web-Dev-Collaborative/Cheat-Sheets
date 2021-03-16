@@ -1,0 +1,17 @@
+<h3 id="arrays">Arrays</h3>
+<p>Define array:</p>
+<pre><code>&gt; var dict = [];</code></pre>
+<p>Append dictionary to array:</p>
+<pre><code>&gt; dict.push({
+    key:   &quot;name&quot;,
+    value: &quot;ruan&quot;
+});</code></pre>
+<p>Print the array:</p>
+<pre><code>&gt; console.log(dict);
+[ { key: &#39;name&#39;, value: &#39;ruan&#39; } ]</code></pre>
+<h3 id="read-file-content">Read File Content:</h3>
+<pre><code>&gt; const fs = require(&#39;fs&#39;);
+&gt; const fileName = &quot;/tmp/foo-bar&quot;;
+&gt; const myText = fs.readFileSync(fileName, &quot;utf-8&quot;);
+&gt; console.log(myText);
+hello</code></pre>

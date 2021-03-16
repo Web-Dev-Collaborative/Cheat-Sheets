@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="./prism.css">
+<script async defer src="./prism.js"></script>
+</head>
+<body>;
+<h3 id="install">Install</h3>
+<pre><code>$ sudo apt-get install ec2-api-tools ec2-ami-tools
+$ brew install ec2-api-tools ec2-ami-tools</code></pre>
+<h3 id="pem-files">Pem files</h3>
+<pre><code>$ brew info ec2-api-tools</code></pre>
+<ul>
+<li><p>Before you can use these tools you must export some variables to your $SHELL and download your X.509 certificate and private key from Amazon Web Services.</p></li>
+<li><p>Your certificate and private key are available at <a href="http://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key">aws-portal.amazon.com</a>.</p></li>
+<li><p>Download two <code>.pem</code> files, one starting with <code>pk-</code>, and one starting with <code>cert-</code>. You need to put both into a folder in your home directory, <code>~/.ec2</code>.</p></li>
+</ul>
+<h3 id="key-pair">Key pair</h3>
+<pre><code># To use public images (AMI&#39;s), you need an SSH keypair from EC2.
+  ec2-add-keypair my-keypair &gt; ~/.ec2/my-keypair.pem
+  chmod 600 ec2-keypair.pem</code></pre>
+<h3 id="start-an-instance">Start an instance</h3>
+<pre><code># Start an instance using a given AMI image:
+# (Use the Ubuntu locator, or ec2-describe-images)
+  ec2-run-instances ami-xxxxxx -k ec2-keypair
+
+# Open up ports (in the &#39;default&#39; security group):
+  ec2-authorize default -p 22
+  ec2-authorize default -p 80
+
+# Connect
+  ssh -i ~/.ec2/my-keypair.pem root@ec2-xxx.amazonaws.com</code></pre>
+<h3 id="management">Management</h3>
+<pre><code># Show running instances
+  ec2-describe-instances
+
+# Kill an instance
+  ec2-terminate-instances i-yourinstance</code></pre>
+<h3 id="misc">Misc</h3>
+<pre><code># Create a security group
+  ec2-add-group group_name -d &quot;Description&quot;
+
+# Show images (AMI&#39;s) owned by amazon, or me
+  ec2-describe-images -o self -o amazon</code></pre>
+<h3 id="ubuntu-images">Ubuntu images</h3>
+<ul>
+<li><a href="http://cloud-images.ubuntu.com/locator/ec2/">Ubuntu EC2 AMI locator</a></li>
+</ul>
+<h3 id="change-certificates">Change certificates</h3>
+<pre><code>EC2_CERT_PATH=&quot;$HOME/.ec2&quot;
+export EC2_PRIVATE_KEY=&quot;$(/bin/ls $EC2_CERT_PATH/pk-*.pem | /usr/bin/head -1)&quot;
+export EC2_CERT=&quot;$(/bin/ls $EC2_CERT_PATH/cert-*.pem | /usr/bin/head -1)&quot;</code></pre>
+</body></html>
