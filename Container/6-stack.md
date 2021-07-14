@@ -2,36 +2,31 @@
 
 > The #data-structures series is a collection of posts about reimplemented data structures in JavaScript.
 
-
-Get the code on Github
-----------------------
+## Get the code on Github
 
 Of course, all the code can also be found on Github in the repository [data-structures-in-javascript](https://github.com/benoitvallon/computer-science-in-javascript/tree/master/data-structures-in-javascript).
 
-Definition
-----------
+## Definition
 
-> A Stack is an abstract data type that serves as a collection of elements, with two principal operations: push, which adds an element to the collection, and pop, which removes the most recently added element that was not yet removed. The order in which elements come off a Stack gives rise to its alternative name, LIFO (for last in, first out). **From [Wikipedia](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))**
+> A Stack is an abstract data type that serves as a collection of elements, with two principal operations: push, which adds an element to the collection, and pop, which removes the most recently added element that was not yet removed. The order in which elements come off a Stack gives rise to its alternative name, LIFO (for last in, first out). **From [Wikipedia](<https://en.wikipedia.org/wiki/Stack_(abstract_data_type)>)**
 
 A Stack often has a third method peek which allows to check the last pushed element without popping it.
 
-Complexity
-----------
+## Complexity
 
-| Average |   |   |   |
-| --- | --- | --- | --- |
-| Access | Search | Insertion | Deletion |
-| O(n) | O(n) | O(1) | O(1) |
+| Average |        |           |          |
+| ------- | ------ | --------- | -------- |
+| Access  | Search | Insertion | Deletion |
+| O(n)    | O(n)   | O(1)      | O(1)     |
 
 To get a full overview of the time and space complexity of the Stack data structure, have a look to this excellent [Big O cheat sheet](http://bigocheatsheet.com/).
 
-The code
---------
+## The code
 
     function Stack() {
       this.stack = [];
     }
-    
+
     Stack.prototype.push = function(value) {
       this.stack.push(value);
     };
@@ -47,7 +42,7 @@ The code
     Stack.prototype.print = function() {
       console.log(this.stack.join(' '));
     };
-    
+
     var stack = new Stack();
     stack.push(1);
     stack.push(2);
@@ -63,13 +58,11 @@ The code
     stack.print(); // => ''
     console.log('peek is undefined:', stack.peek()); // => undefined
     console.log('pop is undefined:', stack.pop()); // => undefined
-    
 
-* * *
+---
 
-* * *
+---
 
-* * *
-
+---
 
 [Source](http://blog.benoitvallon.com/data-structures-in-javascript/the-stack-data-structure/)

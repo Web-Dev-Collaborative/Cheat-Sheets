@@ -1,60 +1,65 @@
 <h3 id="components">Components</h3>
 <table>
-<colgroup>
-<col style="width: 26%" />
-<col style="width: 73%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>kube-apiserver</td>
-<td>validates and configures data for the api objects which include pods, services, replicationcontrollers, and others</td>
-</tr>
-<tr class="even">
-<td>etcd</td>
-<td>distributed k/v store</td>
-</tr>
-<tr class="odd">
-<td>kube-scheduler</td>
-<td>schedule pods to run on selected nodes</td>
-</tr>
-<tr class="even">
-<td>kube-controller-manager</td>
-<td>daemon that embeds the core control loops shipped with kubernetes</td>
-</tr>
-</tbody>
+  <colgroup>
+    <col style="width: 26%" />
+    <col style="width: 73%" />
+  </colgroup>
+  <thead>
+    <tr class="header">
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="odd">
+      <td>kube-apiserver</td>
+      <td>
+        validates and configures data for the api objects which include pods,
+        services, replicationcontrollers, and others
+      </td>
+    </tr>
+    <tr class="even">
+      <td>etcd</td>
+      <td>distributed k/v store</td>
+    </tr>
+    <tr class="odd">
+      <td>kube-scheduler</td>
+      <td>schedule pods to run on selected nodes</td>
+    </tr>
+    <tr class="even">
+      <td>kube-controller-manager</td>
+      <td>daemon that embeds the core control loops shipped with kubernetes</td>
+    </tr>
+  </tbody>
 </table>
 <p>Components and Services running on Worker Nodes:</p>
 <table>
-<colgroup>
-<col style="width: 26%" />
-<col style="width: 73%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>kubelet</td>
-<td>node-agent that runs on each node</td>
-</tr>
-<tr class="even">
-<td>kube-proxy connection</td>
-<td>forwarding</td>
-</tr>
-<tr class="odd">
-<td>container runtime</td>
-<td>container runtimes supported by kubernets: (docker, rkt, runc, etc)</td>
-</tr>
-</tbody>
+  <colgroup>
+    <col style="width: 26%" />
+    <col style="width: 73%" />
+  </colgroup>
+  <thead>
+    <tr class="header">
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="odd">
+      <td>kubelet</td>
+      <td>node-agent that runs on each node</td>
+    </tr>
+    <tr class="even">
+      <td>kube-proxy connection</td>
+      <td>forwarding</td>
+    </tr>
+    <tr class="odd">
+      <td>container runtime</td>
+      <td>
+        container runtimes supported by kubernets: (docker, rkt, runc, etc)
+      </td>
+    </tr>
+  </tbody>
 </table>
 <h3 id="nodes">Nodes</h3>
 <p>Show nodes in the cluster:</p>
@@ -77,9 +82,12 @@
 <pre><code>kubectl top node [node_name]</code></pre>
 <h3 id="pods">Pods</h3>
 <ul>
-<li>The single smallest interactable unit in Kubernetes.</li>
-<li>a Pod can be comprimised of multiple containers that will form a unit deployed on a single node together</li>
-<li>a Pod receives one IP which is shared between containers</li>
+  <li>The single smallest interactable unit in Kubernetes.</li>
+  <li>
+    a Pod can be comprimised of multiple containers that will form a unit
+    deployed on a single node together
+  </li>
+  <li>a Pod receives one IP which is shared between containers</li>
 </ul>
 <p>Show pods:</p>
 <pre><code>kubectl get pods</code></pre>
@@ -113,7 +121,10 @@
 <pre><code>kubectl get pods --all-namespaces -o wide --field-selector spec.nodeName=&quot;ip-10-10-4-20.eu-west-1.compute.internal&quot;</code></pre>
 <p>Show pods from a deployment</p>
 <pre><code>kubectl get pods --output wide --selector app.kubernetes.io/name=my-app</code></pre>
-<p>Run a pod without a deployment (Restart policy with Never wont create a deployment)</p>
+<p>
+  Run a pod without a deployment (Restart policy with Never wont create a
+  deployment)
+</p>
 <pre><code>kubectl run pod1 --image=alpine --restart=Never -- ping localhost</code></pre>
 <p>Run a pod without a deployment (Using generator flag)</p>
 <pre><code>kubectl run pod2 --generator=run-pod/v1 --image=alpine -- ping localhost</code></pre>
@@ -146,5 +157,11 @@
 <p>Show pods, sort output by restarts:</p>
 <pre><code>kubectl get pods --sort-by=&quot;{.status.containerStatuses[:1].restartCount}&quot;</code></pre>
 <h3 id="resources">Resources:</h3>
-<p>Kubectl Output Formatting: - https://gist.github.com/so0k/42313dbb3b547a0f51a547bb968696ba</p>
-<p>Kubernetes Cheatsheet: - https://kubernetes.io/docs/reference/kubectl/cheatsheet/</p>
+<p>
+  Kubectl Output Formatting: -
+  https://gist.github.com/so0k/42313dbb3b547a0f51a547bb968696ba
+</p>
+<p>
+  Kubernetes Cheatsheet: -
+  https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+</p>

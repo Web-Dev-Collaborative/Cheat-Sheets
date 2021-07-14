@@ -1,4 +1,5 @@
 ## External Resources:
+
 - [MongoDB Cheatsheet #1](https://gist.github.com/rbekker87/5b4cd9ef36b6ae092a6260ab9e621a43)
 - [@aponxi](https://gist.github.com/aponxi/4380516)
 
@@ -110,14 +111,16 @@ Select only the name and age key, similar to:
 ```
 
 Select only the data where the age is equal to something, similar to:
+
 - `select name, age from mycol1 where age = 32` :
 
 ```
 > db.mycol1.find({"age": 32}, {"name": 1, "age": 1, "_id": 0})
 { "name" : "ruan", "age" : 32 }
-````
+```
 
 Return the name from a given document id, similar to:
+
 - `select name from mycol1 where id = xx` :
 
 ```

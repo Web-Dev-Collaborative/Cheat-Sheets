@@ -1,10 +1,21 @@
 <h2 id="external-resources">External Resources:</h2>
 <ul>
-<li><a href="https://gist.github.com/rbekker87/5b4cd9ef36b6ae092a6260ab9e621a43">MongoDB Cheatsheet #1</a></li>
-<li><p><span class="citation" data-cites="aponxi">[@aponxi]</span>(https://gist.github.com/aponxi/4380516)</p></li>
-<li>A field in mongodb : {<code>"key": "value"</code>}</li>
-<li>A field consist of a key and value</li>
-<li><p>A operator like <code>gte</code> or <code>lt</code> can be used</p></li>
+  <li>
+    <a href="https://gist.github.com/rbekker87/5b4cd9ef36b6ae092a6260ab9e621a43"
+      >MongoDB Cheatsheet #1</a
+    >
+  </li>
+  <li>
+    <p>
+      <span class="citation" data-cites="aponxi">[@aponxi]</span
+      >(https://gist.github.com/aponxi/4380516)
+    </p>
+  </li>
+  <li>A field in mongodb : {<code>"key": "value"</code>}</li>
+  <li>A field consist of a key and value</li>
+  <li>
+    <p>A operator like <code>gte</code> or <code>lt</code> can be used</p>
+  </li>
 </ul>
 <h2 id="view-databases">View Databases</h2>
 <p>View existing databases:</p>
@@ -37,7 +48,7 @@ WriteResult({ &quot;nInserted&quot; : 1 })</code></pre>
 <h2 id="read-from-mongodb">Read from MongoDB</h2>
 <p>Read all the data from a collection, similar to:</p>
 <ul>
-<li><code>select * from mycol1</code> :</li>
+  <li><code>select * from mycol1</code> :</li>
 </ul>
 <pre><code>&gt; db.mycol1.find()
 { &quot;_id&quot; : ObjectId(&quot;5cc60c8ebdbf7f5dd3f7cdc3&quot;), &quot;name&quot; : &quot;ruan&quot;, &quot;age&quot; : 32, &quot;hobbies&quot; : [ &quot;golf&quot;, &quot;programming&quot;, &quot;music&quot; ] }
@@ -66,15 +77,21 @@ WriteResult({ &quot;nInserted&quot; : 1 })</code></pre>
 }</code></pre>
 <p>Select only the name and age key, similar to:</p>
 <ul>
-<li><code>select name, age from mycol1</code> :</li>
+  <li><code>select name, age from mycol1</code> :</li>
 </ul>
 <pre><code>&gt; db.mycol1.find({}, {&quot;name&quot;: 1, &quot;age&quot;: 1, &quot;_id&quot;: 0})
 { &quot;name&quot; : &quot;ruan&quot;, &quot;age&quot; : 32 }
 { &quot;name&quot; : &quot;michelle&quot;, &quot;age&quot; : 28 }</code></pre>
-<p>Select only the data where the age is equal to something, similar to: - <code>select name, age from mycol1 where age = 32</code> :</p>
+<p>
+  Select only the data where the age is equal to something, similar to: -
+  <code>select name, age from mycol1 where age = 32</code> :
+</p>
 <pre><code>&gt; db.mycol1.find({&quot;age&quot;: 32}, {&quot;name&quot;: 1, &quot;age&quot;: 1, &quot;_id&quot;: 0})
 { &quot;name&quot; : &quot;ruan&quot;, &quot;age&quot; : 32 }</code></pre>
-<p>Return the name from a given document id, similar to: - <code>select name from mycol1 where id = xx</code> :</p>
+<p>
+  Return the name from a given document id, similar to: -
+  <code>select name from mycol1 where id = xx</code> :
+</p>
 <pre><code>&gt; db.mycol1.findOne({_id: ObjectId(&quot;5cc60c8ebdbf7f5dd3f7cdc3&quot;)}).name
 ruan</code></pre>
 <p>Find documents older than a specific age:</p>

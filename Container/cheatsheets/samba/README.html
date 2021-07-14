@@ -1,7 +1,9 @@
 <h1 id="samba">Samba</h1>
 <h2 id="external-resources">External Resources</h2>
 <ul>
-<li>https://confluence.jaytaala.com/display/TKB/Create+samba+share+writeable+by+all%2C+group%2C+or+only+a+user</li>
+  <li>
+    https://confluence.jaytaala.com/display/TKB/Create+samba+share+writeable+by+all%2C+group%2C+or+only+a+user
+  </li>
 </ul>
 <h2 id="setup-shares">Setup Shares</h2>
 <p>Create user:</p>
@@ -23,7 +25,10 @@ chmod g+s /disk/share</code></pre>
   create mask = 0644
   directory mask = 0755
   force user = me</code></pre>
-<p>Allow all linux users which is part of a group to read and write to your share:</p>
+<p>
+  Allow all linux users which is part of a group to read and write to your
+  share:
+</p>
 <pre><code>[share]
   path = /disk/share
   valid users = @mygroup
@@ -32,9 +37,15 @@ chmod g+s /disk/share</code></pre>
   create mask = 0644
   directory mask = 0755
   force user = me</code></pre>
-<p>Only allowing one user to access our share, we need to assign a samba password:</p>
+<p>
+  Only allowing one user to access our share, we need to assign a samba
+  password:
+</p>
 <pre><code>sudo smbpasswd -a me</code></pre>
-<p>Then we can specify our config that only our <code>me</code> user can access our share with read/write permissions:</p>
+<p>
+  Then we can specify our config that only our <code>me</code> user can access
+  our share with read/write permissions:
+</p>
 <pre><code>[share]
   path = /disk/share
   valid users = me

@@ -16,7 +16,7 @@ A seção de boas práticas comuns de segurança contém as práticas recomendad
 
 ## ![✔] Comparando valores secretos e hashes com segurança
 
-**TL;DR:** Ao comparar valores secretos ou hashes como digestões do HMAC, você deve usar a função  [`crypto.timingSafeEqual(a, b)`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_timingsafeequal_a_b) que o Node fornece por padrão desde o Node.js v6.6.0. Este método compara dois objetos e continua comparando, mesmo que os dados não correspondam. Os métodos de comparação de igualdade padrão simplesmente retornariam após uma incompatibilidade de caracteres, permitindo ataques de tempo com base no comprimento da operação.
+**TL;DR:** Ao comparar valores secretos ou hashes como digestões do HMAC, você deve usar a função [`crypto.timingSafeEqual(a, b)`](https://nodejs.org/dist/latest-v9.x/docs/api/crypto.html#crypto_crypto_timingsafeequal_a_b) que o Node fornece por padrão desde o Node.js v6.6.0. Este método compara dois objetos e continua comparando, mesmo que os dados não correspondam. Os métodos de comparação de igualdade padrão simplesmente retornariam após uma incompatibilidade de caracteres, permitindo ataques de tempo com base no comprimento da operação.
 
 **Caso contrário:** Usando operadores de comparação de igualdade padrão, você pode expor informações críticas com base no tempo gasto para comparar dois objetos.
 
@@ -81,7 +81,6 @@ Em seguida, abaixo, listamos alguns conselhos importantes do projeto OWASP.
 - Registrar e auditar cada chamada de API para serviços de nuvem e gerenciamento (por exemplo, quem excluiu o bucket do S3?) Usando serviços como o AWS CloudTrail
 - Execute o verificador de segurança do seu provedor de nuvem (por exemplo, consultor de confiança de segurança da AWS)
 
-
 ## ![✔] OWASP A10: Registro e monitoramento insuficientes
 
 - Alerte em eventos de auditoria notáveis ​​ou suspeitos, como login de usuário, criação de novo usuário, alteração de permissão, etc.
@@ -94,6 +93,5 @@ Em seguida, abaixo, listamos alguns conselhos importantes do projeto OWASP.
 - O escape de dados de solicitação HTTP não confiáveis ​​com base no contexto na saída HTML (corpo, atributo, JavaScript, CSS ou URL) resolverá as vulnerabilidades de XSS refletido e armazenado
 - Aplicar codificação sensível ao contexto quando modificar o documento do navegador no lado do cliente atua em relação ao DOM XSS
 - Ativar uma Política de Segurança de Conteúdo (CSP) como um controle de mitigação de defesa em profundidade contra o XSS
-
 
 <br/><br/><br/>

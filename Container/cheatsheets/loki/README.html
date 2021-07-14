@@ -1,18 +1,39 @@
 <h1 id="loki">Loki</h1>
 <h2 id="blogposts-about-loki">Blogposts about Loki</h2>
 <ul>
-<li>https://rtfm.co.ua/en/grafana-labs-loki-logs-collector-and-monitoring-system/</li>
-<li><a href="https://dev.to/thakkaryash94/docker-container-logs-using-fluentd-and-grafana-loki-a15">Using Fluentd and Loki on Docker</a></li>
-<li><a href="https://www.infracloud.io/blogs/grafana-loki-log-monitoring-alerting/">Log Monitoring and Alerting with Loki</a></li>
+  <li>
+    https://rtfm.co.ua/en/grafana-labs-loki-logs-collector-and-monitoring-system/
+  </li>
+  <li>
+    <a
+      href="https://dev.to/thakkaryash94/docker-container-logs-using-fluentd-and-grafana-loki-a15"
+      >Using Fluentd and Loki on Docker</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://www.infracloud.io/blogs/grafana-loki-log-monitoring-alerting/"
+      >Log Monitoring and Alerting with Loki</a
+    >
+  </li>
 </ul>
 <h2 id="dashboards-for-grafana">Dashboards for Grafana</h2>
 <ul>
-<li>https://grafana.com/grafana/dashboards/12019</li>
+  <li>https://grafana.com/grafana/dashboards/12019</li>
 </ul>
 <h2 id="get-started">Get Started</h2>
-<p>You can refer to the following to get your loki stack up and running: - https://blog.ruanbekker.com/blog/2020/08/13/getting-started-on-logging-with-loki-using-docker/ - https://grafana.com/docs/loki/latest/installation/</p>
+<p>
+  You can refer to the following to get your loki stack up and running: -
+  https://blog.ruanbekker.com/blog/2020/08/13/getting-started-on-logging-with-loki-using-docker/
+  - https://grafana.com/docs/loki/latest/installation/
+</p>
 <h2 id="logging-clients">Logging Clients</h2>
-<p>Install the <a href="https://grafana.com/docs/loki/latest/clients/docker-driver/">loki docker driver</a>:</p>
+<p>
+  Install the
+  <a href="https://grafana.com/docs/loki/latest/clients/docker-driver/"
+    >loki docker driver</a
+  >:
+</p>
 <pre><code>$ sudo docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions</code></pre>
 <h3 id="using-it-in-your-compose">Using it in your compose</h3>
 <p>To use it in your <code>docker-compose.yml</code></p>
@@ -33,7 +54,10 @@ services:
           - labels:
               level:</code></pre>
 <h3 id="default-log-driver">Default Log Driver</h3>
-<p>Or if you want to have all the containers log to loki by default, configure the daemon.json</p>
+<p>
+  Or if you want to have all the containers log to loki by default, configure
+  the daemon.json
+</p>
 <pre><code>$ cat /etc/docker/daemon.json
 {
     &quot;debug&quot; : true,
@@ -49,4 +73,7 @@ services:
 <p>To test with a container:</p>
 <pre><code>$ docker run --rm -it --log-driver loki --log-opt loki-url=&quot;https://x:x@loki.domain.com/loki/api/v1/push&quot; --log-opt loki-external-labels=&quot;job=debug/dockerlogs&quot; hello-world</code></pre>
 <h2 id="logcli">LogCLI</h2>
-<p>View the <a href="logcli/README.md">logcli</a> cheatsheet to use the terminal to view your logs</p>
+<p>
+  View the <a href="logcli/README.md">logcli</a> cheatsheet to use the terminal
+  to view your logs
+</p>

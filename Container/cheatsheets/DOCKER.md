@@ -1,4 +1,4 @@
-###  Docker Template Variables:
+### Docker Template Variables:
 
 Service Name:
 
@@ -108,5 +108,5 @@ my-app-ui
 ```
 
 Docs:
-- https://docs.docker.com/engine/reference/commandline/service_ps/
 
+- https://docs.docker.com/engine/reference/commandline/service_ps/

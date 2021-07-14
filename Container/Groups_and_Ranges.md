@@ -1,66 +1,66 @@
 ---
-description: 'Groups and ranges indicate groups and ranges of expression characters.'
+description: "Groups and ranges indicate groups and ranges of expression characters."
 lang: en
-robots: 'index, follow'
+robots: "index, follow"
 title: 'Groups and ranges - JavaScript \| MDN'
 twitter:card: summary
 twitter:creator: '\@MozDevNet'
-twitter:description: 'Groups and ranges indicate groups and ranges of expression characters.'
-twitter:image: 'https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png'
+twitter:description: "Groups and ranges indicate groups and ranges of expression characters."
+twitter:image: "https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png"
 twitter:site: '\@MozDevNet'
 twitter:title: Groups and ranges
 twitter:url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular\_Expressions/Groups\_and\_Ranges'
-viewport: 'width=device-width, initial-scale=1'
+viewport: "width=device-width, initial-scale=1"
 ---
 
 ::: {#react-container data-component-name="SPA"}
 ::: {.loading-bar}
 :::
 
--   [Skip to main content](#content){#skip-main}
--   [Select language](#language){#skip-language}
--   [Skip to search](#main-q){#skip-search}
+- [Skip to main content](#content){#skip-main}
+- [Select language](#language){#skip-language}
+- [Skip to search](#main-q){#skip-search}
 
 <!-- -->
 
--   Technologies
-    -   [Technologies
-        Overview](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
-    -   [HTML](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/HTML)
-    -   [CSS](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/CSS)
-    -   [JavaScript](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-    -   [Graphics](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics)
-    -   [HTTP](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/HTTP)
-    -   [APIs /
-        DOM](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/API)
-    -   [Browser
-        Extensions](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions)
-    -   [MathML](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/MathML)
--   References & Guides
-    -   [Learn web
-        development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Learn)
-    -   [Tutorials](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Tutorials)
-    -   [References](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Reference)
-    -   [Developer
-        Guides](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Guide)
-    -   [Accessibility](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Accessibility)
-    -   [Game
-        development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Games)
-    -   [\...more
-        docs](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
--   Feedback
-    -   [Send
-        Feedback](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Feedback)
-    -   [Get Firefox help
-        🌐](../../../../../../../external.html?link=https://support.mozilla.org/)
-    -   [Get web development help
-        🌐](../../../../../../../external.html?link=https://stackoverflow.com/)
-    -   [Join the MDN
-        community](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Community)
-    -   [Report a content problem
-        🌐](../../../../../../../external.html?link=https://github.com/mdn/sprints/issues/new?template=issue-template.md&projects=mdn/sprints/2&labels=user-report&title=/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges)
-    -   [Report an issue
-        🌐](../../../../../../../external.html?link=https://github.com/mdn/kuma/issues/new/choose)
+- Technologies
+  - [Technologies
+    Overview](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
+  - [HTML](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/HTML)
+  - [CSS](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/CSS)
+  - [JavaScript](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+  - [Graphics](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics)
+  - [HTTP](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/HTTP)
+  - [APIs /
+    DOM](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/API)
+  - [Browser
+    Extensions](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions)
+  - [MathML](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/MathML)
+- References & Guides
+  - [Learn web
+    development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Learn)
+  - [Tutorials](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Tutorials)
+  - [References](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Reference)
+  - [Developer
+    Guides](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Guide)
+  - [Accessibility](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Accessibility)
+  - [Game
+    development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Games)
+  - [\...more
+    docs](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
+- Feedback
+  - [Send
+    Feedback](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Feedback)
+  - [Get Firefox help
+    🌐](../../../../../../../external.html?link=https://support.mozilla.org/)
+  - [Get web development help
+    🌐](../../../../../../../external.html?link=https://stackoverflow.com/)
+  - [Join the MDN
+    community](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Community)
+  - [Report a content problem
+    🌐](../../../../../../../external.html?link=https://github.com/mdn/sprints/issues/new?template=issue-template.md&projects=mdn/sprints/2&labels=user-report&title=/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges)
+  - [Report an issue
+    🌐](../../../../../../../external.html?link=https://github.com/mdn/kuma/issues/new/choose)
 
 ::: {.header-search}
 Search MDN
@@ -76,6 +76,7 @@ Open search
 
 ::: {.full-width-row-container}
 ::: {.max-content-width-container}
+
 1.  [[See ]{.pre-text}[Web technology for
     developers]{property="name"}](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web){.breadcrumb-chevron}
 2.  [[See ]{.pre-text}[JavaScript]{property="name"}](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript){.breadcrumb-chevron}
@@ -89,32 +90,33 @@ Open search
 ::: {.dropdown-container .language-menu}
 English[▼]{.dropdown-arrow-down aria-hidden="true"}
 
--   [Español](../../../../../../../external.html?link=https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions/Grupos_y_rangos "Spanish")
--   [Français](../../../../../../../external.html?link=https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_régulières/Groupes_et_intervalles "French")
--   [日本語](../../../../../../../external.html?link=https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges "Japanese")
--   [한국어](../../../../../../../external.html?link=https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/정규식/Groups_and_Ranges "Korean")
--   [中文
-    (简体)](../../../../../../../external.html?link=https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges "Chinese (Simplified)")
--   [Add a
-    translation](../../../../../../../external.html?link=https://wiki.developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges$locales){#translations-add}
-:::
-:::
-:::
+- [Español](../../../../../../../external.html?link=https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions/Grupos_y_rangos "Spanish")
+- [Français](../../../../../../../external.html?link=https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_régulières/Groupes_et_intervalles "French")
+- [日本語](../../../../../../../external.html?link=https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges "Japanese")
+- [한국어](../../../../../../../external.html?link=https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/정규식/Groups_and_Ranges "Korean")
+- [中文
+  (简体)](../../../../../../../external.html?link=https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges "Chinese (Simplified)")
+- [Add a
+  translation](../../../../../../../external.html?link=https://wiki.developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges$locales){#translations-add}
+  :::
+  :::
+  :::
 
 ::: {.wiki-left-present .content-layout}
 ::: {.section .document-toc}
 On this Page
-------------
+
+---
 
 Jump to section
 
--   [Types](#Types)
--   [Examples](#Examples)
--   [Specifications](#Specifications)
--   [Browser compatibility](#Browser_compatibility)
--   [See also](#See_also)
--   [Related topics](#sidebar-quicklinks)
-:::
+- [Types](#Types)
+- [Examples](#Examples)
+- [Specifications](#Specifications)
+- [Browser compatibility](#Browser_compatibility)
+- [See also](#See_also)
+- [Related topics](#sidebar-quicklinks)
+  :::
 
 ::: {#content .article .text-content}
 Groups and ranges indicate groups and ranges of expression characters.
@@ -123,8 +125,7 @@ Groups and ranges indicate groups and ranges of expression characters.
 
 </div>
 
-Types {#Types}
------
+## Types {#Types}
 
 ::: {.hidden}
 The following section is also duplicated on [this
@@ -132,161 +133,160 @@ cheatsheet](Cheatsheet.html). Do not forget to edit it as well, thanks!
 :::
 
 +-----------------------------------+-----------------------------------+
-| Characters                        | Meaning                           |
+| Characters | Meaning |
 +===================================+===================================+
-| `x|y`                             | Matches either \"x\" or \"y\".    |
-|                                   | For example, `/green|red/`        |
-|                                   | matches \"green\" in \"green      |
-|                                   | apple\" and \"red\" in \"red      |
-|                                   | apple\".                          |
+| `x|y` | Matches either \"x\" or \"y\". |
+| | For example, `/green|red/` |
+| | matches \"green\" in \"green |
+| | apple\" and \"red\" in \"red |
+| | apple\". |
 +-----------------------------------+-----------------------------------+
-| `[xyz]     [a-c]`                 | A character set. Matches any one  |
-|                                   | of the enclosed characters. You   |
-|                                   | can specify a range of characters |
-|                                   | by using a hyphen, but if the     |
-|                                   | hyphen appears as the first or    |
-|                                   | last character enclosed in the    |
-|                                   | square brackets it is taken as a  |
-|                                   | literal hyphen to be included in  |
-|                                   | the character set as a normal     |
-|                                   | character. It is also possible to |
-|                                   | include a character class in a    |
-|                                   | character set.                    |
-|                                   |                                   |
-|                                   | For example, `[abcd]` is the same |
-|                                   | as `[a-d]`. They match the \"b\"  |
-|                                   | in \"brisket\", and the \"c\" in  |
-|                                   | \"chop\".                         |
-|                                   |                                   |
-|                                   | For example, `[abcd-]` and        |
-|                                   | `[-abcd]` match the \"b\" in      |
-|                                   | \"brisket\", the \"c\" in         |
-|                                   | \"chop\", and the \"-\" (hyphen)  |
-|                                   | in \"non-profit\".                |
-|                                   |                                   |
-|                                   | For example, `[\w-]` is the same  |
-|                                   | as `[A-Za-z0-9_-]`. They both     |
-|                                   | match the \"b\" in \"brisket\",   |
-|                                   | the \"c\" in \"chop\", and the    |
-|                                   | \"n\" in \"non-profit\".          |
+| `[xyz] [a-c]` | A character set. Matches any one |
+| | of the enclosed characters. You |
+| | can specify a range of characters |
+| | by using a hyphen, but if the |
+| | hyphen appears as the first or |
+| | last character enclosed in the |
+| | square brackets it is taken as a |
+| | literal hyphen to be included in |
+| | the character set as a normal |
+| | character. It is also possible to |
+| | include a character class in a |
+| | character set. |
+| | |
+| | For example, `[abcd]` is the same |
+| | as `[a-d]`. They match the \"b\" |
+| | in \"brisket\", and the \"c\" in |
+| | \"chop\". |
+| | |
+| | For example, `[abcd-]` and |
+| | `[-abcd]` match the \"b\" in |
+| | \"brisket\", the \"c\" in |
+| | \"chop\", and the \"-\" (hyphen) |
+| | in \"non-profit\". |
+| | |
+| | For example, `[\w-]` is the same |
+| | as `[A-Za-z0-9_-]`. They both |
+| | match the \"b\" in \"brisket\", |
+| | the \"c\" in \"chop\", and the |
+| | \"n\" in \"non-profit\". |
 +-----------------------------------+-----------------------------------+
-| `[^xyz]      [^a-c]`              | A negated or complemented         |
-|                                   | character set. That is, it        |
-|                                   | matches anything that is not      |
-|                                   | enclosed in the brackets. You can |
-|                                   | specify a range of characters by  |
-|                                   | using a hyphen, but if the hyphen |
-|                                   | appears as the first or last      |
-|                                   | character enclosed in the square  |
-|                                   | brackets it is taken as a literal |
-|                                   | hyphen to be included in the      |
-|                                   | character set as a normal         |
-|                                   | character. For example, `[^abc]`  |
-|                                   | is the same as `[^a-c]`. They     |
-|                                   | initially match \"o\" in          |
-|                                   | \"bacon\" and \"h\" in \"chop\".  |
-|                                   |                                   |
-|                                   | ::: {.blockIndicator .note}       |
-|                                   | The \^ character may also         |
-|                                   | indicate the [beginning of        |
-|                                   | input](Assertions.html).          |
-|                                   | :::                               |
+| `[^xyz] [^a-c]` | A negated or complemented |
+| | character set. That is, it |
+| | matches anything that is not |
+| | enclosed in the brackets. You can |
+| | specify a range of characters by |
+| | using a hyphen, but if the hyphen |
+| | appears as the first or last |
+| | character enclosed in the square |
+| | brackets it is taken as a literal |
+| | hyphen to be included in the |
+| | character set as a normal |
+| | character. For example, `[^abc]` |
+| | is the same as `[^a-c]`. They |
+| | initially match \"o\" in |
+| | \"bacon\" and \"h\" in \"chop\". |
+| | |
+| | ::: {.blockIndicator .note} |
+| | The \^ character may also |
+| | indicate the [beginning of |
+| | input](Assertions.html). |
+| | ::: |
 +-----------------------------------+-----------------------------------+
-| `(x)`                             | **Capturing group: **Matches `x`  |
-|                                   | and remembers the match. For      |
-|                                   | example, `/(foo)/` matches and    |
-|                                   | remembers \"foo\" in \"foo        |
-|                                   | bar\".                            |
-|                                   |                                   |
-|                                   | A regular expression may have     |
-|                                   | multiple capturing groups. In     |
-|                                   | results, matches to capturing     |
-|                                   | groups typically in an array      |
-|                                   | whose members are in the same     |
-|                                   | order as the left parentheses in  |
-|                                   | the capturing group. This is      |
-|                                   | usually just the order of the     |
-|                                   | capturing groups themselves. This |
-|                                   | becomes important when capturing  |
-|                                   | groups are nested. Matches are    |
-|                                   | accessed using the index of the   |
-|                                   | the result\'s elements            |
-|                                   | (`[1], ..., [n]`) or from the     |
-|                                   | predefined `RegExp` object\'s     |
-|                                   | properties (`$1, ..., $9`).       |
-|                                   |                                   |
-|                                   | Capturing groups have a           |
-|                                   | performance penalty. If you       |
-|                                   | don\'t need the matched substring |
-|                                   | to be recalled, prefer            |
-|                                   | non-capturing parentheses (see    |
-|                                   | below).                           |
-|                                   |                                   |
-|                                   | `String.match()` won\'t return    |
-|                                   | groups if the `/.../g` flag is    |
-|                                   | set. However, you can still use   |
-|                                   | `String.matchAll()` to get all    |
-|                                   | matches.                          |
+| `(x)` | **Capturing group: **Matches `x` |
+| | and remembers the match. For |
+| | example, `/(foo)/` matches and |
+| | remembers \"foo\" in \"foo |
+| | bar\".  |
+| | |
+| | A regular expression may have |
+| | multiple capturing groups. In |
+| | results, matches to capturing |
+| | groups typically in an array |
+| | whose members are in the same |
+| | order as the left parentheses in |
+| | the capturing group. This is |
+| | usually just the order of the |
+| | capturing groups themselves. This |
+| | becomes important when capturing |
+| | groups are nested. Matches are |
+| | accessed using the index of the |
+| | the result\'s elements |
+| | (`[1], ..., [n]`) or from the |
+| | predefined `RegExp` object\'s |
+| | properties (`$1, ..., $9`). |
+| | |
+| | Capturing groups have a |
+| | performance penalty. If you |
+| | don\'t need the matched substring |
+| | to be recalled, prefer |
+| | non-capturing parentheses (see |
+| | below). |
+| | |
+| | `String.match()` won\'t return |
+| | groups if the `/.../g` flag is |
+| | set. However, you can still use |
+| | `String.matchAll()` to get all |
+| | matches. |
 +-----------------------------------+-----------------------------------+
-| `\n`                              | Where \"n\" is a positive         |
-|                                   | integer. A back reference to the  |
-|                                   | last substring matching the n     |
-|                                   | parenthetical in the regular      |
-|                                   | expression (counting left         |
-|                                   | parentheses). For example,        |
-|                                   | `/apple(,)\sorange\1/` matches    |
-|                                   | \"apple, orange,\" in \"apple,    |
-|                                   | orange, cherry, peach\".          |
+| `\n` | Where \"n\" is a positive |
+| | integer. A back reference to the |
+| | last substring matching the n |
+| | parenthetical in the regular |
+| | expression (counting left |
+| | parentheses). For example, |
+| | `/apple(,)\sorange\1/` matches |
+| | \"apple, orange,\" in \"apple, |
+| | orange, cherry, peach\". |
 +-----------------------------------+-----------------------------------+
-| `\k<Name>`                        | A back reference to the last      |
-|                                   | substring matching the **Named    |
-|                                   | capture group** specified by      |
-|                                   | `<Name>`.                         |
-|                                   |                                   |
-|                                   | For example,                      |
-|                                   | `/(?<title>\w+), yes \k<title>/`  |
-|                                   | matches                           |
-|                                   | \"Sir, yes Sir\" in \"Do you      |
-|                                   | copy? Sir, yes Sir!\".            |
-|                                   |                                   |
-|                                   | ::: {.blockIndicator .note}       |
-|                                   | `\k` is used literally here to    |
-|                                   | indicate the beginning of a back  |
-|                                   | reference to a Named capture      |
-|                                   | group.                            |
-|                                   | :::                               |
+| `\k<Name>` | A back reference to the last |
+| | substring matching the **Named |
+| | capture group** specified by |
+| | `<Name>`. |
+| | |
+| | For example, |
+| | `/(?<title>\w+), yes \k<title>/`  |
+| | matches |
+| | \"Sir, yes Sir\" in \"Do you |
+| | copy? Sir, yes Sir!\". |
+| | |
+| | ::: {.blockIndicator .note} |
+| | `\k` is used literally here to |
+| | indicate the beginning of a back |
+| | reference to a Named capture |
+| | group. |
+| | ::: |
 +-----------------------------------+-----------------------------------+
-| `(?<Name>x)`                      | **Named capturing                 |
-|                                   | group: **Matches \"x\" and stores |
-|                                   | it on the groups property of the  |
-|                                   | returned matches under the name   |
-|                                   | specified by `<Name>`. The angle  |
-|                                   | brackets (`<` and `>`) are        |
-|                                   | required for group name.          |
-|                                   |                                   |
-|                                   | For example, to extract the       |
-|                                   | United States area code from a    |
-|                                   | phone number, we could use        |
-|                                   | `/\((?<area>\d\d\d)\)/`. The      |
-|                                   | resulting number would appear     |
-|                                   | under `matches.groups.area`.      |
+| `(?<Name>x)` | **Named capturing |
+| | group: **Matches \"x\" and stores |
+| | it on the groups property of the |
+| | returned matches under the name |
+| | specified by `<Name>`. The angle |
+| | brackets (`<` and `>`) are |
+| | required for group name. |
+| | |
+| | For example, to extract the |
+| | United States area code from a |
+| | phone number, we could use |
+| | `/\((?<area>\d\d\d)\)/`. The |
+| | resulting number would appear |
+| | under `matches.groups.area`. |
 +-----------------------------------+-----------------------------------+
-| `(?:x)`                           | **Non-capturing group: **Matches  |
-|                                   | \"x\" but does not remember the   |
-|                                   | match. The matched substring      |
-|                                   | cannot be recalled from the       |
-|                                   | resulting array\'s elements       |
-|                                   | (`[1], ..., [n]`) or from the     |
-|                                   | predefined `RegExp` object\'s     |
-|                                   | properties (`$1, ..., $9`).       |
+| `(?:x)` | **Non-capturing group: **Matches |
+| | \"x\" but does not remember the |
+| | match. The matched substring |
+| | cannot be recalled from the |
+| | resulting array\'s elements |
+| | (`[1], ..., [n]`) or from the |
+| | predefined `RegExp` object\'s |
+| | properties (`$1, ..., $9`). |
 +-----------------------------------+-----------------------------------+
 
-Examples {#Examples}
---------
+## Examples {#Examples}
 
 ### Counting vowels {#Counting_vowels}
 
-``` {.brush: .js .notranslate}
+```{.brush: .js .notranslate}
 var aliceExcerpt = "There was a long silence after this, and Alice could only hear whispers now and then.";
 var regexpVowels = /[aeiouy]/g;
 
@@ -296,7 +296,7 @@ console.log("Number of vowels:", aliceExcerpt.match(regexpVowels).length);
 
 ### Using groups {#Using_groups}
 
-``` {.brush: .js .notranslate}
+```{.brush: .js .notranslate}
 let personList = `First_Name: John, Last_Name: Doe
 First_Name: Jane, Last_Name: Smith`;
 
@@ -309,7 +309,7 @@ do {
 
 ### Using named groups {#Using_named_groups}
 
-``` {.brush: .js .notranslate}
+```{.brush: .js .notranslate}
 let personList = `First_Name: John, Last_Name: Doe
 First_Name: Jane, Last_Name: Smith`;
 
@@ -326,44 +326,45 @@ do {
 table](../Regular_Expressions.html#Browser_compatibility).
 :::
 
-Specifications {#Specifications}
---------------
+## Specifications {#Specifications}
 
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Specification
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  [ECMAScript (ECMA-262)\
-  [The definition of \'RegExp: Ranges\' in that specification.]{.small}](../../../../../../../external.html?link=https://tc39.es/ecma262/#sec-classranges){.external}
+---
 
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Specification
 
-Browser compatibility {#Browser_compatibility}
----------------------
+---
+
+[ECMAScript (ECMA-262)\
+ [The definition of \'RegExp: Ranges\' in that specification.]{.small}](../../../../../../../external.html?link=https://tc39.es/ecma262/#sec-classranges){.external}
+
+---
+
+## Browser compatibility {#Browser_compatibility}
 
 For browser compatibility information, check out the [main Regular
 Expressions compatibility
 table](../Regular_Expressions.html#Browser_compatibility).
 
-See also {#See_also}
---------
+## See also {#See_also}
 
--   [Regular expressions guide](../Regular_Expressions.html)
-    -   [Character classes](Character_Classes.html)
-    -   [Assertions](Assertions.html)
-    -   [Quantifiers](Quantifiers.html)
-    -   [Unicode property escapes](Unicode_Property_Escapes.html)
--   [The `RegExp()`
-    constructor](../../Reference/Global_Objects/RegExp.html)
+- [Regular expressions guide](../Regular_Expressions.html)
+  - [Character classes](Character_Classes.html)
+  - [Assertions](Assertions.html)
+  - [Quantifiers](Quantifiers.html)
+  - [Unicode property escapes](Unicode_Property_Escapes.html)
+- [The `RegExp()`
+  constructor](../../Reference/Global_Objects/RegExp.html)
 
 ::: {.metadata}
 ::: {.section .document-meta}
+
 #### Metadata
 
--   **Last modified:** Jul 18, 2020, [by MDN
-    contributors](../../../../../../../external.html?link=https://wiki.developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges$history)
-:::
-:::
-:::
+- **Last modified:** Jul 18, 2020, [by MDN
+  contributors](../../../../../../../external.html?link=https://wiki.developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges$history)
+  :::
+  :::
+  :::
 
 ::: {#sidebar-quicklinks .sidebar}
 ::: {.quick-links}
@@ -373,7 +374,7 @@ Related Topics
 
 <div>
 
-1.  [***JavaScript***](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+1.  [**_JavaScript_**](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 2.  [**Tutorials:**](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 3.  Complete beginners
     1.  [JavaScript
@@ -746,7 +747,7 @@ Related Topics
     26. [SyntaxError: function statement requires a
         name](../../Reference/Errors/Unnamed_function_statement.html "The JavaScript exception "function statement requires a name" occurs when there is a function statement in the code that requires a name.")
     27. [SyntaxError: identifier starts immediately after numeric
-        literal](../../Reference/Errors/Identifier_after_number.html "The JavaScript exception "identifier starts immediately after numeric literal" occurs when an identifier started with a digit. Identifiers can only start with a letter, underscore (_), or dollar sign ($).")
+        literal](../../Reference/Errors/Identifier*after_number.html "The JavaScript exception "identifier starts immediately after numeric literal" occurs when an identifier started with a digit. Identifiers can only start with a letter, underscore (*), or dollar sign ($).")
     28. [SyntaxError: illegal
         character](../../Reference/Errors/Illegal_character.html "The JavaScript exception "illegal character" occurs when there is an invalid or unexpected token that doesn't belong at this position in the code.")
     29. [SyntaxError: invalid regular expression flag
@@ -873,7 +874,8 @@ Related Topics
 ::: {#newsletter-form-container .newsletter}
 ::: {.section .newsletter-head}
 Learn the best of web development {#learn-the-best-of-web-development .newsletter-teaser}
----------------------------------
+
+---
 
 Get the latest and greatest from MDN delivered straight to your inbox.
 
@@ -901,49 +903,50 @@ Hide Newsletter Sign-up
 [MDN Web
 Docs](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/){.nav-footer-logo}
 
--   [Web
-    Technologies](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
--   [Learn Web
-    Development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Learn)
--   [About
-    MDN](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/About)
--   [Feedback](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Feedback)
+- [Web
+  Technologies](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
+- [Learn Web
+  Development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Learn)
+- [About
+  MDN](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/About)
+- [Feedback](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Feedback)
 
 <!-- -->
 
--   [About](../../../../../../../external.html?link=https://www.mozilla.org/about/)
--   [MDN Web Docs
-    Store](../../../../../../../external.html?link=https://shop.spreadshirt.com/mdn-store/)
--   [Contact
-    Us](../../../../../../../external.html?link=https://www.mozilla.org/contact/)
--   [Firefox](../../../../../../../external.html?link=https://www.mozilla.org/firefox/?utm_source=developer.mozilla.org&utm_campaign=footer&utm_medium=referral)
+- [About](../../../../../../../external.html?link=https://www.mozilla.org/about/)
+- [MDN Web Docs
+  Store](../../../../../../../external.html?link=https://shop.spreadshirt.com/mdn-store/)
+- [Contact
+  Us](../../../../../../../external.html?link=https://www.mozilla.org/contact/)
+- [Firefox](../../../../../../../external.html?link=https://www.mozilla.org/firefox/?utm_source=developer.mozilla.org&utm_campaign=footer&utm_medium=referral)
 
 ::: {.social .social-mdn}
+
 #### MDN
 
--   -   
-:::
+- - :::
 
 ::: {.social .social-moz}
+
 #### Mozilla
 
--   -   
-:::
+- - :::
 
 © 2005-2020 Mozilla and individual contributors. Content is available
 under [these
 licenses](../../../../../../../external.html?link=https://developer.mozilla.org/docs/MDN/About#Copyrights_and_licenses).
 
--   [Terms](../../../../../../../external.html?link=https://www.mozilla.org/about/legal/terms/mozilla)
--   [Privacy](../../../../../../../external.html?link=https://www.mozilla.org/privacy/websites/)
--   [Cookies](../../../../../../../external.html?link=https://www.mozilla.org/privacy/websites/#cookies)
-:::
-:::
+- [Terms](../../../../../../../external.html?link=https://www.mozilla.org/about/legal/terms/mozilla)
+- [Privacy](../../../../../../../external.html?link=https://www.mozilla.org/privacy/websites/)
+- [Cookies](../../../../../../../external.html?link=https://www.mozilla.org/privacy/websites/#cookies)
+  :::
+  :::
 
 ::: {#auth-modal .modal .hidden}
 ::: {.section .auth-providers tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="modal-main-heading"}
 Sign In {#modal-main-heading}
--------
+
+---
 
 Sign in to enjoy the benefits of an MDN account. If you haven't already
 created an account, you will be prompted to do so after signing in.

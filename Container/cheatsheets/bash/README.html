@@ -1,24 +1,40 @@
 <h1 id="bash">BASH</h1>
 <p>My Bash Cheatsheet Index:</p>
 <ul>
-<li><a href="#one-liners">One Liners</a>
-<ul>
-<li><a href="#block-bad-ips">Block Bad IPs</a></li>
-</ul></li>
-<li><a href="#if-statements">If Statements</a>
-<ul>
-<li><a href="#check-if-args-are-passed">Check if args are passed</a></li>
-<li><a href="#check-if-required-variables-exist">Check if required variables exist</a></li>
-<li><a href="#check-if-environment-variables-exists">Check if environment variables exists</a></li>
-</ul></li>
-<li><a href="#while-loops">While Loops</a>
-<ul>
-<li><a href="#run-process-for-5-seconds">Run for 5 Seconds</a></li>
-</ul></li>
-<li><a href="#redirecting-outputs">Redirecting Outputs</a>
-<ul>
-<li><a href="#stdout-stderr">Stdout, Stderr</a></li>
-</ul></li>
+  <li>
+    <a href="#one-liners">One Liners</a>
+    <ul>
+      <li><a href="#block-bad-ips">Block Bad IPs</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#if-statements">If Statements</a>
+    <ul>
+      <li><a href="#check-if-args-are-passed">Check if args are passed</a></li>
+      <li>
+        <a href="#check-if-required-variables-exist"
+          >Check if required variables exist</a
+        >
+      </li>
+      <li>
+        <a href="#check-if-environment-variables-exists"
+          >Check if environment variables exists</a
+        >
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#while-loops">While Loops</a>
+    <ul>
+      <li><a href="#run-process-for-5-seconds">Run for 5 Seconds</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#redirecting-outputs">Redirecting Outputs</a>
+    <ul>
+      <li><a href="#stdout-stderr">Stdout, Stderr</a></li>
+    </ul>
+  </li>
 </ul>
 <h2 id="commands">Commands</h2>
 <h3 id="tr-command">tr command</h3>
@@ -56,7 +72,9 @@ May 10 11:24:02 srv4 postfix/smtpd[1838]: lost connection after AUTH from unknow
     echo &#39;need to pass args&#39;
     exit 0
 fi</code></pre>
-<h2 id="check-if-required-variables-exist">Check if required variables exist</h2>
+<h2 id="check-if-required-variables-exist">
+  Check if required variables exist
+</h2>
 <pre><code>if [ $1 == &quot;one&quot; ] || [ $1 == &quot;two&quot; ]
 then
   echo &quot;argument 1 has the value one or two&quot;
@@ -65,7 +83,9 @@ else
   echo &quot;I require argument 1 to be one or two&quot;
   exit 1
 fi</code></pre>
-<h2 id="check-if-environment-variables-exists">Check if environment variables exists</h2>
+<h2 id="check-if-environment-variables-exists">
+  Check if environment variables exists
+</h2>
 <pre><code>if [ -z ${OWNER} ] || [ -z ${NAME} ]
 then
   echo &quot;does not meet requirements of both environment variables&quot;

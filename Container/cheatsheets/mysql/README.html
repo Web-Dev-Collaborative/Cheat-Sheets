@@ -1,15 +1,15 @@
 <h1 id="mysql-cheatsheet">MySQL Cheatsheet</h1>
 <ul>
-<li><a href="#changing-tables">Changing Tables</a></li>
-<li><a href="#check-and-repair-tables">Check and Repair Tables</a></li>
-<li><a href="#create-tables">Create Tables</a></li>
-<li><a href="#delete">Delete</a></li>
-<li><a href="#get-size-in-mb">Get Size in MB</a></li>
-<li><a href="#indexes">Indexes</a></li>
-<li><a href="#insert-data">Insert Data</a></li>
-<li><a href="#performance-schema-metrics">Performance Schema Metrics</a></li>
-<li><a href="#permissions">Permissions</a></li>
-<li><a href="#repair-table">Repair Table</a></li>
+  <li><a href="#changing-tables">Changing Tables</a></li>
+  <li><a href="#check-and-repair-tables">Check and Repair Tables</a></li>
+  <li><a href="#create-tables">Create Tables</a></li>
+  <li><a href="#delete">Delete</a></li>
+  <li><a href="#get-size-in-mb">Get Size in MB</a></li>
+  <li><a href="#indexes">Indexes</a></li>
+  <li><a href="#insert-data">Insert Data</a></li>
+  <li><a href="#performance-schema-metrics">Performance Schema Metrics</a></li>
+  <li><a href="#permissions">Permissions</a></li>
+  <li><a href="#repair-table">Repair Table</a></li>
 </ul>
 <h2 id="permissions">Permissions</h2>
 <p>Create Database:</p>
@@ -100,9 +100,15 @@
 <pre><code>$ mysqlcheck -o thegeekstuff employee -u root -p</code></pre>
 <p>repairs employee table that is located in thegeekstuff database.</p>
 <pre><code>$ mysqlcheck -r thegeekstuff employee -u root -p</code></pre>
-<p>checks, optimizes and repairs all the corrupted table in thegeekstuff database.</p>
+<p>
+  checks, optimizes and repairs all the corrupted table in thegeekstuff
+  database.
+</p>
 <pre><code>$ mysqlcheck -u root -p --auto-repair -c -o thegeekstuff</code></pre>
-<p>optimize and repair all the tables across all your databases using the following command.</p>
+<p>
+  optimize and repair all the tables across all your databases using the
+  following command.
+</p>
 <pre><code>$ mysqlcheck -u root -p --auto-repair -c -o --all-databases</code></pre>
 <h2 id="delete">Delete</h2>
 <p>Delete data older than x:</p>
@@ -204,7 +210,9 @@ mysql&gt; SHOW VARIABLES LIKE &#39;wait_timeout&#39;;
 <p>Binlog format:</p>
 <pre><code>mysql&gt; show variables like &#39;binlog_format&#39;;</code></pre>
 <h2 id="performance-schema-metrics">Performance Schema Metrics:</h2>
-<p>Execution time of all the different statement types executed by each user:</p>
+<p>
+  Execution time of all the different statement types executed by each user:
+</p>
 <pre><code>mysql&gt; select * from sys.user_summary_by_statement_type;
 +------------+----------------+-------+---------------+-------------+--------------+-----------+---------------+---------------+------------+
 | user       | statement      | total | total_latency | max_latency | lock_latency | rows_sent | rows_examined | rows_affected | full_scans |
@@ -243,6 +251,6 @@ rows_examined_avg: 0
 mysql&gt; optimize table x;</code></pre>
 <h2 id="external-resources">External Resources:</h2>
 <ul>
-<li>https://www.mysqltutorial.org/mysql-inner-join.aspx/</li>
-<li>https://www.mysqltutorial.org/mysql-index/mysql-create-index/</li>
+  <li>https://www.mysqltutorial.org/mysql-inner-join.aspx/</li>
+  <li>https://www.mysqltutorial.org/mysql-index/mysql-create-index/</li>
 </ul>

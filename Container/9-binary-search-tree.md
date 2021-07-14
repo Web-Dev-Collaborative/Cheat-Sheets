@@ -2,37 +2,32 @@
 
 > The #data-structures series is a collection of posts about reimplemented data structures in JavaScript.
 
-
-Get the code on Github
-----------------------
+## Get the code on Github
 
 Of course, all the code can also be found on Github in the repository [data-structures-in-javascript](https://github.com/benoitvallon/computer-science-in-javascript/tree/master/data-structures-in-javascript).
 
-Definition
-----------
+## Definition
 
 > A Binary Search Tree data structure is a rooted binary tree, whose internal nodes each store a key (and optionally, an associated value) and each have two distinguished sub-trees, commonly denoted left and right. The tree additionally satisfies the binary search tree property, which states that the key in each node must be greater than all keys stored in the left sub-tree, and smaller than all keys in right sub-tree. **From [Wikipedia](https://en.wikipedia.org/wiki/Binary_search_tree)**
 
-Complexity
-----------
+## Complexity
 
-| Average |   |   |   |
-| --- | --- | --- | --- |
-| Access | Search | Insertion | Deletion |
+| Average   |           |           |           |
+| --------- | --------- | --------- | --------- |
+| Access    | Search    | Insertion | Deletion  |
 | O(log(n)) | O(log(n)) | O(log(n)) | O(log(n)) |
 
 To get a full overview of the time and space complexity of the Binary Search Tree data structure, have a look to this excellent [Big O cheat sheet](http://bigocheatsheet.com/).
 
-Interesting properties
-----------------------
+## Interesting properties
 
 ### Height and depth
 
 The height of a node is the length of the longest downward path to a leaf from that node. The depth of a node is the length of the path to its root.
 
-*   Height and depth of an empty tree: -1
-*   Height and depth of a tree with just a root node: 0
-*   Height of the root is the height of the tree.
+- Height and depth of an empty tree: -1
+- Height and depth of a tree with just a root node: 0
+- Height of the root is the height of the tree.
 
 ### Full (perfect) and complete
 
@@ -44,28 +39,27 @@ The height of the tree equals the number of edges between the root and a leaf. T
 
 Number of nodes: `2^levels - 1` maximum nodes where `levels = height + 1` where `height = edges-between-root-and-leaf`
 
-*   1 edge, 2 levels => `2^2 - 1 = 3` nodes N | NN
-*   2 edges, 3 levels => `2^3 - 1 = 7` nodes N | NN | NN NN
-*   3 edges, 4 levels => `2^4 - 1 = 15` nodes N | NN | NN NN | NN NN NN NN
+- 1 edge, 2 levels => `2^2 - 1 = 3` nodes N | NN
+- 2 edges, 3 levels => `2^3 - 1 = 7` nodes N | NN | NN NN
+- 3 edges, 4 levels => `2^4 - 1 = 15` nodes N | NN | NN NN | NN NN NN NN
 
 Maximum number of nodes at i level = `2^(i - 1)` (level 0 => 1, level 1 => 2, level 2 => 4, level 3 => 8)
 
-*   if n nodes, than `number of levels = log(n + 1)`, depth still levels - 1
-*   if n nodes, than the `number of edges = n - 1`
+- if n nodes, than `number of levels = log(n + 1)`, depth still levels - 1
+- if n nodes, than the `number of edges = n - 1`
 
-The code
---------
+## The code
 
     function Node(data) {
       this.data = data;
       this.left = null;
       this.right = null;
     }
-    
+
     function BinarySearchTree() {
       this.root = null;
     }
-    
+
     BinarySearchTree.prototype.add = function(data) {
       var node = new Node(data);
       if(!this.root) {
@@ -314,7 +308,7 @@ The code
         return true;
       }
     };
-    
+
     var binarySearchTree = new BinarySearchTree();
     binarySearchTree.add(5);
     binarySearchTree.add(3);
@@ -386,13 +380,11 @@ The code
     binarySearchTree.print(); // => 11 | 6 14 | 4 8 x 16 | 3 5 7 9 x x 15 17
     console.log('tree is balanced is false:', binarySearchTree.isBalanced()); // => false
     console.log('tree is balanced optimized is false:', binarySearchTree.isBalancedOptimized()); // => false
-    
 
-* * *
+---
 
-* * *
+---
 
-* * *
-
+---
 
 [Source](http://blog.benoitvallon.com/data-structures-in-javascript/the-binary-search-tree-data-structure/)

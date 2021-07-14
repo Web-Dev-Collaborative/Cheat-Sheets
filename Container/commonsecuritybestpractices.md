@@ -81,7 +81,6 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - Log and audit each API call to cloud and management services (e.g who deleted the S3 bucket?) using services like AWS CloudTrail
 - Run the security checker of your cloud provider (e.g. AWS security trust advisor)
 
-
 ## ![✔] OWASP A10: Insufficient Logging & Monitoring
 
 - Alert on remarkable or suspicious auditing events like user login, new user creation, permission change, etc
@@ -101,7 +100,6 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 - Protect Personally Identifyable Information in the Applications by encrypting them
 - Follow the data privacy laws of the land
 
-
 - Reference laws:
 
 - European Union: GDPR - https://ec.europa.eu/info/law/law-topic/data-protection_en
@@ -110,7 +108,7 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 
 ## ![✔] Have a security.txt File [PRODUCTION]
 
-**TL;DR:** Have a text file called ```security.txt``` under ```/.well-known```  directory (/.well-known/security.txt) or in the root directory (/security.txt) of your website or your web application in production. ```security.txt``` file should contain details using which security researchers can report vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
+**TL;DR:** Have a text file called `security.txt` under `/.well-known` directory (/.well-known/security.txt) or in the root directory (/security.txt) of your website or your web application in production. `security.txt` file should contain details using which security researchers can report vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent.
 
 **Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
 
@@ -119,13 +117,12 @@ Going on, below we've listed some important bits of advice from the OWASP projec
 
 ## ![✔] Have a SECURITY.md File [OPEN SOURCE]
 
-**TL;DR:** To give people instructions for responsibly reporting security vulnerabilities in your project, you can add a SECURITY.md file to your repository's root, docs, or .github folder. SECURITY.md file should contain details using which security researchers can report vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent. 
+**TL;DR:** To give people instructions for responsibly reporting security vulnerabilities in your project, you can add a SECURITY.md file to your repository's root, docs, or .github folder. SECURITY.md file should contain details using which security researchers can report vulnerabilities and also the contact details of the responsible person/group (email id and/or phone numbers) to whom the reports have to be sent.
 
 **Otherwise:** You may not be notified about the vulnerabilities. You will miss the opportunity to act on the vulnerabilities in time.
 
 🔗 [**Read More: SECURITY.md**](https://help.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository)
 
 <br/><br/><br/>
-
 
 <br/><br/><br/>

@@ -1,17 +1,21 @@
 <h1 id="elasticsearch-cheatsheet">Elasticsearch Cheatsheet</h1>
 <ul>
-<li><a href="#using-curl">Using cURL</a>
-<ul>
-<li><a href="#health-with-curl">Cluster Health</a></li>
-<li><a href="#reindex-using-curl">Reindex</a></li>
-<li><a href="#update-replicas-curl">Update Replica Shards</a></li>
-<li><a href="#snapshots-with-curl">Snapshots</a></li>
-<li><a href="#restore-snapshots-with-curl">Restore Snapshots</a></li>
-</ul></li>
-<li><a href="#python-library">using Python</a>
-<ul>
-<li><a href="#ingest-using-python">Ingest</a></li>
-</ul></li>
+  <li>
+    <a href="#using-curl">Using cURL</a>
+    <ul>
+      <li><a href="#health-with-curl">Cluster Health</a></li>
+      <li><a href="#reindex-using-curl">Reindex</a></li>
+      <li><a href="#update-replicas-curl">Update Replica Shards</a></li>
+      <li><a href="#snapshots-with-curl">Snapshots</a></li>
+      <li><a href="#restore-snapshots-with-curl">Restore Snapshots</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#python-library">using Python</a>
+    <ul>
+      <li><a href="#ingest-using-python">Ingest</a></li>
+    </ul>
+  </li>
 </ul>
 <h2 id="using-curl">Using Curl</h2>
 <h4 id="health-with-curl">Health with Curl</h4>
@@ -42,7 +46,11 @@
       &quot;index&quot;: &quot;archived-metrics-2019.01&quot;, 
     }
 }&#39;</code></pre>
-<p>Reindex only missing documents from source to target index. You will receive conflicts for existing documents, but the proceed value will ignore the conflicts.</p>
+<p>
+  Reindex only missing documents from source to target index. You will receive
+  conflicts for existing documents, but the proceed value will ignore the
+  conflicts.
+</p>
 <pre><code>$ curl -XPOST -H &#39;Content-Type: application/json&#39; &#39;http://127.0.0.1:9200/_reindex&#39; -d &#39;
   {
     &quot;conflicts&quot;: &quot;proceed&quot;, 

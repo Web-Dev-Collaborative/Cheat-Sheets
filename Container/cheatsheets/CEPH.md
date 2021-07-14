@@ -68,11 +68,14 @@ ceph dashboard set-login-credentials
 ## Ceph Docker Volumes
 
 ### Dockerized Ceph:
+
 - https://github.com/flaviostutz/ceph-osd
 
 ### Docker Volume Plugin:
+
 - https://github.com/flaviostutz/cepher
 
 ## Resources:
+
 - http://docs.ceph.com/docs/mimic/mgr/dashboard/
 - https://wiki.nix-pro.com/view/Ceph_FAQ/Tweaks/Howtos

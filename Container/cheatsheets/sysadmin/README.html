@@ -1,7 +1,18 @@
 <h2 id="memory">Memory</h2>
 <ul>
-<li><p><strong>Free</strong> memory is the amount of memory which is currently not used for anything. This number should be small, because memory which is not used is simply wasted.</p></li>
-<li><p><strong>Available</strong> memory is the amount of memory which is available for allocation to a new process or to existing processes.</p></li>
+  <li>
+    <p>
+      <strong>Free</strong> memory is the amount of memory which is currently
+      not used for anything. This number should be small, because memory which
+      is not used is simply wasted.
+    </p>
+  </li>
+  <li>
+    <p>
+      <strong>Available</strong> memory is the amount of memory which is
+      available for allocation to a new process or to existing processes.
+    </p>
+  </li>
 </ul>
 <h3 id="memory-stats">Memory Stats</h3>
 <p>Difference between vsz and rss:</p>
@@ -47,15 +58,19 @@ SHR is the total physical shared memory that the process has access to.</code></
 <pre><code>$ wget https://raw.githubusercontent.com/pixelb/ps_mem/master/ps_mem.py
 $ sudo python ps_mem.py</code></pre>
 <h2 id="permissions">Permissions</h2>
-<h3 id="permissions-for-directories-and-files">Permissions for Directories and Files</h3>
+<h3 id="permissions-for-directories-and-files">
+  Permissions for Directories and Files
+</h3>
 <pre><code>$ sudo chmod 755 /disk
 $ sudo chown -R ubuntu:ubuntu /disk
 $ sudo find /disk/2/htpc -type f -print -exec chmod 644 {} \;
 $ sudo find /disk/2/htpc -type d -print -exec chmod 755 {} \;</code></pre>
 <h3 id="external-resources">External Resources</h3>
 <ul>
-<li>https://www.tummy.com/articles/isolating-heavy-load/</li>
-<li>https://bobcares.com/blog/high-cpu-utilization/</li>
-<li>https://coderwall.com/p/utc42q/understanding-iostat</li>
-<li>https://www.techrepublic.com/article/how-to-use-the-linux-iostat-command-to-check-on-your-storage-subsystem/</li>
+  <li>https://www.tummy.com/articles/isolating-heavy-load/</li>
+  <li>https://bobcares.com/blog/high-cpu-utilization/</li>
+  <li>https://coderwall.com/p/utc42q/understanding-iostat</li>
+  <li>
+    https://www.techrepublic.com/article/how-to-use-the-linux-iostat-command-to-check-on-your-storage-subsystem/
+  </li>
 </ul>

@@ -1,14 +1,14 @@
 <h1 id="prometheus-cheatsheets">Prometheus Cheatsheets</h1>
 <ul>
-<li><a href="#curated-examples">Curated Examples</a></li>
-<li><a href="#example-queries">Example Queries</a></li>
-<li><a href="#scrape-config">Scrape Configs</a></li>
-<li><a href="#external-sources">External Sources</a></li>
+  <li><a href="#curated-examples">Curated Examples</a></li>
+  <li><a href="#example-queries">Example Queries</a></li>
+  <li><a href="#scrape-config">Scrape Configs</a></li>
+  <li><a href="#external-sources">External Sources</a></li>
 </ul>
 <h2 id="curated-examples">Curated Examples</h2>
 <p>Example queries per exporter / service:</p>
 <ul>
-<li><a href="metric_examples/NODE_METRICS.md">Node Metrics</a></li>
+  <li><a href="metric_examples/NODE_METRICS.md">Node Metrics</a></li>
 </ul>
 <h2 id="example-queries">Example Queries</h2>
 <p>How many nodes are up?</p>
@@ -112,17 +112,31 @@ total_number_of_errors{instance=&quot;my-instance&quot;, region=&quot;eu-west-1&
 avg_over_time(probe_success{job=&quot;node&quot;}[15m]) * 100</code></pre>
 <p>Remove / Replace:</p>
 <ul>
-<li>https://medium.com/<span class="citation" data-cites="texasdave2/replace-and-remove-a-label-in-a-prometheus-query-9500faa302f0">@texasdave2/replace-and-remove-a-label-in-a-prometheus-query-9500faa302f0</span></li>
+  <li>
+    https://medium.com/<span
+      class="citation"
+      data-cites="texasdave2/replace-and-remove-a-label-in-a-prometheus-query-9500faa302f0"
+      >@texasdave2/replace-and-remove-a-label-in-a-prometheus-query-9500faa302f0</span
+    >
+  </li>
 </ul>
 <h2 id="scrape-config">Scrape Config</h2>
 <p>Relabel configs:</p>
 <ul>
-<li>https://gist.github.com/trastle/1aa205354577ef0b329d4b8cc84c674a</li>
-<li>https://github.com/prometheus/docs/issues/341</li>
-<li>https://medium.com/quiq-blog/prometheus-relabeling-tricks-6ae62c56cbda</li>
-<li>https://blog.freshtracks.io/prometheus-relabel-rules-and-the-action-parameter-39c71959354a</li>
-<li>https://www.robustperception.io/relabel_configs-vs-metric_relabel_configs</li>
-<li>https://training.robustperception.io/courses/prometheus-configuration/lectures/3170347</li>
+  <li>https://gist.github.com/trastle/1aa205354577ef0b329d4b8cc84c674a</li>
+  <li>https://github.com/prometheus/docs/issues/341</li>
+  <li>
+    https://medium.com/quiq-blog/prometheus-relabeling-tricks-6ae62c56cbda
+  </li>
+  <li>
+    https://blog.freshtracks.io/prometheus-relabel-rules-and-the-action-parameter-39c71959354a
+  </li>
+  <li>
+    https://www.robustperception.io/relabel_configs-vs-metric_relabel_configs
+  </li>
+  <li>
+    https://training.robustperception.io/courses/prometheus-configuration/lectures/3170347
+  </li>
 </ul>
 <p>static_configs:</p>
 <pre><code>scrape_configs:
@@ -149,7 +163,10 @@ avg_over_time(probe_success{job=&quot;node&quot;}[15m]) * 100</code></pre>
 <h2 id="grafana-with-prometheus">Grafana with Prometheus</h2>
 <p>If you have output like this on grafana:</p>
 <pre><code>{instance=&quot;10.0.2.66:9100&quot;,job=&quot;node&quot;,nodename=&quot;rpi-02&quot;}</code></pre>
-<p>and you only want to show the hostnames, you can apply the following in “Legend” input:</p>
+<p>
+  and you only want to show the hostnames, you can apply the following in
+  “Legend” input:
+</p>
 <pre><code>{{nodename}}</code></pre>
 <p>If your output want <code>exported_instance</code> in:</p>
 <pre><code>sum(exporter_memory_usage{exported_instance=&quot;myapp&quot;})</code></pre>
@@ -159,79 +176,235 @@ avg_over_time(probe_success{job=&quot;node&quot;}[15m]) * 100</code></pre>
 <pre><code>{{exported_instance}}</code></pre>
 <h3 id="variables">Variables</h3>
 <ul>
-<li>Hostname:</li>
+  <li>Hostname:</li>
 </ul>
-<p>name: <code>node</code> label: <code>node</code> node: <code>label_values(node_uname_info, nodename)</code></p>
+<p>
+  name: <code>node</code> label: <code>node</code> node:
+  <code>label_values(node_uname_info, nodename)</code>
+</p>
 <p>Then in Grafana you can use:</p>
 <pre><code>sum(rate(node_disk_read_bytes_total{job=&quot;node&quot;}[1m])) by (device, instance) * on(instance) group_left(nodename) (node_uname_info{nodename=~&quot;$node&quot;})</code></pre>
 <ul>
-<li>Node Exporter Address</li>
+  <li>Node Exporter Address</li>
 </ul>
-<p>type: <code>query</code> query: <code>label_values(node_network_up, instance)</code></p>
+<p>
+  type: <code>query</code> query:
+  <code>label_values(node_network_up, instance)</code>
+</p>
 <ul>
-<li>MySQL Exporter Address</li>
+  <li>MySQL Exporter Address</li>
 </ul>
-<p>type: <code>query</code> query: <code>label_values(mysql_up, instance)</code></p>
+<p>
+  type: <code>query</code> query: <code>label_values(mysql_up, instance)</code>
+</p>
 <ul>
-<li>Static Values:</li>
+  <li>Static Values:</li>
 </ul>
-<p>type: <code>custom</code> name: <code>dc</code> label: <code>dc</code> values seperated by comma: <code>eu-west-1a,eu-west-1b,eu-west-1c</code></p>
+<p>
+  type: <code>custom</code> name: <code>dc</code> label: <code>dc</code> values
+  seperated by comma: <code>eu-west-1a,eu-west-1b,eu-west-1c</code>
+</p>
 <ul>
-<li>Docker Swarm Stack Names</li>
+  <li>Docker Swarm Stack Names</li>
 </ul>
-<p>name: <code>stack</code> label: <code>stack</code> query: <code>label_values(container_last_seen,container_label_com_docker_stack_namespace)</code></p>
+<p>
+  name: <code>stack</code> label: <code>stack</code> query:
+  <code
+    >label_values(container_last_seen,container_label_com_docker_stack_namespace)</code
+  >
+</p>
 <ul>
-<li>Docker Swarm Service Names</li>
+  <li>Docker Swarm Service Names</li>
 </ul>
-<p>name: <code>service_name</code> label: <code>service_name</code> query: <code>label_values(container_last_seen,container_label_com_docker_swarm_service_name)</code></p>
+<p>
+  name: <code>service_name</code> label: <code>service_name</code> query:
+  <code
+    >label_values(container_last_seen,container_label_com_docker_swarm_service_name)</code
+  >
+</p>
 <ul>
-<li>Docker Swarm Manager NodeId:</li>
+  <li>Docker Swarm Manager NodeId:</li>
 </ul>
-<p>name: <code>manager_node_id</code> label: <code>manager_node_id</code> query:</p>
+<p>
+  name: <code>manager_node_id</code> label: <code>manager_node_id</code> query:
+</p>
 <pre><code>label_values(container_last_seen{container_label_com_docker_swarm_service_name=~&quot;proxy_traefik&quot;, container_label_com_docker_swarm_node_id=~&quot;.*&quot;}, container_label_com_docker_swarm_node_id)</code></pre>
 <ul>
-<li>Docker Swarm Stacks Running on Managers</li>
+  <li>Docker Swarm Stacks Running on Managers</li>
 </ul>
-<p>name: <code>stack_on_manager</code> label: <code>stack_on_manager</code> query:</p>
+<p>
+  name: <code>stack_on_manager</code> label:
+  <code>stack_on_manager</code> query:
+</p>
 <pre><code>label_values(container_last_seen{container_label_com_docker_swarm_node_id=~&quot;$manager_node_id&quot;},container_label_com_docker_stack_namespace)</code></pre>
 <h2 id="external-sources">External Sources</h2>
 <ul>
-<li><a href="https://prometheus.io/docs/querying/basics/">Prometheus</a></li>
-<li><a href="https://medium.com/@valyala/promql-tutorial-for-beginners-9ab455142085">PromQL for Beginners</a></li>
-<li><a href="https://medianetlab.gr/prometheus-101/">Prometheus 101</a></li>
-<li><a href="https://www.robustperception.io/which-are-my-biggest-metrics">Biggest Metrics</a></li>
-<li><a href="https://github.com/grafana/grafana/issues/6561">Top Metrics</a></li>
-<li><a href="https://ordina-jworks.github.io/monitoring/2016/09/23/Monitoring-with-Prometheus.html">Ordina-Jworks</a></li>
-<li><a href="https://github.com/infinityworks/prometheus-example-queries">Infinity Works</a></li>
-<li><a href="https://medium.com/quiq-blog/prometheus-relabeling-tricks-6ae62c56cbda">Prometheus Relabeling Tricks</a></li>
-<li><span class="citation" data-cites="Valyala">[@Valyala: PromQL Tutorial for Beginners]</span>(https://medium.com/<span class="citation" data-cites="valyala/promql-tutorial-for-beginners-9ab455142085">@valyala/promql-tutorial-for-beginners-9ab455142085</span>)</li>
-<li><span class="citation" data-cites="Jitendra">[@Jitendra: PromQL Cheat Sheet]</span>(https://github.com/jitendra-1217/promql.cheat.sheet)</li>
-<li><a href="https://github.com/infinityworks/prometheus-example-queries/blob/master/README.md">InfinityWorks: Prometheus Example Queries</a></li>
-<li><a href="https://timber.io/blog/promql-for-humans/">Timber: PromQL for Humans</a></li>
-<li><a href="https://www.section.io/blog/prometheus-querying/">SectionIO: Prometheus Querying</a></li>
-<li><a href="">RobustPerception</a>
-<ul>
-<li><a href="https://www.robustperception.io/understanding-machine-cpu-usage">RobustPerception: Understanding Machine CPU Usage</a></li>
-<li><a href="https://www.robustperception.io/common-query-patterns-in-promql">RobustPerception: Common Query Patterns</a></li>
-<li><a href="https://www.robustperception.io/what-percentage-of-time-is-my-service-down-for">RobustPerception: Website Uptime</a></li>
-<li><a href="https://www.robustperception.io/how-does-a-prometheus-histogram-work">RobustPerception: Prometheus Histogram</a></li>
-<li><a href="https://www.robustperception.io/how-does-a-prometheus-counter-work">RobustPerception: Prometheus Counter</a></li>
-<li><a href="https://www.robustperception.io/how-does-a-prometheus-gauge-work">RobustPerception: Prometheus Guage</a></li>
-<li><a href="https://www.robustperception.io/how-does-a-prometheus-summary-work">RobustPerception: Prometheus Summary</a></li>
-</ul></li>
-<li><a href="https://devconnected.com/the-definitive-guide-to-prometheus-in-2019/">DevConnected: The Definitive Guide to Prometheus</a></li>
-<li><span class="citation" data-cites="showmax">[@showmax Prometheus Introduction]</span>(https://tech.showmax.com/2019/10/prometheus-introduction/)</li>
-<li><span class="citation" data-cites="aws">[@aws Prometheus Rewrite Rules for k8s]</span>(https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights-Prometheus-Setup-configure.html#ContainerInsights-Prometheus-Setup-config-scrape)</li>
-<li><a href="">ec2_sd_configs</a>
-<ul>
-<li><a href="https://jarodw.com/posts/prometheus-ec2-sd-multiple-aws-accounts/">Prometheus AWS Cross Account ec2_sd_config</a></li>
-<li><a href="https://medium.com/investing-in-tech/automatic-monitoring-for-all-new-aws-instances-using-prometheus-service-discovery-97d37a5b2ea2">Prometheus AWS ec2_sd_config role</a></li>
-</ul></li>
-<li><span class="citation" data-cites="metricfire.com">[@metricfire.com: Understanding the Rate Function]</span>(https://www.metricfire.com/blog/understanding-the-prometheus-rate-function/) Dashboarding:</li>
-<li><a href="https://niravshah2705.medium.com/prometheus-alert-for-missing-metrics-and-labels-afd4b8f12b1">Alerting on Missing Labels and Metrics</a></li>
-<li><span class="citation" data-cites="devconnected">[@devconnected Disk IO Dashboarding]</span>(https://devconnected.com/monitoring-disk-i-o-on-linux-with-the-node-exporter/)</li>
+  <li><a href="https://prometheus.io/docs/querying/basics/">Prometheus</a></li>
+  <li>
+    <a
+      href="https://medium.com/@valyala/promql-tutorial-for-beginners-9ab455142085"
+      >PromQL for Beginners</a
+    >
+  </li>
+  <li><a href="https://medianetlab.gr/prometheus-101/">Prometheus 101</a></li>
+  <li>
+    <a href="https://www.robustperception.io/which-are-my-biggest-metrics"
+      >Biggest Metrics</a
+    >
+  </li>
+  <li>
+    <a href="https://github.com/grafana/grafana/issues/6561">Top Metrics</a>
+  </li>
+  <li>
+    <a
+      href="https://ordina-jworks.github.io/monitoring/2016/09/23/Monitoring-with-Prometheus.html"
+      >Ordina-Jworks</a
+    >
+  </li>
+  <li>
+    <a href="https://github.com/infinityworks/prometheus-example-queries"
+      >Infinity Works</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://medium.com/quiq-blog/prometheus-relabeling-tricks-6ae62c56cbda"
+      >Prometheus Relabeling Tricks</a
+    >
+  </li>
+  <li>
+    <span class="citation" data-cites="Valyala"
+      >[@Valyala: PromQL Tutorial for Beginners]</span
+    >(https://medium.com/<span
+      class="citation"
+      data-cites="valyala/promql-tutorial-for-beginners-9ab455142085"
+      >@valyala/promql-tutorial-for-beginners-9ab455142085</span
+    >)
+  </li>
+  <li>
+    <span class="citation" data-cites="Jitendra"
+      >[@Jitendra: PromQL Cheat Sheet]</span
+    >(https://github.com/jitendra-1217/promql.cheat.sheet)
+  </li>
+  <li>
+    <a
+      href="https://github.com/infinityworks/prometheus-example-queries/blob/master/README.md"
+      >InfinityWorks: Prometheus Example Queries</a
+    >
+  </li>
+  <li>
+    <a href="https://timber.io/blog/promql-for-humans/"
+      >Timber: PromQL for Humans</a
+    >
+  </li>
+  <li>
+    <a href="https://www.section.io/blog/prometheus-querying/"
+      >SectionIO: Prometheus Querying</a
+    >
+  </li>
+  <li>
+    <a href="">RobustPerception</a>
+    <ul>
+      <li>
+        <a
+          href="https://www.robustperception.io/understanding-machine-cpu-usage"
+          >RobustPerception: Understanding Machine CPU Usage</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.robustperception.io/common-query-patterns-in-promql"
+          >RobustPerception: Common Query Patterns</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.robustperception.io/what-percentage-of-time-is-my-service-down-for"
+          >RobustPerception: Website Uptime</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.robustperception.io/how-does-a-prometheus-histogram-work"
+          >RobustPerception: Prometheus Histogram</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.robustperception.io/how-does-a-prometheus-counter-work"
+          >RobustPerception: Prometheus Counter</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.robustperception.io/how-does-a-prometheus-gauge-work"
+          >RobustPerception: Prometheus Guage</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.robustperception.io/how-does-a-prometheus-summary-work"
+          >RobustPerception: Prometheus Summary</a
+        >
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a
+      href="https://devconnected.com/the-definitive-guide-to-prometheus-in-2019/"
+      >DevConnected: The Definitive Guide to Prometheus</a
+    >
+  </li>
+  <li>
+    <span class="citation" data-cites="showmax"
+      >[@showmax Prometheus Introduction]</span
+    >(https://tech.showmax.com/2019/10/prometheus-introduction/)
+  </li>
+  <li>
+    <span class="citation" data-cites="aws"
+      >[@aws Prometheus Rewrite Rules for k8s]</span
+    >(https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights-Prometheus-Setup-configure.html#ContainerInsights-Prometheus-Setup-config-scrape)
+  </li>
+  <li>
+    <a href="">ec2_sd_configs</a>
+    <ul>
+      <li>
+        <a
+          href="https://jarodw.com/posts/prometheus-ec2-sd-multiple-aws-accounts/"
+          >Prometheus AWS Cross Account ec2_sd_config</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://medium.com/investing-in-tech/automatic-monitoring-for-all-new-aws-instances-using-prometheus-service-discovery-97d37a5b2ea2"
+          >Prometheus AWS ec2_sd_config role</a
+        >
+      </li>
+    </ul>
+  </li>
+  <li>
+    <span class="citation" data-cites="metricfire.com"
+      >[@metricfire.com: Understanding the Rate Function]</span
+    >(https://www.metricfire.com/blog/understanding-the-prometheus-rate-function/)
+    Dashboarding:
+  </li>
+  <li>
+    <a
+      href="https://niravshah2705.medium.com/prometheus-alert-for-missing-metrics-and-labels-afd4b8f12b1"
+      >Alerting on Missing Labels and Metrics</a
+    >
+  </li>
+  <li>
+    <span class="citation" data-cites="devconnected"
+      >[@devconnected Disk IO Dashboarding]</span
+    >(https://devconnected.com/monitoring-disk-i-o-on-linux-with-the-node-exporter/)
+  </li>
 </ul>
 <p>Setups:</p>
 <ul>
-<li><a href="https://ops.tips/blog/simulating-aws-tags-in-local-prometheus/">Simulating AWS Tags in Local Prometheus</a></li>
+  <li>
+    <a href="https://ops.tips/blog/simulating-aws-tags-in-local-prometheus/"
+      >Simulating AWS Tags in Local Prometheus</a
+    >
+  </li>
 </ul>

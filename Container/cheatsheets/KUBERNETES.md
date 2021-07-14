@@ -1,12 +1,11 @@
-## Provisioning 
+## Provisioning
 
-### Setup Kubernetes 
+### Setup Kubernetes
 
 - [Kubernetes on Ubuntu](https://gist.github.com/ruanbekker/38a38aea5f325f7fa4a19e795ef4f0d0)
 - [[K3s](https://github.com/rancher/k3s#quick-start)
 
 ## Get Resource Information
-
 
 ### Nodes
 
@@ -24,9 +23,9 @@ $ kubectl top node [node_name]
 
 ### Pods
 
-* Pods: The single smallest interactable unit in Kubernetes. 
-* Pod can be comprimised of multiple containers that will form a unit deployed on a single node together
-* Pod receives one IP which is shared between containers
+- Pods: The single smallest interactable unit in Kubernetes.
+- Pod can be comprimised of multiple containers that will form a unit deployed on a single node together
+- Pod receives one IP which is shared between containers
 
 ```
 $ kubectl get pods

@@ -1,6 +1,6 @@
 <h1 id="postgresql-cheatsheets">Postgresql · Cheatsheets</h1>
 <blockquote>
-<p>source</p>
+  <p>source</p>
 </blockquote>
 <h2 id="basic-commands">Basic Commands</h2>
 <h3 id="login-to-postgresql">Login to postgresql</h3>
@@ -11,14 +11,22 @@ psql -U myuser -h myhost &quot;dbname=mydb sslmode=require&quot; # ssl connectio
 <h3 id="default-admin-login">Default Admin Login</h3>
 <pre><code>sudo -u postgres psql -U postgres
 sudo -u postgres psql</code></pre>
-<h3 id="list-databases-on-postgresql-server">List databases on postgresql server</h3>
+<h3 id="list-databases-on-postgresql-server">
+  List databases on postgresql server
+</h3>
 <h3 id="determine-system-tables">Determine system tables</h3>
 <pre><code>select * from pg_tables where tableowner = &#39;postgres&#39;;</code></pre>
-<h3 id="list-databases-from-within-a-pg-shell">List databases from within a pg shell</h3>
-<h3 id="list-databases-from-unix-command-prompt">List databases from UNIX command prompt</h3>
+<h3 id="list-databases-from-within-a-pg-shell">
+  List databases from within a pg shell
+</h3>
+<h3 id="list-databases-from-unix-command-prompt">
+  List databases from UNIX command prompt
+</h3>
 <h3 id="describe-a-table">Describe a table</h3>
 <h3 id="quit-psql">Quit psql</h3>
-<h3 id="switch-postgres-database-within-admin-login-shell">Switch postgres database within admin login shell</h3>
+<h3 id="switch-postgres-database-within-admin-login-shell">
+  Switch postgres database within admin login shell
+</h3>
 <h3 id="reset-a-user-password-as-admin">Reset a user password as admin</h3>
 <pre><code>alter user usertochange with password &#39;new_passwd&#39;;</code></pre>
 <h3 id="show-all-tables">Show all tables</h3>
@@ -45,7 +53,9 @@ sudo -u postgres createuser lemmy -W</code></pre>
 create user mysuper with password &#39;1234&#39; SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN REPLICATION;
 # or
 sudo -u postgres createuser lemmy -W -s</code></pre>
-<h3 id="upgrade-an-existing-user-to-superuser">Upgrade an existing user to superuser</h3>
+<h3 id="upgrade-an-existing-user-to-superuser">
+  Upgrade an existing user to superuser
+</h3>
 <pre><code>alter user mysuper with superuser;
 # or even better
 alter user mysuper with SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN REPLICATION</code></pre>
@@ -56,7 +66,9 @@ alter user mysuper with SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN REPLICATION<
 <pre><code>CREATE DATABASE newdb WITH TEMPLATE originaldb;</code></pre>
 <h3 id="view-database-connections">View Database Connections</h3>
 <pre><code>SELECT * FROM pg_stat_activity;</code></pre>
-<h3 id="view-show-data-directory-works-on-9.1">View show data directory (works on 9.1+)</h3>
+<h3 id="view-show-data-directory-works-on-9.1">
+  View show data directory (works on 9.1+)
+</h3>
 <h3 id="show-run-time-parameters">Show run-time parameters</h3>
 <pre><code>show all;
 select * from pg_settings;</code></pre>
@@ -76,8 +88,19 @@ grant all privileges on table1, table2, table3 to myuser;</code></pre>
 <h3 id="restore-postgres-.dump-file">Restore Postgres .dump file</h3>
 <pre><code>pg_restore --verbose --clean --no-acl --no-owner -h localhost -U myuser -d mydb latest.dump</code></pre>
 <p><a href="https://gist.github.com/kagemusha/1569836">source</a></p>
-<h3 id="find-all-active-sessions-and-kill-them-i.e.-for-when-needing-to-drop-or-rename-db">Find all active sessions and kill them (i.e. for when needing to drop or rename db)</h3>
-<p>Source: <a href="http://stackoverflow.com/questions/5408156/how-to-drop-a-postgresql-database-if-there-are-active-connections-to-it">http://stackoverflow.com/questions/5408156/how-to-drop-a-postgresql-database-if-there-are-active-connections-to-it</a></p>
+<h3
+  id="find-all-active-sessions-and-kill-them-i.e.-for-when-needing-to-drop-or-rename-db"
+>
+  Find all active sessions and kill them (i.e. for when needing to drop or
+  rename db)
+</h3>
+<p>
+  Source:
+  <a
+    href="http://stackoverflow.com/questions/5408156/how-to-drop-a-postgresql-database-if-there-are-active-connections-to-it"
+    >http://stackoverflow.com/questions/5408156/how-to-drop-a-postgresql-database-if-there-are-active-connections-to-it</a
+  >
+</p>
 <pre><code># Postgres 9.6 and above
 SELECT pg_terminate_backend(pg_stat_activity.pid)
 FROM pg_stat_activity
@@ -252,8 +275,18 @@ SELECT c1, c2 FROM t
 WHERE c1 IS [NOT] NULL;</code></pre>
 <h2 id="source">Source:</h2>
 <ul>
-<li><a href="https://www.postgresql.org/docs/9.6/static/app-psql.html">PostgreSQL 9.6.0 Documentation</a></li>
-<li><a href="https://pgexercises.com/">PostgreSQL Exercises</a></li>
-<li><a href="http://www.postgresqltutorial.com/postgresql-cheat-sheets">PostgreSQL Tutorial</a></li>
+  <li>
+    <a href="https://www.postgresql.org/docs/9.6/static/app-psql.html"
+      >PostgreSQL 9.6.0 Documentation</a
+    >
+  </li>
+  <li><a href="https://pgexercises.com/">PostgreSQL Exercises</a></li>
+  <li>
+    <a href="http://www.postgresqltutorial.com/postgresql-cheat-sheets"
+      >PostgreSQL Tutorial</a
+    >
+  </li>
 </ul>
-<p><a href="https://karloespiritu.github.io/cheatsheets/postgresql/">Source</a></p>
+<p>
+  <a href="https://karloespiritu.github.io/cheatsheets/postgresql/">Source</a>
+</p>

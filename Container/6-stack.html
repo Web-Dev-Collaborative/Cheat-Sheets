@@ -1,40 +1,68 @@
 <h1 id="the-stack-data-structure">The Stack data structure</h1>
 <blockquote>
-<p>The #data-structures series is a collection of posts about reimplemented data structures in JavaScript.</p>
+  <p>
+    The #data-structures series is a collection of posts about reimplemented
+    data structures in JavaScript.
+  </p>
 </blockquote>
 <h2 id="get-the-code-on-github">Get the code on Github</h2>
-<p>Of course, all the code can also be found on Github in the repository <a href="https://github.com/benoitvallon/computer-science-in-javascript/tree/master/data-structures-in-javascript">data-structures-in-javascript</a>.</p>
+<p>
+  Of course, all the code can also be found on Github in the repository
+  <a
+    href="https://github.com/benoitvallon/computer-science-in-javascript/tree/master/data-structures-in-javascript"
+    >data-structures-in-javascript</a
+  >.
+</p>
 <h2 id="definition">Definition</h2>
 <blockquote>
-<p>A Stack is an abstract data type that serves as a collection of elements, with two principal operations: push, which adds an element to the collection, and pop, which removes the most recently added element that was not yet removed. The order in which elements come off a Stack gives rise to its alternative name, LIFO (for last in, first out). <strong>From <a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">Wikipedia</a></strong></p>
+  <p>
+    A Stack is an abstract data type that serves as a collection of elements,
+    with two principal operations: push, which adds an element to the
+    collection, and pop, which removes the most recently added element that was
+    not yet removed. The order in which elements come off a Stack gives rise to
+    its alternative name, LIFO (for last in, first out).
+    <strong
+      >From
+      <a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)"
+        >Wikipedia</a
+      ></strong
+    >
+  </p>
 </blockquote>
-<p>A Stack often has a third method peek which allows to check the last pushed element without popping it.</p>
+<p>
+  A Stack often has a third method peek which allows to check the last pushed
+  element without popping it.
+</p>
 <h2 id="complexity">Complexity</h2>
 <table>
-<thead>
-<tr class="header">
-<th>Average</th>
-<th> </th>
-<th> </th>
-<th> </th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Access</td>
-<td>Search</td>
-<td>Insertion</td>
-<td>Deletion</td>
-</tr>
-<tr class="even">
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-</tbody>
+  <thead>
+    <tr class="header">
+      <th>Average</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="odd">
+      <td>Access</td>
+      <td>Search</td>
+      <td>Insertion</td>
+      <td>Deletion</td>
+    </tr>
+    <tr class="even">
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>O(1)</td>
+      <td>O(1)</td>
+    </tr>
+  </tbody>
 </table>
-<p>To get a full overview of the time and space complexity of the Stack data structure, have a look to this excellent <a href="http://bigocheatsheet.com/">Big O cheat sheet</a>.</p>
+<p>
+  To get a full overview of the time and space complexity of the Stack data
+  structure, have a look to this excellent
+  <a href="http://bigocheatsheet.com/">Big O cheat sheet</a>.
+</p>
 <h2 id="the-code">The code</h2>
 <pre><code>function Stack() {
   this.stack = [];
@@ -74,4 +102,9 @@ console.log(&#39;pop is undefined:&#39;, stack.pop()); // =&gt; undefined</code>
 <hr />
 <hr />
 <hr />
-<p><a href="http://blog.benoitvallon.com/data-structures-in-javascript/the-stack-data-structure/">Source</a></p>
+<p>
+  <a
+    href="http://blog.benoitvallon.com/data-structures-in-javascript/the-stack-data-structure/"
+    >Source</a
+  >
+</p>

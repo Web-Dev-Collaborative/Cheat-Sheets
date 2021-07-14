@@ -1,14 +1,24 @@
 <h1 id="logql">LogQL</h1>
 <h2 id="other-examples">Other Examples</h2>
 <ul>
-<li>https://github.com/grafana/loki/blob/master/docs/logql.md#filter-expression</li>
-<li>https://medium.com/grafana-tutorials/logql-in-grafana-loki-ffc822a65f59</li>
+  <li>
+    https://github.com/grafana/loki/blob/master/docs/logql.md#filter-expression
+  </li>
+  <li>
+    https://medium.com/grafana-tutorials/logql-in-grafana-loki-ffc822a65f59
+  </li>
 </ul>
 <h2 id="logql-examples">logql examples</h2>
 <p>Log events per container_name:</p>
 <pre><code>sum by(container_name) (rate({job=&quot;prod/dockerlogs&quot;}[1m]))</code></pre>
 <h2 id="logql-parser">logql-parser</h2>
-<p>From <a href="https://hub.docker.com/layers/ctovena/loki/logql-parser-5e0238e/images/sha256-a326d3329c25729b111216bdb0bddb4b8e976a40954c8be4c5396f36a5fb4f23?context=explore">ctovena/loki:logql-parser-5e0238e</a></p>
+<p>
+  From
+  <a
+    href="https://hub.docker.com/layers/ctovena/loki/logql-parser-5e0238e/images/sha256-a326d3329c25729b111216bdb0bddb4b8e976a40954c8be4c5396f36a5fb4f23?context=explore"
+    >ctovena/loki:logql-parser-5e0238e</a
+  >
+</p>
 <pre><code>{job=&quot;adsb&quot;} | json | gs &gt; 500</code></pre>
 <pre><code>sum by (query) (avg_over_time({job=&quot;dev/app&quot;} |= &quot;caller=metrics.go&quot; | logfmt | duration &gt; 100ms | unwrap througput_mb[1m]))</code></pre>
 <pre><code>{job=&quot;dev/app&quot;} |= &quot;caller=metrics.go&quot; | logfmt | throughput_mb &lt; 100 and duration &gt;= 200ms | line_format &quot;{{.duration}}{{.query}}&quot;</code></pre>

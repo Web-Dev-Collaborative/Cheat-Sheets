@@ -1,39 +1,66 @@
 <h1 id="the-tree-data-structure">The Tree data structure</h1>
 <blockquote>
-<p>The #data-structures series is a collection of posts about reimplemented data structures in JavaScript.</p>
+  <p>
+    The #data-structures series is a collection of posts about reimplemented
+    data structures in JavaScript.
+  </p>
 </blockquote>
 <h2 id="get-the-code-on-github">Get the code on Github</h2>
-<p>Of course, all the code can also be found on Github in the repository <a href="https://github.com/benoitvallon/computer-science-in-javascript/tree/master/data-structures-in-javascript">data-structures-in-javascript</a>.</p>
+<p>
+  Of course, all the code can also be found on Github in the repository
+  <a
+    href="https://github.com/benoitvallon/computer-science-in-javascript/tree/master/data-structures-in-javascript"
+    >data-structures-in-javascript</a
+  >.
+</p>
 <h2 id="definition">Definition</h2>
 <blockquote>
-<p>A Tree is a widely used data structure that simulates a hierarchical tree structure, with a root value and subtrees of children with a parent node. A tree data structure can be defined recursively as a collection of nodes (starting at a root node), where each node is a data structure consisting of a value, together with a list of references to nodes (the “children”), with the constraints that no reference is duplicated, and none points to the root node. <strong>From <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)">Wikipedia</a></strong></p>
+  <p>
+    A Tree is a widely used data structure that simulates a hierarchical tree
+    structure, with a root value and subtrees of children with a parent node. A
+    tree data structure can be defined recursively as a collection of nodes
+    (starting at a root node), where each node is a data structure consisting of
+    a value, together with a list of references to nodes (the “children”), with
+    the constraints that no reference is duplicated, and none points to the root
+    node.
+    <strong
+      >From
+      <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)"
+        >Wikipedia</a
+      ></strong
+    >
+  </p>
 </blockquote>
 <h2 id="complexity">Complexity</h2>
 <table>
-<thead>
-<tr class="header">
-<th>Average</th>
-<th> </th>
-<th> </th>
-<th> </th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Access</td>
-<td>Search</td>
-<td>Insertion</td>
-<td>Deletion</td>
-</tr>
-<tr class="even">
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(n)</td>
-</tr>
-</tbody>
+  <thead>
+    <tr class="header">
+      <th>Average</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="odd">
+      <td>Access</td>
+      <td>Search</td>
+      <td>Insertion</td>
+      <td>Deletion</td>
+    </tr>
+    <tr class="even">
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+    </tr>
+  </tbody>
 </table>
-<p>To get a full overview of the time and space complexity of the Tree data structure, have a look to this excellent <a href="http://bigocheatsheet.com/">Big O cheat sheet</a>.</p>
+<p>
+  To get a full overview of the time and space complexity of the Tree data
+  structure, have a look to this excellent
+  <a href="http://bigocheatsheet.com/">Big O cheat sheet</a>.
+</p>
 <h2 id="the-code">The code</h2>
 <pre><code>function Node(data) {
   this.data = data;
@@ -195,4 +222,9 @@ tree.print(); // =&gt; ceo | cto | dev1 dev2 dev3</code></pre>
 <hr />
 <hr />
 <hr />
-<p><a href="http://blog.benoitvallon.com/data-structures-in-javascript/the-tree-data-structure/">Source</a></p>
+<p>
+  <a
+    href="http://blog.benoitvallon.com/data-structures-in-javascript/the-tree-data-structure/"
+    >Source</a
+  >
+</p>

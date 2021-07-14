@@ -1,32 +1,65 @@
 <h2 id="examples">Examples</h2>
 <ul>
-<li>https://sbcode.net/grafana/install-promtail-service/</li>
-<li>https://www.bookstack.cn/read/loki/clients-promtail-pipelines.md</li>
-<li>https://github.com/grafana/loki/issues/333#issuecomment-570651075 (parsing labels from log tag)</li>
-<li>https://docs.docker.com/config/containers/logging/configure/ (^ related)</li>
-<li>https://github.com/grafana/loki/issues/775#issuecomment-568814165 (create labels from filename)</li>
-<li>https://www.gitmemory.com/issue/grafana/loki/748/534945463 (drop logs from something)</li>
-<li>https://github.com/cyriltovena/loki/blob/master/docs/clients/promtail/stages/match.md#example (drop logs from match)</li>
-<li>https://www.youtube.com/watch?v=bIAC0uQee0k (using promtail with loki)</li>
-<li>https://grafana.com/docs/loki/latest/clients/promtail/scraping/</li>
-<li>https://grafana.com/blog/2020/07/13/loki-tutorial-how-to-set-up-promtail-on-aws-ec2-to-find-and-analyze-your-logs/</li>
+  <li>https://sbcode.net/grafana/install-promtail-service/</li>
+  <li>https://www.bookstack.cn/read/loki/clients-promtail-pipelines.md</li>
+  <li>
+    https://github.com/grafana/loki/issues/333#issuecomment-570651075 (parsing
+    labels from log tag)
+  </li>
+  <li>
+    https://docs.docker.com/config/containers/logging/configure/ (^ related)
+  </li>
+  <li>
+    https://github.com/grafana/loki/issues/775#issuecomment-568814165 (create
+    labels from filename)
+  </li>
+  <li>
+    https://www.gitmemory.com/issue/grafana/loki/748/534945463 (drop logs from
+    something)
+  </li>
+  <li>
+    https://github.com/cyriltovena/loki/blob/master/docs/clients/promtail/stages/match.md#example
+    (drop logs from match)
+  </li>
+  <li>
+    https://www.youtube.com/watch?v=bIAC0uQee0k (using promtail with loki)
+  </li>
+  <li>https://grafana.com/docs/loki/latest/clients/promtail/scraping/</li>
+  <li>
+    https://grafana.com/blog/2020/07/13/loki-tutorial-how-to-set-up-promtail-on-aws-ec2-to-find-and-analyze-your-logs/
+  </li>
 </ul>
 <h2 id="current-issues">Current Issues</h2>
 <ul>
-<li>https://github.com/grafana/loki/issues/74 (multi-line)</li>
-<li>https://github.com/grafana/loki/issues/1880 (malformed logs with slashes)</li>
+  <li>https://github.com/grafana/loki/issues/74 (multi-line)</li>
+  <li>
+    https://github.com/grafana/loki/issues/1880 (malformed logs with slashes)
+  </li>
 </ul>
 <h2 id="logql">LogQL</h2>
 <ul>
-<li>https://github.com/grafana/loki/blob/master/docs/logql.md</li>
+  <li>https://github.com/grafana/loki/blob/master/docs/logql.md</li>
 </ul>
 <h2 id="pipelines">Pipelines</h2>
-<p>More Info: - https://github.com/grafana/loki/blob/master/docs/clients/promtail/pipelines.md - https://github.com/grafana/loki/blob/master/docs/clients/promtail/stages/template.md</p>
+<p>
+  More Info: -
+  https://github.com/grafana/loki/blob/master/docs/clients/promtail/pipelines.md
+  -
+  https://github.com/grafana/loki/blob/master/docs/clients/promtail/stages/template.md
+</p>
 <h3 id="transform">Transform</h3>
 <blockquote>
-<p>The pipeline example below, takes the current value of level from the extracted map and converts its value to be all lowercase. For example, if the extracted map contained level with a value of INFO, this pipeline would change its value to info"</p>
+  <p>
+    The pipeline example below, takes the current value of level from the
+    extracted map and converts its value to be all lowercase. For example, if
+    the extracted map contained level with a value of INFO, this pipeline would
+    change its value to info"
+  </p>
 </blockquote>
-<p>Pipeline Transform example, change uppercase values to lowercase (INFO to info):</p>
+<p>
+  Pipeline Transform example, change uppercase values to lowercase (INFO to
+  info):
+</p>
 <pre><code>scrape_configs:
   - job_name: app1
     static_configs:
@@ -59,7 +92,10 @@
       template: &#39;{{ if eq .Value &quot;stdout&quot; }}{{ Replace .Value &quot;stdout&quot; &quot;info&quot; -1 }}{{ else if eq .Value &quot;stderr&quot; }}{{ Replace .Value &quot;stderr&quot; &quot;error&quot; -1 }}{{ .Value }}{{ end }}&#39;</code></pre>
 <h3 id="drop">Drop</h3>
 <p>In this scenario, we want to drop specific logs to not appear in loki</p>
-<p>Ref: https://github.com/cyriltovena/loki/blob/master/docs/clients/promtail/stages/match.md#example</p>
+<p>
+  Ref:
+  https://github.com/cyriltovena/loki/blob/master/docs/clients/promtail/stages/match.md#example
+</p>
 <pre><code>- job_name: qa/docker
   entry_parser: raw
   static_configs:
@@ -129,7 +165,12 @@ scrape_configs:
       image_id:
       container_id:</code></pre>
 <h3 id="containers-with-file-workaround">Containers with File Workaround</h3>
-<p>Taken from <a href="https://github.com/grafana/loki/issues/333#issuecomment-637401983">here</a></p>
+<p>
+  Taken from
+  <a href="https://github.com/grafana/loki/issues/333#issuecomment-637401983"
+    >here</a
+  >
+</p>
 <pre><code>docker ps --format &#39;- targets: [&quot;{{.ID}}&quot;]\n  labels:\n    container_name: &quot;{{.Names}}&quot;&#39; &gt; /etc/promtail/promtail-targets.yaml</code></pre>
 <pre><code>scrape_configs:
 - job_name: containers

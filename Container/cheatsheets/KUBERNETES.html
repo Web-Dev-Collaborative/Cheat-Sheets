@@ -1,8 +1,13 @@
 <h2 id="provisioning">Provisioning</h2>
 <h3 id="setup-kubernetes">Setup Kubernetes</h3>
 <ul>
-<li><a href="https://gist.github.com/ruanbekker/38a38aea5f325f7fa4a19e795ef4f0d0">Kubernetes on Ubuntu</a></li>
-<li>[<a href="https://github.com/rancher/k3s#quick-start">K3s</a></li>
+  <li>
+    <a
+      href="https://gist.github.com/ruanbekker/38a38aea5f325f7fa4a19e795ef4f0d0"
+      >Kubernetes on Ubuntu</a
+    >
+  </li>
+  <li>[<a href="https://github.com/rancher/k3s#quick-start">K3s</a></li>
 </ul>
 <h2 id="get-resource-information">Get Resource Information</h2>
 <h3 id="nodes">Nodes</h3>
@@ -16,9 +21,12 @@ $ kubectl get nodes -o jsonpath=&#39;{.items[*].status.addresses[?(@.type==&quot
 $ kubectl top node [node_name]</code></pre>
 <h3 id="pods">Pods</h3>
 <ul>
-<li>Pods: The single smallest interactable unit in Kubernetes.</li>
-<li>Pod can be comprimised of multiple containers that will form a unit deployed on a single node together</li>
-<li>Pod receives one IP which is shared between containers</li>
+  <li>Pods: The single smallest interactable unit in Kubernetes.</li>
+  <li>
+    Pod can be comprimised of multiple containers that will form a unit deployed
+    on a single node together
+  </li>
+  <li>Pod receives one IP which is shared between containers</li>
 </ul>
 <pre><code>$ kubectl get pods
 $ kubectl get pods --all-namespaces

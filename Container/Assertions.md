@@ -1,74 +1,74 @@
 ---
 description: |
-    Assertions include boundaries, which indicate the beginnings and endings
-    of lines and words, and other patterns indicating in some way that a
-    match is possible (including look-ahead, look-behind, and conditional
-    expressions).
+  Assertions include boundaries, which indicate the beginnings and endings
+  of lines and words, and other patterns indicating in some way that a
+  match is possible (including look-ahead, look-behind, and conditional
+  expressions).
 lang: en
-robots: 'index, follow'
+robots: "index, follow"
 title: 'Assertions - JavaScript \| MDN'
 twitter:card: summary
 twitter:creator: '\@MozDevNet'
 twitter:description: |
-    Assertions include boundaries, which indicate the beginnings and endings
-    of lines and words, and other patterns indicating in some way that a
-    match is possible (including look-ahead, look-behind, and conditional
-    expressions).
-twitter:image: 'https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png'
+  Assertions include boundaries, which indicate the beginnings and endings
+  of lines and words, and other patterns indicating in some way that a
+  match is possible (including look-ahead, look-behind, and conditional
+  expressions).
+twitter:image: "https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png"
 twitter:site: '\@MozDevNet'
 twitter:title: Assertions
 twitter:url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular\_Expressions/Assertions'
-viewport: 'width=device-width, initial-scale=1'
+viewport: "width=device-width, initial-scale=1"
 ---
 
 ::: {#react-container data-component-name="SPA"}
 ::: {.loading-bar}
 :::
 
--   [Skip to main content](#content){#skip-main}
--   [Select language](#language){#skip-language}
--   [Skip to search](#main-q){#skip-search}
+- [Skip to main content](#content){#skip-main}
+- [Select language](#language){#skip-language}
+- [Skip to search](#main-q){#skip-search}
 
 <!-- -->
 
--   Technologies
-    -   [Technologies
-        Overview](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
-    -   [HTML](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/HTML)
-    -   [CSS](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/CSS)
-    -   [JavaScript](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-    -   [Graphics](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics)
-    -   [HTTP](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/HTTP)
-    -   [APIs /
-        DOM](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/API)
-    -   [Browser
-        Extensions](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions)
-    -   [MathML](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/MathML)
--   References & Guides
-    -   [Learn web
-        development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Learn)
-    -   [Tutorials](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Tutorials)
-    -   [References](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Reference)
-    -   [Developer
-        Guides](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Guide)
-    -   [Accessibility](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Accessibility)
-    -   [Game
-        development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Games)
-    -   [\...more
-        docs](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
--   Feedback
-    -   [Send
-        Feedback](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Feedback)
-    -   [Get Firefox help
-        🌐](../../../../../../../external.html?link=https://support.mozilla.org/)
-    -   [Get web development help
-        🌐](../../../../../../../external.html?link=https://stackoverflow.com/)
-    -   [Join the MDN
-        community](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Community)
-    -   [Report a content problem
-        🌐](../../../../../../../external.html?link=https://github.com/mdn/sprints/issues/new?template=issue-template.md&projects=mdn/sprints/2&labels=user-report&title=/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions)
-    -   [Report an issue
-        🌐](../../../../../../../external.html?link=https://github.com/mdn/kuma/issues/new/choose)
+- Technologies
+  - [Technologies
+    Overview](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
+  - [HTML](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/HTML)
+  - [CSS](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/CSS)
+  - [JavaScript](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+  - [Graphics](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics)
+  - [HTTP](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/HTTP)
+  - [APIs /
+    DOM](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/API)
+  - [Browser
+    Extensions](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions)
+  - [MathML](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/MathML)
+- References & Guides
+  - [Learn web
+    development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Learn)
+  - [Tutorials](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Tutorials)
+  - [References](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Reference)
+  - [Developer
+    Guides](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Guide)
+  - [Accessibility](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Accessibility)
+  - [Game
+    development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Games)
+  - [\...more
+    docs](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
+- Feedback
+  - [Send
+    Feedback](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Feedback)
+  - [Get Firefox help
+    🌐](../../../../../../../external.html?link=https://support.mozilla.org/)
+  - [Get web development help
+    🌐](../../../../../../../external.html?link=https://stackoverflow.com/)
+  - [Join the MDN
+    community](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Community)
+  - [Report a content problem
+    🌐](../../../../../../../external.html?link=https://github.com/mdn/sprints/issues/new?template=issue-template.md&projects=mdn/sprints/2&labels=user-report&title=/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions)
+  - [Report an issue
+    🌐](../../../../../../../external.html?link=https://github.com/mdn/kuma/issues/new/choose)
 
 ::: {.header-search}
 Search MDN
@@ -84,6 +84,7 @@ Open search
 
 ::: {.full-width-row-container}
 ::: {.max-content-width-container}
+
 1.  [[See ]{.pre-text}[Web technology for
     developers]{property="name"}](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web){.breadcrumb-chevron}
 2.  [[See ]{.pre-text}[JavaScript]{property="name"}](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript){.breadcrumb-chevron}
@@ -97,33 +98,34 @@ Open search
 ::: {.dropdown-container .language-menu}
 English[▼]{.dropdown-arrow-down aria-hidden="true"}
 
--   [Español](../../../../../../../external.html?link=https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions/Aserciones "Spanish")
--   [Français](../../../../../../../external.html?link=https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_régulières/Assertions "French")
--   [日本語](../../../../../../../external.html?link=https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions "Japanese")
--   [한국어](../../../../../../../external.html?link=https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/정규식/Assertions "Korean")
--   [Русский](../../../../../../../external.html?link=https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions "Russian")
--   [中文
-    (简体)](../../../../../../../external.html?link=https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions "Chinese (Simplified)")
--   [Add a
-    translation](../../../../../../../external.html?link=https://wiki.developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions$locales){#translations-add}
-:::
-:::
-:::
+- [Español](../../../../../../../external.html?link=https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions/Aserciones "Spanish")
+- [Français](../../../../../../../external.html?link=https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_régulières/Assertions "French")
+- [日本語](../../../../../../../external.html?link=https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions "Japanese")
+- [한국어](../../../../../../../external.html?link=https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/정규식/Assertions "Korean")
+- [Русский](../../../../../../../external.html?link=https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions "Russian")
+- [中文
+  (简体)](../../../../../../../external.html?link=https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions "Chinese (Simplified)")
+- [Add a
+  translation](../../../../../../../external.html?link=https://wiki.developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions$locales){#translations-add}
+  :::
+  :::
+  :::
 
 ::: {.wiki-left-present .content-layout}
 ::: {.section .document-toc}
 On this Page
-------------
+
+---
 
 Jump to section
 
--   [Types](#Types)
--   [Examples](#Examples)
--   [Specifications](#Specifications)
--   [Browser compatibility](#Browser_compatibility)
--   [See also](#See_also)
--   [Related topics](#sidebar-quicklinks)
-:::
+- [Types](#Types)
+- [Examples](#Examples)
+- [Specifications](#Specifications)
+- [Browser compatibility](#Browser_compatibility)
+- [See also](#See_also)
+- [Related topics](#sidebar-quicklinks)
+  :::
 
 ::: {#content .article .text-content}
 Assertions include boundaries, which indicate the beginnings and endings
@@ -135,8 +137,7 @@ expressions).
 
 </div>
 
-Types {#Types}
------
+## Types {#Types}
 
 ::: {.hidden}
 The following section is also duplicated on [this
@@ -146,82 +147,82 @@ cheatsheet](Cheatsheet.html). Do not forget to edit it as well, thanks!
 ### Boundary-type assertions {#Boundary-type_assertions}
 
 +-----------------------------------+-----------------------------------+
-| Characters                        | Meaning                           |
+| Characters | Meaning |
 +===================================+===================================+
-| `^`                               | Matches the beginning of input.   |
-|                                   | If the multiline flag is set to   |
-|                                   | true, also matches immediately    |
-|                                   | after a line break character. For |
-|                                   | example, `/^A/` does not match    |
-|                                   | the \"A\" in \"an A\", but does   |
-|                                   | match the first \"A\" in \"An     |
-|                                   | A\".                              |
-|                                   |                                   |
-|                                   | ::: {.blockIndicator .note}       |
-|                                   | This character has a different    |
-|                                   | meaning when it appears at the    |
-|                                   | start of a                        |
-|                                   | [group](Groups_and_Ranges.html).  |
-|                                   | :::                               |
+| `^` | Matches the beginning of input. |
+| | If the multiline flag is set to |
+| | true, also matches immediately |
+| | after a line break character. For |
+| | example, `/^A/` does not match |
+| | the \"A\" in \"an A\", but does |
+| | match the first \"A\" in \"An |
+| | A\". |
+| | |
+| | ::: {.blockIndicator .note} |
+| | This character has a different |
+| | meaning when it appears at the |
+| | start of a |
+| | [group](Groups_and_Ranges.html). |
+| | ::: |
 +-----------------------------------+-----------------------------------+
-| `$`                               | Matches the end of input. If the  |
-|                                   | multiline flag is set to true,    |
-|                                   | also matches immediately before a |
-|                                   | line break character. For         |
-|                                   | example, `/t$/` does not match    |
-|                                   | the \"t\" in \"eater\", but does  |
-|                                   | match it in \"eat\".              |
+| `$` | Matches the end of input. If the |
+| | multiline flag is set to true, |
+| | also matches immediately before a |
+| | line break character. For |
+| | example, `/t$/` does not match |
+| | the \"t\" in \"eater\", but does |
+| | match it in \"eat\". |
 +-----------------------------------+-----------------------------------+
-| `\b`                              | Matches a word boundary. This is  |
-|                                   | the position where a word         |
-|                                   | character is not followed or      |
-|                                   | preceded by another               |
-|                                   | word-character, such as between a |
-|                                   | letter and a space. Note that a   |
-|                                   | matched word boundary is not      |
-|                                   | included in the match. In other   |
-|                                   | words, the length of a matched    |
-|                                   | word boundary is zero.            |
-|                                   |                                   |
-|                                   | Examples:                         |
-|                                   |                                   |
-|                                   | -   `/\bm/` matches the \"m\" in  |
-|                                   |     \"moon\".                     |
-|                                   | -   `/oo\b/` does not match the   |
-|                                   |     \"oo\" in \"moon\", because   |
-|                                   |     \"oo\" is followed by \"n\"   |
-|                                   |     which is a word character.    |
-|                                   | -   `/oon\b/` matches the \"oon\" |
-|                                   |     in \"moon\", because \"oon\"  |
-|                                   |     is the end of the string,     |
-|                                   |     thus not followed by a word   |
-|                                   |     character.                    |
-|                                   | -   `/\w\b\w/` will never match   |
-|                                   |     anything, because a word      |
-|                                   |     character can never be        |
-|                                   |     followed by both a non-word   |
-|                                   |     and a word character.         |
-|                                   |                                   |
-|                                   | To match a backspace character    |
-|                                   | (`[\b]`), see [Character          |
-|                                   | Classes](Character_Classes.html). |
+| `\b` | Matches a word boundary. This is |
+| | the position where a word |
+| | character is not followed or |
+| | preceded by another |
+| | word-character, such as between a |
+| | letter and a space. Note that a |
+| | matched word boundary is not |
+| | included in the match. In other |
+| | words, the length of a matched |
+| | word boundary is zero. |
+| | |
+| | Examples: |
+| | |
+| | - `/\bm/` matches the \"m\" in |
+| | \"moon\". |
+| | - `/oo\b/` does not match the |
+| | \"oo\" in \"moon\", because |
+| | \"oo\" is followed by \"n\" |
+| | which is a word character. |
+| | - `/oon\b/` matches the \"oon\" |
+| | in \"moon\", because \"oon\" |
+| | is the end of the string, |
+| | thus not followed by a word |
+| | character. |
+| | - `/\w\b\w/` will never match |
+| | anything, because a word |
+| | character can never be |
+| | followed by both a non-word |
+| | and a word character. |
+| | |
+| | To match a backspace character |
+| | (`[\b]`), see [Character |
+| | Classes](Character_Classes.html). |
 +-----------------------------------+-----------------------------------+
-| `\B`                              | Matches a non-word boundary. This |
-|                                   | is a position where the previous  |
-|                                   | and next character are of the     |
-|                                   | same type: Either both must be    |
-|                                   | words, or both must be non-words, |
-|                                   | for example between two letters   |
-|                                   | or between two spaces. The        |
-|                                   | beginning and end of a string are |
-|                                   | considered non-words. Same as the |
-|                                   | matched word boundary, the        |
-|                                   | matched non-word boundary is also |
-|                                   | not included in the match. For    |
-|                                   | example, `/\Bon/` matches \"on\"  |
-|                                   | in \"at noon\", and `/ye\B/`      |
-|                                   | matches \"ye\" in \"possibly      |
-|                                   | yesterday\".                      |
+| `\B` | Matches a non-word boundary. This |
+| | is a position where the previous |
+| | and next character are of the |
+| | same type: Either both must be |
+| | words, or both must be non-words, |
+| | for example between two letters |
+| | or between two spaces. The |
+| | beginning and end of a string are |
+| | considered non-words. Same as the |
+| | matched word boundary, the |
+| | matched non-word boundary is also |
+| | not included in the match. For |
+| | example, `/\Bon/` matches \"on\" |
+| | in \"at noon\", and `/ye\B/` |
+| | matches \"ye\" in \"possibly |
+| | yesterday\". |
 +-----------------------------------+-----------------------------------+
 
 ### Other assertions {#Other_assertions}
@@ -231,74 +232,72 @@ cheatsheet](Cheatsheet.html). Do not forget to edit it as well, thanks!
 :::
 
 +-----------------------------------+-----------------------------------+
-| Characters                        | Meaning                           |
+| Characters | Meaning |
 +===================================+===================================+
-| `x(?=y)`                          | **Lookahead assertion: **Matches  |
-|                                   | \"x\" only if \"x\" is followed   |
-|                                   | by \"y\". For example,            |
-|                                   | /`Jack(?=Sprat)/` matches         |
-|                                   | \"Jack\" only if it is followed   |
-|                                   | by \"Sprat\".\                    |
-|                                   | `/Jack(?=Sprat|Frost)/` matches   |
-|                                   | \"Jack\" only if it is followed   |
-|                                   | by \"Sprat\" or \"Frost\".        |
-|                                   | However, neither \"Sprat\" nor    |
-|                                   | \"Frost\" is part of the match    |
-|                                   | results.                          |
+| `x(?=y)` | **Lookahead assertion: **Matches |
+| | \"x\" only if \"x\" is followed |
+| | by \"y\". For example, |
+| | /`Jack(?=Sprat)/` matches |
+| | \"Jack\" only if it is followed |
+| | by \"Sprat\".\ |
+| | `/Jack(?=Sprat|Frost)/` matches |
+| | \"Jack\" only if it is followed |
+| | by \"Sprat\" or \"Frost\". |
+| | However, neither \"Sprat\" nor |
+| | \"Frost\" is part of the match |
+| | results. |
 +-----------------------------------+-----------------------------------+
-| `x(?!y)`                          | **Negative lookahead              |
-|                                   | assertion: **Matches \"x\" only   |
-|                                   | if \"x\" is not followed by       |
-|                                   | \"y\". For example, `/\d+(?!\.)/` |
-|                                   | matches a number only if it is    |
-|                                   | not followed by a decimal         |
-|                                   | point. `/\d+(?!\.)/.exec('3.141') |
-|                                   | `                                 |
-|                                   | matches \"141\" but not \"3.      |
+| `x(?!y)` | **Negative lookahead |
+| | assertion: **Matches \"x\" only |
+| | if \"x\" is not followed by |
+| | \"y\". For example, `/\d+(?!\.)/` |
+| | matches a number only if it is |
+| | not followed by a decimal |
+| | point. `/\d+(?!\.)/.exec('3.141') | | | ` |
+| | matches \"141\" but not \"3. |
 +-----------------------------------+-----------------------------------+
-| `(?<=y)x`                         | **Lookbehind assertion: **Matches |
-|                                   | \"x\" only if \"x\" is            |
-|                                   | preceded by \"y\". For example,   |
-|                                   | `/(?<=Jack)Sprat/` matches        |
-|                                   | \"Sprat\" only if it is preceded  |
-|                                   | by                                |
-|                                   | \"Jack\". `/(?<=Jack|Tom)Sprat/`  |
-|                                   | matches \"Sprat\" only if it is   |
-|                                   | preceded by \"Jack\" or \"Tom\".  |
-|                                   | However, neither \"Jack\" nor     |
-|                                   | \"Tom\" is part of the match      |
-|                                   | results.                          |
+| `(?<=y)x` | **Lookbehind assertion: **Matches |
+| | \"x\" only if \"x\" is |
+| | preceded by \"y\". For example, |
+| | `/(?<=Jack)Sprat/` matches |
+| | \"Sprat\" only if it is preceded |
+| | by |
+| | \"Jack\". `/(?<=Jack|Tom)Sprat/` |
+| | matches \"Sprat\" only if it is |
+| | preceded by \"Jack\" or \"Tom\". |
+| | However, neither \"Jack\" nor |
+| | \"Tom\" is part of the match |
+| | results. |
 +-----------------------------------+-----------------------------------+
-| `(?<!y)x`                         | **Negative lookbehind             |
-|                                   | assertion: **Matches \"x\" only   |
-|                                   | if \"x\" is not preceded by       |
-|                                   | \"y\". For example, `/(?<!-)\d+/` |
-|                                   | matches a number only if it is    |
-|                                   | not preceded by a minus           |
-|                                   | sign. `/(?<!-)\d+/.exec('3')`     |
-|                                   | matches                           |
-|                                   | \"3\". `/(?<!-)\d+/.exec('-3')`   |
-|                                   |  match is not found because       |
-|                                   | the number is preceded by the     |
-|                                   | minus sign.                       |
+| `(?<!y)x` | **Negative lookbehind |
+| | assertion: **Matches \"x\" only |
+| | if \"x\" is not preceded by |
+| | \"y\". For example, `/(?<!-)\d+/` |
+| | matches a number only if it is |
+| | not preceded by a minus |
+| | sign. `/(?<!-)\d+/.exec('3')` |
+| | matches |
+| | \"3\". `/(?<!-)\d+/.exec('-3')` |
+| |  match is not found because |
+| | the number is preceded by the |
+| | minus sign. |
 +-----------------------------------+-----------------------------------+
 
-Examples {#Examples}
---------
+## Examples {#Examples}
 
 ### General boundary-type overview example {#General_boundary-type_overview_example}
 
-``` {.brush: .js}
+```{.brush: .js}
 // Using Regex boundaries to fix buggy string.
 buggyMultiline = `tey, ihe light-greon apple
 tangs on ihe greon traa`;
 
 // 1) Use ^ to fix the matching at the begining of the string, and right after newline.
-buggyMultiline = buggyMultiline.replace(/^t/gim,'h'); 
+buggyMultiline = buggyMultiline.replace(/^t/gim,'h');
 console.log(1, buggyMultiline); // fix 'tey', 'tangs' => 'hey', 'hangs'. Avoid 'traa'.
 
 // 2) Use $ to fix matching at the end of the text.
-buggyMultiline = buggyMultiline.replace(/aa$/gim,'ee.'); 
+buggyMultiline = buggyMultiline.replace(/aa$/gim,'ee.');
 console.log(2, buggyMultiline); // fix  'traa' => 'tree'.
 
 // 3) Use \b to match characters right on border between a word and a space.
@@ -316,9 +315,9 @@ Use `^` for matching at the beginning of input. In this example, we can
 get the fruits that start with \'A\' by a `/^A/` regex. For selecting
 appropriate fruits we can use the
 [filter](../../Reference/Global_Objects/Array/filter.html) method with
-an [arrow](../../Reference/Functions/Arrow_functions.html) function. 
+an [arrow](../../Reference/Functions/Arrow_functions.html) function.
 
-``` {.brush: .js}
+```{.brush: .js}
 let fruits = ["Apple", "Watermelon", "Orange", "Avocado", "Strawberry"];
 
 // Select fruits started with 'A' by /^A/ Regex.
@@ -332,7 +331,7 @@ In the second example `^` is used both for matching at the beginning of
 input and for creating negated or complemented character sets when used
 within [groups](Groups_and_Ranges.html).
 
-``` {.brush: .js}
+```{.brush: .js}
 let fruits = ["Apple", "Watermelon", "Orange", "Avocado", "Strawberry"];
 
 // Selecting fruits that dose not start by 'A' by a /^[^A]/ regex.
@@ -348,7 +347,7 @@ console.log(fruitsStartsWithNotA); // [ 'Watermelon', 'Orange', 'Strawberry' ]
 
 ### Matching a word boundary {#Matching_a_word_boundary}
 
-``` {.brush: .js}
+```{.brush: .js}
 let fruitsWithDescription = ["Red apple", "Orange orange", "Green Avocado"];
 
 // Select descriptions that contains 'en' or 'ed' words endings:
@@ -359,7 +358,7 @@ console.log(enEdSelection); // [ 'Red apple', 'Green Avocado' ]
 
 ### Lookahead assertion {#Lookahead_assertion}
 
-``` {.brush: .js}
+```{.brush: .js}
 // JS Lookahead assertion x(?=y)
 
 let regex = /First(?= test)/g;
@@ -376,17 +375,17 @@ For example, `/\d+(?!\.)/` matches a number only if it is not followed
 by a decimal point. `/\d+(?!\.)/.exec('3.141')` matches \"141\" but not
 \"3.
 
-``` {.brush: .js}
+```{.brush: .js}
 console.log(/\d+(?!\.)/g.exec('3.141')); // [ '141', index: 2, input: '3.141' ]
 ```
 
-### Different meaning of \'?!\' combination usage in Assertions and  Ranges  {#Different_meaning_of_!_combination_usage_in_Assertions_and_Ranges}
+### Different meaning of \'?!\' combination usage in Assertions and  Ranges  {#Different*meaning_of*!\_combination_usage_in_Assertions_and_Ranges}
 
 Different meaning of `?!` combination usage in
 [Assertions](Assertions.html) `/x(?!y)/ `and
 [Ranges](Groups_and_Ranges.html) `[^?!]`.
 
-``` {.brush: .js}
+```{.brush: .js}
 let orangeNotLemon = "Do you want to have an orange? Yes, I do not want to have a lemon!";
 
 // Different meaning of '?!' combination usage in Assertions /x(?!y)/ and  Ranges /[^?!]/
@@ -399,51 +398,52 @@ console.log(orangeNotLemon.match(selectNotOrangeRegex)); // [ ' Yes, I do not wa
 
 ### Lookbehind assertion {#Lookbehind_assertion}
 
-``` {.brush: .js}
+```{.brush: .js}
 let oranges = ['ripe orange A ', 'green orange B', 'ripe orange C',];
 
 let ripe_oranges = oranges.filter( fruit => fruit.match(/(?<=ripe )orange/));
 console.log(ripe_oranges); // [ 'ripe orange A ', 'ripe orange C' ]
 ```
 
-Specifications {#Specifications}
---------------
+## Specifications {#Specifications}
 
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Specification
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  [ECMAScript (ECMA-262)\
-  [The definition of \'RegExp: Assertions\' in that specification.]{.small}](../../../../../../../external.html?link=https://tc39.es/ecma262/#sec-assertion){.external}
+---
 
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Specification
 
-Browser compatibility {#Browser_compatibility}
----------------------
+---
+
+[ECMAScript (ECMA-262)\
+ [The definition of \'RegExp: Assertions\' in that specification.]{.small}](../../../../../../../external.html?link=https://tc39.es/ecma262/#sec-assertion){.external}
+
+---
+
+## Browser compatibility {#Browser_compatibility}
 
 For browser compatibility information, check out the [main Regular
 Expressions compatibility
 table](../Regular_Expressions.html#Browser_compatibility).
 
-See also {#See_also}
---------
+## See also {#See_also}
 
--   [Regular expressions guide](../Regular_Expressions.html)
-    -   [Character classes](Character_Classes.html)
-    -   [Quantifiers](Quantifiers.html)
-    -   [Unicode property escapes](Unicode_Property_Escapes.html)
-    -   [Groups and ranges](Groups_and_Ranges.html)
--   [The `RegExp()`
-    constructor](../../Reference/Global_Objects/RegExp.html)
+- [Regular expressions guide](../Regular_Expressions.html)
+  - [Character classes](Character_Classes.html)
+  - [Quantifiers](Quantifiers.html)
+  - [Unicode property escapes](Unicode_Property_Escapes.html)
+  - [Groups and ranges](Groups_and_Ranges.html)
+- [The `RegExp()`
+  constructor](../../Reference/Global_Objects/RegExp.html)
 
 ::: {.metadata}
 ::: {.section .document-meta}
+
 #### Metadata
 
--   **Last modified:** May 10, 2020, [by MDN
-    contributors](../../../../../../../external.html?link=https://wiki.developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions$history)
-:::
-:::
-:::
+- **Last modified:** May 10, 2020, [by MDN
+  contributors](../../../../../../../external.html?link=https://wiki.developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions$history)
+  :::
+  :::
+  :::
 
 ::: {#sidebar-quicklinks .sidebar}
 ::: {.quick-links}
@@ -453,7 +453,7 @@ Related Topics
 
 <div>
 
-1.  [***JavaScript***](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+1.  [**_JavaScript_**](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 2.  [**Tutorials:**](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 3.  Complete beginners
     1.  [JavaScript
@@ -744,7 +744,7 @@ Related Topics
     26. [SyntaxError: function statement requires a
         name](../../Reference/Errors/Unnamed_function_statement.html "The JavaScript exception "function statement requires a name" occurs when there is a function statement in the code that requires a name.")
     27. [SyntaxError: identifier starts immediately after numeric
-        literal](../../Reference/Errors/Identifier_after_number.html "The JavaScript exception "identifier starts immediately after numeric literal" occurs when an identifier started with a digit. Identifiers can only start with a letter, underscore (_), or dollar sign ($).")
+        literal](../../Reference/Errors/Identifier*after_number.html "The JavaScript exception "identifier starts immediately after numeric literal" occurs when an identifier started with a digit. Identifiers can only start with a letter, underscore (*), or dollar sign ($).")
     28. [SyntaxError: illegal
         character](../../Reference/Errors/Illegal_character.html "The JavaScript exception "illegal character" occurs when there is an invalid or unexpected token that doesn't belong at this position in the code.")
     29. [SyntaxError: invalid regular expression flag
@@ -871,7 +871,8 @@ Related Topics
 ::: {#newsletter-form-container .newsletter}
 ::: {.section .newsletter-head}
 Learn the best of web development {#learn-the-best-of-web-development .newsletter-teaser}
----------------------------------
+
+---
 
 Get the latest and greatest from MDN delivered straight to your inbox.
 
@@ -899,49 +900,50 @@ Hide Newsletter Sign-up
 [MDN Web
 Docs](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/){.nav-footer-logo}
 
--   [Web
-    Technologies](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
--   [Learn Web
-    Development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Learn)
--   [About
-    MDN](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/About)
--   [Feedback](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Feedback)
+- [Web
+  Technologies](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
+- [Learn Web
+  Development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Learn)
+- [About
+  MDN](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/About)
+- [Feedback](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Feedback)
 
 <!-- -->
 
--   [About](../../../../../../../external.html?link=https://www.mozilla.org/about/)
--   [MDN Web Docs
-    Store](../../../../../../../external.html?link=https://shop.spreadshirt.com/mdn-store/)
--   [Contact
-    Us](../../../../../../../external.html?link=https://www.mozilla.org/contact/)
--   [Firefox](../../../../../../../external.html?link=https://www.mozilla.org/firefox/?utm_source=developer.mozilla.org&utm_campaign=footer&utm_medium=referral)
+- [About](../../../../../../../external.html?link=https://www.mozilla.org/about/)
+- [MDN Web Docs
+  Store](../../../../../../../external.html?link=https://shop.spreadshirt.com/mdn-store/)
+- [Contact
+  Us](../../../../../../../external.html?link=https://www.mozilla.org/contact/)
+- [Firefox](../../../../../../../external.html?link=https://www.mozilla.org/firefox/?utm_source=developer.mozilla.org&utm_campaign=footer&utm_medium=referral)
 
 ::: {.social .social-mdn}
+
 #### MDN
 
--   -   
-:::
+- - :::
 
 ::: {.social .social-moz}
+
 #### Mozilla
 
--   -   
-:::
+- - :::
 
 © 2005-2020 Mozilla and individual contributors. Content is available
 under [these
 licenses](../../../../../../../external.html?link=https://developer.mozilla.org/docs/MDN/About#Copyrights_and_licenses).
 
--   [Terms](../../../../../../../external.html?link=https://www.mozilla.org/about/legal/terms/mozilla)
--   [Privacy](../../../../../../../external.html?link=https://www.mozilla.org/privacy/websites/)
--   [Cookies](../../../../../../../external.html?link=https://www.mozilla.org/privacy/websites/#cookies)
-:::
-:::
+- [Terms](../../../../../../../external.html?link=https://www.mozilla.org/about/legal/terms/mozilla)
+- [Privacy](../../../../../../../external.html?link=https://www.mozilla.org/privacy/websites/)
+- [Cookies](../../../../../../../external.html?link=https://www.mozilla.org/privacy/websites/#cookies)
+  :::
+  :::
 
 ::: {#auth-modal .modal .hidden}
 ::: {.section .auth-providers tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="modal-main-heading"}
 Sign In {#modal-main-heading}
--------
+
+---
 
 Sign in to enjoy the benefits of an MDN account. If you haven't already
 created an account, you will be prompted to do so after signing in.

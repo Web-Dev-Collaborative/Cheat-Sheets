@@ -39,7 +39,13 @@ scrape_configs:
 # HELP promtail_custom_nginx_get_hits Total GET requests
 # TYPE promtail_custom_nginx_get_hits counter
 promtail_custom_nginx_get_hits{filename=&quot;/var/log/nginx/access.log&quot;,job=&quot;prod/logs&quot;,logtype=&quot;info&quot;,service=&quot;nginx-test&quot;} 801</code></pre>
-<p>Now we can configure prometheus to scrape this endpoint, I am using <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#ec2_sd_config">ec2_sd_config</a>:</p>
+<p>
+  Now we can configure prometheus to scrape this endpoint, I am using
+  <a
+    href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#ec2_sd_config"
+    >ec2_sd_config</a
+  >:
+</p>
 <pre><code>scrape_configs:
   # promtail-exporter
   - job_name: promtail-exporter
@@ -57,7 +63,11 @@ promtail_custom_nginx_get_hits{filename=&quot;/var/log/nginx/access.log&quot;,jo
       target_label: __address__
     - source_labels: [__meta_ec2_tag_Name]
       target_label: instance</code></pre>
-<p>Tag the EC2 instance as <code>PromtailScrape</code> =&gt; <code>Enabled</code> and verify that prometheus is scraping promtail with the following in prometheus:</p>
+<p>
+  Tag the EC2 instance as <code>PromtailScrape</code> =&gt;
+  <code>Enabled</code> and verify that prometheus is scraping promtail with the
+  following in prometheus:
+</p>
 <pre><code>up{job=&quot;promtail-exporter&quot;}</code></pre>
 <p>You can also view all the metrics from that exporter with:</p>
 <pre><code>{__name__=~&quot;.+&quot;, job=&quot;promtail-exporter&quot;}</code></pre>

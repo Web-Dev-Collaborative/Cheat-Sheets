@@ -9,7 +9,6 @@
 - [using Python](#python-library)
   - [Ingest](#ingest-using-python)
 
-
 ## Using Curl
 
 #### Health with Curl
@@ -41,9 +40,9 @@ $ curl -XPOST -H 'Content-Type: application/json' 'http://127.0.0.1:9200/_reinde
   {
     "source": {
       "index": ["my-metrics-2019.01.03"]
-    }, 
+    },
     "dest": {
-      "index": "archived-metrics-2019.01.03", 
+      "index": "archived-metrics-2019.01.03",
     }
 }'
 ```
@@ -55,9 +54,9 @@ $ curl -XPOST -H 'Content-Type: application/json' 'http://127.0.0.1:9200/_reinde
   {
     "source": {
       "index": ["my-metrics-2019.01.03", "my-metrics-2019.01.04"]
-    }, 
+    },
     "dest": {
-      "index": "archived-metrics-2019.01", 
+      "index": "archived-metrics-2019.01",
     }
 }'
 ```
@@ -67,12 +66,12 @@ Reindex only missing documents from source to target index. You will receive con
 ```
 $ curl -XPOST -H 'Content-Type: application/json' 'http://127.0.0.1:9200/_reindex' -d '
   {
-    "conflicts": "proceed", 
+    "conflicts": "proceed",
     "source": {
       "index": ["my-metrics-2019.01.03"]
-    }, 
+    },
     "dest": {
-      "index": "archived-metrics-2019.01.03", 
+      "index": "archived-metrics-2019.01.03",
       "op_type": "create"
     }
 }'
@@ -103,15 +102,15 @@ Reindex the last 500 documents based on timestamp to a target index:
 ```
 $ curl -XPOST -H 'Content-Type: application/json' 'http://127.0.0.1:9200/_reindex' -d '
   {
-    "size": 500, 
+    "size": 500,
     "source": {
       "index": "my-metrics-2019.01.03",
       "sort": {
         "timestamp": "desc"
       }
-    }, 
+    },
     "dest": {
-      "index": "archived-last500-metrics-2019.01.03", 
+      "index": "archived-last500-metrics-2019.01.03",
       "op_type": "create"
     }
 }'
@@ -129,7 +128,7 @@ $ curl -XPOST -H 'Content-Type: application/json' 'http://127.0.0.1:9200/_reinde
         "request_method",
         "referral"
       ]
-    }, 
+    },
     "dest": {
       "index": "archived-subset-metrics-2019.01.03"
     }
@@ -198,11 +197,12 @@ curl -XPOST -H 'Content-Type: application/json' 'http://127.0.0.1:9200/_snapshot
 {
   "indices": [
     "kibana_sample_data_ecommerce", "kibana_sample_data_logs"
-  ], 
-  "ignore_unavailable": false, 
-  "include_global_state": false 
+  ],
+  "ignore_unavailable": false,
+  "include_global_state": false
 }'
 ```
+
 ```
 curl 'http://127.0.0.1:9200/_cat/indices/kibana_sample*?v'
 health status index
@@ -217,17 +217,18 @@ curl -XPOST -H 'Content-Type: application/json' 'http://127.0.0.1:9200/_snapshot
 {
   "indices": [
     "kibana_sample_data_ecommerce", "kibana_sample_data_logs"
-  ], 
-  "ignore_unavailable": false, 
-  "include_global_state": false, 
-  "rename_pattern": "(.+)", 
-  "rename_replacement": "restored_index_$1" 
+  ],
+  "ignore_unavailable": false,
+  "include_global_state": false,
+  "rename_pattern": "(.+)",
+  "rename_replacement": "restored_index_$1"
 }'
 ```
+
 ```
 curl 'http://127.0.0.1:9200/_cat/indices/*restored*?v'
 health status index
-green  open   restored_index_kibana_sample_data_ecommerce 
+green  open   restored_index_kibana_sample_data_ecommerce
 green  open   restored_index_kibana_sample_data_logs
 ```
 
@@ -235,22 +236,23 @@ Restore and rename with a different name pattern:
 
 ```
 curl -XPOST -H 'Content-Type: application/json' 'http://127.0.0.1:9200/_snapshot/es-index-backups/test-snapshot-latest/_restore' -d '
-{ 
+{
   "indices": [
     "kibana_sample_data_ecommerce", "kibana_sample_data_logs"
-  ], 
-  "ignore_unavailable": false, 
-  "include_global_state": false, 
-  "rename_pattern": 
-  "kibana_sample_data_(.+)", 
-  "rename_replacement": "restored_index_$1" 
+  ],
+  "ignore_unavailable": false,
+  "include_global_state": false,
+  "rename_pattern":
+  "kibana_sample_data_(.+)",
+  "rename_replacement": "restored_index_$1"
 }'
 ```
+
 ```
 curl 'http://127.0.0.1:9200/_cat/indices/*restored*?v'
-health status index                                       
-green  open   restored_index_ecommerce                    
-green  open   restored_index_logs                         
+health status index
+green  open   restored_index_ecommerce
+green  open   restored_index_logs
 ```
 
 ## Python Library
@@ -265,8 +267,8 @@ from requests_aws4auth import AWS4Auth
 
 aws_auth = AWS4Auth(access_key, secret_key, AWS_REGION, 'es', session_token=token)
 es = Elasticsearch(
-    hosts = [{'host': ES_ENDPOINT, 'port': 443}], 
-    http_auth=aws_credentials, use_ssl=True, verify_certs=True, 
+    hosts = [{'host': ES_ENDPOINT, 'port': 443}],
+    http_auth=aws_credentials, use_ssl=True, verify_certs=True,
     connection_class=RequestsHttpConnection
 )
 ```
@@ -292,6 +294,6 @@ for doc in list_of_dicts:
     doc['_type'] = '_doc'
     bulk_docs.append(doc)
     del doc
-    
+
 helpers.bulk(es, bulk_docs)
 ```

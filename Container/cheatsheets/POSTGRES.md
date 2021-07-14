@@ -3,7 +3,6 @@
 - https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb
 - https://www.tutorialspoint.com/postgresql/postgresql_schema.htm
 
-
 ## Setting Up
 
 Install:
@@ -71,14 +70,14 @@ List databases:
 -----------+---------+----------+---------+-------+---------------------
  postgres  | ruan    | UTF8     | C       | C     |
  restapi1  | appuser | UTF8     | C       | C     | =Tc/appuser        +
- ```
- 
- Switch to database:
- 
- ```
- postgres=> \c restapi1
- You are now connected to database "restapi1" as user "appuser".
- ```
+```
+
+Switch to database:
+
+```
+postgres=> \c restapi1
+You are now connected to database "restapi1" as user "appuser".
+```
 
 Show tables:
 

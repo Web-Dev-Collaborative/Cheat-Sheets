@@ -1,22 +1,26 @@
 <h1 id="elasticsearch-cheatsheet">Elasticsearch Cheatsheet</h1>
 <ul>
-<li><a href="#using-curl">Using cURL</a>
-<ul>
-<li><a href="#health-with-curl">Cluster Health</a></li>
-<li><a href="#view-indices">View Indices</a></li>
-<li><a href="#create-index">Create Index</a></li>
-<li><a href="#ingest-data">Ingest</a></li>
-<li><a href="#search">Search</a></li>
-<li><a href="#reindex-using-curl">Reindex</a></li>
-<li><a href="#update-replicas-curl">Update Replica Shards</a></li>
-<li><a href="#snapshots-with-curl">Snapshots</a></li>
-<li><a href="#restore-snapshots-with-curl">Restore Snapshots</a></li>
-<li><a href="#tasks">Tasks API</a></li>
-</ul></li>
-<li><a href="python-elasticsearch.md#python-library">using Python</a>
-<ul>
-<li><a href="python-elasticsearch.md#ingest-using-python">Ingest</a></li>
-</ul></li>
+  <li>
+    <a href="#using-curl">Using cURL</a>
+    <ul>
+      <li><a href="#health-with-curl">Cluster Health</a></li>
+      <li><a href="#view-indices">View Indices</a></li>
+      <li><a href="#create-index">Create Index</a></li>
+      <li><a href="#ingest-data">Ingest</a></li>
+      <li><a href="#search">Search</a></li>
+      <li><a href="#reindex-using-curl">Reindex</a></li>
+      <li><a href="#update-replicas-curl">Update Replica Shards</a></li>
+      <li><a href="#snapshots-with-curl">Snapshots</a></li>
+      <li><a href="#restore-snapshots-with-curl">Restore Snapshots</a></li>
+      <li><a href="#tasks">Tasks API</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="python-elasticsearch.md#python-library">using Python</a>
+    <ul>
+      <li><a href="python-elasticsearch.md#ingest-using-python">Ingest</a></li>
+    </ul>
+  </li>
 </ul>
 <h2 id="using-curl">Using Curl</h2>
 <h3 id="health-with-curl">Health with Curl</h3>
@@ -40,14 +44,20 @@
 <h3 id="create-index">Create Index</h3>
 <p>Create a Index:</p>
 <pre><code>$ curl -XPOST -H &quot;Content-Type: application/json&quot; &quot;http://localhost:9200/my-test-index</code></pre>
-<p>Create a Index with 5 Primary Shards, 1 Replica Shard and Refresh Interval of 30 seconds:</p>
+<p>
+  Create a Index with 5 Primary Shards, 1 Replica Shard and Refresh Interval of
+  30 seconds:
+</p>
 <pre><code>$ curl -XPUT -H &quot;Content-Type: application/json&quot; \
   http://localhost:9200/my-foobar-index \
   -d &#39;{&quot;index&quot;: {&quot;number_of_shards&quot;:&quot;5&quot;,&quot;number_of_replicas&quot;: 1, &quot;refresh_interval&quot;: &quot;30s&quot;}}&#39;</code></pre>
 <p>If you want to manually refresh your index to see the data:</p>
 <pre><code>$ curl -XPOST -H &quot;Content-Type: application/json&quot; &quot;http://localhost:9200/my-foobar-index/_refresh&quot;</code></pre>
 <h3 id="update-index-settings">Update Index Settings</h3>
-<p>Documentation: - https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-update-settings.html</p>
+<p>
+  Documentation: -
+  https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-update-settings.html
+</p>
 <p>View the index settings:</p>
 <pre><code>$ curl -XGET -H &quot;Content-Type: application/json&quot; &quot;http://127.0.0.1:9200/my-foobar-index/_settings?pretty&quot;</code></pre>
 <p>Update the settings, disable refresh for example:</p>
@@ -82,7 +92,11 @@
       &quot;index&quot;: &quot;archived-metrics-2019.01&quot;, 
     }
 }&#39;</code></pre>
-<p>Reindex only missing documents from source to target index. You will receive conflicts for existing documents, but the proceed value will ignore the conflicts.</p>
+<p>
+  Reindex only missing documents from source to target index. You will receive
+  conflicts for existing documents, but the proceed value will ignore the
+  conflicts.
+</p>
 <pre><code>$ curl -XPOST -H &#39;Content-Type: application/json&#39; &#39;http://127.0.0.1:9200/_reindex&#39; -d &#39;
   {
     &quot;conflicts&quot;: &quot;proceed&quot;, 
@@ -280,5 +294,5 @@ indices:data/write/bulk        yZXq8fZWRjiurCvtO7tSpQ:92155276  -               
 &quot;action&quot; : &quot;indices:data/write/bulk</code></pre>
 <h3 id="external-resources">External Resources</h3>
 <ul>
-<li>http://elasticsearch-cheatsheet.jolicode.com/</li>
+  <li>http://elasticsearch-cheatsheet.jolicode.com/</li>
 </ul>

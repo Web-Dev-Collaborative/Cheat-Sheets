@@ -1,20 +1,21 @@
 # Bash CheatSheet
+
 ```bash
-	pushd 
+	pushd
 	# goes to a directory from directory
-	popd 
+	popd
 	# returns to the original directory
 	file
 	# gives info about the file
-	locate <name> 
+	locate <name>
 	# locates find
 	sudo updatedb
 	# updates database
-	which <name> 
+	which <name>
 	# tells if install
-	history 
+	history
 	# shows command history
-	whatis 
+	whatis
 	# tells info about command
 	apropos <search term>
 	# displays commands with that search term
@@ -25,9 +26,9 @@
 	# trace >> track in real-time the pathway taken by a packet on an IP network from source to destination, reporting the IP addresses of all the routers it pinged in between
 ```
 
-# Thing that are basic but I need to work on 
+# Thing that are basic but I need to work on
 
-cat 
+cat
 mv
 chmod
 

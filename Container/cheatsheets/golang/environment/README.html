@@ -25,7 +25,9 @@ export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
 mkdir -p &quot;$GOPATH/src&quot; &quot;$GOPATH/bin&quot;
 cd $GOPATH
 go version</code></pre>
-<p>To get a environment where you can download from git, append the following:</p>
+<p>
+  To get a environment where you can download from git, append the following:
+</p>
 <pre><code>$ apk add --no-cache gcc musl-dev git
 $ go get github.com/digitalocean/godo
 $ ls $GOPATH/

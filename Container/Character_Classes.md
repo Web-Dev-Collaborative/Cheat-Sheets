@@ -1,70 +1,70 @@
 ---
 description: |
-    Character classes distinguish kinds of characters such as, for example,
-    distinguishing between letters and digits.
+  Character classes distinguish kinds of characters such as, for example,
+  distinguishing between letters and digits.
 lang: en
-robots: 'index, follow'
+robots: "index, follow"
 title: 'Character classes - JavaScript \| MDN'
 twitter:card: summary
 twitter:creator: '\@MozDevNet'
 twitter:description: |
-    Character classes distinguish kinds of characters such as, for example,
-    distinguishing between letters and digits.
-twitter:image: 'https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png'
+  Character classes distinguish kinds of characters such as, for example,
+  distinguishing between letters and digits.
+twitter:image: "https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png"
 twitter:site: '\@MozDevNet'
 twitter:title: Character classes
 twitter:url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular\_Expressions/Character\_Classes'
-viewport: 'width=device-width, initial-scale=1'
+viewport: "width=device-width, initial-scale=1"
 ---
 
 ::: {#react-container data-component-name="SPA"}
 ::: {.loading-bar}
 :::
 
--   [Skip to main content](#content){#skip-main}
--   [Select language](#language){#skip-language}
--   [Skip to search](#main-q){#skip-search}
+- [Skip to main content](#content){#skip-main}
+- [Select language](#language){#skip-language}
+- [Skip to search](#main-q){#skip-search}
 
 <!-- -->
 
--   Technologies
-    -   [Technologies
-        Overview](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
-    -   [HTML](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/HTML)
-    -   [CSS](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/CSS)
-    -   [JavaScript](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-    -   [Graphics](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics)
-    -   [HTTP](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/HTTP)
-    -   [APIs /
-        DOM](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/API)
-    -   [Browser
-        Extensions](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions)
-    -   [MathML](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/MathML)
--   References & Guides
-    -   [Learn web
-        development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Learn)
-    -   [Tutorials](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Tutorials)
-    -   [References](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Reference)
-    -   [Developer
-        Guides](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Guide)
-    -   [Accessibility](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Accessibility)
-    -   [Game
-        development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Games)
-    -   [\...more
-        docs](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
--   Feedback
-    -   [Send
-        Feedback](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Feedback)
-    -   [Get Firefox help
-        🌐](../../../../../../../external.html?link=https://support.mozilla.org/)
-    -   [Get web development help
-        🌐](../../../../../../../external.html?link=https://stackoverflow.com/)
-    -   [Join the MDN
-        community](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Community)
-    -   [Report a content problem
-        🌐](../../../../../../../external.html?link=https://github.com/mdn/sprints/issues/new?template=issue-template.md&projects=mdn/sprints/2&labels=user-report&title=/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes)
-    -   [Report an issue
-        🌐](../../../../../../../external.html?link=https://github.com/mdn/kuma/issues/new/choose)
+- Technologies
+  - [Technologies
+    Overview](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
+  - [HTML](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/HTML)
+  - [CSS](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/CSS)
+  - [JavaScript](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+  - [Graphics](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics)
+  - [HTTP](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/HTTP)
+  - [APIs /
+    DOM](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/API)
+  - [Browser
+    Extensions](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions)
+  - [MathML](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/MathML)
+- References & Guides
+  - [Learn web
+    development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Learn)
+  - [Tutorials](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Tutorials)
+  - [References](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Reference)
+  - [Developer
+    Guides](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Guide)
+  - [Accessibility](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/Accessibility)
+  - [Game
+    development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Games)
+  - [\...more
+    docs](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
+- Feedback
+  - [Send
+    Feedback](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Feedback)
+  - [Get Firefox help
+    🌐](../../../../../../../external.html?link=https://support.mozilla.org/)
+  - [Get web development help
+    🌐](../../../../../../../external.html?link=https://stackoverflow.com/)
+  - [Join the MDN
+    community](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Community)
+  - [Report a content problem
+    🌐](../../../../../../../external.html?link=https://github.com/mdn/sprints/issues/new?template=issue-template.md&projects=mdn/sprints/2&labels=user-report&title=/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes)
+  - [Report an issue
+    🌐](../../../../../../../external.html?link=https://github.com/mdn/kuma/issues/new/choose)
 
 ::: {.header-search}
 Search MDN
@@ -80,6 +80,7 @@ Open search
 
 ::: {.full-width-row-container}
 ::: {.max-content-width-container}
+
 1.  [[See ]{.pre-text}[Web technology for
     developers]{property="name"}](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web){.breadcrumb-chevron}
 2.  [[See ]{.pre-text}[JavaScript]{property="name"}](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript){.breadcrumb-chevron}
@@ -93,32 +94,33 @@ Open search
 ::: {.dropdown-container .language-menu}
 English[▼]{.dropdown-arrow-down aria-hidden="true"}
 
--   [Español](../../../../../../../external.html?link=https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions/Clases_de_caracteres "Spanish")
--   [Français](../../../../../../../external.html?link=https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_régulières/Classes_de_caractères "French")
--   [日本語](../../../../../../../external.html?link=https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes "Japanese")
--   [Русский](../../../../../../../external.html?link=https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes "Russian")
--   [中文
-    (简体)](../../../../../../../external.html?link=https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes "Chinese (Simplified)")
--   [Add a
-    translation](../../../../../../../external.html?link=https://wiki.developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes$locales){#translations-add}
-:::
-:::
-:::
+- [Español](../../../../../../../external.html?link=https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions/Clases_de_caracteres "Spanish")
+- [Français](../../../../../../../external.html?link=https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_régulières/Classes_de_caractères "French")
+- [日本語](../../../../../../../external.html?link=https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes "Japanese")
+- [Русский](../../../../../../../external.html?link=https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes "Russian")
+- [中文
+  (简体)](../../../../../../../external.html?link=https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes "Chinese (Simplified)")
+- [Add a
+  translation](../../../../../../../external.html?link=https://wiki.developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes$locales){#translations-add}
+  :::
+  :::
+  :::
 
 ::: {.wiki-left-present .content-layout}
 ::: {.section .document-toc}
 On this Page
-------------
+
+---
 
 Jump to section
 
--   [Types](#Types)
--   [Examples](#Examples)
--   [Specifications](#Specifications)
--   [Browser compatibility](#Browser_compatibility)
--   [See also](#See_also)
--   [Related topics](#sidebar-quicklinks)
-:::
+- [Types](#Types)
+- [Examples](#Examples)
+- [Specifications](#Specifications)
+- [Browser compatibility](#Browser_compatibility)
+- [See also](#See_also)
+- [Related topics](#sidebar-quicklinks)
+  :::
 
 ::: {#content .article .text-content}
 Character classes distinguish kinds of characters such as, for example,
@@ -128,8 +130,7 @@ distinguishing between letters and digits.
 
 </div>
 
-Types {#Types}
------
+## Types {#Types}
 
 ::: {.hidden}
 The following table is also duplicated on [this
@@ -137,175 +138,170 @@ cheatsheet](Cheatsheet.html). Do not forget to edit it as well, thanks!
 :::
 
 +-----------------------------------+-----------------------------------+
-| Characters                        | Meaning                           |
+| Characters | Meaning |
 +===================================+===================================+
-| `.`                               | Has one of the following          |
-|                                   | meanings:                         |
-|                                   |                                   |
-|                                   | -   Matches any single character  |
-|                                   |     *except* line terminators:    |
-|                                   |     `\n`, `\r`, `\u2028` or       |
-|                                   |     `\u2029`. For example, `/.y/` |
-|                                   |     matches \"my\" and \"ay\",    |
-|                                   |     but not \"yes\", in \"yes     |
-|                                   |     make my day\".                |
-|                                   | -   Inside a character set, the   |
-|                                   |     dot loses its special meaning |
-|                                   |     and matches a literal dot.    |
-|                                   |                                   |
-|                                   | Note that the `m` multiline flag  |
-|                                   | doesn\'t change the dot behavior. |
-|                                   | So to match a pattern across      |
-|                                   | multiple lines, the character set |
-|                                   | `[^]` can be used --- it will     |
-|                                   | match any character including     |
-|                                   | newlines.                         |
-|                                   |                                   |
-|                                   | ES2018 added the `s` \"dotAll\"   |
-|                                   | flag, which allows the dot to     |
-|                                   | also match line terminators.      |
+| `.` | Has one of the following |
+| | meanings: |
+| | |
+| | - Matches any single character |
+| | _except_ line terminators: |
+| | `\n`, `\r`, `\u2028` or |
+| | `\u2029`. For example, `/.y/` |
+| | matches \"my\" and \"ay\", |
+| | but not \"yes\", in \"yes |
+| | make my day\". |
+| | - Inside a character set, the |
+| | dot loses its special meaning |
+| | and matches a literal dot. |
+| | |
+| | Note that the `m` multiline flag |
+| | doesn\'t change the dot behavior. |
+| | So to match a pattern across |
+| | multiple lines, the character set |
+| | `[^]` can be used --- it will |
+| | match any character including |
+| | newlines. |
+| | |
+| | ES2018 added the `s` \"dotAll\" |
+| | flag, which allows the dot to |
+| | also match line terminators. |
 +-----------------------------------+-----------------------------------+
-| `\d`                              | Matches any digit (Arabic         |
-|                                   | numeral). Equivalent to `[0-9]`.  |
-|                                   | For example, `/\d/` or `/[0-9]/`  |
-|                                   | matches \"2\" in \"B2 is the      |
-|                                   | suite number\".                   |
+| `\d` | Matches any digit (Arabic |
+| | numeral). Equivalent to `[0-9]`. |
+| | For example, `/\d/` or `/[0-9]/` |
+| | matches \"2\" in \"B2 is the |
+| | suite number\". |
 +-----------------------------------+-----------------------------------+
-| `\D`                              | Matches any character that is not |
-|                                   | a digit (Arabic numeral).         |
-|                                   | Equivalent to `[^0-9]`. For       |
-|                                   | example, `/\D/` or `/[^0-9]/`     |
-|                                   | matches \"B\" in \"B2 is the      |
-|                                   | suite number\".                   |
+| `\D` | Matches any character that is not |
+| | a digit (Arabic numeral). |
+| | Equivalent to `[^0-9]`. For |
+| | example, `/\D/` or `/[^0-9]/` |
+| | matches \"B\" in \"B2 is the |
+| | suite number\". |
 +-----------------------------------+-----------------------------------+
-| `\w`                              | Matches any alphanumeric          |
-|                                   | character from the basic Latin    |
-|                                   | alphabet, including the           |
-|                                   | underscore. Equivalent to         |
-|                                   | `[A-Za-z0-9_]`. For example,      |
-|                                   | `/\w/` matches \"a\" in           |
-|                                   | \"apple\", \"5\" in \"\$5.28\",   |
-|                                   | \"3\" in \"3D\" and \"m\" in      |
-|                                   | \"Émanuel\".                      |
+| `\w` | Matches any alphanumeric |
+| | character from the basic Latin |
+| | alphabet, including the |
+| | underscore. Equivalent to |
+| | `[A-Za-z0-9_]`. For example, |
+| | `/\w/` matches \"a\" in |
+| | \"apple\", \"5\" in \"\$5.28\", |
+| | \"3\" in \"3D\" and \"m\" in |
+| | \"Émanuel\". |
 +-----------------------------------+-----------------------------------+
-| `\W`                              | Matches any character that is not |
-|                                   | a word character from the basic   |
-|                                   | Latin alphabet. Equivalent to     |
-|                                   | `[^A-Za-z0-9_]`. For example,     |
-|                                   | `/\W/` or `/[^A-Za-z0-9_]/`       |
-|                                   | matches \"%\" in \"50%\" and      |
-|                                   | \"É\" in \"Émanuel\".             |
+| `\W` | Matches any character that is not |
+| | a word character from the basic |
+| | Latin alphabet. Equivalent to |
+| | `[^A-Za-z0-9_]`. For example, |
+| | `/\W/` or `/[^A-Za-z0-9_]/` |
+| | matches \"%\" in \"50%\" and |
+| | \"É\" in \"Émanuel\". |
 +-----------------------------------+-----------------------------------+
-| `\s`                              | Matches a single white space      |
-|                                   | character, including space, tab,  |
-|                                   | form feed, line feed, and other   |
-|                                   | Unicode spaces. Equivalent to     |
-|                                   | `[ \f\n\r\t\v\u00a0\u1680\u2000-\ |
-|                                   | u200a\u2028\u2029\u202f\u205f\u30 |
-|                                   | 00\ufeff]`.                       |
-|                                   | For example, `/\s\w*/` matches \" |
-|                                   | bar\" in \"foo bar\".             |
+| `\s` | Matches a single white space |
+| | character, including space, tab, |
+| | form feed, line feed, and other |
+| | Unicode spaces. Equivalent to |
+| | `[ \f\n\r\t\v\u00a0\u1680\u2000-\ | | | u200a\u2028\u2029\u202f\u205f\u30 | | | 00\ufeff]`. |
+| | For example, `/\s\w*/` matches \" |
+| | bar\" in \"foo bar\". |
 +-----------------------------------+-----------------------------------+
-| `\S`                              | Matches a single character other  |
-|                                   | than white space. Equivalent to   |
-|                                   | `[^ \f\n\r\t\v\u00a0\u1680\u2000- |
-|                                   | \u200a\u2028\u2029\u202f\u205f\u3 |
-|                                   | 000\ufeff]`.                      |
-|                                   | For example, `/\S\w*/` matches    |
-|                                   | \"foo\" in \"foo bar\".           |
+| `\S` | Matches a single character other |
+| | than white space. Equivalent to |
+| | `[^ \f\n\r\t\v\u00a0\u1680\u2000- | | | \u200a\u2028\u2029\u202f\u205f\u3 | | | 000\ufeff]`. |
+| | For example, `/\S\w*/` matches |
+| | \"foo\" in \"foo bar\". |
 +-----------------------------------+-----------------------------------+
-| `\t`                              | Matches a horizontal tab.         |
+| `\t` | Matches a horizontal tab. |
 +-----------------------------------+-----------------------------------+
-| `\r`                              | Matches a carriage return.        |
+| `\r` | Matches a carriage return. |
 +-----------------------------------+-----------------------------------+
-| `\n`                              | Matches a linefeed.               |
+| `\n` | Matches a linefeed. |
 +-----------------------------------+-----------------------------------+
-| `\v`                              | Matches a vertical tab.           |
+| `\v` | Matches a vertical tab. |
 +-----------------------------------+-----------------------------------+
-| `\f`                              | Matches a form-feed.              |
+| `\f` | Matches a form-feed. |
 +-----------------------------------+-----------------------------------+
-| `[\b]`                            | Matches a backspace. If you\'re   |
-|                                   | looking for the word-boundary     |
-|                                   | character (`\b`), see             |
-|                                   | [Boundaries](Assertions.html).    |
+| `[\b]` | Matches a backspace. If you\'re |
+| | looking for the word-boundary |
+| | character (`\b`), see |
+| | [Boundaries](Assertions.html). |
 +-----------------------------------+-----------------------------------+
-| `\0`                              | Matches a NUL character. Do not   |
-|                                   | follow this with another digit.   |
+| `\0` | Matches a NUL character. Do not |
+| | follow this with another digit. |
 +-----------------------------------+-----------------------------------+
-| `\cX`                             | Matches a control character using |
-|                                   | [caret                            |
-|                                   | notation](../../../../../../../ex |
-|                                   | ternal.html?link=https://en.wikip |
-|                                   | edia.org/wiki/Caret_notation){.ex |
-|                                   | ternal},                          |
-|                                   | where \"X\" is a letter from A--Z |
-|                                   | (corresponding to codepoints      |
-|                                   | `U+0001`*--*`U+001F`). For        |
-|                                   | example, `/\cM/` matches          |
-|                                   | \"\\r\" in \"\\r\\n\".            |
+| `\cX` | Matches a control character using |
+| | [caret |
+| | notation](../../../../../../../ex |
+| | ternal.html?link=https://en.wikip |
+| | edia.org/wiki/Caret_notation){.ex |
+| | ternal}, |
+| | where \"X\" is a letter from A--Z |
+| | (corresponding to codepoints |
+| | `U+0001`_--_`U+001F`). For |
+| | example, `/\cM/` matches |
+| | \"\\r\" in \"\\r\\n\". |
 +-----------------------------------+-----------------------------------+
-| `\xhh`                            | Matches the character with the    |
-|                                   | code `hh` (two hexadecimal        |
-|                                   | digits).                          |
+| `\xhh` | Matches the character with the |
+| | code `hh` (two hexadecimal |
+| | digits). |
 +-----------------------------------+-----------------------------------+
-| `\uhhhh`                          | Matches a UTF-16 code-unit with   |
-|                                   | the value `hhhh` (four            |
-|                                   | hexadecimal digits).              |
+| `\uhhhh` | Matches a UTF-16 code-unit with |
+| | the value `hhhh` (four |
+| | hexadecimal digits). |
 +-----------------------------------+-----------------------------------+
-| `\u{hhhh} or \u{hhhhh}`           | (Only when the `u` flag is set.)  |
-|                                   | Matches the character with the    |
-|                                   | Unicode value `U+hhhh`            |
-|                                   | or `U+hhhhh` (hexadecimal         |
-|                                   | digits).                          |
+| `\u{hhhh} or \u{hhhhh}` | (Only when the `u` flag is set.) |
+| | Matches the character with the |
+| | Unicode value `U+hhhh` |
+| | or `U+hhhhh` (hexadecimal |
+| | digits). |
 +-----------------------------------+-----------------------------------+
-| `\`                               | Indicates that the following      |
-|                                   | character should be treated       |
-|                                   | specially, or \"escaped\". It     |
-|                                   | behaves one of two ways.          |
-|                                   |                                   |
-|                                   | -   For characters that are       |
-|                                   |     usually treated literally,    |
-|                                   |     indicates that the next       |
-|                                   |     character is special and not  |
-|                                   |     to be interpreted literally.  |
-|                                   |     For example, `/b/` matches    |
-|                                   |     the character \"b\". By       |
-|                                   |     placing a backslash in front  |
-|                                   |     of \"b\", that is by using    |
-|                                   |     `/\b/`, the character becomes |
-|                                   |     special to mean match a word  |
-|                                   |     boundary.                     |
-|                                   | -   For characters that are       |
-|                                   |     usually treated specially,    |
-|                                   |     indicates that the next       |
-|                                   |     character is not special and  |
-|                                   |     should be interpreted         |
-|                                   |     literally. For example,       |
-|                                   |     \"\*\" is a special character |
-|                                   |     that means 0 or more          |
-|                                   |     occurrences of the preceding  |
-|                                   |     character should be matched;  |
-|                                   |     for example, `/a*/` means     |
-|                                   |     match 0 or more \"a\"s. To    |
-|                                   |     match `*` literally, precede  |
-|                                   |     it with a backslash; for      |
-|                                   |     example, `/a\*/` matches      |
-|                                   |     \"a\*\".                      |
-|                                   |                                   |
-|                                   | ::: {.blockIndicator .note}       |
-|                                   | To match this character           |
-|                                   | literally, escape it with itself. |
-|                                   | In other words to search for      |
-|                                   | `\` use `/\\/`.                   |
-|                                   | :::                               |
+| `\` | Indicates that the following |
+| | character should be treated |
+| | specially, or \"escaped\". It |
+| | behaves one of two ways. |
+| | |
+| | - For characters that are |
+| | usually treated literally, |
+| | indicates that the next |
+| | character is special and not |
+| | to be interpreted literally. |
+| | For example, `/b/` matches |
+| | the character \"b\". By |
+| | placing a backslash in front |
+| | of \"b\", that is by using |
+| | `/\b/`, the character becomes |
+| | special to mean match a word |
+| | boundary. |
+| | - For characters that are |
+| | usually treated specially, |
+| | indicates that the next |
+| | character is not special and |
+| | should be interpreted |
+| | literally. For example, |
+| | \"\*\" is a special character |
+| | that means 0 or more |
+| | occurrences of the preceding |
+| | character should be matched; |
+| | for example, `/a*/` means |
+| | match 0 or more \"a\"s. To |
+| | match `*` literally, precede |
+| | it with a backslash; for |
+| | example, `/a\*/` matches |
+| | \"a\*\". |
+| | |
+| | ::: {.blockIndicator .note} |
+| | To match this character |
+| | literally, escape it with itself. |
+| | In other words to search for |
+| | `\` use `/\\/`. |
+| | ::: |
 +-----------------------------------+-----------------------------------+
 
-Examples {#Examples}
---------
+## Examples {#Examples}
 
 ### Looking for a series of digits {#Looking_for_a_series_of_digits}
 
-``` {.brush: .js .notranslate}
+```{.brush: .js .notranslate}
 var randomData = "015 354 8787 687351 3512 8735";
 var regexpFourDigits = /\b\d{4}\b/g;
 // \b indicates a boundary (i.e. do not start matching in the middle of a word)
@@ -319,7 +315,7 @@ console.table(randomData.match(regexpFourDigits));
 
 ### Looking for a word (from the latin alphabet) starting with A {#Looking_for_a_word_from_the_latin_alphabet_starting_with_A}
 
-``` {.brush: .js .notranslate}
+```{.brush: .js .notranslate}
 var aliceExcerpt = "I’m sure I’m not Ada,’ she said, ‘for her hair goes in such long ringlets, and mine doesn’t go in ringlets at all.";
 var regexpWordStartingWithA = /\b[aA]\w+/g;
 // \b indicates a boundary (i.e. do not start matching in the middle of a word)
@@ -339,7 +335,7 @@ contains most of the characters used around the world and we can use
 character classes and ranges to match words written with those
 characters.
 
-``` {.brush: .js .notranslate}
+```{.brush: .js .notranslate}
 var nonEnglishText = "Приключения Алисы в Стране чудес";
 var regexpBMPWord = /([\u0000-\u0019\u0021-\uFFFF])+/gu;
 // BMP goes through U+0000 to U+FFFF but space is U+0020
@@ -353,47 +349,48 @@ Note for MDN editors: please do not try to add funny examples with emoji
 as those characters are not handled by the platform (Kuma).
 :::
 
-Specifications {#Specifications}
---------------
+## Specifications {#Specifications}
 
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Specification
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  [ECMAScript (ECMA-262)\
-  [The definition of \'RegExp: Character classes\' in that specification.]{.small}](../../../../../../../external.html?link=https://tc39.es/ecma262/#sec-characterclass){.external}
+---
 
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Specification
 
-Browser compatibility {#Browser_compatibility}
----------------------
+---
+
+[ECMAScript (ECMA-262)\
+ [The definition of \'RegExp: Character classes\' in that specification.]{.small}](../../../../../../../external.html?link=https://tc39.es/ecma262/#sec-characterclass){.external}
+
+---
+
+## Browser compatibility {#Browser_compatibility}
 
 For browser compatibility information, check out the [main Regular
 Expressions compatibility
 table](../Regular_Expressions.html#Browser_compatibility).
 
-See also {#See_also}
---------
+## See also {#See_also}
 
--   [Regular expressions guide](../Regular_Expressions.html)
-    -   [Assertions](Assertions.html)
-    -   [Quantifiers](Quantifiers.html)
-    -   [Unicode property escapes](Unicode_Property_Escapes.html)
-    -   [Groups and ranges](Groups_and_Ranges.html)
--   [The `RegExp()`
-    constructor](../../Reference/Global_Objects/RegExp.html)
--   [Arrow
-    symbol](../../../../../../../external.html?link=https://medium.com/@iris.atlanttida/arrow-symbol-ed58b383e6df){.external}
-    characters
+- [Regular expressions guide](../Regular_Expressions.html)
+  - [Assertions](Assertions.html)
+  - [Quantifiers](Quantifiers.html)
+  - [Unicode property escapes](Unicode_Property_Escapes.html)
+  - [Groups and ranges](Groups_and_Ranges.html)
+- [The `RegExp()`
+  constructor](../../Reference/Global_Objects/RegExp.html)
+- [Arrow
+  symbol](../../../../../../../external.html?link=https://medium.com/@iris.atlanttida/arrow-symbol-ed58b383e6df){.external}
+  characters
 
 ::: {.metadata}
 ::: {.section .document-meta}
+
 #### Metadata
 
--   **Last modified:** Sep 29, 2020, [by MDN
-    contributors](../../../../../../../external.html?link=https://wiki.developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes$history)
-:::
-:::
-:::
+- **Last modified:** Sep 29, 2020, [by MDN
+  contributors](../../../../../../../external.html?link=https://wiki.developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes$history)
+  :::
+  :::
+  :::
 
 ::: {#sidebar-quicklinks .sidebar}
 ::: {.quick-links}
@@ -403,7 +400,7 @@ Related Topics
 
 <div>
 
-1.  [***JavaScript***](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+1.  [**_JavaScript_**](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 2.  [**Tutorials:**](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 3.  Complete beginners
     1.  [JavaScript
@@ -778,7 +775,7 @@ Related Topics
     26. [SyntaxError: function statement requires a
         name](../../Reference/Errors/Unnamed_function_statement.html "The JavaScript exception "function statement requires a name" occurs when there is a function statement in the code that requires a name.")
     27. [SyntaxError: identifier starts immediately after numeric
-        literal](../../Reference/Errors/Identifier_after_number.html "The JavaScript exception "identifier starts immediately after numeric literal" occurs when an identifier started with a digit. Identifiers can only start with a letter, underscore (_), or dollar sign ($).")
+        literal](../../Reference/Errors/Identifier*after_number.html "The JavaScript exception "identifier starts immediately after numeric literal" occurs when an identifier started with a digit. Identifiers can only start with a letter, underscore (*), or dollar sign ($).")
     28. [SyntaxError: illegal
         character](../../Reference/Errors/Illegal_character.html "The JavaScript exception "illegal character" occurs when there is an invalid or unexpected token that doesn't belong at this position in the code.")
     29. [SyntaxError: invalid regular expression flag
@@ -905,7 +902,8 @@ Related Topics
 ::: {#newsletter-form-container .newsletter}
 ::: {.section .newsletter-head}
 Learn the best of web development {#learn-the-best-of-web-development .newsletter-teaser}
----------------------------------
+
+---
 
 Get the latest and greatest from MDN delivered straight to your inbox.
 
@@ -933,49 +931,50 @@ Hide Newsletter Sign-up
 [MDN Web
 Docs](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/){.nav-footer-logo}
 
--   [Web
-    Technologies](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
--   [Learn Web
-    Development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Learn)
--   [About
-    MDN](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/About)
--   [Feedback](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Feedback)
+- [Web
+  Technologies](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Web)
+- [Learn Web
+  Development](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/Learn)
+- [About
+  MDN](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/About)
+- [Feedback](../../../../../../../external.html?link=https://developer.mozilla.org/en-US/docs/MDN/Feedback)
 
 <!-- -->
 
--   [About](../../../../../../../external.html?link=https://www.mozilla.org/about/)
--   [MDN Web Docs
-    Store](../../../../../../../external.html?link=https://shop.spreadshirt.com/mdn-store/)
--   [Contact
-    Us](../../../../../../../external.html?link=https://www.mozilla.org/contact/)
--   [Firefox](../../../../../../../external.html?link=https://www.mozilla.org/firefox/?utm_source=developer.mozilla.org&utm_campaign=footer&utm_medium=referral)
+- [About](../../../../../../../external.html?link=https://www.mozilla.org/about/)
+- [MDN Web Docs
+  Store](../../../../../../../external.html?link=https://shop.spreadshirt.com/mdn-store/)
+- [Contact
+  Us](../../../../../../../external.html?link=https://www.mozilla.org/contact/)
+- [Firefox](../../../../../../../external.html?link=https://www.mozilla.org/firefox/?utm_source=developer.mozilla.org&utm_campaign=footer&utm_medium=referral)
 
 ::: {.social .social-mdn}
+
 #### MDN
 
--   -   
-:::
+- - :::
 
 ::: {.social .social-moz}
+
 #### Mozilla
 
--   -   
-:::
+- - :::
 
 © 2005-2020 Mozilla and individual contributors. Content is available
 under [these
 licenses](../../../../../../../external.html?link=https://developer.mozilla.org/docs/MDN/About#Copyrights_and_licenses).
 
--   [Terms](../../../../../../../external.html?link=https://www.mozilla.org/about/legal/terms/mozilla)
--   [Privacy](../../../../../../../external.html?link=https://www.mozilla.org/privacy/websites/)
--   [Cookies](../../../../../../../external.html?link=https://www.mozilla.org/privacy/websites/#cookies)
-:::
-:::
+- [Terms](../../../../../../../external.html?link=https://www.mozilla.org/about/legal/terms/mozilla)
+- [Privacy](../../../../../../../external.html?link=https://www.mozilla.org/privacy/websites/)
+- [Cookies](../../../../../../../external.html?link=https://www.mozilla.org/privacy/websites/#cookies)
+  :::
+  :::
 
 ::: {#auth-modal .modal .hidden}
 ::: {.section .auth-providers tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="modal-main-heading"}
 Sign In {#modal-main-heading}
--------
+
+---
 
 Sign in to enjoy the benefits of an MDN account. If you haven't already
 created an account, you will be prompted to do so after signing in.

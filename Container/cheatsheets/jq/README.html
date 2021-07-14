@@ -1,6 +1,9 @@
 <h2 id="jq-cheatsheet">JQ Cheatsheet</h2>
 <p>Data:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">{</span></a>
+<div class="sourceCode" id="cb1">
+  <pre
+    class="sourceCode json"
+  ><code class="sourceCode json"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">{</span></a>
 <a class="sourceLine" id="cb1-2" title="2">  <span class="dt">&quot;images&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
 <a class="sourceLine" id="cb1-3" title="3">    <span class="fu">{</span></a>
 <a class="sourceLine" id="cb1-4" title="4">      <span class="dt">&quot;creation_date&quot;</span><span class="fu">:</span> <span class="st">&quot;2019-01-03T14:52:34.514699+00:00&quot;</span><span class="fu">,</span></a>
@@ -39,9 +42,13 @@
 <a class="sourceLine" id="cb1-37" title="37">      <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;ubuntu xenial&quot;</span></a>
 <a class="sourceLine" id="cb1-38" title="38">    <span class="fu">}</span></a>
 <a class="sourceLine" id="cb1-39" title="39">  <span class="ot">]</span></a>
-<a class="sourceLine" id="cb1-40" title="40"><span class="fu">}</span></a></code></pre></div>
+<a class="sourceLine" id="cb1-40" title="40"><span class="fu">}</span></a></code></pre>
+</div>
 <p>Return the data under the image array:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1">$ <span class="fu">cat</span> data.json <span class="kw">|</span> <span class="ex">jq</span> <span class="st">&#39;.images[]&#39;</span></a>
+<div class="sourceCode" id="cb2">
+  <pre
+    class="sourceCode bash"
+  ><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1">$ <span class="fu">cat</span> data.json <span class="kw">|</span> <span class="ex">jq</span> <span class="st">&#39;.images[]&#39;</span></a>
 <a class="sourceLine" id="cb2-2" title="2"></a>
 <a class="sourceLine" id="cb2-3" title="3">  <span class="kw">{</span></a>
 <a class="sourceLine" id="cb2-4" title="4">    <span class="st">&quot;creation_date&quot;</span>: <span class="st">&quot;2019-01-03T14:52:34.514699+00:00&quot;</span>,</a>
@@ -56,9 +63,13 @@
 <a class="sourceLine" id="cb2-13" title="13">    <span class="st">&quot;name&quot;</span>: <span class="st">&quot;ubuntu xenial&quot;</span></a>
 <a class="sourceLine" id="cb2-14" title="14">  <span class="kw">}</span></a>
 <a class="sourceLine" id="cb2-15" title="15">  <span class="kw">{</span></a>
-<a class="sourceLine" id="cb2-16" title="16"> <span class="ex">...</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-16" title="16"> <span class="ex">...</span></a></code></pre>
+</div>
 <p>Return only data relevant with arch: amd64:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1">$ <span class="fu">cat</span> data.json <span class="kw">|</span> <span class="ex">jq</span> <span class="st">&#39;.images[] | select(.arch == &quot;amd64&quot;)&#39;</span></a>
+<div class="sourceCode" id="cb3">
+  <pre
+    class="sourceCode bash"
+  ><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1">$ <span class="fu">cat</span> data.json <span class="kw">|</span> <span class="ex">jq</span> <span class="st">&#39;.images[] | select(.arch == &quot;amd64&quot;)&#39;</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="kw">{</span></a>
 <a class="sourceLine" id="cb3-3" title="3">  <span class="st">&quot;creation_date&quot;</span>: <span class="st">&quot;2019-01-03T14:52:34.514699+00:00&quot;</span>,</a>
 <a class="sourceLine" id="cb3-4" title="4">  <span class="st">&quot;default_bootscript&quot;</span>: <span class="kw">{</span></a>
@@ -70,10 +81,15 @@
 <a class="sourceLine" id="cb3-10" title="10">  <span class="st">&quot;arch&quot;</span>: <span class="st">&quot;amd64&quot;</span>,</a>
 <a class="sourceLine" id="cb3-11" title="11">  <span class="st">&quot;id&quot;</span>: <span class="st">&quot;x3cf2bbf-fe08-947f-8bf2-c8ce51f92050&quot;</span>,</a>
 <a class="sourceLine" id="cb3-12" title="12">  <span class="st">&quot;name&quot;</span>: <span class="st">&quot;ubuntu xenial&quot;</span></a>
-<a class="sourceLine" id="cb3-13" title="13"><span class="kw">}</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-13" title="13"><span class="kw">}</span></a></code></pre>
+</div>
 <p>Only return the id value from our query:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1">$ <span class="fu">cat</span> data.json <span class="kw">|</span> <span class="ex">jq</span> <span class="st">&#39;.images[] | select(.arch == &quot;amd64&quot;) | .id&#39;</span></a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="st">&quot;x3cf2bbf-fe08-947f-8bf2-c8ce51f92050&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb4">
+  <pre
+    class="sourceCode bash"
+  ><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1">$ <span class="fu">cat</span> data.json <span class="kw">|</span> <span class="ex">jq</span> <span class="st">&#39;.images[] | select(.arch == &quot;amd64&quot;) | .id&#39;</span></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="st">&quot;x3cf2bbf-fe08-947f-8bf2-c8ce51f92050&quot;</span></a></code></pre>
+</div>
 <p>We can do similar with (<code>contains</code>, <code>startswith</code>):</p>
 <pre><code>$ cat data.json | jq &#39;.images[] | select(.arch | contains(&quot;amd&quot;)) | .id&#39;
 $ cat data.json | jq &#39;.images[] | select(.arch | startswith(&quot;md6&quot;)) | .id&#39;</code></pre>

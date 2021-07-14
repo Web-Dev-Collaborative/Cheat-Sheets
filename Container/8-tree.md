@@ -2,39 +2,34 @@
 
 > The #data-structures series is a collection of posts about reimplemented data structures in JavaScript.
 
-
-Get the code on Github
-----------------------
+## Get the code on Github
 
 Of course, all the code can also be found on Github in the repository [data-structures-in-javascript](https://github.com/benoitvallon/computer-science-in-javascript/tree/master/data-structures-in-javascript).
 
-Definition
-----------
+## Definition
 
-> A Tree is a widely used data structure that simulates a hierarchical tree structure, with a root value and subtrees of children with a parent node. A tree data structure can be defined recursively as a collection of nodes (starting at a root node), where each node is a data structure consisting of a value, together with a list of references to nodes (the "children"), with the constraints that no reference is duplicated, and none points to the root node. **From [Wikipedia](https://en.wikipedia.org/wiki/Tree_(data_structure))**
+> A Tree is a widely used data structure that simulates a hierarchical tree structure, with a root value and subtrees of children with a parent node. A tree data structure can be defined recursively as a collection of nodes (starting at a root node), where each node is a data structure consisting of a value, together with a list of references to nodes (the "children"), with the constraints that no reference is duplicated, and none points to the root node. **From [Wikipedia](<https://en.wikipedia.org/wiki/Tree_(data_structure)>)**
 
-Complexity
-----------
+## Complexity
 
-| Average |   |   |   |
-| --- | --- | --- | --- |
-| Access | Search | Insertion | Deletion |
-| O(n) | O(n) | O(n) | O(n) |
+| Average |        |           |          |
+| ------- | ------ | --------- | -------- |
+| Access  | Search | Insertion | Deletion |
+| O(n)    | O(n)   | O(n)      | O(n)     |
 
 To get a full overview of the time and space complexity of the Tree data structure, have a look to this excellent [Big O cheat sheet](http://bigocheatsheet.com/).
 
-The code
---------
+## The code
 
     function Node(data) {
       this.data = data;
       this.children = [];
     }
-    
+
     function Tree() {
       this.root = null;
     }
-    
+
     Tree.prototype.add = function(data, toNodeData) {
       var node = new Node(data);
       var parent = toNodeData ? this.findBFS(toNodeData) : null;
@@ -52,7 +47,7 @@ The code
       if(this.root.data === data) {
         this.root = null;
       }
-    
+
       var queue = [this.root];
       while(queue.length) {
         var node = queue.shift();
@@ -159,7 +154,7 @@ The code
       }
       console.log(string.trim());
     };
-    
+
     var tree = new Tree();
     tree.add('ceo');
     tree.add('cto', 'ceo');
@@ -183,13 +178,11 @@ The code
     tree.print(); // => ceo | cto cfo | dev1 dev2 dev3 accountant
     tree.remove('cfo');
     tree.print(); // => ceo | cto | dev1 dev2 dev3
-    
 
-* * *
+---
 
-* * *
+---
 
-* * *
-
+---
 
 [Source](http://blog.benoitvallon.com/data-structures-in-javascript/the-tree-data-structure/)

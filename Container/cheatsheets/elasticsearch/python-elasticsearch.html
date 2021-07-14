@@ -1,25 +1,43 @@
 <h1 id="elasticsearch-cheatsheet">Elasticsearch Cheatsheet</h1>
 <p>My Elasticsearch Cheatsheet using Python</p>
 <ul>
-<li><a href="python-elasticsearch.md#python-library">Using Python Elasticsearch Library</a>
-<ul>
-<li><a href="python-elasticsearch.md#authenticate-with-http-basic-auth">Authentication</a></li>
-<li><a href="python-elasticsearch.md#elasticsearch-info-response">Info</a></li>
-<li><a href="python-elasticsearch.md#ingest">Ingest</a></li>
-<li><a href="python-elasticsearch.md#ingest">Bulk Ingest</a></li>
-</ul></li>
-<li><a href="">Using Python Requests</a>
-<ul>
-<li><a href="">Create a Index</a></li>
-</ul></li>
-<li><a href="README.md#using-curl">Using cURL</a>
-<ul>
-<li><a href="README.md#health-with-curl">Cluster Health</a></li>
-<li><a href="README.md#reindex-using-curl">Reindex</a></li>
-<li><a href="README.md#update-replicas-curl">Update Replica Shards</a></li>
-<li><a href="README.md#snapshots-with-curl">Snapshots</a></li>
-<li><a href="README.md#restore-snapshots-with-curl">Restore Snapshots</a></li>
-</ul></li>
+  <li>
+    <a href="python-elasticsearch.md#python-library"
+      >Using Python Elasticsearch Library</a
+    >
+    <ul>
+      <li>
+        <a href="python-elasticsearch.md#authenticate-with-http-basic-auth"
+          >Authentication</a
+        >
+      </li>
+      <li>
+        <a href="python-elasticsearch.md#elasticsearch-info-response">Info</a>
+      </li>
+      <li><a href="python-elasticsearch.md#ingest">Ingest</a></li>
+      <li><a href="python-elasticsearch.md#ingest">Bulk Ingest</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="">Using Python Requests</a>
+    <ul>
+      <li><a href="">Create a Index</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="README.md#using-curl">Using cURL</a>
+    <ul>
+      <li><a href="README.md#health-with-curl">Cluster Health</a></li>
+      <li><a href="README.md#reindex-using-curl">Reindex</a></li>
+      <li>
+        <a href="README.md#update-replicas-curl">Update Replica Shards</a>
+      </li>
+      <li><a href="README.md#snapshots-with-curl">Snapshots</a></li>
+      <li>
+        <a href="README.md#restore-snapshots-with-curl">Restore Snapshots</a>
+      </li>
+    </ul>
+  </li>
 </ul>
 <h2 id="python-library">Python Library</h2>
 <h4 id="create-a-client-with-python">Create a Client with Python</h4>
@@ -33,7 +51,9 @@ es = Elasticsearch(
     http_auth=aws_credentials, use_ssl=True, verify_certs=True, 
     connection_class=RequestsHttpConnection
 )</code></pre>
-<h4 id="authenticate-with-http-basic-auth">Authenticate with HTTP Basic Auth</h4>
+<h4 id="authenticate-with-http-basic-auth">
+  Authenticate with HTTP Basic Auth
+</h4>
 <pre><code>from elasticsearch import Elasticsearch, RequestsHttpConnection, helpers
 
 es = Elasticsearch(
