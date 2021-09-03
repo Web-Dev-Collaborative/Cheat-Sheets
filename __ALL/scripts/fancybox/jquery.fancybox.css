@@ -58,7 +58,7 @@
 
 .fancybox-error {
   color: #444;
-  font: 14px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 15px;
   white-space: nowrap;
@@ -80,7 +80,7 @@
 .fancybox-close,
 .fancybox-prev span,
 .fancybox-next span {
-  background-image: url('https://cheatography.com/scripts/fancybox/fancybox_sprite.png');
+  background-image: url("https://cheatography.com/scripts/fancybox/fancybox_sprite.png");
 }
 
 #fancybox-loading {
@@ -98,7 +98,7 @@
 #fancybox-loading div {
   width: 44px;
   height: 44px;
-  background: url('https://cheatography.com/scripts/fancybox/fancybox_loading.gif')
+  background: url("https://cheatography.com/scripts/fancybox/fancybox_loading.gif")
     center center no-repeat;
 }
 
@@ -120,7 +120,7 @@
   cursor: pointer;
   text-decoration: none;
   background: transparent
-    url('https://cheatography.com/scripts/fancybox/blank.gif'); /* helps IE */
+    url("https://cheatography.com/scripts/fancybox/blank.gif"); /* helps IE */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   z-index: 8040;
 }
@@ -190,7 +190,7 @@
   overflow: hidden;
   display: none;
   z-index: 8010;
-  background: url('https://cheatography.com/scripts/fancybox/fancybox_overlay.png');
+  background: url("https://cheatography.com/scripts/fancybox/fancybox_overlay.png");
 }
 
 .fancybox-overlay-fixed {
@@ -208,7 +208,7 @@
 
 .fancybox-title {
   visibility: hidden;
-  font: normal 13px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative;
   text-shadow: none;
   z-index: 8050;
@@ -271,12 +271,12 @@
   .fancybox-close,
   .fancybox-prev span,
   .fancybox-next span {
-    background-image: url('https://cheatography.com/scripts/fancybox/fancybox_sprite@2x.png');
+    background-image: url("https://cheatography.com/scripts/fancybox/fancybox_sprite@2x.png");
     background-size: 44px 152px; /*The size of the normal image, half the size of the hi-res image*/
   }
 
   #fancybox-loading div {
-    background-image: url('https://cheatography.com/scripts/fancybox/fancybox_loading@2x.gif');
+    background-image: url("https://cheatography.com/scripts/fancybox/fancybox_loading@2x.gif");
     background-size: 24px 24px; /*The size of the normal image, half the size of the hi-res image*/
   }
 }
