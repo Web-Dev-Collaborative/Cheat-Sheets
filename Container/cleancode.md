@@ -16493,9 +16493,9 @@ We want code to be as expressive as possible. Run-on expressions, Hungarian nota
 and magic numbers all obscure the author's intent. For example, here is the overTimePay
 function as it might have appeared:
 
-public int m_otCalc() {
-return iThsWkd _ iThsRte +
-(int) Math.round(0.5 _ iThsRte \*
+public int m*otCalc() {
+return iThsWkd * iThsRte +
+(int) Math.round(0.5 \_ iThsRte \*
 Math.max(0, iThsWkd - 400)
 );
 }
@@ -19584,29 +19584,29 @@ SerialDate.Java
 137 public static final int SUNDAY = Calendar.SUNDAY;
 138
 139 /\*\* The number of days in each month in non leap years. _/
-140 static final int[] LAST_DAY_OF_MONTH =
+140 static final int[] LAST*DAY_OF_MONTH =
 141 {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 142
 143 /** The number of days in a (non-leap) year up to the end of each month. \*/
 144 static final int[] AGGREGATE_DAYS_TO_END_OF_MONTH =
 145 {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365};
 146
-147 /** The number of days in a year up to the end of the preceding month. _/
-148 static final int[] AGGREGATE_DAYS_TO_END_OF_PRECEDING_MONTH =
+147 /** The number of days in a year up to the end of the preceding month. */
+148 static final int[] AGGREGATE*DAYS_TO_END_OF_PRECEDING_MONTH =
 149 {0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365};
 150
-151 /\*\* The number of days in a leap year up to the end of each month. _/
-152 static final int[] LEAP_YEAR_AGGREGATE_DAYS_TO_END_OF_MONTH =
+151 /\*\* The number of days in a leap year up to the end of each month. */
+152 static final int[] LEAP*YEAR_AGGREGATE_DAYS_TO_END_OF_MONTH =
 153 {0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366};
 154
-155 /**
-156 _ The number of days in a leap year up to the end of the preceding month.
-157 _/
+155 /\*\*
+156 * The number of days in a leap year up to the end of the preceding month.
+157 \_/
 158 static final int[]
 159 LEAP_YEAR_AGGREGATE_DAYS_TO_END_OF_PRECEDING_MONTH =
 160 {0, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366};
 161
-162 /** A useful constant for referring to the first week in a month. \*/
+162 /\*\* A useful constant for referring to the first week in a month. \*/
 163 public static final int FIRST_WEEK_IN_MONTH = 1;
 164
 
@@ -19624,25 +19624,25 @@ SerialDate.Java
 169 public static final int THIRD_WEEK_IN_MONTH = 3;
 170
 171 /\*\* A useful constant for referring to the fourth week in a month. _/
-172 public static final int FOURTH_WEEK_IN_MONTH = 4;
+172 public static final int FOURTH*WEEK_IN_MONTH = 4;
 173
 174 /** A useful constant for referring to the last week in a month. \*/
 175 public static final int LAST_WEEK_IN_MONTH = 0;
 176
-177 /** Useful range constant. _/
-178 public static final int INCLUDE_NONE = 0;
+177 /** Useful range constant. */
+178 public static final int INCLUDE*NONE = 0;
 179
-180 /\*\* Useful range constant. _/
-181 public static final int INCLUDE_FIRST = 1;
+180 /\*\* Useful range constant. */
+181 public static final int INCLUDE*FIRST = 1;
 182
 183 /** Useful range constant. \*/
 184 public static final int INCLUDE_SECOND = 2;
 185
-186 /** Useful range constant. _/
-187 public static final int INCLUDE_BOTH = 3;
+186 /** Useful range constant. */
+187 public static final int INCLUDE*BOTH = 3;
 188
 189 /\*\*
-190 _ Useful constant for specifying a day of the week relative to a fixed
+190 * Useful constant for specifying a day of the week relative to a fixed
 191 _ date.
 192 _/
 193 public static final int PRECEDING = -1;
@@ -19902,7 +19902,7 @@ SerialDate.Java
 415 final String[] months;
 416
 417 if (shortened) {
-418 months = DATE_FORMAT_SYMBOLS.getShortMonths();
+418 months = DATE*FORMAT_SYMBOLS.getShortMonths();
 419 }
 420 else {
 421 months = DATE_FORMAT_SYMBOLS.getMonths();
@@ -19912,8 +19912,8 @@ SerialDate.Java
 425
 426 }
 427
-428 /**
-429 _ Converts a string to a month code.
+428 /\*\*
+429 * Converts a string to a month code.
 430 _ <P>
 431 _ This method will return one of the constants JANUARY, FEBRUARY, ...,
 432 _ DECEMBER that corresponds to the string. If the string is not
@@ -19922,7 +19922,7 @@ SerialDate.Java
 435 _ @param s the string to parse.
 436 _
 437 _ @return <code>-1</code> if the string is not parseable, the month of the
-438 _ year otherwise.
+438 \_ year otherwise.
 439 \*/
 440 public static int stringToMonthCode(String s) {
 441
@@ -19958,7 +19958,7 @@ SerialDate.Java
 471
 472 }
 473
-474 /**
+474 /\*\*
 
 ```
 Listing B-1 (continued)
@@ -20278,7 +20278,7 @@ SerialDate.Java
 751 public static String weekInMonthToString(final int count) {
 752
 753 switch (count) {
-754 case SerialDate.FIRST_WEEK_IN_MONTH : return "First";
+754 case SerialDate.FIRST*WEEK_IN_MONTH : return "First";
 755 case SerialDate.SECOND_WEEK_IN_MONTH : return "Second";
 756 case SerialDate.THIRD_WEEK_IN_MONTH : return "Third";
 757 case SerialDate.FOURTH_WEEK_IN_MONTH : return "Fourth";
@@ -20289,14 +20289,14 @@ SerialDate.Java
 762
 763 }
 764
-765 /\*_
+765 /\**
 766 _ Returns a string representing the supplied 'relative'.
 767 _ <P>
 768 _ Need to find a better approach.
 769 _
 770 _ @param relative a constant representing the 'relative'.
 771 _
-772 _ @return a string representing the supplied 'relative'.
+772 \_ @return a string representing the supplied 'relative'.
 773 \*/
 774 public static String relativeToString(final int relative) {
 775
@@ -22019,11 +22019,11 @@ SpreadsheetDate.java
 380 _ @return A boolean.
 381 _/
 382 public boolean isInRange(final SerialDate d1, final SerialDate d2) {
-383 return isInRange(d1, d2, SerialDate.INCLUDE_BOTH);
+383 return isInRange(d1, d2, SerialDate.INCLUDE*BOTH);
 384 }
 385
-386 /**
-387 _ Returns true if this SerialDate is within the specified range (caller
+386 /\*\*
+387 * Returns true if this SerialDate is within the specified range (caller
 388 _ specifies whether or not the end-points are included). The order of d1
 389 _ and d2 is not important.
 390 _
@@ -22057,7 +22057,7 @@ SpreadsheetDate.java
 418 }
 419 }
 420
-421 /**
+421 /\*\*
 422 _ Calculate the serial number from the day, month and year.
 423 _ <P>
 424 _ 1-Jan-1900 = 2.
@@ -22067,7 +22067,7 @@ SpreadsheetDate.java
 428 _ @param y the year.
 429 _
 430 _ @return the serial number from the day, month and year.
-431 _/
+431 \_/
 432 private int calcSerial(final int d, final int m, final int y) {
 433 final int yy = ((y - 1900) \* 365) + SerialDate.leapYearCount(y - 1);
 434 int mm = SerialDate.AGGREGATE_DAYS_TO_END_OF_PRECEDING_MONTH[m];

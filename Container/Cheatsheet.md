@@ -236,11 +236,11 @@ original article](Character_Classes.html)
 | | [caret |
 | | notation](../../../../../../../ex |
 | | ternal.html?link=https://en.wikip |
-| | edia.org/wiki/Caret_notation){.ex |
+| | edia.org/wiki/Caret*notation){.ex |
 | | ternal}, |
 | | where \"X\" is a letter from A--Z |
 | | (corresponding to codepoints |
-| | `U+0001`_--_`U+001F`). For |
+| | `U+0001`*--_`U+001F`). For |
 | | example, `/\cM/` matches |
 | | \"\\r\" in \"\\r\\n\". |
 +-----------------------------------+-----------------------------------+
@@ -305,7 +305,7 @@ original article](Character_Classes.html)
 | | flag](../Regular_Expressions.html |
 | | #Advanced_searching_with_flags_2) |
 | | , |
-| | these will cause an _invalid |
+| | these will cause an \_invalid |
 | | identity escape_ error. This is |
 | | done to ensure backward |
 | | compatibility with existing code |

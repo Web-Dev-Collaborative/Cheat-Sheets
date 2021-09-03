@@ -233,11 +233,11 @@ cheatsheet](Cheatsheet.html). Do not forget to edit it as well, thanks!
 | | [caret |
 | | notation](../../../../../../../ex |
 | | ternal.html?link=https://en.wikip |
-| | edia.org/wiki/Caret_notation){.ex |
+| | edia.org/wiki/Caret*notation){.ex |
 | | ternal}, |
 | | where \"X\" is a letter from A--Z |
 | | (corresponding to codepoints |
-| | `U+0001`_--_`U+001F`). For |
+| | `U+0001`*--\_`U+001F`). For |
 | | example, `/\cM/` matches |
 | | \"\\r\" in \"\\r\\n\". |
 +-----------------------------------+-----------------------------------+
