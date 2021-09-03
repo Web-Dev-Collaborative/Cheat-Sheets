@@ -20278,7 +20278,7 @@ SerialDate.Java
 751 public static String weekInMonthToString(final int count) {
 752
 753 switch (count) {
-754 case SerialDate.FIRST*WEEK_IN_MONTH : return "First";
+754 case SerialDate.FIRST\*WEEK*IN_MONTH : return "First";
 755 case SerialDate.SECOND_WEEK_IN_MONTH : return "Second";
 756 case SerialDate.THIRD_WEEK_IN_MONTH : return "Third";
 757 case SerialDate.FOURTH_WEEK_IN_MONTH : return "Fourth";
@@ -20289,13 +20289,13 @@ SerialDate.Java
 762
 763 }
 764
-765 /\**
-766 _ Returns a string representing the supplied 'relative'.
+765 /\*\*
+766 * Returns a string representing the supplied 'relative'.
 767 _ <P>
 768 _ Need to find a better approach.
 769 _
 770 _ @param relative a constant representing the 'relative'.
-771 _
+771 \_
 772 \_ @return a string representing the supplied 'relative'.
 773 \*/
 774 public static String relativeToString(final int relative) {
